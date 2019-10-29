@@ -1,0 +1,13 @@
+current directory: /Users/takedatakashiki/Documents/develop/omoKake/omokake02/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191024-69542-1doy0iw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/takedatakashiki/Documents/develop/omoKake/omokake02/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/takedatakashiki/Documents/develop/omoKake/omokake02/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/takedatakashiki/Documents/develop/omoKake/omokake02/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
