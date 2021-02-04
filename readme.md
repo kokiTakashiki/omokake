@@ -26,4 +26,6 @@ This is an experimental application.
 実験的アプリです。
 
 ## link
+[![](https://img.youtube.com/vi/840NX88MnGY/0.jpg)](https://www.youtube.com/watch?v=840NX88MnGY)
+
 https://kokitakashiki.github.io/homepage.io/omokake.html
