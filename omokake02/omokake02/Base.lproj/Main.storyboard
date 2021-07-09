@@ -364,12 +364,10 @@ iPhoneとiCloud内に保存された
 
 ・kakera画面
 「かけら」の形を選択します。
-※2019年現在は三角と四角の２種類
 
 ・flow画面
 「かけら」の流れを選択します。
 Blow upは吹き上がるような表現です。
-※2019年現在はBlow upのみ
 
 以上で作品を生み出すことができます。
 
@@ -457,14 +455,12 @@ Blow upは吹き上がるような表現です。
 
 ・kakera画面
 「かけら」の形を選択します。
-※2019年現在は三角と四角の２種類
 
 ・flow画面
 「かけら」の流れを選択します。
 Blow upは吹き上がるような表現です。
-※2019年現在はBlow upのみ
 
-色はランダムです。2019年現在
+色はランダムです。
 
 以上で
 作品を生み出すことができます。</string>
@@ -709,7 +705,7 @@ Special Thanks</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="9fA-Kc-5Km"/>
-        <segue reference="EFF-LM-pkj"/>
+        <segue reference="iv6-DD-mjx"/>
         <segue reference="eNZ-BB-j2s"/>
         <segue reference="BW2-y9-QsB"/>
     </inferredMetricsTieBreakers>
