@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Photos
 
 extension PHPhotoLibrary {
@@ -28,6 +29,12 @@ extension PHPhotoLibrary {
             case .restricted:
                 userCompletionHandler("Restricted")
                 print("Restricted")
+            case .limited:
+                userCompletionHandler("limited")
+                print("limited")
+            @unknown default:
+                userCompletionHandler("default")
+                print("default")
             }
             
         }
@@ -45,9 +52,10 @@ class MenuViewPresentorImpl: MenuViewPresentor {
     var assetsVideo:PHFetchResult<PHAsset>!
     var sendVideoCount:Int = 0
     
+    var fetchResult: PHFetchResult<PHCollection>!
+    var requestFetchResult: PHFetchResult<PHAsset>!
+    
     func getPhotoCount() -> Int {
-        //Photo
-        let imgManager = PHImageManager.default()
         
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
@@ -90,6 +98,45 @@ class MenuViewPresentorImpl: MenuViewPresentor {
         }
         
         return sendCount - sendVideoCount
+    }
+    
+    func getThumbnail(indexPathRow: Int, thumbnailSize: CGSize) -> [UIImage] {
+        var originalArray: Array! = [UIImage]()
+        let imageManager = PHCachingImageManager()
+        
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        requestOptions.deliveryMode = .highQualityFormat
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        // アルバムをフェッチ
+        let assetCollections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+
+        assetCollections.enumerateObjects { assetCollection, index, _ in
+            
+            self.requestFetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+            //アルバム内の画像が一枚もない時は適当に配列に画像を突っ込んでおく
+            //ここの記述がないとindexPathが何もないというエラーを吐く
+            if self.requestFetchResult.firstObject == nil {
+                print("何もない")
+                originalArray.append(UIImage(named: "test")!)
+            } else {
+                let asset = self.requestFetchResult.object(at: 0)
+
+
+                imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+                    if image == nil {
+                        print("managerError")
+                    } else {
+                        originalArray.append(image! as UIImage)
+                    }
+                })
+            }
+        }
+        
+        return originalArray
     }
     
     var status = "norn"

@@ -17,6 +17,14 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let partsCount = presentor.getPhotoCount()
+        
+        let thumbnailSize = CGSize(width: 10, height: 10)
+        var originalArray:[UIImage] = []
+        for cell in 0..<partsCount {
+            originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
+            print("配列の数は\(originalArray.count)です")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

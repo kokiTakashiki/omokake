@@ -110,4 +110,15 @@ class ParticleSetup {
         
         return texture
     }
+    
+//    static func loadTextureImage(image: UIImage) -> MTLTexture? {
+//        let textureLoader = MTKTextureLoader(device: Renderer.device)
+//        var texture: MTLTexture?
+//        let cgImage = image.cgImage
+//        do {
+//            try? texture = textureLoader.newTexture(cgImage: <#T##CGImage#>, options: <#T##[MTKTextureLoader.Option : Any]?#>)
+//        } catch <#pattern#> {
+//            <#statements#>
+//        }
+//    }
 }
