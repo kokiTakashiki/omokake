@@ -17,14 +17,14 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let partsCount = presentor.getPhotoCount()
+        //let partsCount = presentor.getPhotoCount()
         
-        let thumbnailSize = CGSize(width: 10, height: 10)
-        var originalArray:[UIImage] = []
-        for cell in 0..<partsCount {
-            originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
-            print("配列の数は\(originalArray.count)です")
-        }
+//        let thumbnailSize = CGSize(width: 10, height: 10)
+//        var originalArray:[UIImage] = []
+//        for cell in 0..<partsCount {
+//            originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
+//            print("配列の数は\(originalArray.count)です")
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,7 +35,7 @@ class MenuViewController: UIViewController {
             flowSelectViewController.modalTransitionStyle = .crossDissolve
             
             //ここで写真の枚数を送ります。
-            flowSelectViewController.partsCount = 500//presentor.getPhotoCount()
+            flowSelectViewController.partsCount = presentor.getPhotoCount()
             flowSelectViewController.selectKakera = ["kakera","kakera2"]
             //self.dismiss(animated: true, completion: nil)
         }
@@ -46,7 +46,7 @@ class MenuViewController: UIViewController {
             flowSelectViewController.modalTransitionStyle = .crossDissolve
             
             //ここで写真の枚数を送ります。
-            flowSelectViewController.partsCount = 500//presentor.getPhotoCount()
+            flowSelectViewController.partsCount = presentor.getPhotoCount()
             flowSelectViewController.selectKakera = ["kakeraS1","kakeraS2"]
             //self.dismiss(animated: true, completion: nil)
         }

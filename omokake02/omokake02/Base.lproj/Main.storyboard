@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-DI-GIW" customClass="MTKView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-DI-GIW" customClass="MTKView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZi-Jc-pmK">
-                                        <rect key="frame" x="29" y="44" width="44" height="60"/>
+                                        <rect key="frame" x="29" y="40" width="44" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="←">
@@ -38,6 +36,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NsR-DI-GIW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5uG-M5-qeA"/>
+                            <constraint firstItem="NsR-DI-GIW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wfo-J4-P5b"/>
+                            <constraint firstItem="NsR-DI-GIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g50-ua-gdL"/>
+                            <constraint firstItem="NsR-DI-GIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="i5V-a3-aCH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ngu-dL-XBW"/>
                     <connections>
@@ -46,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="-17"/>
+            <point key="canvasLocation" x="266.66666666666669" y="-17.410714285714285"/>
         </scene>
         <!--Title View Controller-->
         <scene sceneID="bnw-MB-YcU">
@@ -242,7 +246,7 @@ iPhoneとiCloud内の写真に
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-av-cfI">
-                                <rect key="frame" x="179" y="782" width="58" height="45"/>
+                                <rect key="frame" x="178" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,7 +310,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-5x-KtH">
-                                <rect key="frame" x="179" y="782" width="58" height="45"/>
+                                <rect key="frame" x="178" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,7 +353,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-MF-wgt">
-                                <rect key="frame" x="179" y="782" width="58" height="45"/>
+                                <rect key="frame" x="178" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -415,7 +419,7 @@ Blow upは吹き上がるような表現です。
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-Hg-heu">
-                                <rect key="frame" x="113" y="356" width="185" height="185"/>
+                                <rect key="frame" x="111" y="356" width="185" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BlowUp"/>
                                 <connections>
@@ -423,7 +427,7 @@ Blow upは吹き上がるような表現です。
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="flow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thV-UG-BBu">
-                                <rect key="frame" x="163" y="69" width="85" height="59"/>
+                                <rect key="frame" x="161" y="69" width="85" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -443,26 +447,16 @@ Blow upは吹き上がるような表現です。
             <objects>
                 <viewController id="UgK-ev-nRT" customClass="HelpSelectViewController" customModule="omokake" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6tW-Ia-8qa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-zo-C4j">
-                                <rect key="frame" x="31" y="18" width="33" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="←">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="H98-mq-xA1" kind="modal" identifier="backKakeraView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="YkD-i1-KVN"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLO-ie-ijr">
-                                <rect key="frame" x="0.0" y="80" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="816"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-tp-oUF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="2000" id="7DO-Ds-11E"/>
+                                            <constraint firstAttribute="height" constant="1200" id="7DO-Ds-11E"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="YBd-x1-O0a" kind="embed" id="mmf-c0-brM"/>
@@ -479,6 +473,16 @@ Blow upは吹き上がるような表現です。
                                 <viewLayoutGuide key="contentLayoutGuide" id="tqB-tS-gay"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ZO2-Nf-Usg"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-zo-C4j">
+                                <rect key="frame" x="31" y="62" width="33" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="←">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="H98-mq-xA1" kind="modal" identifier="backKakeraView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="YkD-i1-KVN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jec-jK-Cmq"/>
                         <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
@@ -496,141 +500,6 @@ Blow upは吹き上がるような表現です。
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n27-sL-BNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1014.4927536231885" y="745.98214285714278"/>
-        </scene>
-        <!--Help Interaction View Controller-->
-        <scene sceneID="fGv-yE-hnO">
-            <objects>
-                <viewController id="0GE-ld-i5l" customClass="HelpInteractionViewController" customModule="omokake" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cR9-vY-7bh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6t-Yw-AxS">
-                                <rect key="frame" x="295" y="726" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="→">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mut-BG-PHn" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="S7s-GA-hCc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-QJ-O1U">
-                                <rect key="frame" x="62" y="726" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="←">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UgK-ev-nRT" kind="modal" identifier="backHelpSelectView" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="rGa-57-VP1"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckD-Id-MLe">
-                                <rect key="frame" x="32" y="218" width="350" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">長押しで
-かけらが
-集まります。</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXj-Fq-Crz">
-                                <rect key="frame" x="32" y="473" width="350" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">離すと
-かけらが
-散らばります。</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shusoku" translatesAutoresizingMaskIntoConstraints="NO" id="4m9-wK-iFb">
-                                <rect key="frame" x="228" y="218" width="152" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kakusan" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-1Z-7Ft">
-                                <rect key="frame" x="228" y="473" width="152" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タッチインタラクション" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlc-cd-xBC">
-                                <rect key="frame" x="31" y="66" width="352" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MOV-cl-0vE"/>
-                        <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WwN-MF-1iV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="857" y="746"/>
-        </scene>
-        <!--Credit View Controller-->
-        <scene sceneID="1aQ-0z-tKD">
-            <objects>
-                <viewController id="mut-BG-PHn" customClass="CreditViewController" customModule="omokake" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zMq-hq-JVP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="r72-iI-f5Q">
-                                <rect key="frame" x="32" y="220" width="350" height="444"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">武田 孝騎
-
-武田 綾奈
-佐川 晴海</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ8-hK-seO">
-                                <rect key="frame" x="30" y="220" width="285" height="444"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Developing by
-
-Icon Design
-Special Thanks</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-9l-6nr">
-                                <rect key="frame" x="62" y="726" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="←">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0GE-ld-i5l" kind="modal" identifier="backHelpInteractionView" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="EFF-LM-pkj"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="credit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkH-1v-JaG">
-                                <rect key="frame" x="157" y="65" width="101" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ytK-5e-zfF"/>
-                        <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d1H-98-35e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1777" y="746"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cRn-gE-RXo">
@@ -673,7 +542,7 @@ Special Thanks</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UgK-ev-nRT" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="eNZ-BB-j2s"/>
+                                    <segue destination="UgK-ev-nRT" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="eNZ-BB-j2s"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kakera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-qd-XdB">
@@ -698,20 +567,171 @@ Special Thanks</string>
             <objects>
                 <viewController id="YBd-x1-O0a" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OmF-TU-IHp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画面説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqs-IQ-FJd">
+                                <rect key="frame" x="28" y="20" width="120" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="R3c-qg-46F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tr0-EC-G0R">
+                                <rect key="frame" x="28" y="79" width="358" height="394"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="394" id="OoY-1R-9dG"/>
+                                </constraints>
+                                <string key="text">iPhoneとiCloud内に保存された
+写真の数だけ
+「かけら」を生成します。
+
+・kakera画面
+「かけら」の形を選択します。
+
+・flow画面
+「かけら」の流れを選択します。
+Blow upは吹き上がるような表現です。
+
+色はランダムです。
+
+以上で
+作品を生み出すことができます。</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Sl-4L1">
+                                <rect key="frame" x="28" y="1020" width="358" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="iPI-jx-6p3"/>
+                                </constraints>
+                                <string key="text">武田 孝騎
+
+武田 綾奈
+佐川 晴海</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-1a-ywH">
+                                <rect key="frame" x="28" y="1020" width="283" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="MlV-88-v8w"/>
+                                </constraints>
+                                <string key="text">Developing by
+
+Icon Design
+Special Thanks</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="credit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-do-PW1">
+                                <rect key="frame" x="28" y="960" width="96" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="PzD-bJ-hte"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOb-wI-Umv">
+                                <rect key="frame" x="28" y="561" width="358" height="190"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="sM3-MZ-Z8d"/>
+                                </constraints>
+                                <string key="text">長押しで
+かけらが
+集まります。</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-PM-roZ">
+                                <rect key="frame" x="28" y="771" width="344" height="152"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="152" id="jSG-Jo-voD"/>
+                                </constraints>
+                                <string key="text">離すと
+かけらが
+散らばります。</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shusoku" translatesAutoresizingMaskIntoConstraints="NO" id="mbt-gc-Cbo">
+                                <rect key="frame" x="234" y="561" width="152" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="UCR-I1-spW"/>
+                                    <constraint firstAttribute="width" constant="152" id="VIY-OK-dgp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakusan" translatesAutoresizingMaskIntoConstraints="NO" id="Sup-s4-d6V">
+                                <rect key="frame" x="234" y="771" width="152" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="0ar-RY-JZh"/>
+                                    <constraint firstAttribute="height" constant="152" id="Xyt-lu-wGG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タッチインタラクション" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq0-b3-biI">
+                                <rect key="frame" x="28" y="521" width="330" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="2H2-1c-xd5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lek-Ee-ard"/>
+                        <color key="backgroundColor" red="0.13389414550000001" green="0.1432466805" blue="0.15893578529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tr0-EC-G0R" firstAttribute="top" secondItem="jqs-IQ-FJd" secondAttribute="bottom" constant="27" id="09J-qd-wFo"/>
+                            <constraint firstItem="tr0-EC-G0R" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="1Av-Rs-UcI"/>
+                            <constraint firstItem="xNg-do-PW1" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="4jU-R4-hCp"/>
+                            <constraint firstItem="VOb-wI-Umv" firstAttribute="top" secondItem="mbt-gc-Cbo" secondAttribute="top" id="5hr-Xp-mtR"/>
+                            <constraint firstItem="eq0-b3-biI" firstAttribute="top" secondItem="tr0-EC-G0R" secondAttribute="bottom" constant="48" id="A11-Ma-251"/>
+                            <constraint firstItem="T5X-1a-ywH" firstAttribute="top" secondItem="qyf-Sl-4L1" secondAttribute="top" id="Bb9-nf-Pe7"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="qyf-Sl-4L1" secondAttribute="trailing" constant="28" id="FuA-wc-aMs"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="mbt-gc-Cbo" secondAttribute="trailing" constant="28" id="GMW-tA-gTI"/>
+                            <constraint firstItem="pPd-PM-roZ" firstAttribute="top" secondItem="VOb-wI-Umv" secondAttribute="bottom" constant="20" id="KdI-4L-Siy"/>
+                            <constraint firstItem="T5X-1a-ywH" firstAttribute="top" secondItem="xNg-do-PW1" secondAttribute="bottom" constant="8" symbolic="YES" id="M15-Kg-dJI"/>
+                            <constraint firstItem="eq0-b3-biI" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="MID-VO-RRV"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="tr0-EC-G0R" secondAttribute="trailing" constant="28" id="MWm-QN-8CL"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="T5X-1a-ywH" secondAttribute="trailing" constant="103" id="NT6-Ot-uUp"/>
+                            <constraint firstItem="jqs-IQ-FJd" firstAttribute="top" secondItem="OmF-TU-IHp" secondAttribute="top" constant="20" id="Oi6-gL-fdk"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xNg-do-PW1" secondAttribute="trailing" symbolic="YES" id="Suw-Xu-9bJ"/>
+                            <constraint firstItem="VOb-wI-Umv" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="VFx-Pv-HBh"/>
+                            <constraint firstItem="VOb-wI-Umv" firstAttribute="top" secondItem="eq0-b3-biI" secondAttribute="bottom" constant="8" symbolic="YES" id="VMq-ow-8S6"/>
+                            <constraint firstItem="pPd-PM-roZ" firstAttribute="top" secondItem="Sup-s4-d6V" secondAttribute="top" id="Yg3-gl-fDu"/>
+                            <constraint firstItem="xNg-do-PW1" firstAttribute="top" secondItem="pPd-PM-roZ" secondAttribute="bottom" constant="37" id="bJm-Bf-wF5"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eq0-b3-biI" secondAttribute="trailing" symbolic="YES" id="dmU-TU-wc6"/>
+                            <constraint firstItem="VOb-wI-Umv" firstAttribute="trailing" secondItem="qyf-Sl-4L1" secondAttribute="trailing" id="e1w-fj-LoP"/>
+                            <constraint firstItem="T5X-1a-ywH" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="kYa-pd-Yjj"/>
+                            <constraint firstItem="jqs-IQ-FJd" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="l1w-6v-Umt"/>
+                            <constraint firstItem="pPd-PM-roZ" firstAttribute="leading" secondItem="lek-Ee-ard" secondAttribute="leading" constant="28" id="q1g-gw-rCJ"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="Sup-s4-d6V" secondAttribute="trailing" constant="28" id="sKC-X8-Pdm"/>
+                            <constraint firstItem="VOb-wI-Umv" firstAttribute="leading" secondItem="qyf-Sl-4L1" secondAttribute="leading" id="viU-sT-06Y"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" secondItem="pPd-PM-roZ" secondAttribute="trailing" constant="42" id="y3A-ch-rPd"/>
+                            <constraint firstItem="lek-Ee-ard" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jqs-IQ-FJd" secondAttribute="trailing" symbolic="YES" id="zSg-qp-Dgk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUh-aZ-xsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254" y="1115"/>
+            <point key="canvasLocation" x="-259.4202898550725" y="813.61607142857144"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EFF-LM-pkj"/>
-        <segue reference="YkD-i1-KVN"/>
-        <segue reference="eNZ-BB-j2s"/>
+        <segue reference="U5R-R6-gqk"/>
         <segue reference="BW2-y9-QsB"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -722,9 +742,6 @@ Special Thanks</string>
         <image name="kakusan" width="600" height="600"/>
         <image name="settingButton" width="536" height="532"/>
         <image name="shusoku" width="400" height="597"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
