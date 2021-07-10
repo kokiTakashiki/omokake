@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -241,7 +242,7 @@ iPhoneとiCloud内の写真に
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-av-cfI">
-                                <rect key="frame" x="180" y="782" width="58" height="45"/>
+                                <rect key="frame" x="179" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -270,7 +271,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="データの取得失敗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD9-8r-xdS">
-                                <rect key="frame" x="31" y="69" width="304" height="38"/>
+                                <rect key="frame" x="30" y="69" width="304" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -305,7 +306,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-5x-KtH">
-                                <rect key="frame" x="180" y="782" width="58" height="45"/>
+                                <rect key="frame" x="179" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,7 +325,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="データの取得完了" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf3-9d-21w">
-                                <rect key="frame" x="31" y="69" width="304" height="38"/>
+                                <rect key="frame" x="30" y="69" width="304" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,7 +349,7 @@ iPhoneの設定画面 から許可をしてください。</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-MF-wgt">
-                                <rect key="frame" x="180" y="782" width="58" height="45"/>
+                                <rect key="frame" x="179" y="782" width="58" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -414,7 +415,7 @@ Blow upは吹き上がるような表現です。
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-Hg-heu">
-                                <rect key="frame" x="114" y="356" width="185" height="185"/>
+                                <rect key="frame" x="113" y="356" width="185" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BlowUp"/>
                                 <connections>
@@ -422,7 +423,7 @@ Blow upは吹き上がるような表現です。
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="flow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thV-UG-BBu">
-                                <rect key="frame" x="164" y="69" width="85" height="59"/>
+                                <rect key="frame" x="163" y="69" width="85" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -445,43 +446,8 @@ Blow upは吹き上がるような表現です。
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFB-JA-CTO">
-                                <rect key="frame" x="32" y="218" width="350" height="476"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">iPhoneとiCloud内に保存された
-写真の数だけ
-「かけら」を生成します。
-
-・kakera画面
-「かけら」の形を選択します。
-
-・flow画面
-「かけら」の流れを選択します。
-Blow upは吹き上がるような表現です。
-
-色はランダムです。
-
-以上で
-作品を生み出すことができます。</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-un-AEu">
-                                <rect key="frame" x="295" y="726" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="→">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0GE-ld-i5l" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="iv6-DD-mjx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-zo-C4j">
-                                <rect key="frame" x="62" y="726" width="40" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-zo-C4j">
+                                <rect key="frame" x="31" y="18" width="33" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="←">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,21 +456,46 @@ Blow upは吹き上がるような表現です。
                                     <segue destination="H98-mq-xA1" kind="modal" identifier="backKakeraView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="YkD-i1-KVN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="かけらについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-cy-grj">
-                                <rect key="frame" x="31" y="66" width="272" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="39"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLO-ie-ijr">
+                                <rect key="frame" x="0.0" y="80" width="414" height="762"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-tp-oUF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2000" id="7DO-Ds-11E"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="YBd-x1-O0a" kind="embed" id="mmf-c0-brM"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="g0i-tp-oUF" firstAttribute="trailing" secondItem="tqB-tS-gay" secondAttribute="trailing" id="XH0-UV-2bR"/>
+                                    <constraint firstItem="g0i-tp-oUF" firstAttribute="bottom" secondItem="tqB-tS-gay" secondAttribute="bottom" id="YPq-zV-Kay"/>
+                                    <constraint firstItem="g0i-tp-oUF" firstAttribute="centerX" secondItem="wLO-ie-ijr" secondAttribute="centerX" id="lKm-G3-IoH"/>
+                                    <constraint firstItem="g0i-tp-oUF" firstAttribute="leading" secondItem="tqB-tS-gay" secondAttribute="leading" id="wVm-dg-KT5"/>
+                                    <constraint firstItem="g0i-tp-oUF" firstAttribute="top" secondItem="tqB-tS-gay" secondAttribute="top" id="yI1-vf-drQ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="tqB-tS-gay"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ZO2-Nf-Usg"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jec-jK-Cmq"/>
                         <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ElA-zo-C4j" firstAttribute="top" secondItem="Jec-jK-Cmq" secondAttribute="top" constant="18" id="0S4-Qq-l58"/>
+                            <constraint firstItem="ElA-zo-C4j" firstAttribute="leading" secondItem="Jec-jK-Cmq" secondAttribute="leading" constant="31" id="OBY-4t-DWt"/>
+                            <constraint firstAttribute="bottom" secondItem="wLO-ie-ijr" secondAttribute="bottom" id="RbP-6v-45Z"/>
+                            <constraint firstItem="wLO-ie-ijr" firstAttribute="top" secondItem="6tW-Ia-8qa" secondAttribute="top" constant="80" id="ab4-NJ-yQk"/>
+                            <constraint firstItem="wLO-ie-ijr" firstAttribute="top" secondItem="ElA-zo-C4j" secondAttribute="bottom" constant="8" symbolic="YES" id="lMD-oX-RkT"/>
+                            <constraint firstItem="wLO-ie-ijr" firstAttribute="leading" secondItem="Jec-jK-Cmq" secondAttribute="leading" id="ox0-R0-aur"/>
+                            <constraint firstItem="wLO-ie-ijr" firstAttribute="trailing" secondItem="Jec-jK-Cmq" secondAttribute="trailing" id="rLG-aP-abq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n27-sL-BNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1541" y="-850"/>
+            <point key="canvasLocation" x="-1014.4927536231885" y="745.98214285714278"/>
         </scene>
         <!--Help Interaction View Controller-->
         <scene sceneID="fGv-yE-hnO">
@@ -559,11 +550,11 @@ Blow upは吹き上がるような表現です。
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shusoku" translatesAutoresizingMaskIntoConstraints="NO" id="4m9-wK-iFb">
-                                <rect key="frame" x="229" y="218" width="152" height="190"/>
+                                <rect key="frame" x="228" y="218" width="152" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kakusan" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-1Z-7Ft">
-                                <rect key="frame" x="229" y="473" width="152" height="152"/>
+                                <rect key="frame" x="228" y="473" width="152" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タッチインタラクション" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlc-cd-xBC">
@@ -580,7 +571,7 @@ Blow upは吹き上がるような表現です。
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwN-MF-1iV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="-850"/>
+            <point key="canvasLocation" x="857" y="746"/>
         </scene>
         <!--Credit View Controller-->
         <scene sceneID="1aQ-0z-tKD">
@@ -603,7 +594,7 @@ Blow upは吹き上がるような表現です。
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ8-hK-seO">
-                                <rect key="frame" x="31" y="220" width="285" height="444"/>
+                                <rect key="frame" x="30" y="220" width="285" height="444"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Developing by
@@ -639,7 +630,7 @@ Special Thanks</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1H-98-35e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="-850"/>
+            <point key="canvasLocation" x="1777" y="746"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cRn-gE-RXo">
@@ -702,10 +693,24 @@ Special Thanks</string>
             </objects>
             <point key="canvasLocation" x="-2326" y="-17"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eCN-Tf-ctB">
+            <objects>
+                <viewController id="YBd-x1-O0a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OmF-TU-IHp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUh-aZ-xsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="1115"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9fA-Kc-5Km"/>
-        <segue reference="iv6-DD-mjx"/>
+        <segue reference="EFF-LM-pkj"/>
+        <segue reference="YkD-i1-KVN"/>
         <segue reference="eNZ-BB-j2s"/>
         <segue reference="BW2-y9-QsB"/>
     </inferredMetricsTieBreakers>
@@ -717,6 +722,9 @@ Special Thanks</string>
         <image name="kakusan" width="600" height="600"/>
         <image name="settingButton" width="536" height="532"/>
         <image name="shusoku" width="400" height="597"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
