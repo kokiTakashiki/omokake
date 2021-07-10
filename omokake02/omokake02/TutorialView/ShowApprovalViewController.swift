@@ -32,6 +32,8 @@ class ShowApprovalViewController: UIViewController {
         switch status {
         case "Authorized":
             self.performSegue(withIdentifier: "AuthorizedSegue", sender: nil)
+        case "limited":
+            self.performSegue(withIdentifier: "DeniedSegue", sender: nil)
         case "Denied":
             self.performSegue(withIdentifier: "DeniedSegue", sender: nil)
         default:

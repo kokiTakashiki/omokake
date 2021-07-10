@@ -146,7 +146,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">おもかけは、
-思い出に触れること
+たくさんの思い出に触れること
 をコンセプトにしたアプリです。
 
 iPhoneとiCloud内の写真に アクセスして
@@ -237,10 +237,10 @@ iPhoneとiCloud内の写真に
             </objects>
             <point key="canvasLocation" x="-4259" y="715"/>
         </scene>
-        <!--View Controller-->
+        <!--Denied View Controller-->
         <scene sceneID="osP-1m-GOx">
             <objects>
-                <viewController id="etG-1V-0Oa" sceneMemberID="viewController">
+                <viewController id="etG-1V-0Oa" customClass="DeniedViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ckZ-hc-5gv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,12 +253,15 @@ iPhoneとiCloud内の写真に
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-4M-LMf">
-                                <rect key="frame" x="32" y="250" width="350" height="402"/>
+                                <rect key="frame" x="32" y="151" width="350" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">取得できませんでした。
 
-iPhoneの設定画面 から許可をしてください。</string>
+iPhoneの設定画面
+から許可をしてください。
+
+なお取得のみで書き込みは行いません。</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -281,6 +284,15 @@ iPhoneの設定画面 から許可をしてください。</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-S9-TJM">
+                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="settingButton"/>
+                                <connections>
+                                    <action selector="settingAction:" destination="etG-1V-0Oa" eventType="touchUpInside" id="Paf-V0-8Cg"/>
+                                    <action selector="settingButton:" destination="WVI-fj-dvN" eventType="touchUpInside" id="L1d-Qw-xPT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="714-mN-ntI"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,7 +431,7 @@ Blow upは吹き上がるような表現です。
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-Hg-heu">
-                                <rect key="frame" x="111" y="356" width="185" height="185"/>
+                                <rect key="frame" x="110" y="356" width="185" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BlowUp"/>
                                 <connections>
@@ -517,7 +529,6 @@ Blow upは吹き上がるような表現です。
                                 </state>
                                 <connections>
                                     <action selector="sankakuAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="Xkl-27-qHu"/>
-                                    <segue destination="laj-ZJ-ETm" kind="modal" identifier="sankakuWatatasu" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="TLs-Zf-Cil"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29T-Ud-FLE">
@@ -527,7 +538,7 @@ Blow upは吹き上がるような表現です。
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="laj-ZJ-ETm" kind="modal" identifier="SikakuWatatasu" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="BW2-y9-QsB"/>
+                                    <action selector="sikakuAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="grV-yo-pbs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fu-Of-5f6">
@@ -547,7 +558,7 @@ Blow upは吹き上がるような表現です。
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kakera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-qd-XdB">
-                                <rect key="frame" x="137" y="69" width="139" height="59"/>
+                                <rect key="frame" x="137.5" y="69" width="139" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="qoS-4y-vRm"/>
                                 </constraints>
@@ -556,7 +567,7 @@ Blow upは吹き上がるような表現です。
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今まで撮った写真の数（かけらの数）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-8x-MI0">
-                                <rect key="frame" x="27" y="136" width="238" height="14"/>
+                                <rect key="frame" x="28" y="136" width="238" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="PKL-bt-oL4"/>
                                 </constraints>
@@ -588,6 +599,7 @@ Blow upは吹き上がるような表現です。
                     <navigationItem key="navigationItem" id="gBH-bc-9jV"/>
                     <connections>
                         <outlet property="photosCount" destination="A1b-or-W8h" id="Ocn-Ph-OK2"/>
+                        <segue destination="laj-ZJ-ETm" kind="modal" identifier="FlowSelectView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="AeS-vt-yET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY9-w9-V1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,7 +623,7 @@ Blow upは吹き上がるような表現です。
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tr0-EC-G0R">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tr0-EC-G0R">
                                 <rect key="frame" x="28" y="79" width="358" height="394"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -763,8 +775,7 @@ Special Thanks</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U5R-R6-gqk"/>
-        <segue reference="BW2-y9-QsB"/>
+        <segue reference="9fA-Kc-5Km"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>
