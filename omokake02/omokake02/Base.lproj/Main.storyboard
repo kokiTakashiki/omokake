@@ -134,8 +134,15 @@
                                     <segue destination="WVI-fj-dvN" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="S0c-wl-EG2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="おもかけについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-a4-SkW">
+                                <rect key="frame" x="32" y="69" width="303" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdS-ZA-z94">
-                                <rect key="frame" x="32" y="250" width="350" height="444"/>
+                                <rect key="frame" x="32" y="226" width="350" height="444"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">おもかけは、
@@ -144,21 +151,14 @@
 
 iPhoneとiCloud内の写真に アクセスして
 写真の数だけ
-「かけら」を生成することなど 
-写真のデータが作品に 反映されていきます。
+「かけら」を生成します。 
+そのため撮った写真が少ないと満足のいく作品にならない可能性があります。
 
 写真への影響はありません。</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="おもかけについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-a4-SkW">
-                                <rect key="frame" x="32" y="69" width="303" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3O1-ji-YhW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -516,6 +516,7 @@ Blow upは吹き上がるような表現です。
                                     <color key="titleColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="sankakuAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="Xkl-27-qHu"/>
                                     <segue destination="laj-ZJ-ETm" kind="modal" identifier="sankakuWatatasu" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="TLs-Zf-Cil"/>
                                 </connections>
                             </button>
@@ -545,18 +546,49 @@ Blow upは吹き上がるような表現です。
                                     <segue destination="UgK-ev-nRT" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="eNZ-BB-j2s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kakera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-qd-XdB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kakera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-qd-XdB">
                                 <rect key="frame" x="137" y="69" width="139" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="qoS-4y-vRm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今まで撮った写真の数（かけらの数）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-8x-MI0">
+                                <rect key="frame" x="27" y="136" width="238" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="PKL-bt-oL4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1b-or-W8h">
+                                <rect key="frame" x="28" y="158" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="tmi-hH-fAK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xhL-K5-bcB"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eLa-qd-XdB" firstAttribute="centerX" secondItem="UXA-K5-ZMY" secondAttribute="centerX" id="8YV-T0-Gyx"/>
+                            <constraint firstItem="A1b-or-W8h" firstAttribute="top" secondItem="DXf-8x-MI0" secondAttribute="bottom" constant="8" symbolic="YES" id="96w-uK-f7u"/>
+                            <constraint firstItem="eLa-qd-XdB" firstAttribute="top" secondItem="xhL-K5-bcB" secondAttribute="top" constant="25" id="G5w-Tz-nba"/>
+                            <constraint firstItem="A1b-or-W8h" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="28" id="jxT-nB-OKt"/>
+                            <constraint firstItem="DXf-8x-MI0" firstAttribute="top" secondItem="eLa-qd-XdB" secondAttribute="bottom" constant="8" symbolic="YES" id="qJc-fi-6oX"/>
+                            <constraint firstItem="DXf-8x-MI0" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="28" id="yCJ-uN-bo2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gBH-bc-9jV"/>
+                    <connections>
+                        <outlet property="photosCount" destination="A1b-or-W8h" id="Ocn-Ph-OK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY9-w9-V1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
