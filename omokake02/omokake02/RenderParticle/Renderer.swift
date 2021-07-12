@@ -29,11 +29,12 @@ class Renderer: NSObject {
     
     var setParticles: [ParticleSetup] = []
     
-    let partsCount: Int!
-    var colorCount = 1
-    let selectKakera:Array<String>!
+    var partsCount: Int!
     
-    init?(mtlView: MTKView, partsCount: Int, selectKakera: Array<String>, renderDestination: RenderDestinationProvider) {
+    // TODO
+    let presentor = MenuViewPresentorImpl()
+    
+    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, renderDestination: RenderDestinationProvider) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
             return nil
         }
@@ -43,28 +44,72 @@ class Renderer: NSObject {
         //print("DrawW",drawableSize.width,"DrawH",drawableSize.height)
         self.commandQ = commandQ
         self.partsCount = partsCount
-        self.selectKakera = selectKakera
         self.renderDestination = renderDestination
         super.init()
         mtlView.framebufferOnly = false
         
         loadMetal()
         
-        colorCount = Int.random(in: 1...4)
+        let colorCount = Int.random(in: 1...4)
         
-        let omokak = omokake(size: mtlView.drawableSize)
-        //生成地点
-        let randpartsCount = partsCount / Int.random(in: 3...10)
-        print("randpartsCount",randpartsCount)
-        omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-        omokak.particleCount = partsCount - randpartsCount
-        setParticles.append(omokak)
+        switch selectKakera {
+        case "sankaku":
+            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera")!, colorCount: colorCount)
+            //生成地点
+            let randpartsCount = partsCount / Int.random(in: 3...10)
+            print("randpartsCount",randpartsCount)
+            omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+            omokak.particleCount = partsCount - randpartsCount
+            setParticles.append(omokak)
+            
+            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera2")!, colorCount: colorCount)
+            //生成地点
+            omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+            omokak2.particleCount = randpartsCount
+            setParticles.append(omokak2)
+        case "sikaku":
+            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS1")!, colorCount: colorCount)
+            //生成地点
+            let randpartsCount = partsCount / Int.random(in: 3...10)
+            print("randpartsCount",randpartsCount)
+            omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+            omokak.particleCount = partsCount - randpartsCount
+            setParticles.append(omokak)
+            
+            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS2")!, colorCount: colorCount)
+            //生成地点
+            omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+            omokak2.particleCount = randpartsCount
+            setParticles.append(omokak2)
+        case "thumbnail": // 600 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
+            let thumbnailSize = CGSize(width: 20, height: 20)
+            print("partCount", partsCount)
+            let originalArray:[UIImage] = presentor.getThumbnail(partsCount: partsCount/60,thumbnailSize: thumbnailSize)
+            self.partsCount = 50
+            for cell in 0..<originalArray.count {
+                //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
+                print("配列の数は\(cell)です")
+                let omokak = omokake(size: mtlView.drawableSize,
+                                     texture: ParticleSetup.loadTextureImage(image: originalArray[cell]), colorCount: 0)
+                //生成地点
+                //let randpartsCount = partsCount / Int.random(in: 3...10)
+                //print("randpartsCount",randpartsCount)
+                omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+                omokak.particleCount = 1//partsCount - randpartsCount
+                setParticles.append(omokak)
+                
+//                let omokak2 = omokake2(size: mtlView.drawableSize,
+//                                       texture: ParticleSetup.loadTextureImage(image: presentor.getThumbnail(indexPathRow: cell,
+//                                                                                                             thumbnailSize: thumbnailSize)[0]))
+//                //生成地点
+//                omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+//                omokak2.particleCount = randpartsCount
+//                setParticles.append(omokak2)
+            }
+        default:
+            print("select is falier")
+        }
         
-        let omokak2 = omokake2(size: mtlView.drawableSize)
-        //生成地点
-        omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-        omokak2.particleCount = randpartsCount
-        setParticles.append(omokak2)
     }
     
     private func loadMetal() {
@@ -96,7 +141,7 @@ class Renderer: NSObject {
         //透明度の許可
         renderPipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha//renderDestination.colorSourceRGBBlendFactor
         //アルファブレンドを許可する
-        renderPipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true//renderDestination.colorIsBlendingEnabled
+        renderPipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = false//renderDestination.colorIsBlendingEnabled
         //
         renderPipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .one//renderDestination.colorDestinationRGBBlendFactor
         //renderPipelineStateDescriptor.stencilAttachmentPixelFormat = renderDestination.depthStencilPixelFormat

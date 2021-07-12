@@ -111,14 +111,26 @@ class ParticleSetup {
         return texture
     }
     
-//    static func loadTextureImage(image: UIImage) -> MTLTexture? {
-//        let textureLoader = MTKTextureLoader(device: Renderer.device)
-//        var texture: MTLTexture?
-//        let cgImage = image.cgImage
-//        do {
-//            try? texture = textureLoader.newTexture(cgImage: <#T##CGImage#>, options: <#T##[MTKTextureLoader.Option : Any]?#>)
-//        } catch <#pattern#> {
-//            <#statements#>
-//        }
-//    }
+    static func loadTextureImage(image: UIImage) -> MTLTexture {
+        //CGImage変換時に向きがおかしくならないように
+        UIGraphicsBeginImageContext(image.size);
+        image.draw(in: CGRect(x:0, y:0, width:image.size.width, height:image.size.height))
+        let orientationImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //CGImageに変換
+        guard let cgImage = orientationImage?.cgImage else {
+            fatalError("Can't open image \(image)")
+        }
+        //MTKTextureLoaderを使用してCGImageをMTLTextureに変換
+        let textureLoader = MTKTextureLoader(device: Renderer.device)
+        do {
+            let tex = try textureLoader.newTexture(cgImage: cgImage, options: nil)
+            let textureDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: tex.pixelFormat, width: tex.width, height: tex.height, mipmapped: false)
+            textureDescriptor.usage = [.shaderRead, .shaderWrite]
+            return tex
+        }
+        catch {
+            fatalError("Can't load texture")
+        }
+    }
 }

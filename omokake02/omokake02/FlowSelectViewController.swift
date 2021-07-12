@@ -11,8 +11,8 @@ import UIKit
 
 class FlowSelectViewController: UIViewController {
     
-    var partsCount:Int = 0
-    var selectKakera:Array<String> = ["kakera","kakera2"]
+    var partsCount:Int = 1
+    var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

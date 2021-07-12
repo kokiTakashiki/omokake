@@ -121,7 +121,7 @@ fragment float4 fragmentShader(VertexOut in [[ stage_in ]],
     constexpr sampler default_sampler;
     //テクスチャ情報
     float4 color = particleTexture.sample(default_sampler, point);
-    color = float4(color.xyz, 0.5);
+    color = float4(color.xyz, 1.0);
     color *= in.color;
     return color;
 }

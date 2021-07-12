@@ -8,19 +8,19 @@
 
 //import Foundation
 import CoreGraphics
+import Metal
 import simd
 
 extension Renderer {
     
-    func omokake(size: CGSize) -> ParticleSetup {
+    func omokake(size: CGSize, texture: MTLTexture, colorCount: Int) -> ParticleSetup {
         //print("koko",self.partsCount!)
         //判定用
         let partsCount = self.partsCount!
-        let colorCount = self.colorCount
         
         let particleSetup = ParticleSetup()
         //particleSetup.particleCount = 10000
-        particleSetup.particleTexture = ParticleSetup.loadTexture(imageName: selectKakera[0])
+        particleSetup.particleTexture = texture//ParticleSetup.loadTexture(imageName: selectKakera[0])
         particleSetup.birthRate = 1
         
         var particleDiscripter = ParticleDescriptor()
@@ -73,17 +73,15 @@ extension Renderer {
             break
         }
         switch colorCount {
+        case 0:
+            particleDiscripter.color = float4(1.0,1.0,1.0,1.0)
         case 1:
-            print("1")
             particleDiscripter.color = float4(1.0,0.5,0.0,1.0)//orenge
         case 2:
-            print("2")
             particleDiscripter.color = float4(0.4,1.0,1.0,1.0)//sian
         case 3:
-            print("3")
             particleDiscripter.color = float4(1.0,0.1,0.8,1.0)//pink
         case 4:
-            print("4")
             particleDiscripter.color = float4(0.4,1.0,0.1,1.0)//green
         default:
             break
@@ -100,14 +98,13 @@ extension Renderer {
         return particleSetup
     }
     
-    func omokake2(size: CGSize) -> ParticleSetup {
+    func omokake2(size: CGSize, texture: MTLTexture, colorCount: Int) -> ParticleSetup {
         //判定用
         let partsCount = self.partsCount!
-        let colorCount = self.colorCount
         
         let particleSetup = ParticleSetup()
         //particleSetup.particleCount = 10000
-        particleSetup.particleTexture = ParticleSetup.loadTexture(imageName: selectKakera[1])
+        particleSetup.particleTexture = texture//ParticleSetup.loadTexture(imageName: selectKakera[1])
         particleSetup.birthRate = 1
         
         var particleDiscripter = ParticleDescriptor()
@@ -157,17 +154,15 @@ extension Renderer {
             break
         }
         switch colorCount {
+        case 0:
+            particleDiscripter.color = float4(1.0,1.0,1.0,1.0)
         case 1:
-            print("1")
             particleDiscripter.color = float4(1.0,0.5,0.0,1.0)//orenge
         case 2:
-            print("2")
             particleDiscripter.color = float4(0.4,1.0,1.0,1.0)//sian
         case 3:
-            print("3")
             particleDiscripter.color = float4(1.0,0.1,0.8,1.0)//pink
         case 4:
-            print("4")
             particleDiscripter.color = float4(0.4,1.0,0.1,1.0)//green
         default:
             break
@@ -175,7 +170,7 @@ extension Renderer {
         //particleDiscripter.color = float4(1.0,0.1,0.8,1.0)
         //画面サイズ
         particleDiscripter.frame = float2(Float(size.width),Float(size.height))
-        print(float2(Float(size.width),Float(size.height)))
+        //print(float2(Float(size.width),Float(size.height)))
         //start地点
         particleDiscripter.startPosition = float2(0.0,0.0)
         //speed

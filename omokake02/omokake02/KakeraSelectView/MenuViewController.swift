@@ -15,12 +15,12 @@ class MenuViewController: UIViewController {
     let presentor = MenuViewPresentorImpl()
     @IBOutlet weak var photosCount: UILabel!
     var partsCount = 0
-    var selectkakera = [String]()
+    var selectkakera:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        partsCount = 200//presentor.getPhotoCount()
+        partsCount = presentor.getPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
         
 //        let thumbnailSize = CGSize(width: 10, height: 10)
@@ -29,20 +29,6 @@ class MenuViewController: UIViewController {
 //            originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
 //            print("配列の数は\(originalArray.count)です")
 //        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "FlowSelectView" {
-
-            let flowSelectViewController:FlowSelectViewController = segue.destination as! FlowSelectViewController
-            flowSelectViewController.modalTransitionStyle = .crossDissolve
-
-            //ここで写真の枚数を送ります。
-            flowSelectViewController.partsCount = partsCount
-            flowSelectViewController.selectKakera = selectkakera
-        }
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,12 +41,12 @@ class MenuViewController: UIViewController {
 // MARK: IBAction
 extension MenuViewController {
     @IBAction func sankakuAction(_ sender: Any) {
-        selectkakera = ["kakera","kakera2"]
+        selectkakera = "sankaku"//["kakera","kakera2"]
         partsAlertAndPresent()
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
-        selectkakera = ["kakeraS1","kakeraS2"]
+        selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
         partsAlertAndPresent()
     }
     
@@ -77,5 +63,19 @@ extension MenuViewController {
         } else {
             self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "FlowSelectView" {
+
+            let flowSelectViewController:FlowSelectViewController = segue.destination as! FlowSelectViewController
+            flowSelectViewController.modalTransitionStyle = .crossDissolve
+
+            //ここで写真の枚数を送ります。
+            flowSelectViewController.partsCount = partsCount
+            flowSelectViewController.selectKakera = selectkakera
+        }
+
     }
 }

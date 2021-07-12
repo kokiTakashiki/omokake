@@ -22,7 +22,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     var touchEndFloat:Float = 0.0
     
     var partsCount:Int = 0
-    var selectKakera:Array<String> = ["kakera","kakera2"]
+    var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

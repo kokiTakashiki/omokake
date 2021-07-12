@@ -100,7 +100,7 @@ class MenuViewPresentorImpl: MenuViewPresentor {
         return sendCount - sendVideoCount
     }
     
-    func getThumbnail(indexPathRow: Int, thumbnailSize: CGSize) -> [UIImage] {
+    func getThumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var originalArray: Array! = [UIImage]()
         let imageManager = PHCachingImageManager()
         
@@ -123,16 +123,18 @@ class MenuViewPresentorImpl: MenuViewPresentor {
                 print("何もない")
                 originalArray.append(UIImage(named: "test")!)
             } else {
-                let asset = self.requestFetchResult.object(at: 0)
+                for i in 0..<partsCount{
+                    let asset = self.requestFetchResult.object(at: i)
 
-
-                imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
-                    if image == nil {
-                        print("managerError")
-                    } else {
-                        originalArray.append(image! as UIImage)
-                    }
-                })
+                    imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+                        if image == nil {
+                            print("managerError")
+                            originalArray.append(UIImage.getEmptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
+                        } else {
+                            originalArray.append(image! as UIImage)
+                        }
+                    })
+                }
             }
         }
         
