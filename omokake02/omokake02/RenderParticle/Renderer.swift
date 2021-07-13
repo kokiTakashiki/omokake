@@ -34,7 +34,7 @@ class Renderer: NSObject {
     // TODO
     let presentor = MenuViewPresentorImpl()
     
-    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, renderDestination: RenderDestinationProvider) {
+    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
             return nil
         }
@@ -48,7 +48,7 @@ class Renderer: NSObject {
         super.init()
         mtlView.framebufferOnly = false
         
-        loadMetal()
+        loadMetal(isBlendingEnabled: isBlendingEnabled)
         
         let colorCount = Int.random(in: 1...4)
         
@@ -112,7 +112,7 @@ class Renderer: NSObject {
         
     }
     
-    private func loadMetal() {
+    private func loadMetal(isBlendingEnabled: Bool) {
         // Load all the shader files with a metal file extension in the project
         guard let defaultLibrary = Renderer.device.makeDefaultLibrary(), let computeFunc = defaultLibrary.makeFunction(name: "perticleCompute") else {
             return
@@ -141,7 +141,7 @@ class Renderer: NSObject {
         //透明度の許可
         renderPipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha//renderDestination.colorSourceRGBBlendFactor
         //アルファブレンドを許可する
-        renderPipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = false//renderDestination.colorIsBlendingEnabled
+        renderPipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = isBlendingEnabled//renderDestination.colorIsBlendingEnabled
         //
         renderPipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .one//renderDestination.colorDestinationRGBBlendFactor
         //renderPipelineStateDescriptor.stencilAttachmentPixelFormat = renderDestination.depthStencilPixelFormat

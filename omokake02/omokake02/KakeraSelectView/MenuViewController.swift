@@ -16,11 +16,12 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var photosCount: UILabel!
     var partsCount = 0
     var selectkakera:String = ""
+    var isBlendingEnabled:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        partsCount = presentor.getPhotoCount()
+        partsCount = 500000//presentor.getPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
         
 //        let thumbnailSize = CGSize(width: 10, height: 10)
@@ -42,17 +43,28 @@ class MenuViewController: UIViewController {
 extension MenuViewController {
     @IBAction func sankakuAction(_ sender: Any) {
         selectkakera = "sankaku"//["kakera","kakera2"]
+        isBlendingEnabled = true
         partsAlertAndPresent()
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
         selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
+        isBlendingEnabled = false
         partsAlertAndPresent()
     }
     
     private func partsAlertAndPresent() {
         if partsCount < 200 {
             let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。", preferredStyle:  UIAlertController.Style.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                (action: UIAlertAction!) -> Void in
+                print("OK")
+                self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+        } else if partsCount > 1000000 {
+            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "このアプリでは", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
                 print("OK")
@@ -75,6 +87,7 @@ extension MenuViewController {
             //ここで写真の枚数を送ります。
             flowSelectViewController.partsCount = partsCount
             flowSelectViewController.selectKakera = selectkakera
+            flowSelectViewController.isBlendingEnabled = isBlendingEnabled
         }
 
     }

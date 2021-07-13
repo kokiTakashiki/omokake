@@ -23,6 +23,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     
     var partsCount:Int = 0
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
+    var isBlendingEnabled:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
             return
         }
         
-        renderer = Renderer(mtlView: drawView, partsCount: partsCount, selectKakera: selectKakera, renderDestination: drawView)
+        renderer = Renderer(mtlView: drawView, partsCount: partsCount, selectKakera: selectKakera, isBlendingEnabled: isBlendingEnabled, renderDestination: drawView)
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
     }
     

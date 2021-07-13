@@ -13,6 +13,7 @@ class FlowSelectViewController: UIViewController {
     
     var partsCount:Int = 1
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
+    var isBlendingEnabled:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class FlowSelectViewController: UIViewController {
             //ここで写真の枚数を送ります。
             drawViewController.partsCount = partsCount
             drawViewController.selectKakera = selectKakera
+            drawViewController.isBlendingEnabled = isBlendingEnabled
             //self.dismiss(animated: true, completion: nil)
             //self.presentedViewController?.dismiss(animated: true, completion: nil)
         }

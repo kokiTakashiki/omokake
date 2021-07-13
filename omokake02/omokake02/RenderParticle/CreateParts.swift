@@ -146,10 +146,14 @@ extension Renderer {
             //
             particleDiscripter.pointSize = 11
             particleDiscripter.speedY = 1
-        case 50001...1000000:
+        case 50001...100000:
             //
             particleDiscripter.pointSize = 7
             particleDiscripter.speedY = 0.8
+        case 100001...20000000:
+            //
+            particleDiscripter.pointSize = 0.1
+            particleDiscripter.speedY = 0.7
         default:
             break
         }
