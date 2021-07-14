@@ -41,9 +41,22 @@ extension MenuViewController {
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
-        selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
+        selectkakera = "sikaku"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = false
         deviceMaxParts()
+    }
+    
+    @IBAction func thumbnailAction(_ sender: Any) {
+        selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
+        isBlendingEnabled = false
+        //deviceMaxParts()
+        let selectAlbumStoryboard = UIStoryboard(name: "SelectAlbumViewController", bundle: nil)
+        let selectAlbumViewController = selectAlbumStoryboard.instantiateViewController(withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
+        selectAlbumViewController.partsCount = partsCount
+        selectAlbumViewController.selectKakera = selectkakera
+        selectAlbumViewController.isBlendingEnabled = isBlendingEnabled
+        selectAlbumViewController.modalPresentationStyle = .fullScreen
+        self.present(selectAlbumViewController, animated: true, completion: nil)
     }
     
     // TODO: チップの性能ごとに自動判定したい。
@@ -127,6 +140,7 @@ extension MenuViewController {
             flowSelectViewController.modalTransitionStyle = .crossDissolve
 
             //ここで写真の枚数を送ります。
+            print("sendParts\(partsCount)")
             flowSelectViewController.partsCount = partsCount
             flowSelectViewController.selectKakera = selectkakera
             flowSelectViewController.isBlendingEnabled = isBlendingEnabled

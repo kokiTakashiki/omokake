@@ -81,10 +81,10 @@ class Renderer: NSObject {
             omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
             omokak2.particleCount = randpartsCount
             setParticles.append(omokak2)
-        case "thumbnail": // 600 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
+        case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             print("partCount", partsCount)
-            let originalArray:[UIImage] = presentor.getThumbnail(partsCount: partsCount/60,thumbnailSize: thumbnailSize)
+            let originalArray:[UIImage] = presentor.getThumbnail(partsCount: 400,thumbnailSize: thumbnailSize)
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)

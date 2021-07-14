@@ -117,7 +117,6 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuViewGo" {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-           
         }
     }
     

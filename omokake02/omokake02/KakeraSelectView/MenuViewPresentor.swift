@@ -46,6 +46,7 @@ protocol MenuViewPresentor {
     func Authorization() -> String
 }
 
+// TODO: プレゼンターとしての役割を超えてしまった。。
 class MenuViewPresentorImpl: MenuViewPresentor {
     var assets:PHFetchResult<PHAsset>!
     var sendCount:Int = 0
