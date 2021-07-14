@@ -19,21 +19,16 @@ class TitleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //backGroundView.image = UIImage(named: "bgKakera")
         
         let defaults = UserDefaults.standard
         let loadedTutorialOff = defaults.object(forKey: "tutorialOff")
         if (loadedTutorialOff as? Bool != nil) {
             tutorialOff = loadedTutorialOff as! Bool
         }
-        //let defaults2 = UserDefaults.standard
         let loadedMenuOn = defaults.object(forKey: "menuOn")
         if (loadedMenuOn as? Bool != nil) {
             menuOn = loadedMenuOn as! Bool
         }
-        
-        //print("tutorialOff",tutorialOff)
-        //print("menuOn",menuOn)
         
         if tutorialOff {
             tutorialButton.isHidden = true
@@ -48,13 +43,13 @@ class TitleViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tutorial1thView" {
-            let tutorialVC:TutorialViewController = segue.destination as! TutorialViewController
+            //let tutorialVC:TutorialViewController = segue.destination as! TutorialViewController
             //drawViewController.modalTransitionStyle = .crossDissolve
             self.dismiss(animated: true, completion: nil)
         }
         
         if segue.identifier == "menuView" {
-            let menuVC:MenuViewController = segue.destination as! MenuViewController
+            //let menuVC:MenuViewController = segue.destination as! MenuViewController
             //drawViewController.modalTransitionStyle = .crossDissolve
             self.dismiss(animated: true, completion: nil)
         }

@@ -129,7 +129,7 @@ class MenuViewPresentorImpl: MenuViewPresentor {
                     imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
                         if image == nil {
                             print("managerError")
-                            originalArray.append(UIImage.getEmptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
+                            originalArray.append(UIImage.emptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
                         } else {
                             originalArray.append(image! as UIImage)
                         }

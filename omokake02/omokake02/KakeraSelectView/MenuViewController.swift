@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        partsCount = 500000//presentor.getPhotoCount()
+        partsCount = 300001//presentor.getPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
         
 //        let thumbnailSize = CGSize(width: 10, height: 10)
@@ -53,6 +53,8 @@ extension MenuViewController {
         partsAlertAndPresent()
     }
     
+    // 6s 100000
+    // 11Pro 300000
     private func partsAlertAndPresent() {
         if partsCount < 200 {
             let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。", preferredStyle:  UIAlertController.Style.alert)
@@ -63,8 +65,8 @@ extension MenuViewController {
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-        } else if partsCount > 1000000 {
-            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "このアプリでは", preferredStyle:  UIAlertController.Style.alert)
+        } else if partsCount > 300000 {
+            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは300000かけらの生成が\n限界となっています。\nその限界を超えたあなたに特別な機能を\n用意しました。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
                 print("OK")

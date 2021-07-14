@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD47C362699E644003B8094 /* DeniedViewController.swift */; };
 		9AD9FB73269C8E5B00518925 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB72269C8E5B00518925 /* Array+Ex.swift */; };
 		9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB74269C977B00518925 /* UIImage+Ex.swift */; };
+		9AD9FB78269EF0C600518925 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9AD9FB77269EF0C600518925 /* DeviceKit */; };
 		9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */; };
 		9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */; };
 		9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD9FB78269EF0C600518925 /* DeviceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +210,9 @@
 			dependencies = (
 			);
 			name = omokake02;
+			packageProductDependencies = (
+				9AD9FB77269EF0C600518925 /* DeviceKit */,
+			);
 			productName = omokake02;
 			productReference = 9AEDD923234A0A1D0004A0C2 /* omokake.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +241,9 @@
 				Base,
 			);
 			mainGroup = 9AEDD91A234A0A1D0004A0C2;
+			packageReferences = (
+				9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+			);
 			productRefGroup = 9AEDD924234A0A1D0004A0C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,7 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,6 +498,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9AD9FB77269EF0C600518925 /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9AEDD91B234A0A1D0004A0C2 /* Project object */;
 }

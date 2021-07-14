@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImage {
 
-    class func getEmptyImage(color: UIColor, frame: CGRect) -> UIImage {
+    class func emptyImage(color: UIColor, frame: CGRect) -> UIImage {
         // グラフィックスコンテキストを作成
         UIGraphicsBeginImageContext(frame.size)
 
