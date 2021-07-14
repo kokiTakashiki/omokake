@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DeviceKit
 
 class MenuViewController: UIViewController {
     
@@ -20,16 +21,8 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         partsCount = 300001//presentor.getPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
-        
-//        let thumbnailSize = CGSize(width: 10, height: 10)
-//        var originalArray:[UIImage] = []
-//        for cell in 0..<partsCount {
-//            originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
-//            print("配列の数は\(originalArray.count)です")
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,32 +37,79 @@ extension MenuViewController {
     @IBAction func sankakuAction(_ sender: Any) {
         selectkakera = "sankaku"//["kakera","kakera2"]
         isBlendingEnabled = true
-        partsAlertAndPresent()
+        deviceMaxParts()
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
         selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = false
-        partsAlertAndPresent()
+        deviceMaxParts()
+    }
+    
+    // TODO: チップの性能ごとに自動判定したい。
+    // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
+    private func deviceMaxParts() {
+        let device = Device.current
+        print("device \(device)")
+        switch device {
+        case .iPhone6s:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhone6sPlus:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhoneSE:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhone7:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhone8:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhone7Plus:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhoneX:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhone8Plus:
+            partsAlertAndPresent(maxParts: 100000)
+        case .iPhoneXR:
+            partsAlertAndPresent(maxParts: 200000)
+        case .iPhoneXSMax:
+            partsAlertAndPresent(maxParts: 200000)
+        case .iPhoneXS:
+            partsAlertAndPresent(maxParts: 200000)
+        case .iPhoneSE2:
+            partsAlertAndPresent(maxParts: 200000)
+        case .iPhone11:
+            partsAlertAndPresent(maxParts: 300000)
+        case .iPhone11ProMax:
+            partsAlertAndPresent(maxParts: 300000)
+        case .iPhone11Pro:
+            partsAlertAndPresent(maxParts: 300000)
+        case .iPhone12Pro:
+            partsAlertAndPresent(maxParts: 300000)
+        case .iPhone12:
+            partsAlertAndPresent(maxParts: 300000)
+        case .iPhone12ProMax:
+            partsAlertAndPresent(maxParts: 300000)
+        default:
+            partsAlertAndPresent(maxParts: 100000)
+        }
     }
     
     // 6s 100000
     // 11Pro 300000
-    private func partsAlertAndPresent() {
+    private func partsAlertAndPresent(maxParts: Int) {
         if partsCount < 200 {
             let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                print("OK")
                 self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-        } else if partsCount > 300000 {
-            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは300000かけらの生成が\n限界となっています。\nその限界を超えたあなたに特別な機能を\n用意しました。", preferredStyle:  UIAlertController.Style.alert)
+        } else if partsCount > maxParts {
+            // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
+            partsCount = maxParts
+            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                print("OK")
                 self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
             })
             alert.addAction(defaultAction)
