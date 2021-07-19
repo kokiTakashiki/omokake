@@ -42,7 +42,7 @@ extension MenuViewController {
     
     @IBAction func sikakuAction(_ sender: Any) {
         selectkakera = "sikaku"//["kakeraS1","kakeraS2"]
-        isBlendingEnabled = false
+        isBlendingEnabled = true
         deviceMaxParts()
     }
     
