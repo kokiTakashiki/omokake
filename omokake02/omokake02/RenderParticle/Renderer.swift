@@ -31,9 +31,6 @@ class Renderer: NSObject {
     
     var partsCount: Int!
     
-    // TODO
-    let presentor = MenuViewPresentorImpl()
-    
     init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
             return nil
@@ -84,7 +81,7 @@ class Renderer: NSObject {
         case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             print("partCount", partsCount)
-            let originalArray:[UIImage] = presentor.getThumbnail(partsCount: 400,thumbnailSize: thumbnailSize)
+            let originalArray:[UIImage] = PhotosManager.thumbnail(partsCount: 400,thumbnailSize: thumbnailSize)
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)

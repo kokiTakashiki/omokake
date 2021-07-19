@@ -11,8 +11,6 @@ import UIKit
 
 class ShowApprovalViewController: UIViewController {
     
-    //ユーザー許可の画面を呼び出す用
-    let presentor = MenuViewPresentorImpl()
     var status:String = "norn"
     
     override func viewDidLoad() {
@@ -21,13 +19,13 @@ class ShowApprovalViewController: UIViewController {
     
     @IBAction func settingButton(_ sender: Any) {
         //ユーザー許可を呼び出す仕掛け
-        status = presentor.Authorization()
+        status = PhotosManager.Authorization()
     }
     
     
     @IBAction func changeVCButton(_ sender: Any) {
         //状況の更新用
-        status = presentor.Authorization()
+        status = PhotosManager.Authorization()
         switch status {
         case "Authorized":
             self.performSegue(withIdentifier: "AuthorizedSegue", sender: nil)

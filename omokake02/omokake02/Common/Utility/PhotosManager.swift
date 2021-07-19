@@ -1,31 +1,22 @@
 //
-//  MenuViewPresentor.swift
+//  PhotosManager.swift
 //  omokake02
 //
-//  Created by takasiki on 10/14/1 R.
-//  Copyright © 1 Reiwa takasiki. All rights reserved.
+//  Created by 武田孝騎 on 2021/07/19.
+//  Copyright © 2021 takasiki. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import Photos
 
-protocol MenuViewPresentor {
-    func getPhotoCount() -> Int
-    func Authorization() -> String
-}
-
-// TODO: プレゼンターとしての役割を超えてしまった。。
-class MenuViewPresentorImpl: MenuViewPresentor {
-    var assets:PHFetchResult<PHAsset>!
-    var sendCount:Int = 0
-    var assetsVideo:PHFetchResult<PHAsset>!
-    var sendVideoCount:Int = 0
-    
-    var fetchResult: PHFetchResult<PHCollection>!
-    var requestFetchResult: PHFetchResult<PHAsset>!
-    
-    func getPhotoCount() -> Int {
+struct PhotosManager {
+    static func allPhotoCount() -> Int {
+        
+        var assets:PHFetchResult<PHAsset>!
+        var sendCount:Int = 0
+        var assetsVideo:PHFetchResult<PHAsset>!
+        var sendVideoCount:Int = 0
         
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
@@ -44,8 +35,8 @@ class MenuViewPresentorImpl: MenuViewPresentor {
             print(assetCollection.localizedTitle!, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
             
             // アセットをフェッチ
-            self.assets = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
-            self.sendCount = self.assets!.count
+            assets = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
+            sendCount = assets!.count
             
             //print("asset count",self.assets.count)
         }
@@ -61,8 +52,8 @@ class MenuViewPresentorImpl: MenuViewPresentor {
             
             if assetCollection.localizedTitle == "Videos" {
                 // アセットをフェッチ
-                self.assetsVideo = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
-                self.sendVideoCount = self.assetsVideo!.count
+                assetsVideo = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
+                sendVideoCount = assetsVideo!.count
             }
             //print("asset count",self.assets.count)
         }
@@ -70,7 +61,9 @@ class MenuViewPresentorImpl: MenuViewPresentor {
         return sendCount - sendVideoCount
     }
     
-    func getThumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+    static func thumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+        var requestFetchResult: PHFetchResult<PHAsset>!
+        
         var originalArray: Array! = [UIImage]()
         let imageManager = PHCachingImageManager()
         
@@ -86,15 +79,15 @@ class MenuViewPresentorImpl: MenuViewPresentor {
 
         assetCollections.enumerateObjects { assetCollection, index, _ in
             
-            self.requestFetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+            requestFetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
             //アルバム内の画像が一枚もない時は適当に配列に画像を突っ込んでおく
             //ここの記述がないとindexPathが何もないというエラーを吐く
-            if self.requestFetchResult.firstObject == nil {
+            if requestFetchResult.firstObject == nil {
                 print("何もない")
                 originalArray.append(UIImage(named: "test")!)
             } else {
                 for i in 0..<partsCount{
-                    let asset = self.requestFetchResult.object(at: i)
+                    let asset = requestFetchResult.object(at: i)
 
                     imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
                         if image == nil {
@@ -111,12 +104,17 @@ class MenuViewPresentorImpl: MenuViewPresentor {
         return originalArray
     }
     
-    var status = "norn"
-    func Authorization() -> String {
+    static func Authorization() -> String {
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        var status = "norn"
         
         PHPhotoLibrary.Authorization(userCompletionHandler: { str in
-            self.status = str
+            status = str
+            semaphore.signal()
         })
+        semaphore.wait()
+        
         return status
     }
 }

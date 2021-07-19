@@ -13,7 +13,6 @@ import DeviceKit
 class MenuViewController: UIViewController {
     
     //var partsCount:Int = 0
-    let presentor = MenuViewPresentorImpl()
     @IBOutlet weak var photosCount: UILabel!
     var partsCount = 0
     var selectkakera:String = ""

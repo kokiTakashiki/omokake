@@ -12,6 +12,7 @@
 		9AA7F910235ED0AD004B03B4 /* HelpInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F90F235ED0AD004B03B4 /* HelpInteractionViewController.swift */; };
 		9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */; };
 		9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */; };
+		9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */; };
 		9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD47C362699E644003B8094 /* DeniedViewController.swift */; };
 		9AD9FB73269C8E5B00518925 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB72269C8E5B00518925 /* Array+Ex.swift */; };
 		9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB74269C977B00518925 /* UIImage+Ex.swift */; };
@@ -35,7 +36,6 @@
 		9AEDD944235370C40004A0C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD943235370C40004A0C2 /* MenuViewController.swift */; };
 		9AEDD948235390320004A0C2 /* kakera2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD947235390320004A0C2 /* kakera2.png */; };
 		9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD94923543B260004A0C2 /* TitleViewController.swift */; };
-		9AEDD94C23543F7E0004A0C2 /* MenuViewPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD94B23543F7E0004A0C2 /* MenuViewPresentor.swift */; };
 		9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */; };
 		9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD95023547C3A0004A0C2 /* kakeraS1.png */; };
 		9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD957235481A80004A0C2 /* buttonSKakera.png */; };
@@ -52,6 +52,7 @@
 		9AA7F90F235ED0AD004B03B4 /* HelpInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInteractionViewController.swift; sourceTree = "<group>"; };
 		9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectViewController.swift; sourceTree = "<group>"; };
 		9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Ex.swift"; sourceTree = "<group>"; };
+		9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
 		9AD47C362699E644003B8094 /* DeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeniedViewController.swift; sourceTree = "<group>"; };
 		9AD9FB72269C8E5B00518925 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		9AD9FB74269C977B00518925 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		9AEDD943235370C40004A0C2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9AEDD947235390320004A0C2 /* kakera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakera2.png; sourceTree = "<group>"; };
 		9AEDD94923543B260004A0C2 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
-		9AEDD94B23543F7E0004A0C2 /* MenuViewPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewPresentor.swift; sourceTree = "<group>"; };
 		9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS2.png; sourceTree = "<group>"; };
 		9AEDD95023547C3A0004A0C2 /* kakeraS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS1.png; sourceTree = "<group>"; };
 		9AEDD957235481A80004A0C2 /* buttonSKakera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonSKakera.png; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		9AC3914C26A58F1600CA7D19 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -247,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
-				9AEDD94B23543F7E0004A0C2 /* MenuViewPresentor.swift */,
 			);
 			path = KakeraSelectView;
 			sourceTree = "<group>";
@@ -357,9 +357,9 @@
 				9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */,
 				9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */,
 				9AEDD93B234A0F190004A0C2 /* shader.metal in Sources */,
-				9AEDD94C23543F7E0004A0C2 /* MenuViewPresentor.swift in Sources */,
 				9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */,
 				9AEDD9602354AA420004A0C2 /* TutorialViewController.swift in Sources */,
+				9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */,
 				9AEDD944235370C40004A0C2 /* MenuViewController.swift in Sources */,
 				9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */,
 				9AEDD9622354D1650004A0C2 /* ShowApprovalViewController.swift in Sources */,
