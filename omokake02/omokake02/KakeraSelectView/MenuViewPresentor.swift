@@ -10,37 +10,6 @@ import Foundation
 import UIKit
 import Photos
 
-extension PHPhotoLibrary {
-    //ユーザーに許可を促す.
-    class func Authorization( userCompletionHandler: @escaping (String) -> Void){
-        
-        PHPhotoLibrary.requestAuthorization { (status) -> Void in
-            
-            switch(status){
-            case .authorized:
-                userCompletionHandler("Authorized")
-                print("Authorized")
-            case .denied:
-                userCompletionHandler("Denied")
-                print("Denied")
-            case .notDetermined:
-                userCompletionHandler("NotDetermined")
-                print("NotDetermined")
-            case .restricted:
-                userCompletionHandler("Restricted")
-                print("Restricted")
-            case .limited:
-                userCompletionHandler("limited")
-                print("limited")
-            @unknown default:
-                userCompletionHandler("default")
-                print("default")
-            }
-            
-        }
-    }
-}
-
 protocol MenuViewPresentor {
     func getPhotoCount() -> Int
     func Authorization() -> String

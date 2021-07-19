@@ -22,7 +22,6 @@ class ShowApprovalViewController: UIViewController {
     @IBAction func settingButton(_ sender: Any) {
         //ユーザー許可を呼び出す仕掛け
         status = presentor.Authorization()
-        //print("status",status)
     }
     
     
