@@ -15,6 +15,7 @@ extension MTKView : RenderDestinationProvider {
 class DrawViewController: UIViewController, MTKViewDelegate {
     
     @IBOutlet weak var drawView: MTKView!
+    @IBOutlet weak var partsCountLabel: UILabel!
     
     var renderer: Renderer!
     var pressurePointInit:float2 = float2(x: -10000.0, y: -10000.0)
@@ -57,11 +58,12 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit)
+        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit)
         //フェードオン！
         if fadeOn {
             fadeOut()
         }
+        partsCountLabel.text = "\(result)"
         //print("touchEndFloat",touchEndFloat)
     }
     

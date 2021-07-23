@@ -53,7 +53,8 @@ class Renderer: NSObject {
         case "sankaku":
             let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera")!, colorCount: colorCount)
             //生成地点
-            let randpartsCount = partsCount / Int.random(in: 3...10)
+            var randpartsCount = partsCount / Int.random(in: 3...10)
+            if randpartsCount == 0 { randpartsCount = 1 }
             print("[Renderer] randpartsCount",randpartsCount)
             omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
             omokak.particleCount = partsCount - randpartsCount
@@ -67,7 +68,8 @@ class Renderer: NSObject {
         case "sikaku":
             let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS1")!, colorCount: colorCount)
             //生成地点
-            let randpartsCount = partsCount / Int.random(in: 3...10)
+            var randpartsCount = partsCount / Int.random(in: 3...10)
+            if randpartsCount == 0 { randpartsCount = 1 }
             print("[Renderer] randpartsCount",randpartsCount)
             omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
             omokak.particleCount = partsCount - randpartsCount
@@ -89,7 +91,7 @@ class Renderer: NSObject {
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
-                print("[Renderer] 配列の数は\(cell)です")
+                //print("[Renderer] 配列の数は\(cell)です")
                 let omokak = omokake(size: mtlView.drawableSize,
                                      texture: ParticleSetup.loadTextureImage(image: originalArray[cell]), colorCount: 0)
                 //生成地点
@@ -155,7 +157,7 @@ class Renderer: NSObject {
     }
     
     //public func draw(in view: MTKView) {
-    func update(pressurePointInit: float2, touchEndFloat: Float, pressureEndPointInit: float2){
+    func update(pressurePointInit: float2, touchEndFloat: Float, pressureEndPointInit: float2) -> Int{
         
         for setParticle in setParticles {
             setParticle.generate()
@@ -163,10 +165,10 @@ class Renderer: NSObject {
         
         guard let commandBuf = commandQ.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
             let currentDrawable = renderDestination.currentDrawable else {
-            return
+            return 0
         }
         guard let computeEncoder = commandBuf.makeComputeCommandEncoder() else {
-            return
+            return 0
         }
         computeEncoder.setComputePipelineState(computePipelineState)
         let threadsPerGroup = MTLSizeMake(computePipelineState.threadExecutionWidth, 1, 1)
@@ -226,6 +228,10 @@ class Renderer: NSObject {
         renderEncoder.setVertexBytes(&size,
                                      length: MemoryLayout<float2>.stride,
                                      index: 0)
+        
+        // label用
+        var allCurrentParticles = 0
+        
         for setParticle in setParticles {
             renderEncoder.setVertexBuffer(setParticle.particleBuffer,offset: 0, index: 1)
             renderEncoder.setVertexBytes(&setParticle.position,
@@ -235,12 +241,13 @@ class Renderer: NSObject {
             renderEncoder.drawPrimitives(type: .point, vertexStart: 0,
                                          vertexCount: 1,
                                          instanceCount: setParticle.currentParticles)
+            allCurrentParticles += setParticle.currentParticles
         }
         renderEncoder.endEncoding()
         commandBuf.present(currentDrawable)
         commandBuf.commit()
         
-        
+        return allCurrentParticles
     }
     
     public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
