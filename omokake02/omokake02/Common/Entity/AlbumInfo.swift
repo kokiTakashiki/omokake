@@ -9,10 +9,12 @@
 import Foundation
 
 class AlbumInfo {
+    var index: Int
     var title: String
     var photosCount: Int
     
-    init(title: String, photosCount: Int) {
+    init(index: Int, title: String, photosCount: Int) {
+        self.index = index
         self.title = title
         self.photosCount = photosCount
     }

@@ -61,10 +61,61 @@ struct PhotosManager {
         return sendCount - sendVideoCount
     }
     
-    static func thumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+    static func albumTitleNames() -> [AlbumInfo] {
+        var result:[AlbumInfo] = []
+        // アルバムをフェッチ
+        let assetCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
+        
+        assetCollections.enumerateObjects { assetCollection, index, _ in
+            
+            let assets = assets(fromCollection: assetCollection)
+            result.append(AlbumInfo(index: index, title: assetCollection.localizedTitle ?? "no Title", photosCount: assets.count))
+        }
+        
+        return result
+    }
+    
+    // get the assets in a collection
+    static func assets(fromCollection collection: PHAssetCollection) -> PHFetchResult<PHAsset> {
+        let photosOptions = PHFetchOptions()
+        photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        photosOptions.predicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
+        
+        return PHAsset.fetchAssets(in: collection, options: photosOptions)
+    }
+    
+    static func selectThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+        var originalArray = [UIImage]()
+        let imageManager = PHCachingImageManager()
+        
+        var requestFetchResult: PHFetchResult<PHAssetCollection>!
+        requestFetchResult = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
+        let collection: PHAssetCollection
+        collection = requestFetchResult.object(at: albumInfo.index)
+        
+        let fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
+        print("fetchResult \(fetchResult.count)")
+        //ここの記述がないとindexPathが何もないというエラーを吐く
+        if fetchResult.firstObject == nil {
+            print("何もない")
+            originalArray.append(UIImage(named: "test")!)
+        } else {
+            for i in 0..<partsCount {
+                let asset = fetchResult.object(at: i)
+                
+                imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+                    originalArray.append(image ?? UIImage.emptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
+                })
+            }
+        }
+        
+        return originalArray
+    }
+    
+    static func allThumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var requestFetchResult: PHFetchResult<PHAsset>!
         
-        var originalArray: Array! = [UIImage]()
+        var originalArray = [UIImage]()
         let imageManager = PHCachingImageManager()
         
         let requestOptions = PHImageRequestOptions()
@@ -76,7 +127,7 @@ struct PhotosManager {
         
         // アルバムをフェッチ
         let assetCollections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
-
+        
         assetCollections.enumerateObjects { assetCollection, index, _ in
             
             requestFetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
@@ -88,7 +139,7 @@ struct PhotosManager {
             } else {
                 for i in 0..<partsCount{
                     let asset = requestFetchResult.object(at: i)
-
+                    
                     imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
                         if image == nil {
                             print("managerError")

@@ -216,7 +216,7 @@
 				9AEDD94923543B260004A0C2 /* TitleViewController.swift */,
 				9AA7F90C235ECF93004B03B4 /* HelpPageView */,
 				9AD47C352699E54E003B8094 /* TutorialView */,
-				9AEDD94D23543F850004A0C2 /* KakeraSelectView */,
+				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
 				9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
 				9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */,
@@ -242,14 +242,6 @@
 				9AEDD959235481A90004A0C2 /* comingSoon1.png */,
 			);
 			path = texture;
-			sourceTree = "<group>";
-		};
-		9AEDD94D23543F850004A0C2 /* KakeraSelectView */ = {
-			isa = PBXGroup;
-			children = (
-				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
-			);
-			path = KakeraSelectView;
 			sourceTree = "<group>";
 		};
 		9AEDD94E235441580004A0C2 /* RenderParticle */ = {

@@ -15,19 +15,21 @@ class SelectAlbumViewController: UIViewController {
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     var isBlendingEnabled:Bool = false
     
-    var testAlbumData = [
-        AlbumInfo(title: "testes", photosCount: 99),
-        AlbumInfo(title: "testes2", photosCount: 100),
-        AlbumInfo(title: "testes3", photosCount: 999)
-    ]
+    var albumData = [AlbumInfo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.selectDelegate = self
+        albumData = PhotosManager.albumTitleNames()
+        albumData.forEach({ data in
+            print(data.index)
+            print(data.title)
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.item = testAlbumData
+        tableView.item = albumData
         tableView.reloadData()
     }
 }
@@ -39,6 +41,7 @@ extension SelectAlbumViewController: AlbumTableViewDelegate {
         flowSelectViewController.partsCount = partsCount
         flowSelectViewController.selectKakera = selectKakera
         flowSelectViewController.isBlendingEnabled = isBlendingEnabled
+        flowSelectViewController.albumInfo = note
         flowSelectViewController.modalPresentationStyle = .fullScreen
         self.present(flowSelectViewController, animated: true, completion: nil)
     }

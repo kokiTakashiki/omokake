@@ -25,6 +25,9 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     var isBlendingEnabled:Bool = false
     
+    // thumbnail用
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -41,7 +44,12 @@ class DrawViewController: UIViewController, MTKViewDelegate {
             return
         }
         
-        renderer = Renderer(mtlView: drawView, partsCount: partsCount, selectKakera: selectKakera, isBlendingEnabled: isBlendingEnabled, renderDestination: drawView)
+        renderer = Renderer(mtlView: drawView,
+                            partsCount: partsCount,
+                            selectKakera: selectKakera,
+                            isBlendingEnabled: isBlendingEnabled,
+                            renderDestination: drawView,
+                            albumInfo: albumInfo)
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
     }
     

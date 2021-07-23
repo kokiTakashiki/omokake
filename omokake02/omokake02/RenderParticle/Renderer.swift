@@ -31,7 +31,7 @@ class Renderer: NSObject {
     
     var partsCount: Int!
     
-    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider) {
+    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
             return nil
         }
@@ -80,8 +80,12 @@ class Renderer: NSObject {
             setParticles.append(omokak2)
         case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
-            print("partCount", partsCount)
-            let originalArray:[UIImage] = PhotosManager.thumbnail(partsCount: 400,thumbnailSize: thumbnailSize)
+            var partsMaxCount = albumInfo.photosCount
+            print("partCount", albumInfo.photosCount)
+            if albumInfo.photosCount > 400 {
+                partsMaxCount = 400
+            }
+            let originalArray:[UIImage] = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)

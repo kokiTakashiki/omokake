@@ -15,6 +15,9 @@ class FlowSelectViewController: UIViewController {
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     var isBlendingEnabled:Bool = false
     
+    // thumbnail用
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +35,7 @@ class FlowSelectViewController: UIViewController {
             drawViewController.partsCount = partsCount
             drawViewController.selectKakera = selectKakera
             drawViewController.isBlendingEnabled = isBlendingEnabled
+            drawViewController.albumInfo = albumInfo
             //self.dismiss(animated: true, completion: nil)
             //self.presentedViewController?.dismiss(animated: true, completion: nil)
         }
