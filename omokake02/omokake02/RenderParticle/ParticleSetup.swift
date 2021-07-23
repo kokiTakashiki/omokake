@@ -102,10 +102,10 @@ class ParticleSetup {
             if let url: URL = Bundle.main.url(forResource: imageName, withExtension: fileExtension) {
                 texture = try textureLoader.newTexture(URL: url, options: textureLoaderOptions)
             } else {
-                print("Failed load \(imageName)")
+                print("[ParticleSetup] Failed load \(imageName)")
             }
         } catch let error {
-            print(error.localizedDescription)
+            print("[ParticleSetup] ",error.localizedDescription)
         }
         
         return texture

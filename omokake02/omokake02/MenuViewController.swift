@@ -20,7 +20,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        partsCount = 300001//presentor.getPhotoCount()
+        partsCount = PhotosManager.allPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
     }
     
@@ -62,7 +62,7 @@ extension MenuViewController {
     // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
     private func deviceMaxParts() {
         let device = Device.current
-        print("device \(device)")
+        print("[MenuViewController] device \(device)")
         switch device {
         case .iPhone6s:
             partsAlertAndPresent(maxParts: 100000)
@@ -139,7 +139,7 @@ extension MenuViewController {
             flowSelectViewController.modalTransitionStyle = .crossDissolve
 
             //ここで写真の枚数を送ります。
-            print("sendParts\(partsCount)")
+            print("[MenuViewController] sendParts \(partsCount)")
             flowSelectViewController.partsCount = partsCount
             flowSelectViewController.selectKakera = selectkakera
             flowSelectViewController.isBlendingEnabled = isBlendingEnabled

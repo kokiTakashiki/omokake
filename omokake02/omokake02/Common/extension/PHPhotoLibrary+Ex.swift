@@ -18,22 +18,22 @@ extension PHPhotoLibrary {
                 switch status {
                 case .authorized:
                     userCompletionHandler("Authorized")
-                    print("Authorized")
+                    print("[PHPhotoLibrary] Authorized")
                 case .denied:
                     userCompletionHandler("Denied")
-                    print("Denied")
+                    print("[PHPhotoLibrary] Denied")
                 case .notDetermined:
                     userCompletionHandler("NotDetermined")
-                    print("NotDetermined")
+                    print("[PHPhotoLibrary] NotDetermined")
                 case .restricted:
                     userCompletionHandler("Restricted")
-                    print("Restricted")
+                    print("[PHPhotoLibrary] Restricted")
                 case .limited:
                     userCompletionHandler("limited")
-                    print("limited")
+                    print("[PHPhotoLibrary] limited")
                 @unknown default:
                     userCompletionHandler("default")
-                    print("default")
+                    print("[PHPhotoLibrary] default")
                 }
                 
             }
@@ -43,22 +43,22 @@ extension PHPhotoLibrary {
                 switch status {
                 case .authorized:
                     userCompletionHandler("Authorized")
-                    print("Authorized")
+                    print("[PHPhotoLibrary] Authorized")
                 case .denied:
                     userCompletionHandler("Denied")
-                    print("Denied")
+                    print("[PHPhotoLibrary] Denied")
                 case .notDetermined:
                     userCompletionHandler("NotDetermined")
-                    print("NotDetermined")
+                    print("[PHPhotoLibrary] NotDetermined")
                 case .restricted:
                     userCompletionHandler("Restricted")
-                    print("Restricted")
+                    print("[PHPhotoLibrary] Restricted")
                 case .limited:
                     userCompletionHandler("limited")
-                    print("limited")
+                    print("[PHPhotoLibrary] limited")
                 @unknown default:
                     userCompletionHandler("default")
-                    print("default")
+                    print("[PHPhotoLibrary] default")
                 }
                 
             }

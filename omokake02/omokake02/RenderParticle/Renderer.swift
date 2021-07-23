@@ -54,7 +54,7 @@ class Renderer: NSObject {
             let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera")!, colorCount: colorCount)
             //生成地点
             let randpartsCount = partsCount / Int.random(in: 3...10)
-            print("randpartsCount",randpartsCount)
+            print("[Renderer] randpartsCount",randpartsCount)
             omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
             omokak.particleCount = partsCount - randpartsCount
             setParticles.append(omokak)
@@ -68,7 +68,7 @@ class Renderer: NSObject {
             let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS1")!, colorCount: colorCount)
             //生成地点
             let randpartsCount = partsCount / Int.random(in: 3...10)
-            print("randpartsCount",randpartsCount)
+            print("[Renderer] randpartsCount",randpartsCount)
             omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
             omokak.particleCount = partsCount - randpartsCount
             setParticles.append(omokak)
@@ -81,7 +81,7 @@ class Renderer: NSObject {
         case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             var partsMaxCount = albumInfo.photosCount
-            print("partCount", albumInfo.photosCount)
+            print("[Renderer] partCount", albumInfo.photosCount)
             if albumInfo.photosCount > 400 {
                 partsMaxCount = 400
             }
@@ -89,7 +89,7 @@ class Renderer: NSObject {
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
-                print("配列の数は\(cell)です")
+                print("[Renderer] 配列の数は\(cell)です")
                 let omokak = omokake(size: mtlView.drawableSize,
                                      texture: ParticleSetup.loadTextureImage(image: originalArray[cell]), colorCount: 0)
                 //生成地点
@@ -108,7 +108,7 @@ class Renderer: NSObject {
 //                setParticles.append(omokak2)
             }
         default:
-            print("select is falier")
+            print("[Renderer] select is falier")
         }
         
     }
@@ -122,7 +122,7 @@ class Renderer: NSObject {
         do {
             try computePipelineState = Renderer.device.makeComputePipelineState(function: computeFunc)
         } catch let error {
-            print("Failed to created commpute pipeline state, error \(error)")
+            print("[Renderer] Failed to created commpute pipeline state, error \(error)")
         }
         
         // Set the default formats needed to render

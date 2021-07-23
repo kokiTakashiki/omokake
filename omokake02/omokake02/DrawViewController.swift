@@ -40,7 +40,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         drawView.delegate = self
         
         guard drawView.device != nil else {
-            print("Metal is not supported on this device")
+            print("[DrawViewController] Metal is not supported on this device")
             return
         }
         

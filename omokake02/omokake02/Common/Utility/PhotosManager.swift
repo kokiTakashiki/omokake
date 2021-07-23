@@ -32,7 +32,7 @@ struct PhotosManager {
             
             // アルバムタイトル
             //print(assetCollection.localizedTitle ?? "")
-            print(assetCollection.localizedTitle!, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
+            print("[PhotosManager]",assetCollection.localizedTitle!, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
             
             // アセットをフェッチ
             assets = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
@@ -94,10 +94,10 @@ struct PhotosManager {
         collection = requestFetchResult.object(at: albumInfo.index)
         
         let fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
-        print("fetchResult \(fetchResult.count)")
+        print("[PhotosManager] fetchResult \(fetchResult.count)")
         //ここの記述がないとindexPathが何もないというエラーを吐く
         if fetchResult.firstObject == nil {
-            print("何もない")
+            print("[PhotosManager] 何もない")
             originalArray.append(UIImage(named: "test")!)
         } else {
             for i in 0..<partsCount {
@@ -134,7 +134,7 @@ struct PhotosManager {
             //アルバム内の画像が一枚もない時は適当に配列に画像を突っ込んでおく
             //ここの記述がないとindexPathが何もないというエラーを吐く
             if requestFetchResult.firstObject == nil {
-                print("何もない")
+                print("[PhotosManager] 何もない")
                 originalArray.append(UIImage(named: "test")!)
             } else {
                 for i in 0..<partsCount{
@@ -142,7 +142,7 @@ struct PhotosManager {
                     
                     imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
                         if image == nil {
-                            print("managerError")
+                            print("[PhotosManager] managerError")
                             originalArray.append(UIImage.emptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
                         } else {
                             originalArray.append(image! as UIImage)

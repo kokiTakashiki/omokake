@@ -21,10 +21,6 @@ class SelectAlbumViewController: UIViewController {
         super.viewDidLoad()
         tableView.selectDelegate = self
         albumData = PhotosManager.albumTitleNames()
-        albumData.forEach({ data in
-            print(data.index)
-            print(data.title)
-        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
