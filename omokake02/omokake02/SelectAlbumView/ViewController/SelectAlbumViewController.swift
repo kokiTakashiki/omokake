@@ -32,6 +32,19 @@ class SelectAlbumViewController: UIViewController {
 
 extension SelectAlbumViewController: AlbumTableViewDelegate {
     func albumTable(_ tableView: AlbumTableView, didSelectNoteListTable note: AlbumInfo) {
+        if note.photosCount > 400 {
+            let alert: UIAlertController = UIAlertController(title: "400枚に制限します。", message: "サムネイル表示では400枚が上限となっています。", preferredStyle:  UIAlertController.Style.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                (action: UIAlertAction!) -> Void in
+                self.present(note)
+            })
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+        }
+        present(note)
+    }
+    
+    private func present(_ note: AlbumInfo) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let flowSelectViewController = mainStoryboard.instantiateViewController(withIdentifier: "FlowSelectViewController") as! FlowSelectViewController
         flowSelectViewController.partsCount = partsCount
