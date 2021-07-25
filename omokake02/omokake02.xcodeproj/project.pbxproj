@@ -13,6 +13,7 @@
 		9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */; };
 		9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */; };
 		9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */; };
+		9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */; };
 		9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD47C362699E644003B8094 /* DeniedViewController.swift */; };
 		9AD9FB73269C8E5B00518925 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB72269C8E5B00518925 /* Array+Ex.swift */; };
 		9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB74269C977B00518925 /* UIImage+Ex.swift */; };
@@ -53,6 +54,7 @@
 		9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectViewController.swift; sourceTree = "<group>"; };
 		9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Ex.swift"; sourceTree = "<group>"; };
 		9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
+		9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		9AD47C362699E644003B8094 /* DeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeniedViewController.swift; sourceTree = "<group>"; };
 		9AD9FB72269C8E5B00518925 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		9AD9FB74269C977B00518925 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				9AD9FB72269C8E5B00518925 /* Array+Ex.swift */,
 				9AD9FB74269C977B00518925 /* UIImage+Ex.swift */,
 				9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */,
+				9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */,
 				9AEDD93D2352BC3D0004A0C2 /* ParticleSetup.swift in Sources */,
 				9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */,
+				9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */,
 				9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */,
 				9AD9FB73269C8E5B00518925 /* Array+Ex.swift in Sources */,
 				9AEDD93F2352C7250004A0C2 /* CreateParts.swift in Sources */,
