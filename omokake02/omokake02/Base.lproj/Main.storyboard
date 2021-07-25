@@ -388,12 +388,11 @@ iPhoneの設定画面
 iPhoneとiCloud内に保存された
 写真の数だけ「かけら」を生成します。
 
-・kakera画面
+kakera画面
 「かけら」の形を選択します。
 
-・flow画面
+flow画面
 「かけら」の流れを選択します。
-Blow upは吹き上がるような表現です。
 
 以上で作品を生み出すことができます。
 
@@ -645,10 +644,10 @@ Blow upは吹き上がるような表現です。
 写真の数だけ
 「かけら」を生成します。
 
-・kakera画面
+kakera画面
 「かけら」の形を選択します。
 
-・flow画面
+flow画面
 「かけら」の流れを選択します。
 Blow upは吹き上がるような表現です。
 
@@ -787,7 +786,7 @@ Special Thanks</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U5R-R6-gqk"/>
+        <segue reference="9fA-Kc-5Km"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>
