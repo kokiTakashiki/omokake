@@ -33,16 +33,7 @@ class SelectAlbumViewController: UIViewController {
 
 extension SelectAlbumViewController: AlbumTableViewDelegate {
     func albumTable(_ tableView: AlbumTableView, didSelectNoteListTable note: AlbumInfo) {
-        if note.photosCount > 400 {
-            let alert: UIAlertController = UIAlertController(title: "400枚に制限します。", message: "サムネイル表示では400枚が上限となっています。", preferredStyle:  UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-                (action: UIAlertAction!) -> Void in
-                self.present(note)
-            })
-            alert.addAction(defaultAction)
-            present(alert, animated: true, completion: nil)
-        }
-        present(note)
+        deviceMaxParts(note)
     }
     
     private func present(_ note: AlbumInfo) {
@@ -66,74 +57,74 @@ extension SelectAlbumViewController {
 extension SelectAlbumViewController {
     // TODO: チップの性能ごとに自動判定したい。
     // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
-    private func deviceMaxParts() {
+    private func deviceMaxParts(_ note: AlbumInfo) {
         let device = Device.current
         print("[MenuViewController] device \(device)")
         switch device {
         case .iPhone6s:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhone6sPlus:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhoneSE:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhone7:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhone8:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhone7Plus:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhoneX:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhone8Plus:
-            partsAlertAndPresent(maxParts: 200)
+            partsAlertAndPresent(note, maxParts: 200)
         case .iPhoneXR:
-            partsAlertAndPresent(maxParts: 200000)
+            partsAlertAndPresent(note, maxParts: 300)
         case .iPhoneXSMax:
-            partsAlertAndPresent(maxParts: 200000)
+            partsAlertAndPresent(note, maxParts: 300)
         case .iPhoneXS:
-            partsAlertAndPresent(maxParts: 200000)
+            partsAlertAndPresent(note, maxParts: 300)
         case .iPhoneSE2:
-            partsAlertAndPresent(maxParts: 200000)
+            partsAlertAndPresent(note, maxParts: 300)
         case .iPhone11:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         case .iPhone11ProMax:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         case .iPhone11Pro:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         case .iPhone12Pro:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         case .iPhone12:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         case .iPhone12ProMax:
-            partsAlertAndPresent(maxParts: 300000)
+            partsAlertAndPresent(note, maxParts: 400)
         default:
-            partsAlertAndPresent(maxParts: 100000)
+            partsAlertAndPresent(note, maxParts: 200)
         }
     }
     
-    // 6s 100000
-    // 11Pro 300000
-    private func partsAlertAndPresent(maxParts: Int) {
-        if partsCount < 10 {
+    // 6s 200
+    // 11Pro 400
+    private func partsAlertAndPresent(_ note: AlbumInfo, maxParts: Int) {
+        if note.photosCount < 10 {
             let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+                self.present(note)
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-        } else if partsCount > maxParts {
+        } else if note.photosCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             partsCount = maxParts
-            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。", preferredStyle:  UIAlertController.Style.alert)
+            let alert: UIAlertController = UIAlertController(title: "\(maxParts)枚に制限します。", message: "サムネイル表示では\(maxParts)枚の\n表示が上限となっています。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+                self.present(note)
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
         } else {
-            self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+            self.present(note)
         }
     }
     

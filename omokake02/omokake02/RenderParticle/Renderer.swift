@@ -84,8 +84,8 @@ class Renderer: NSObject {
             let thumbnailSize = CGSize(width: 20, height: 20)
             var partsMaxCount = albumInfo.photosCount
             print("[Renderer] partCount", albumInfo.photosCount)
-            if albumInfo.photosCount > 400 {
-                partsMaxCount = 400
+            if albumInfo.photosCount > partsCount {
+                partsMaxCount = partsCount
             }
             let originalArray:[UIImage] = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
             self.partsCount = 50
