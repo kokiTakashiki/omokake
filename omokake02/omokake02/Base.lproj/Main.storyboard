@@ -19,11 +19,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-DI-GIW" customClass="MTKView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZi-Jc-pmK">
-                                        <rect key="frame" x="29" y="40" width="44" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <state key="normal" title="←">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZi-Jc-pmK">
+                                        <rect key="frame" x="20" y="40" width="30" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="KMm-9p-tlV"/>
+                                            <constraint firstAttribute="height" constant="59" id="lfa-eW-pFd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                        <state key="normal" title="&lt;">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -32,6 +35,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wZi-Jc-pmK" firstAttribute="leading" secondItem="NsR-DI-GIW" secondAttribute="leading" constant="20" id="VWL-Ol-XeV"/>
+                                    <constraint firstItem="wZi-Jc-pmK" firstAttribute="top" secondItem="NsR-DI-GIW" secondAttribute="top" constant="40" id="ygb-0u-KGD"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1Y-o0-hh1">
                                 <rect key="frame" x="20" y="841" width="44" height="21"/>
@@ -47,6 +54,7 @@
                             <constraint firstItem="E1Y-o0-hh1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R0z-QH-ron"/>
                             <constraint firstItem="E1Y-o0-hh1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TqU-Mt-HL5"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wfo-J4-P5b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E1Y-o0-hh1" secondAttribute="trailing" symbolic="YES" id="dll-UR-ziX"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g50-ua-gdL"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="i5V-a3-aCH"/>
                         </constraints>
@@ -69,21 +77,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTU-0z-Ipx" customClass="UIImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="omokake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-DD-Cg5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="omokake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-DD-Cg5">
                                 <rect key="frame" x="46" y="130" width="321" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="Yu5-gw-oxh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="78"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-fg-ElO">
-                                <rect key="frame" x="103" y="416" width="208" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-fg-ElO">
+                                <rect key="frame" x="110" y="416" width="194" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="BeL-UI-AMK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Tap to Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,9 +99,11 @@
                                     <segue destination="B0y-2G-Mbd" kind="modal" identifier="tutorial1thView" modalPresentationStyle="fullScreen" id="4SY-TQ-PXi"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-0U-gms">
-                                <rect key="frame" x="103" y="416" width="208" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-0U-gms">
+                                <rect key="frame" x="110" y="416" width="194" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="KyA-Lf-rQD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Tap to Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,9 +115,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TIF-w7-Syp"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jgv-fg-ElO" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="4pJ-dK-uND"/>
+                            <constraint firstItem="VW1-DD-Cg5" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="P5P-Mf-d1f"/>
+                            <constraint firstItem="DkD-0U-gms" firstAttribute="centerY" secondItem="68t-dn-AUv" secondAttribute="centerY" id="Wz5-SN-8e5"/>
+                            <constraint firstItem="DkD-0U-gms" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="gEK-ee-D17"/>
+                            <constraint firstItem="Jgv-fg-ElO" firstAttribute="centerY" secondItem="68t-dn-AUv" secondAttribute="centerY" id="i8m-E0-8lw"/>
+                            <constraint firstItem="VW1-DD-Cg5" firstAttribute="top" secondItem="TIF-w7-Syp" secondAttribute="top" constant="86" id="m4b-pn-krU"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="backGroundView" destination="FTU-0z-Ipx" id="F4X-Gl-98B"/>
                         <outlet property="menuButton" destination="DkD-0U-gms" id="1Kp-Od-C08"/>
                         <outlet property="tutorialButton" destination="Jgv-fg-ElO" id="hkh-bh-k2e"/>
                     </connections>
@@ -439,7 +455,7 @@ flow画面
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-Hg-heu">
-                                <rect key="frame" x="114" y="356" width="185" height="185"/>
+                                <rect key="frame" x="114.5" y="355.5" width="185" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="jFX-vf-FUF"/>
                                     <constraint firstAttribute="height" constant="185" id="y8n-Xf-DOl"/>
@@ -450,7 +466,7 @@ flow画面
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thV-UG-BBu">
-                                <rect key="frame" x="164" y="69" width="86" height="59"/>
+                                <rect key="frame" x="164.5" y="69" width="85" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="bt8-ME-wvN"/>
                                 </constraints>
@@ -466,7 +482,6 @@ flow画面
                             <constraint firstItem="thV-UG-BBu" firstAttribute="top" secondItem="h6i-NK-bLe" secondAttribute="top" constant="25" id="DOA-rq-I5Z"/>
                             <constraint firstItem="BfB-Hg-heu" firstAttribute="centerX" secondItem="Nzj-XF-X4B" secondAttribute="centerX" id="OHZ-UB-Wxq"/>
                             <constraint firstItem="BfB-Hg-heu" firstAttribute="centerY" secondItem="Nzj-XF-X4B" secondAttribute="centerY" id="fae-zv-8BV"/>
-                            <constraint firstItem="thV-UG-BBu" firstAttribute="leading" secondItem="h6i-NK-bLe" secondAttribute="leading" constant="164" id="giR-EX-zRq"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -483,7 +498,7 @@ flow画面
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLO-ie-ijr">
-                                <rect key="frame" x="0.0" y="80" width="414" height="816"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-tp-oUF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1350"/>
@@ -506,10 +521,14 @@ flow画面
                                 <viewLayoutGuide key="frameLayoutGuide" id="ZO2-Nf-Usg"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-zo-C4j">
-                                <rect key="frame" x="31" y="62" width="33" height="10"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="←">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="31" y="62" width="30" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="FvX-o3-cv7"/>
+                                    <constraint firstAttribute="height" constant="37" id="Lss-nF-LZT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="H98-mq-xA1" kind="modal" identifier="backKakeraView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="YkD-i1-KVN"/>
@@ -522,9 +541,8 @@ flow画面
                             <constraint firstItem="ElA-zo-C4j" firstAttribute="top" secondItem="Jec-jK-Cmq" secondAttribute="top" constant="18" id="0S4-Qq-l58"/>
                             <constraint firstItem="ElA-zo-C4j" firstAttribute="leading" secondItem="Jec-jK-Cmq" secondAttribute="leading" constant="31" id="OBY-4t-DWt"/>
                             <constraint firstAttribute="bottom" secondItem="wLO-ie-ijr" secondAttribute="bottom" id="RbP-6v-45Z"/>
-                            <constraint firstItem="wLO-ie-ijr" firstAttribute="top" secondItem="6tW-Ia-8qa" secondAttribute="top" constant="80" id="ab4-NJ-yQk"/>
-                            <constraint firstItem="wLO-ie-ijr" firstAttribute="top" secondItem="ElA-zo-C4j" secondAttribute="bottom" constant="8" symbolic="YES" id="lMD-oX-RkT"/>
                             <constraint firstItem="wLO-ie-ijr" firstAttribute="leading" secondItem="Jec-jK-Cmq" secondAttribute="leading" id="ox0-R0-aur"/>
+                            <constraint firstItem="wLO-ie-ijr" firstAttribute="top" secondItem="ElA-zo-C4j" secondAttribute="bottom" constant="8" symbolic="YES" id="qpv-2O-4rS"/>
                             <constraint firstItem="wLO-ie-ijr" firstAttribute="trailing" secondItem="Jec-jK-Cmq" secondAttribute="trailing" id="rLG-aP-abq"/>
                         </constraints>
                     </view>
@@ -930,8 +948,7 @@ Special Thanks</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eNZ-BB-j2s"/>
-        <segue reference="YkD-i1-KVN"/>
+        <segue reference="Zpa-gN-UjY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>

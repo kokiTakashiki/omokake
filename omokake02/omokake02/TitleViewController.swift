@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class TitleViewController: UIViewController {
-    @IBOutlet weak var backGroundView: UIImageView!
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
