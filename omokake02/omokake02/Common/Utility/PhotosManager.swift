@@ -84,6 +84,43 @@ struct PhotosManager {
         return PHAsset.fetchAssets(in: collection, options: photosOptions)
     }
     
+    static func favoriteAlbumInfo() -> AlbumInfo {
+        var result:[AlbumInfo] = []
+        let assetCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
+        assetCollection.enumerateObjects { assetCollection, index, _ in
+            let assets = assets(fromCollection: assetCollection)
+            result.append(AlbumInfo(index: index, title: "Favorites", photosCount: assets.count))
+        }
+        return result[0]
+    }
+    
+    static func favoriteThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+        var originalArray = [UIImage]()
+        let imageManager = PHCachingImageManager()
+        
+        var requestFetchResult: PHFetchResult<PHAssetCollection>!
+        requestFetchResult = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
+        let collection: PHAssetCollection
+        collection = requestFetchResult.object(at: albumInfo.index)
+        
+        let fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
+        print("[PhotosManager] fetchResult \(fetchResult.count)")
+        //ここの記述がないとindexPathが何もないというエラーを吐く
+        if fetchResult.firstObject == nil {
+            print("[PhotosManager] 何もない")
+        } else {
+            for i in 0..<partsCount {
+                let asset = fetchResult.object(at: i)
+                
+                imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+                    originalArray.append(image ?? UIImage.emptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
+                })
+            }
+        }
+        
+        return originalArray
+    }
+    
     static func selectThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var originalArray = [UIImage]()
         let imageManager = PHCachingImageManager()
@@ -98,7 +135,6 @@ struct PhotosManager {
         //ここの記述がないとindexPathが何もないというエラーを吐く
         if fetchResult.firstObject == nil {
             print("[PhotosManager] 何もない")
-            originalArray.append(UIImage(named: "test")!)
         } else {
             for i in 0..<partsCount {
                 let asset = fetchResult.object(at: i)
@@ -135,7 +171,6 @@ struct PhotosManager {
             //ここの記述がないとindexPathが何もないというエラーを吐く
             if requestFetchResult.firstObject == nil {
                 print("[PhotosManager] 何もない")
-                originalArray.append(UIImage(named: "test")!)
             } else {
                 for i in 0..<partsCount{
                     let asset = requestFetchResult.object(at: i)

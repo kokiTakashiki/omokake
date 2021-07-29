@@ -21,12 +21,13 @@ class SelectAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.selectDelegate = self
-        albumData = PhotosManager.albumTitleNames()
+        albumData.append(PhotosManager.favoriteAlbumInfo())
+        albumData = albumData + PhotosManager.albumTitleNames()
+        tableView.item = albumData
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.item = albumData
         tableView.reloadData()
     }
 }

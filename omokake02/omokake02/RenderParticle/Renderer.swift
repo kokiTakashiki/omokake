@@ -82,12 +82,24 @@ class Renderer: NSObject {
             setParticles.append(omokak2)
         case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
-            var partsMaxCount = albumInfo.photosCount
-            print("[Renderer] partCount", albumInfo.photosCount)
-            if albumInfo.photosCount > partsCount {
-                partsMaxCount = partsCount
+            var originalArray:[UIImage] = []
+            switch albumInfo.title {
+            case "Favorites":
+                var partsMaxCount = albumInfo.photosCount
+                print("[Renderer] partCount", albumInfo.photosCount)
+                if albumInfo.photosCount > partsCount {
+                    partsMaxCount = partsCount
+                }
+                originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+            default:
+                var partsMaxCount = albumInfo.photosCount
+                print("[Renderer] partCount", albumInfo.photosCount)
+                if albumInfo.photosCount > partsCount {
+                    partsMaxCount = partsCount
+                }
+                originalArray = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
             }
-            let originalArray:[UIImage] = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+            // TODO: size指定
             self.partsCount = 50
             for cell in 0..<originalArray.count {
                 //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
