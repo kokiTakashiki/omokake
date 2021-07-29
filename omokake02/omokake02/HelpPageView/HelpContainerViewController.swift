@@ -6,7 +6,6 @@
 //  Copyright © 2021 takasiki. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class HelpContainerViewController: UIViewController {
