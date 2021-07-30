@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// MARK: 一種類の広がりしかないので停止中
 class FlowSelectViewController: UIViewController {
     
     var partsCount:Int = 1
