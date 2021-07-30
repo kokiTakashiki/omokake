@@ -11,7 +11,7 @@
         <!--Draw View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrawViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawViewController" id="BYZ-38-t0r" customClass="DrawViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="omokake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-DD-Cg5">
-                                <rect key="frame" x="46" y="130" width="321" height="102"/>
+                                <rect key="frame" x="46.5" y="130" width="321" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="Yu5-gw-oxh"/>
                                 </constraints>
@@ -165,7 +165,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おもかけについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-a4-SkW">
-                                <rect key="frame" x="19" y="69" width="303" height="38"/>
+                                <rect key="frame" x="20" y="69" width="303" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="XGy-D0-aPQ"/>
                                 </constraints>
@@ -224,7 +224,7 @@ iPhoneとiCloud内の写真に アクセスして
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-iy-pBb">
-                                <rect key="frame" x="295" y="776" width="40" height="54"/>
+                                <rect key="frame" x="295.5" y="776" width="40" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="8sC-s3-R7J"/>
                                     <constraint firstAttribute="width" constant="40" id="cp0-Cr-FQA"/>
@@ -238,7 +238,7 @@ iPhoneとiCloud内の写真に アクセスして
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6K-SX-vZo">
-                                <rect key="frame" x="178" y="782" width="57" height="45"/>
+                                <rect key="frame" x="178.5" y="782" width="57" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="P0q-gr-qdR"/>
                                     <constraint firstAttribute="height" constant="45" id="d1A-XN-5AC"/>
@@ -342,7 +342,7 @@ iPhoneの設定画面から
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo9-4B-aqd">
-                                <rect key="frame" x="77" y="776" width="40" height="54"/>
+                                <rect key="frame" x="78" y="776" width="40" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="SHB-YZ-mcV"/>
                                     <constraint firstAttribute="height" constant="54" id="hmy-BI-bDE"/>
@@ -409,7 +409,7 @@ iPhoneの設定画面から
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92R-Ko-hbh">
-                                <rect key="frame" x="295" y="776" width="40" height="54"/>
+                                <rect key="frame" x="296" y="776" width="40" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="lRh-Xx-KwK"/>
                                     <constraint firstAttribute="width" constant="40" id="sOT-y0-NFP"/>
@@ -517,7 +517,7 @@ flow画面
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72Q-RF-lRL">
-                                <rect key="frame" x="295" y="776" width="40" height="54"/>
+                                <rect key="frame" x="296" y="776" width="40" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1Wg-Uf-dmc"/>
                                     <constraint firstAttribute="width" constant="40" id="s2B-UA-9fQ"/>
@@ -531,7 +531,7 @@ flow画面
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い方について" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owe-Gw-DqD">
-                                <rect key="frame" x="19" y="69" width="265" height="38"/>
+                                <rect key="frame" x="20" y="69" width="265" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="0lA-wG-f0n"/>
                                 </constraints>
@@ -576,9 +576,6 @@ flow画面
                                     <constraint firstAttribute="height" constant="185" id="y8n-Xf-DOl"/>
                                 </constraints>
                                 <state key="normal" image="BlowUp"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="goDrawView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="vHf-HF-80g"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thV-UG-BBu">
                                 <rect key="frame" x="164.5" y="69" width="85" height="59"/>
@@ -734,7 +731,7 @@ flow画面
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29T-Ud-FLE">
-                                <rect key="frame" x="209" y="445" width="185" height="185"/>
+                                <rect key="frame" x="209" y="445.5" width="185" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="29T-Ud-FLE" secondAttribute="height" multiplier="1:1" id="1YS-ao-ChG"/>
                                 </constraints>
@@ -774,7 +771,6 @@ flow画面
                     <navigationItem key="navigationItem" id="gBH-bc-9jV"/>
                     <connections>
                         <outlet property="photosCount" destination="A1b-or-W8h" id="Ocn-Ph-OK2"/>
-                        <segue destination="laj-ZJ-ETm" kind="modal" identifier="FlowSelectView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="AeS-vt-yET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY9-w9-V1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1080,7 +1076,7 @@ Special Thanks</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YkD-i1-KVN"/>
+        <segue reference="U5R-R6-gqk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>

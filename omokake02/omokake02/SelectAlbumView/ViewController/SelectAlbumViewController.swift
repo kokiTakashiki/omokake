@@ -36,17 +36,6 @@ extension SelectAlbumViewController: AlbumTableViewDelegate {
     func albumTable(_ tableView: AlbumTableView, didSelectNoteListTable note: AlbumInfo) {
         deviceMaxParts(note)
     }
-    
-    private func present(_ note: AlbumInfo) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let flowSelectViewController = mainStoryboard.instantiateViewController(withIdentifier: "FlowSelectViewController") as! FlowSelectViewController
-        flowSelectViewController.partsCount = partsCount
-        flowSelectViewController.selectKakera = selectKakera
-        flowSelectViewController.isBlendingEnabled = isBlendingEnabled
-        flowSelectViewController.albumInfo = note
-        flowSelectViewController.modalPresentationStyle = .fullScreen
-        self.present(flowSelectViewController, animated: true, completion: nil)
-    }
 }
 
 extension SelectAlbumViewController {
@@ -129,4 +118,15 @@ extension SelectAlbumViewController {
         }
     }
     
+    private func present(_ note: AlbumInfo) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
+        drawViewController.partsCount = partsCount
+        drawViewController.selectKakera = selectKakera
+        drawViewController.isBlendingEnabled = isBlendingEnabled
+        drawViewController.albumInfo = note
+        drawViewController.modalPresentationStyle = .fullScreen
+        drawViewController.modalTransitionStyle = .crossDissolve
+        self.present(drawViewController, animated: true, completion: nil)
+    }
 }

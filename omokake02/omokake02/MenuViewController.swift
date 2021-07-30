@@ -15,7 +15,7 @@ class MenuViewController: UIViewController {
     //var partsCount:Int = 0
     @IBOutlet weak var photosCount: UILabel!
     var partsCount = 0
-    var selectkakera:String = ""
+    var selectKakera:String = ""
     var isBlendingEnabled:Bool = false
     
     override func viewDidLoad() {
@@ -34,30 +34,33 @@ class MenuViewController: UIViewController {
 // MARK: IBAction
 extension MenuViewController {
     @IBAction func sankakuAction(_ sender: Any) {
-        selectkakera = "sankaku"//["kakera","kakera2"]
+        selectKakera = "sankaku"//["kakera","kakera2"]
         isBlendingEnabled = true
         deviceMaxParts()
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
-        selectkakera = "sikaku"//["kakeraS1","kakeraS2"]
+        selectKakera = "sikaku"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = true
         deviceMaxParts()
     }
     
     @IBAction func thumbnailAction(_ sender: Any) {
-        selectkakera = "thumbnail"//["kakeraS1","kakeraS2"]
+        selectKakera = "thumbnail"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = false
         //deviceMaxParts()
         let selectAlbumStoryboard = UIStoryboard(name: "SelectAlbumViewController", bundle: nil)
         let selectAlbumViewController = selectAlbumStoryboard.instantiateViewController(withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
         selectAlbumViewController.partsCount = partsCount
-        selectAlbumViewController.selectKakera = selectkakera
+        selectAlbumViewController.selectKakera = selectKakera
         selectAlbumViewController.isBlendingEnabled = isBlendingEnabled
         selectAlbumViewController.modalPresentationStyle = .fullScreen
         self.present(selectAlbumViewController, animated: true, completion: nil)
     }
-    
+}
+
+// MARK: praivate
+extension MenuViewController {
     // TODO: チップの性能ごとに自動判定したい。
     // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
     private func deviceMaxParts() {
@@ -112,7 +115,7 @@ extension MenuViewController {
             let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+                self.present()
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
@@ -122,28 +125,24 @@ extension MenuViewController {
             let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。", preferredStyle:  UIAlertController.Style.alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 (action: UIAlertAction!) -> Void in
-                self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+                self.present()
             })
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
         } else {
-            self.performSegue(withIdentifier: "FlowSelectView", sender: nil)
+            self.present()
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "FlowSelectView" {
-
-            let flowSelectViewController:FlowSelectViewController = segue.destination as! FlowSelectViewController
-            flowSelectViewController.modalTransitionStyle = .crossDissolve
-
-            //ここで写真の枚数を送ります。
-            print("[MenuViewController] sendParts \(partsCount)")
-            flowSelectViewController.partsCount = partsCount
-            flowSelectViewController.selectKakera = selectkakera
-            flowSelectViewController.isBlendingEnabled = isBlendingEnabled
-        }
-
+    private func present() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
+        drawViewController.partsCount = partsCount
+        drawViewController.selectKakera = selectKakera
+        drawViewController.isBlendingEnabled = isBlendingEnabled
+        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+        drawViewController.modalPresentationStyle = .fullScreen
+        drawViewController.modalTransitionStyle = .crossDissolve
+        self.present(drawViewController, animated: true, completion: nil)
     }
 }
