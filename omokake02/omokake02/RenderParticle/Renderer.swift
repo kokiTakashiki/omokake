@@ -99,27 +99,12 @@ class Renderer: NSObject {
                 }
                 originalArray = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
             }
-            // TODO: size指定
-            self.partsCount = 50
             for cell in 0..<originalArray.count {
-                //originalArray = originalArray + presentor.getThumbnail(indexPathRow: cell, thumbnailSize: thumbnailSize)
-                //print("[Renderer] 配列の数は\(cell)です")
-                let omokak = omokake(size: mtlView.drawableSize,
-                                     texture: ParticleSetup.loadTextureImage(image: originalArray[cell]), colorCount: 0)
-                //生成地点
-                //let randpartsCount = partsCount / Int.random(in: 3...10)
-                //print("randpartsCount",randpartsCount)
+                let omokak = omokakeThumbnail(size: mtlView.drawableSize,
+                                     texture: ParticleSetup.loadTextureImage(image: originalArray[cell]))
                 omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-                omokak.particleCount = 1//partsCount - randpartsCount
+                omokak.particleCount = 1
                 setParticles.append(omokak)
-                
-//                let omokak2 = omokake2(size: mtlView.drawableSize,
-//                                       texture: ParticleSetup.loadTextureImage(image: presentor.getThumbnail(indexPathRow: cell,
-//                                                                                                             thumbnailSize: thumbnailSize)[0]))
-//                //生成地点
-//                omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-//                omokak2.particleCount = randpartsCount
-//                setParticles.append(omokak2)
             }
         default:
             print("[Renderer] select is falier")

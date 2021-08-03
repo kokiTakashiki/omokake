@@ -79,7 +79,7 @@ class ParticleSetup {
             pointer.pointee.position = pdescriptor.position
             pointer.pointee.startPosition = pdescriptor.startPosition
             pointer.pointee.size = pdescriptor.pointSize //+ .random(in: pdescriptor.pointSizeRange)
-            pointer.pointee.direction = pdescriptor.direction //+ .random(in: pdescriptor.directionRange)
+            pointer.pointee.direction = pdescriptor.direction + .random(in: pdescriptor.directionRange)
             pointer.pointee.directionRange = .random(in: pdescriptor.directionRange)
             pointer.pointee.color = pdescriptor.color
             pointer.pointee.frame = pdescriptor.frame

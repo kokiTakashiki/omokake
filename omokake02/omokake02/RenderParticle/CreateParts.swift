@@ -12,7 +12,6 @@ import Metal
 import simd
 
 extension Renderer {
-    
     func omokake(size: CGSize, texture: MTLTexture, colorCount: Int) -> ParticleSetup {
         //print("koko",self.partsCount!)
         //判定用
@@ -26,7 +25,8 @@ extension Renderer {
         var particleDiscripter = ParticleDescriptor()
         //方向
         particleDiscripter.direction = -.pi / 2
-        particleDiscripter.directionRange = -1.0...1.0
+        //particleDiscripter.directionRange = -1.0...1.0
+        particleDiscripter.directionRange = 0.0...0.0
         //大きさ
         //particleDiscripter.pointSize = 10 //100 //10 //20
         //speed
@@ -110,7 +110,8 @@ extension Renderer {
         var particleDiscripter = ParticleDescriptor()
         //方向
         particleDiscripter.direction = -.pi / 2
-        particleDiscripter.directionRange = -1.0...1.0
+        //particleDiscripter.directionRange = -1.0...1.0
+        particleDiscripter.directionRange = 0.0...0.0
         //大きさ
         //particleDiscripter.pointSize = 10 //100 //10 //20
         switch partsCount {
@@ -180,6 +181,34 @@ extension Renderer {
         //speed
         particleDiscripter.speed = 0.3
         particleDiscripter.speedRange = -0.98...0.42
+        
+        particleSetup.particleDescriptor = particleDiscripter
+        
+        return particleSetup
+    }
+    
+    func omokakeThumbnail(size: CGSize, texture: MTLTexture) -> ParticleSetup {
+        let particleSetup = ParticleSetup()
+        particleSetup.particleTexture = texture
+        particleSetup.birthRate = 1
+        
+        var particleDiscripter = ParticleDescriptor()
+        //方向
+        particleDiscripter.direction = -.pi / 2
+        particleDiscripter.directionRange = -3.0...3.0
+        //大きさ
+        particleDiscripter.pointSize = 100
+        particleDiscripter.speedY = 2
+        
+        //speed
+        particleDiscripter.speed = 1
+        particleDiscripter.speedRange = -1.78...0.62
+
+        particleDiscripter.color = float4(1.0,1.0,1.0,1.0)
+        //画面サイズ
+        particleDiscripter.frame = float2(Float(size.width),Float(size.height))
+        //start地点
+        particleDiscripter.startPosition = float2(0.0,0.0)
         
         particleSetup.particleDescriptor = particleDiscripter
         

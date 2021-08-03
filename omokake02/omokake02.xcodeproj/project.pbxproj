@@ -99,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PartSizeChangeView;
+			sourceTree = "<group>";
+		};
 		9AA7F90C235ECF93004B03B4 /* HelpPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +226,7 @@
 				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
 				9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
+				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
 				9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */,
 				9AEDD94E235441580004A0C2 /* RenderParticle */,
 				9AEDD9402352C9A10004A0C2 /* texture */,
