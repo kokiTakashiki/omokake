@@ -15,6 +15,7 @@ typedef struct {
     float2 position;
     float direction;
     float directionRange;
+    float interactionRange;
     float4 color;
     float size;
     float2 frame;
@@ -79,8 +80,8 @@ kernel void perticleCompute(device Particle *particles [[buffer(0)]],
             // 正規化(ベクトルの長さを 1 にする)
             evx /= Endlen;
             evy /= Endlen;
-            particles[id].position.x += 3 * cos(particle.direction + particle.directionRange);//vx*abs(particle.speed + 2.0);
-            particles[id].position.y -= 3 * sin(particle.direction + particle.directionRange);//vy*abs(particle.speed + 5.0);
+            particles[id].position.x += 3 * cos(particle.direction + particle.directionRange + particle.interactionRange);//vx*abs(particle.speed + 2.0);
+            particles[id].position.y -= 3 * sin(particle.direction + particle.directionRange + particle.interactionRange);//vy*abs(particle.speed + 5.0);
             if(endXv != 0.0){
                 
             }

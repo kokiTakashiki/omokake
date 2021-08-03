@@ -25,7 +25,7 @@ extension Renderer {
         var particleDiscripter = ParticleDescriptor()
         //方向
         particleDiscripter.direction = -.pi / 2
-        //particleDiscripter.directionRange = -1.0...1.0
+        particleDiscripter.interactionRange = -1.0...1.0
         particleDiscripter.directionRange = 0.0...0.0
         //大きさ
         //particleDiscripter.pointSize = 10 //100 //10 //20
@@ -110,7 +110,7 @@ extension Renderer {
         var particleDiscripter = ParticleDescriptor()
         //方向
         particleDiscripter.direction = -.pi / 2
-        //particleDiscripter.directionRange = -1.0...1.0
+        particleDiscripter.interactionRange = -1.0...1.0
         particleDiscripter.directionRange = 0.0...0.0
         //大きさ
         //particleDiscripter.pointSize = 10 //100 //10 //20
@@ -195,6 +195,7 @@ extension Renderer {
         var particleDiscripter = ParticleDescriptor()
         //方向
         particleDiscripter.direction = -.pi / 2
+        particleDiscripter.interactionRange = -3.0...3.0
         particleDiscripter.directionRange = -3.0...3.0
         //大きさ
         particleDiscripter.pointSize = 100

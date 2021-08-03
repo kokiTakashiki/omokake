@@ -14,6 +14,7 @@ struct Particle {
     var position: float2
     var direction: Float
     var directionRange: Float
+    var interactionRange: Float
     var color: float4
     var size: Float
     var frame: float2
@@ -26,6 +27,7 @@ struct ParticleDescriptor {
     var position = float2(0)
     var direction: Float = 0
     var directionRange: ClosedRange<Float> = 0...0
+    var interactionRange: ClosedRange<Float> = 0...0
     var pointSize: Float = 80
     var pointSizeRange: ClosedRange<Float> = 0...0
     var color = float4(0)
@@ -80,7 +82,7 @@ class ParticleSetup {
             pointer.pointee.startPosition = pdescriptor.startPosition
             pointer.pointee.size = pdescriptor.pointSize //+ .random(in: pdescriptor.pointSizeRange)
             pointer.pointee.direction = pdescriptor.direction + .random(in: pdescriptor.directionRange)
-            pointer.pointee.directionRange = .random(in: pdescriptor.directionRange)
+            pointer.pointee.interactionRange = .random(in: pdescriptor.interactionRange)
             pointer.pointee.color = pdescriptor.color
             pointer.pointee.frame = pdescriptor.frame
             pointer.pointee.speed = pdescriptor.speed + .random(in: pdescriptor.speedRange)
