@@ -118,15 +118,25 @@ extension SelectAlbumViewController {
         }
     }
     
+//    private func present(_ note: AlbumInfo) {
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
+//        drawViewController.partsCount = partsCount
+//        drawViewController.selectKakera = selectKakera
+//        drawViewController.isBlendingEnabled = isBlendingEnabled
+//        drawViewController.albumInfo = note
+//        drawViewController.modalPresentationStyle = .fullScreen
+//        drawViewController.modalTransitionStyle = .crossDissolve
+//        self.present(drawViewController, animated: true, completion: nil)
+//    }
     private func present(_ note: AlbumInfo) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
-        drawViewController.partsCount = partsCount
-        drawViewController.selectKakera = selectKakera
-        drawViewController.isBlendingEnabled = isBlendingEnabled
-        drawViewController.albumInfo = note
-        drawViewController.modalPresentationStyle = .fullScreen
-        drawViewController.modalTransitionStyle = .crossDissolve
-        self.present(drawViewController, animated: true, completion: nil)
+        let partSizeChangeStoryboard = UIStoryboard(name: "PartSizeChangeView", bundle: nil)
+        let partSizeChangeViewController = partSizeChangeStoryboard.instantiateViewController(withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
+        partSizeChangeViewController.partsCount = partsCount
+        partSizeChangeViewController.selectKakera = selectKakera
+        partSizeChangeViewController.isBlendingEnabled = isBlendingEnabled
+        partSizeChangeViewController.albumInfo = note
+        partSizeChangeViewController.modalPresentationStyle = .fullScreen
+        self.present(partSizeChangeViewController, animated: true, completion: nil)
     }
 }

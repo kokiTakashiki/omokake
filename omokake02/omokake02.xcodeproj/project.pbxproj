@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */; };
+		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
+		9A5FBA5926BA880800B09CC8 /* SinglePartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5826BA880800B09CC8 /* SinglePartRenderer.swift */; };
 		9AA7F909235CA1AC004B03B4 /* FlowSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */; };
 		9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */; };
 		9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartSizeChangeView.storyboard; sourceTree = "<group>"; };
+		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
+		9A5FBA5826BA880800B09CC8 /* SinglePartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePartRenderer.swift; sourceTree = "<group>"; };
 		9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowSelectViewController.swift; sourceTree = "<group>"; };
 		9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectViewController.swift; sourceTree = "<group>"; };
 		9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Ex.swift"; sourceTree = "<group>"; };
@@ -102,8 +108,27 @@
 		9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */ = {
 			isa = PBXGroup;
 			children = (
+				9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */,
+				9A5FBA5426B94F0000B09CC8 /* ViewController */,
+				9A5FBA5526B94F0D00B09CC8 /* View */,
 			);
 			path = PartSizeChangeView;
+			sourceTree = "<group>";
+		};
+		9A5FBA5426B94F0000B09CC8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9A5FBA5526B94F0D00B09CC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A5FBA5826BA880800B09CC8 /* SinglePartRenderer.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9AA7F90C235ECF93004B03B4 /* HelpPageView */ = {
@@ -337,6 +362,7 @@
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
 				9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */,
+				9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */,
 				9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */,
 				9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */,
 			);
@@ -350,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
+				9A5FBA5926BA880800B09CC8 /* SinglePartRenderer.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
 				9AD9FB81269F315400518925 /* AlbumTableView.swift in Sources */,
@@ -366,6 +393,7 @@
 				9AEDD9622354D1650004A0C2 /* ShowApprovalViewController.swift in Sources */,
 				9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */,
 				9AEDD93D2352BC3D0004A0C2 /* ParticleSetup.swift in Sources */,
+				9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */,
 				9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */,
 				9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */,
 				9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */,
@@ -519,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -540,7 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

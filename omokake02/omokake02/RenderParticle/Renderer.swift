@@ -30,6 +30,7 @@ class Renderer: NSObject {
     var setParticles: [ParticleSetup] = []
     
     var partsCount: Int!
+
     
     init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {

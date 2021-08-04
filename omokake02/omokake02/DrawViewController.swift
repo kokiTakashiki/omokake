@@ -9,8 +9,7 @@
 import UIKit
 import MetalKit
 
-extension MTKView : RenderDestinationProvider {
-}
+extension MTKView : RenderDestinationProvider {}
 
 class DrawViewController: UIViewController, MTKViewDelegate {
     
@@ -126,7 +125,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuViewGo" {
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
