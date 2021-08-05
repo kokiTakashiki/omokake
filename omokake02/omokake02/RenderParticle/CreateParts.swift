@@ -187,7 +187,7 @@ extension Renderer {
         return particleSetup
     }
     
-    func omokakeThumbnail(size: CGSize, texture: MTLTexture) -> ParticleSetup {
+    func omokakeThumbnail(size: CGSize, texture: MTLTexture, speed: Float, speedY: Float, speedRange: ClosedRange<Float>) -> ParticleSetup {
         let particleSetup = ParticleSetup()
         particleSetup.particleTexture = texture
         particleSetup.birthRate = 1
@@ -199,11 +199,11 @@ extension Renderer {
         particleDiscripter.directionRange = -3.0...3.0
         //大きさ
         particleDiscripter.pointSize = 100
-        particleDiscripter.speedY = 2
+        particleDiscripter.speedY = speedY
         
         //speed
-        particleDiscripter.speed = 1
-        particleDiscripter.speedRange = -1.78...0.62
+        particleDiscripter.speed = speed
+        particleDiscripter.speedRange = speedRange
 
         particleDiscripter.color = simd_float4(1.0,1.0,1.0,1.0)
         //画面サイズ

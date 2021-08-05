@@ -22,6 +22,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     var partsCount:Int = 0
     var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
     var isBlendingEnabled:Bool = false
+    var customSize:Float = 1.0
     
     // thumbnail用
     var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
@@ -49,13 +50,17 @@ class DrawViewController: UIViewController, MTKViewDelegate {
                             renderDestination: drawView,
                             albumInfo: albumInfo)
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
+        
+        if selectKakera == "thumbnail" {} else {
+            customSize = recommendSize()
+        }
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
     }
     
     func draw(in view: MTKView) {
-        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: 1.0)
+        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: customSize)
         //フェードオン！
         if fadeOn {
             fadeOut()
@@ -123,10 +128,43 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuViewGo" {
-            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            if selectKakera == "thumbnail" {
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            } else {
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
     
 }
 
+extension DrawViewController {
+    private func recommendSize() -> Float {
+        switch partsCount {
+            case 1...50:
+                return 100.0
+            case 51...100:
+                return 80.0
+            case 101...500:
+                return 50.0
+            case 501...1000:
+                return 30.0
+            case 1001...2000:
+                return 22.0
+            case 2001...3000:
+                return 20.0
+            case 3001...6000:
+                return 15.0
+            case 6001...50000:
+                return 11.0
+            case 50001...100000:
+                return 7.0
+            case 100001...400000:
+                return 5.0
+            default:
+                return 0.0
+       }
+        
+    }
+}

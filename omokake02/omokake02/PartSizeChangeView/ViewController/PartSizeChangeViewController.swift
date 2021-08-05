@@ -41,8 +41,12 @@ class PartSizeChangeViewController: UIViewController {
             print("[PartSizeChangeViewController] Metal is not supported on this device")
             return
         }
+        if selectKakera == "thumbnail" {
+            partSizeSlider.maximumValue = 200
+            partSizeSlider.minimumValue = 50
+        }
         
-        partSizeSlider.value = recommendSize()
+        partSizeSlider.value = recommendSize(selectKakera: selectKakera)
         
         renderer = Renderer(mtlView: drawView,
                             partsCount: 1,
@@ -65,7 +69,6 @@ extension PartSizeChangeViewController: MTKViewDelegate {
         guard (renderer?.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: partSizeSlider.value)) != nil else {
             fatalError("[PartSizeChangeViewController] renderer in not init")
         }
-        print("[PartSizeChangeViewController] partSizeSlider",partSizeSlider.value)
     }
 }
 
@@ -77,35 +80,41 @@ extension PartSizeChangeViewController {
         drawViewController.selectKakera = selectKakera
         drawViewController.isBlendingEnabled = isBlendingEnabled
         drawViewController.albumInfo = albumInfo
+        drawViewController.customSize = partSizeSlider.value
         drawViewController.modalPresentationStyle = .fullScreen
         drawViewController.modalTransitionStyle = .crossDissolve
         self.present(drawViewController, animated: true, completion: nil)
     }
     
-    private func recommendSize() -> Float {
-        switch partsCount {
-            case 1...50:
-                return 100.0
-            case 51...100:
-                return 80.0
-            case 101...500:
-                return 50.0
-            case 501...1000:
-                return 30.0
-            case 1001...2000:
-                return 22.0
-            case 2001...3000:
-                return 20.0
-            case 3001...6000:
-                return 15.0
-            case 6001...50000:
-                return 11.0
-            case 50001...100000:
-                return 7.0
-            case 100001...400000:
-                return 5.0
-            default:
-                return 0.0
-       }
+    private func recommendSize(selectKakera: String) -> Float {
+        if selectKakera == "thumbnail" {
+            return 50
+        } else {
+            switch partsCount {
+                case 1...50:
+                    return 100.0
+                case 51...100:
+                    return 80.0
+                case 101...500:
+                    return 50.0
+                case 501...1000:
+                    return 30.0
+                case 1001...2000:
+                    return 22.0
+                case 2001...3000:
+                    return 20.0
+                case 3001...6000:
+                    return 15.0
+                case 6001...50000:
+                    return 11.0
+                case 50001...100000:
+                    return 7.0
+                case 100001...400000:
+                    return 5.0
+                default:
+                    return 0.0
+           }
+        }
+        
     }
 }

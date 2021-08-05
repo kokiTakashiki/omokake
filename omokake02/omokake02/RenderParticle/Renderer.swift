@@ -119,7 +119,10 @@ extension Renderer {
             }
             for cell in 0..<originalArray.count {
                 let omokak = omokakeThumbnail(size: mtlView.drawableSize,
-                                     texture: ParticleSetup.loadTextureImage(image: originalArray[cell]))
+                                              texture: ParticleSetup.loadTextureImage(image: originalArray[cell]),
+                                              speed: 1,
+                                              speedY: 2,
+                                              speedRange: -1.78...0.62)
                 omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
                 omokak.particleCount = 1
                 setParticles.append(omokak)
@@ -136,6 +139,35 @@ extension Renderer {
                           imageName: "kakeraS1",
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
+        case "thumbnailSize":
+            let thumbnailSize = CGSize(width: 20, height: 20)
+            var originalArray:[UIImage] = []
+            switch albumInfo.title {
+            case "Favorites":
+                var partsMaxCount = albumInfo.photosCount
+                print("[Renderer] partCount", albumInfo.photosCount)
+                if albumInfo.photosCount > partsCount {
+                    partsMaxCount = partsCount
+                }
+                originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+            default:
+                var partsMaxCount = albumInfo.photosCount
+                print("[Renderer] partCount", albumInfo.photosCount)
+                if albumInfo.photosCount > partsCount {
+                    partsMaxCount = partsCount
+                }
+                originalArray = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+            }
+            for cell in 0..<originalArray.count {
+                let omokak = omokakeThumbnail(size: mtlView.drawableSize,
+                                              texture: ParticleSetup.loadTextureImage(image: originalArray[cell]),
+                                              speed: 0,
+                                              speedY: 0,
+                                              speedRange: 0...0)
+                omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)]
+                omokak.particleCount = 1
+                setParticles.append(omokak)
+            }
         default:
             print("[Renderer] select is falier")
         }
