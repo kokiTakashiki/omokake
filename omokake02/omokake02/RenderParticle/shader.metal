@@ -105,13 +105,14 @@ struct VertexOut {
 vertex VertexOut vertexTransform(constant float2 &size [[buffer(0)]],
                                  device Particle *particles [[buffer(1)]],
                                  constant float2 &setParticlePosition [[ buffer(2) ]],
+                                 const device float& customSize [[ buffer(3) ]],
                                  uint iid [[instance_id]]) {
     VertexOut out;
     float2 position = particles[iid].position + setParticlePosition;
     out.position.xy = position.xy / size * 2.0 - 1.0;
     out.position.z = 0;
     out.position.w = 1;
-    out.point_size = particles[iid].size; //* particles[instance].scale;
+    out.point_size = customSize; //particles[iid].size; //* particles[instance].scale;
     out.color = particles[iid].color;
     return out;
 }

@@ -9,16 +9,14 @@
 import UIKit
 import MetalKit
 
-extension MTKView : RenderDestinationProvider {}
-
 class DrawViewController: UIViewController, MTKViewDelegate {
     
     @IBOutlet weak var drawView: MTKView!
     @IBOutlet weak var partsCountLabel: UILabel!
     
     var renderer: Renderer!
-    var pressurePointInit:float2 = float2(x: -10000.0, y: -10000.0)
-    var pressureEndPInit:float2 = float2(x: -1.0, y: -1.0)
+    var pressurePointInit:simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
+    var pressureEndPInit:simd_float2 = simd_float2(x: -1.0, y: -1.0)
     var touchEndFloat:Float = 0.0
     
     var partsCount:Int = 0
@@ -57,7 +55,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit)
+        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: 1.0)
         //フェードオン！
         if fadeOn {
             fadeOut()
@@ -92,7 +90,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         
         let touch = touches.first
         let touchLocation = (touch?.location(in: drawView))!
-        let touchInit = float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
+        let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressurePointInit = touchInit
         //print(pressurePoint)
@@ -104,7 +102,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         
         let touch = touches.first
         let touchLocation = (touch?.location(in: drawView))!
-        let touchInit = float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
+        let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressurePointInit = touchInit
         //print(pressurePointInit)
@@ -114,10 +112,10 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         super.touchesEnded(touches, with: event)
         let touch = touches.first
         let touchLocation = (touch?.location(in: drawView))!
-        let touchInit = float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
+        let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressureEndPInit = touchInit
-        pressurePointInit = float2(x: -10000.0, y: -10000.0)
+        pressurePointInit = simd_float2(x: -10000.0, y: -10000.0)
         touchEndFloat = 1.0
         fadeOn = true
         //count = 0.0

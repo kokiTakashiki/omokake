@@ -29,7 +29,7 @@ class Renderer: NSObject {
     
     var setParticles: [ParticleSetup] = []
     
-    var partsCount: Int!
+    var partsCount: Int = 0
 
     
     init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
@@ -47,40 +47,57 @@ class Renderer: NSObject {
         mtlView.framebufferOnly = false
         
         loadMetal(isBlendingEnabled: isBlendingEnabled)
+        partsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
+    }
+    
+    public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         
+    }
+}
+
+// MARK: Create
+extension Renderer {
+    private func createOmokake(mtlView: MTKView, startPosition: simd_float2, imageName: String, imageName2: String, colorCount: Int) {
+        if partsCount <= 1 {
+            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName)!, colorCount: colorCount)
+            //生成地点
+            omokak.position = startPosition
+            omokak.particleCount = partsCount
+            setParticles.append(omokak)
+        } else {
+            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName)!, colorCount: colorCount)
+            //生成地点
+            var randpartsCount = partsCount / Int.random(in: 3...10)
+            if randpartsCount == 0 { randpartsCount = 1 }
+            print("[Renderer] randpartsCount",randpartsCount)
+            omokak.position = startPosition
+            omokak.particleCount = partsCount - randpartsCount
+            setParticles.append(omokak)
+            
+            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName2)!, colorCount: colorCount)
+            //生成地点
+            omokak2.position = startPosition
+            omokak2.particleCount = randpartsCount
+            setParticles.append(omokak2)
+        }
+    }
+    
+    private func partsSetUp(_ mtlView: MTKView, selectKakera: String, albumInfo: AlbumInfo) {
         let colorCount = Int.random(in: 1...4)
         
         switch selectKakera {
         case "sankaku":
-            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera")!, colorCount: colorCount)
-            //生成地点
-            var randpartsCount = partsCount / Int.random(in: 3...10)
-            if randpartsCount == 0 { randpartsCount = 1 }
-            print("[Renderer] randpartsCount",randpartsCount)
-            omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-            omokak.particleCount = partsCount - randpartsCount
-            setParticles.append(omokak)
-            
-            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakera2")!, colorCount: colorCount)
-            //生成地点
-            omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-            omokak2.particleCount = randpartsCount
-            setParticles.append(omokak2)
+            createOmokake(mtlView: mtlView,
+                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
+                          imageName: "kakera",
+                          imageName2: "kakera2",
+                          colorCount: colorCount)
         case "sikaku":
-            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS1")!, colorCount: colorCount)
-            //生成地点
-            var randpartsCount = partsCount / Int.random(in: 3...10)
-            if randpartsCount == 0 { randpartsCount = 1 }
-            print("[Renderer] randpartsCount",randpartsCount)
-            omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-            omokak.particleCount = partsCount - randpartsCount
-            setParticles.append(omokak)
-            
-            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: "kakeraS2")!, colorCount: colorCount)
-            //生成地点
-            omokak2.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
-            omokak2.particleCount = randpartsCount
-            setParticles.append(omokak2)
+            createOmokake(mtlView: mtlView,
+                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
+                          imageName: "kakeraS1",
+                          imageName2: "kakeraS2",
+                          colorCount: colorCount)
         case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
@@ -107,12 +124,26 @@ class Renderer: NSObject {
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
+        case "sankakuSize":
+            createOmokake(mtlView: mtlView,
+                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
+                          imageName: "kakera",
+                          imageName2: "kakera2",
+                          colorCount: colorCount)
+        case "sikakuSize":
+            createOmokake(mtlView: mtlView,
+                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
+                          imageName: "kakeraS1",
+                          imageName2: "kakeraS2",
+                          colorCount: colorCount)
         default:
             print("[Renderer] select is falier")
         }
-        
     }
-    
+}
+
+// MARK: loadMetal
+extension Renderer {
     private func loadMetal(isBlendingEnabled: Bool) {
         // Load all the shader files with a metal file extension in the project
         guard let defaultLibrary = Renderer.device.makeDefaultLibrary(), let computeFunc = defaultLibrary.makeFunction(name: "perticleCompute") else {
@@ -153,9 +184,12 @@ class Renderer: NSObject {
             print("Failed to created render pipeline state, error \(error)")
         }
     }
-    
+}
+
+// MARK: Update
+extension Renderer {
     //public func draw(in view: MTKView) {
-    func update(pressurePointInit: float2, touchEndFloat: Float, pressureEndPointInit: float2) -> Int{
+    func update(pressurePointInit: simd_float2, touchEndFloat: Float, pressureEndPointInit: simd_float2, customSize: Float) -> Int{
         
         for setParticle in setParticles {
             setParticle.generate()
@@ -184,17 +218,17 @@ class Renderer: NSObject {
             
             // pressurePoint
             var pressureBuffer1: MTLBuffer! = nil
-            pressureBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<float2>.size, options: [])
+            pressureBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: [])
             pressureBuffer1.label = "pressureZone1"
-            let vPressureBuffer1Data = pressureBuffer1.contents().bindMemory(to: float2.self, capacity: 1 / MemoryLayout<float2>.stride)
-            vPressureBuffer1Data[0] = float2(pressurePointInit.x * Float(drawableSize.width),pressurePointInit.y * Float(drawableSize.height))
+            let vPressureBuffer1Data = pressureBuffer1.contents().bindMemory(to: simd_float2.self, capacity: 1 / MemoryLayout<simd_float2>.stride)
+            vPressureBuffer1Data[0] = simd_float2(pressurePointInit.x * Float(drawableSize.width),pressurePointInit.y * Float(drawableSize.height))
             
             // pressureEndPoint
             var pressureEndBuffer1: MTLBuffer! = nil
-            pressureEndBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<float2>.size, options: [])
+            pressureEndBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: [])
             pressureEndBuffer1.label = "pressureEndPoint"
-            let pressureEndBuffer1Data = pressureEndBuffer1.contents().bindMemory(to: float2.self, capacity: 1 / MemoryLayout<float2>.stride)
-            pressureEndBuffer1Data[0] = float2(pressureEndPointInit.x * Float(drawableSize.width),pressureEndPointInit.y * Float(drawableSize.height))
+            let pressureEndBuffer1Data = pressureEndBuffer1.contents().bindMemory(to: simd_float2.self, capacity: 1 / MemoryLayout<simd_float2>.stride)
+            pressureEndBuffer1Data[0] = simd_float2(pressureEndPointInit.x * Float(drawableSize.width),pressureEndPointInit.y * Float(drawableSize.height))
             
             var touchEndBool: MTLBuffer! = nil
             touchEndBool = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: [])
@@ -222,9 +256,9 @@ class Renderer: NSObject {
         
         let renderEncoder = commandBuf.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
         renderEncoder.setRenderPipelineState(renderPipelineState)
-        var size = float2(Float(drawableSize.width),Float(drawableSize.height))
+        var size = simd_float2(Float(drawableSize.width),Float(drawableSize.height))
         renderEncoder.setVertexBytes(&size,
-                                     length: MemoryLayout<float2>.stride,
+                                     length: MemoryLayout<simd_float2>.stride,
                                      index: 0)
         
         // label用
@@ -233,8 +267,16 @@ class Renderer: NSObject {
         for setParticle in setParticles {
             renderEncoder.setVertexBuffer(setParticle.particleBuffer,offset: 0, index: 1)
             renderEncoder.setVertexBytes(&setParticle.position,
-                                         length: MemoryLayout<float2>.stride,
+                                         length: MemoryLayout<simd_float2>.stride,
                                          index: 2)
+            
+            var customSizeBuffer: MTLBuffer! = nil
+            customSizeBuffer = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: [])
+            customSizeBuffer.label = "customSizeBuffer"
+            let customSizeBufferData = customSizeBuffer.contents().bindMemory(to: Float.self, capacity: 1 / MemoryLayout<Float>.stride)
+            customSizeBufferData[0] = customSize
+            
+            renderEncoder.setVertexBuffer(customSizeBuffer,offset: 0, index: 3)
             renderEncoder.setFragmentTexture(setParticle.particleTexture, index: 0)
             renderEncoder.drawPrimitives(type: .point, vertexStart: 0,
                                          vertexCount: 1,
@@ -246,9 +288,5 @@ class Renderer: NSObject {
         commandBuf.commit()
         
         return allCurrentParticles
-    }
-    
-    public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        
     }
 }

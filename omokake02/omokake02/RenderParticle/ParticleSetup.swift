@@ -10,28 +10,28 @@
 import MetalKit
 
 struct Particle {
-    var startPosition: float2
-    var position: float2
+    var startPosition: simd_float2
+    var position: simd_float2
     var direction: Float
     var directionRange: Float
     var interactionRange: Float
-    var color: float4
+    var color: simd_float4
     var size: Float
-    var frame: float2
+    var frame: simd_float2
     var speed: Float
     var speedY: Float
 }
 
 struct ParticleDescriptor {
-    var startPosition = float2(0)
-    var position = float2(0)
+    var startPosition = simd_float2(repeating: 0)
+    var position = simd_float2(repeating: 0)
     var direction: Float = 0
     var directionRange: ClosedRange<Float> = 0...0
     var interactionRange: ClosedRange<Float> = 0...0
     var pointSize: Float = 80
     var pointSizeRange: ClosedRange<Float> = 0...0
-    var color = float4(0)
-    var frame = float2(0)
+    var color = simd_float4(repeating: 0)
+    var frame = simd_float2(repeating: 0)
     var speed: Float = 0
     var speedRange: ClosedRange<Float> = 0...0
     var speedY: Float = 1
@@ -43,7 +43,8 @@ class ParticleSetup {
     var particleBuffer: MTLBuffer?
     var particleDescriptor: ParticleDescriptor?
     
-    var position: float2 = [0, 0]
+    var position: simd_float2 = [0, 0]
+    var pointSize: Float = 80
     var currentParticles = 0
     var particleCount: Int = 0 {
         didSet {
@@ -80,7 +81,7 @@ class ParticleSetup {
         for _ in 0..<birthRate {
             pointer.pointee.position = pdescriptor.position
             pointer.pointee.startPosition = pdescriptor.startPosition
-            pointer.pointee.size = pdescriptor.pointSize //+ .random(in: pdescriptor.pointSizeRange)
+            pointer.pointee.size = pdescriptor.pointSize
             pointer.pointee.direction = pdescriptor.direction + .random(in: pdescriptor.directionRange)
             pointer.pointee.interactionRange = .random(in: pdescriptor.interactionRange)
             pointer.pointee.color = pdescriptor.color
