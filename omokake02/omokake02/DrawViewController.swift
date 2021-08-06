@@ -27,6 +27,8 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     // thumbnail用
     var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
     
+    var shareBackgroundColor:MTLClearColor = .black
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,8 +36,9 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("Metal is not supported")
         }
+        self.view.backgroundColor = .convertMTLClearColor(shareBackgroundColor)
         drawView.device = defaultDevice
-        drawView.backgroundColor = UIColor.black
+        drawView.clearColor = shareBackgroundColor
         drawView.delegate = self
         
         guard drawView.device != nil else {
@@ -129,7 +132,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuViewGo" {
             if selectKakera == "thumbnail" {
-                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
             } else {
                 self.presentingViewController?.dismiss(animated: true, completion: nil)
             }

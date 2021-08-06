@@ -27,14 +27,17 @@ class PartSizeChangeViewController: UIViewController {
     var pressureEndPInit:simd_float2 = simd_float2(x: -1.0, y: -1.0)
     var touchEndFloat:Float = 0.0
     
+    var shareBackgroundColor:MTLClearColor = .black
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("[PartSizeChangeViewController] Metal is not supported")
         }
+        
         drawView.device = defaultDevice
-        drawView.backgroundColor = UIColor.black
+        drawView.clearColor = shareBackgroundColor
         drawView.delegate = self
         
         guard drawView.device != nil else {
@@ -42,7 +45,7 @@ class PartSizeChangeViewController: UIViewController {
             return
         }
         if selectKakera == "thumbnail" {
-            partSizeSlider.maximumValue = 200
+            partSizeSlider.maximumValue = 400
             partSizeSlider.minimumValue = 50
         }
         
@@ -59,13 +62,22 @@ class PartSizeChangeViewController: UIViewController {
     @IBAction func startButtonAction(_ sender: UIButton) {
         self.present()
     }
+    @IBAction func dismissButton(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func selectColorAction(_ sender: UIButton) {
+        shareBackgroundColor = selectBackGroundColor(sender.tag)
+    }
 }
+
+
 
 extension PartSizeChangeViewController: MTKViewDelegate {
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
     }
     
     func draw(in view: MTKView) {
+        view.clearColor = shareBackgroundColor
         guard (renderer?.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: partSizeSlider.value)) != nil else {
             fatalError("[PartSizeChangeViewController] renderer in not init")
         }
@@ -73,6 +85,25 @@ extension PartSizeChangeViewController: MTKViewDelegate {
 }
 
 extension PartSizeChangeViewController {
+    private func selectBackGroundColor(_ selectButtonTag: Int) -> MTLClearColor {
+        switch selectButtonTag {
+        case 1:
+            return .backgroundMagenta
+        case 2:
+            return .backgroundMagenta
+        case 3:
+            return .backgroundMagenta
+        case 4:
+            return .backgroundMagenta
+        case 5:
+            return .backgroundMagenta
+        case 6:
+            return .black
+        default:
+            return .black
+        }
+    }
+    
     private func present() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
@@ -81,6 +112,7 @@ extension PartSizeChangeViewController {
         drawViewController.isBlendingEnabled = isBlendingEnabled
         drawViewController.albumInfo = albumInfo
         drawViewController.customSize = partSizeSlider.value
+        drawViewController.shareBackgroundColor = shareBackgroundColor
         drawViewController.modalPresentationStyle = .fullScreen
         drawViewController.modalTransitionStyle = .crossDissolve
         self.present(drawViewController, animated: true, completion: nil)
@@ -88,7 +120,7 @@ extension PartSizeChangeViewController {
     
     private func recommendSize(selectKakera: String) -> Float {
         if selectKakera == "thumbnail" {
-            return 50
+            return 225
         } else {
             switch partsCount {
                 case 1...50:

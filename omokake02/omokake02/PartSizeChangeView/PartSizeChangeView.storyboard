@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,25 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-dA-UYf">
-                                <rect key="frame" x="85" y="576" width="244" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="hkW-Qd-q1T"/>
-                                </constraints>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kakera Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubx-wK-APt">
-                                <rect key="frame" x="83.5" y="69" width="247" height="59"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kakera Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubx-wK-APt">
+                                <rect key="frame" x="74.5" y="69" width="265.5" height="52"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9I-U8-ccq" customClass="MTKView">
-                                <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="y9I-U8-ccq" secondAttribute="height" multiplier="1:1" id="Jyf-xy-zlb"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-Lg-753">
                                 <rect key="frame" x="149" y="716" width="116" height="116"/>
                                 <constraints>
@@ -48,19 +36,198 @@
                                     <action selector="startButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kuJ-VS-V68"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9I-U8-ccq" customClass="MTKView">
+                                <rect key="frame" x="87" y="181.5" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="D26-DF-q0W"/>
+                                    <constraint firstAttribute="width" secondItem="y9I-U8-ccq" secondAttribute="height" multiplier="1:1" id="l8i-kg-SWV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n04-rJ-MKN">
+                                <rect key="frame" x="87" y="181.5" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n04-rJ-MKN" secondAttribute="height" multiplier="1:1" id="bI3-Hz-hjJ"/>
+                                    <constraint firstAttribute="width" constant="240" id="piT-xe-jne"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d6E-Gj-Nk1">
+                                <rect key="frame" x="87" y="429.5" width="240" height="68"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-dA-UYf">
+                                        <rect key="frame" x="-2" y="0.0" width="244" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="hkW-Qd-q1T"/>
+                                        </constraints>
+                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="VHV-G4-gt7">
+                                        <rect key="frame" x="0.0" y="38" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxz-am-IpX" userLabel="selectColorButton1">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" name="backgroundMagenta"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X8W-gi-peL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8h-ZW-1pQ" userLabel="selectColorButton2">
+                                                <rect key="frame" x="42" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" name="backgroundCyaan"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CYW-gg-Rhv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSo-HI-XmH" userLabel="selectColorButton3">
+                                                <rect key="frame" x="84" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" name="backgroundGreen"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fSY-v7-8r7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9k-15-PFS" userLabel="selectColorButton4">
+                                                <rect key="frame" x="126" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" name="backgroundYellow"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FfC-00-sRw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqg-T0-HBi" userLabel="selectColorButton5">
+                                                <rect key="frame" x="168" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" name="backgroundOrange"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ewp-tx-v2p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-6i-WLV" userLabel="selectColorButton6">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectColorAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="se6-Hn-5gi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNV-JT-WlA">
+                                <rect key="frame" x="20" y="69" width="30" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="MmZ-Wc-dA0"/>
+                                    <constraint firstAttribute="width" constant="30" id="fAc-8F-ks2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9OK-MH-nT4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FNV-JT-WlA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="0Lo-5A-EEd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ohc-Lg-753" secondAttribute="bottom" constant="30" id="1vG-Oe-BNV"/>
-                            <constraint firstItem="LLe-dA-UYf" firstAttribute="top" secondItem="y9I-U8-ccq" secondAttribute="bottom" constant="8" symbolic="YES" id="34x-pa-Vu2"/>
-                            <constraint firstItem="y9I-U8-ccq" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="BUX-lX-heP"/>
-                            <constraint firstItem="y9I-U8-ccq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="O5A-j3-WlE"/>
-                            <constraint firstItem="y9I-U8-ccq" firstAttribute="centerX" secondItem="Ohc-Lg-753" secondAttribute="centerX" id="Odr-uu-aJt"/>
+                            <constraint firstItem="d6E-Gj-Nk1" firstAttribute="top" secondItem="n04-rJ-MKN" secondAttribute="bottom" constant="8" symbolic="YES" id="9tf-1r-K2G"/>
+                            <constraint firstItem="FNV-JT-WlA" firstAttribute="top" secondItem="Ubx-wK-APt" secondAttribute="top" id="EOt-dc-izG"/>
+                            <constraint firstItem="d6E-Gj-Nk1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FwA-Yq-iWU"/>
+                            <constraint firstItem="Ohc-Lg-753" firstAttribute="centerX" secondItem="d6E-Gj-Nk1" secondAttribute="centerX" id="JPx-D6-gHg"/>
+                            <constraint firstItem="y9I-U8-ccq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KhO-zK-svd"/>
+                            <constraint firstItem="n04-rJ-MKN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MMu-ec-RPM"/>
+                            <constraint firstItem="n04-rJ-MKN" firstAttribute="top" secondItem="Ubx-wK-APt" secondAttribute="bottom" constant="60.5" id="O9N-r5-HeG"/>
                             <constraint firstItem="Ubx-wK-APt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="U6s-Nr-2Yv"/>
-                            <constraint firstItem="LLe-dA-UYf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZWZ-y0-44g"/>
+                            <constraint firstItem="n04-rJ-MKN" firstAttribute="top" secondItem="y9I-U8-ccq" secondAttribute="top" id="i7L-FQ-N1B"/>
                             <constraint firstItem="Ubx-wK-APt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="w4h-Of-mWa"/>
-                            <constraint firstItem="y9I-U8-ccq" firstAttribute="leading" secondItem="LLe-dA-UYf" secondAttribute="leading" id="wQL-Wt-g4A"/>
                         </constraints>
                     </view>
                     <connections>
@@ -75,6 +242,21 @@
     </scenes>
     <resources>
         <image name="BlowUp" width="536" height="536"/>
+        <namedColor name="backgroundCyaan">
+            <color red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundGreen">
+            <color red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundMagenta">
+            <color red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundOrange">
+            <color red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundYellow">
+            <color red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

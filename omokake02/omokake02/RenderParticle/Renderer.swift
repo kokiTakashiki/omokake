@@ -49,10 +49,6 @@ class Renderer: NSObject {
         loadMetal(isBlendingEnabled: isBlendingEnabled)
         partsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
     }
-    
-    public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        
-    }
 }
 
 // MARK: Create
