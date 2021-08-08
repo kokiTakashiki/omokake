@@ -88,15 +88,15 @@ extension PartSizeChangeViewController {
     private func selectBackGroundColor(_ selectButtonTag: Int) -> MTLClearColor {
         switch selectButtonTag {
         case 1:
-            return .backgroundMagenta
+            return .convertUIColor(.backgroundMagenta)
         case 2:
-            return .backgroundMagenta
+            return .convertUIColor(.backgroundCyaan)
         case 3:
-            return .backgroundMagenta
+            return .convertUIColor(.backgroundGreen)
         case 4:
-            return .backgroundMagenta
+            return .convertUIColor(.backgroundYellow)
         case 5:
-            return .backgroundMagenta
+            return .convertUIColor(.backgroundOrange)
         case 6:
             return .black
         default:

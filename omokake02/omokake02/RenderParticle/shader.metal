@@ -103,7 +103,7 @@ struct VertexOut {
 
 
 vertex VertexOut vertexTransform(constant float2 &size [[buffer(0)]],
-                                 device Particle *particles [[buffer(1)]],
+                                 const device Particle *particles [[buffer(1)]],
                                  constant float2 &setParticlePosition [[ buffer(2) ]],
                                  const device float& customSize [[ buffer(3) ]],
                                  uint iid [[instance_id]]) {

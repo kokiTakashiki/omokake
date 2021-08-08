@@ -15,6 +15,7 @@
 		9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */; };
 		9ABA85D726BD3CE2002EC738 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */; };
 		9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */; };
+		9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85DC26BFBEBC002EC738 /* Index+Ex.swift */; };
 		9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */; };
 		9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */; };
 		9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */; };
@@ -61,6 +62,7 @@
 		9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLClearColor+Ex.swift"; sourceTree = "<group>"; };
+		9ABA85DC26BFBEBC002EC738 /* Index+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Index+Ex.swift"; sourceTree = "<group>"; };
 		9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Ex.swift"; sourceTree = "<group>"; };
 		9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
 		9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */,
 				9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */,
 				9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */,
+				9ABA85DC26BFBEBC002EC738 /* Index+Ex.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			files = (
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
+				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
 				9AD9FB81269F315400518925 /* AlbumTableView.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
