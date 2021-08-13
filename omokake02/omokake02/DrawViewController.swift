@@ -126,7 +126,6 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         pressurePointInit = simd_float2(x: -10000.0, y: -10000.0)
         touchEndFloat = 1.0
         fadeOn = true
-        //count = 0.0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

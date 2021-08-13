@@ -13,7 +13,6 @@ import simd
 
 extension Renderer {
     func omokake(size: CGSize, texture: MTLTexture, colorCount: Int) -> ParticleSetup {
-        //print("koko",self.partsCount!)
         //判定用
         let partsCount = self.partsCount
         
@@ -89,7 +88,6 @@ extension Renderer {
         //particleDiscripter.color = float4(1.0,0.1,0.8,1.0)
         //画面サイズ
         particleDiscripter.frame = simd_float2(Float(size.width),Float(size.height))
-        //print(float2(Float(size.width),Float(size.height)))
         //start地点
         particleDiscripter.startPosition = simd_float2(0.0,0.0)
         
@@ -175,7 +173,6 @@ extension Renderer {
         //particleDiscripter.color = float4(1.0,0.1,0.8,1.0)
         //画面サイズ
         particleDiscripter.frame = simd_float2(Float(size.width),Float(size.height))
-        //print(float2(Float(size.width),Float(size.height)))
         //start地点
         particleDiscripter.startPosition = simd_float2(0.0,0.0)
         //speed

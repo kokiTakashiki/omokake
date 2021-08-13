@@ -89,7 +89,7 @@ struct PhotosManager {
         let assetCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
         assetCollection.enumerateObjects { assetCollection, index, _ in
             let assets = assets(fromCollection: assetCollection)
-            result.append(AlbumInfo(index: index, title: "Favorites", photosCount: assets.count))
+            result.append(AlbumInfo(index: index, title: "お気に入り", photosCount: assets.count))
         }
         return result[0]
     }

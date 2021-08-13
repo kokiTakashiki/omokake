@@ -39,7 +39,6 @@ class Renderer: NSObject {
         
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
-        //print("DrawW",drawableSize.width,"DrawH",drawableSize.height)
         self.commandQ = commandQ
         self.partsCount = partsCount
         self.renderDestination = renderDestination
@@ -98,7 +97,7 @@ extension Renderer {
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
             switch albumInfo.title {
-            case "Favorites":
+            case "お気に入り":
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
@@ -139,7 +138,7 @@ extension Renderer {
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
             switch albumInfo.title {
-            case "Favorites":
+            case "お気に入り":
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "buttonThumbnail.png",
+      "filename" : "thumbnailButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
