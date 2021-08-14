@@ -15,11 +15,8 @@ class HelpSelectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backKakeraView" {
-            self.dismiss(animated: true, completion: nil)
-        }
-        
+    @IBAction func backMenuAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

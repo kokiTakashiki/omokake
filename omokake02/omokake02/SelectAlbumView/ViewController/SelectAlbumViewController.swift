@@ -40,7 +40,7 @@ extension SelectAlbumViewController: AlbumTableViewDelegate {
 
 extension SelectAlbumViewController {
     @IBAction func backSelectKakeraAction(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

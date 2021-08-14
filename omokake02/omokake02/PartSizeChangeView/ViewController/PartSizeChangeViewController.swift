@@ -63,7 +63,7 @@ class PartSizeChangeViewController: UIViewController {
         self.present()
     }
     @IBAction func dismissButton(_ sender: UIButton) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func selectColorAction(_ sender: UIButton) {
         shareBackgroundColor = selectBackGroundColor(sender.tag)

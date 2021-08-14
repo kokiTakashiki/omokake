@@ -127,15 +127,9 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         touchEndFloat = 1.0
         fadeOn = true
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MenuViewGo" {
-            if selectKakera == "thumbnail" {
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
-            } else {
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
-            }
-        }
+
+    @IBAction func backMenuAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

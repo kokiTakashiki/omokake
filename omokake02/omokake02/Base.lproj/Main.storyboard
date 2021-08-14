@@ -30,7 +30,7 @@
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="H98-mq-xA1" kind="modal" identifier="MenuViewGo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="U5R-R6-gqk"/>
+                                            <action selector="backMenuAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFC-Ma-UH6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266.66666666666669" y="-17.410714285714285"/>
+            <point key="canvasLocation" x="-577" y="-17"/>
         </scene>
         <!--Title View Controller-->
         <scene sceneID="bnw-MB-YcU">
@@ -605,7 +605,7 @@ kakera Setting画面
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWa-6W-xWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1014" y="-17"/>
+            <point key="canvasLocation" x="-1441" y="-17"/>
         </scene>
         <!--Help Select View Controller-->
         <scene sceneID="STf-Ft-PJA">
@@ -649,7 +649,7 @@ kakera Setting画面
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="H98-mq-xA1" kind="modal" identifier="backKakeraView" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="YkD-i1-KVN"/>
+                                    <action selector="backMenuAction:" destination="UgK-ev-nRT" eventType="touchUpInside" id="Ell-39-rq6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1083,7 +1083,7 @@ Special Thanks</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9fA-Kc-5Km"/>
+        <segue reference="Zpa-gN-UjY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>
