@@ -1,6 +1,6 @@
 # omokake
 ## about
-How long has it been since the day you bought your smartphone?
+How long has it been since the day you bought your iPhone?
 
 Photos of your happy days
 or photos that you took when you had an idea
@@ -12,7 +12,7 @@ What if those memories become fragments and start moving?
 This is an experimental application that allows you to interact with your memories.
 This is an experimental application.
 
-スマートフォンを購入したあの日から
+iPhoneを購入したあの日から
 どれくらい経ちましたか？
 
 楽しい日々の写真や
