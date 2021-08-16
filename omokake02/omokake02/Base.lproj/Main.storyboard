@@ -635,9 +635,9 @@ kakera Setting画面
                                 <rect key="frame" x="0.0" y="107" width="414" height="789"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-tp-oUF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1350" id="7DO-Ds-11E"/>
+                                            <constraint firstAttribute="height" constant="1400" id="7DO-Ds-11E"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="YBd-x1-O0a" kind="embed" id="mmf-c0-brM"/>
@@ -804,7 +804,7 @@ kakera Setting画面
             <objects>
                 <viewController id="YBd-x1-O0a" customClass="HelpContainerViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OmF-TU-IHp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画面説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqs-IQ-FJd">
@@ -1024,7 +1024,7 @@ Special Thanks</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBg-V5-wZS">
-                                <rect key="frame" x="20" y="1256" width="374" height="41"/>
+                                <rect key="frame" x="20" y="1256" width="374" height="91"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
