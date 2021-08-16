@@ -10,6 +10,7 @@
 		9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */; };
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
+		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
 		9AA7F909235CA1AC004B03B4 /* FlowSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */; };
 		9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */; };
 		9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */; };
@@ -57,6 +58,7 @@
 		9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartSizeChangeView.storyboard; sourceTree = "<group>"; };
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
+		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowSelectViewController.swift; sourceTree = "<group>"; };
 		9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectViewController.swift; sourceTree = "<group>"; };
 		9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				9AD9FB74269C977B00518925 /* UIImage+Ex.swift */,
 				9AC3914A26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift */,
 				9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */,
+				9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */,
 				9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */,
 				9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */,
 				9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */,
@@ -393,6 +396,7 @@
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
 				9AD9FB81269F315400518925 /* AlbumTableView.swift in Sources */,
+				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
 				9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */,
 				9AC3915226AECDF000CA7D19 /* HelpContainerViewController.swift in Sources */,

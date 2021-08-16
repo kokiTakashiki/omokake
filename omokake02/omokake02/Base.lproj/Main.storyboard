@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,31 +19,40 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-DI-GIW" customClass="MTKView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZi-Jc-pmK">
-                                        <rect key="frame" x="20" y="40" width="30" height="59"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="KMm-9p-tlV"/>
-                                            <constraint firstAttribute="height" constant="59" id="lfa-eW-pFd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
-                                        <state key="normal" title="&lt;">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backMenuAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFC-Ma-UH6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="wZi-Jc-pmK" firstAttribute="leading" secondItem="NsR-DI-GIW" secondAttribute="leading" constant="20" id="VWL-Ol-XeV"/>
-                                    <constraint firstItem="wZi-Jc-pmK" firstAttribute="top" secondItem="NsR-DI-GIW" secondAttribute="top" constant="40" id="ygb-0u-KGD"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPh-PD-zF0">
+                                <rect key="frame" x="358" y="71" width="36" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wAh-Ua-uZr"/>
+                                    <constraint firstAttribute="width" constant="36" id="wEz-Ee-iQz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ao7-gs-xqT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZi-Jc-pmK">
+                                <rect key="frame" x="20" y="62" width="30" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="Jnb-jH-Oxg"/>
+                                    <constraint firstAttribute="width" constant="30" id="w7K-l6-v7r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backMenuAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFC-Ma-UH6"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1Y-o0-hh1">
-                                <rect key="frame" x="20" y="841" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="836" width="49" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -50,13 +60,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wZi-Jc-pmK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0I7-xh-ubU"/>
+                            <constraint firstItem="yPh-PD-zF0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="2Bg-Py-g51"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5uG-M5-qeA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yPh-PD-zF0" secondAttribute="trailing" constant="20" id="HLg-qR-64A"/>
                             <constraint firstItem="E1Y-o0-hh1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R0z-QH-ron"/>
                             <constraint firstItem="E1Y-o0-hh1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TqU-Mt-HL5"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wfo-J4-P5b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E1Y-o0-hh1" secondAttribute="trailing" symbolic="YES" id="dll-UR-ziX"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g50-ua-gdL"/>
                             <constraint firstItem="NsR-DI-GIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="i5V-a3-aCH"/>
+                            <constraint firstItem="wZi-Jc-pmK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="q3i-n8-UPP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ngu-dL-XBW"/>
@@ -67,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-577" y="-17"/>
+            <point key="canvasLocation" x="-596" y="17"/>
         </scene>
         <!--Title View Controller-->
         <scene sceneID="bnw-MB-YcU">
@@ -1093,5 +1107,6 @@ Special Thanks</string>
         <image name="kakusan" width="600" height="600"/>
         <image name="settingButton" width="536" height="532"/>
         <image name="shusoku" width="400" height="597"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

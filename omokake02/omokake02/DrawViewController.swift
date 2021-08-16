@@ -57,6 +57,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         if selectKakera == "thumbnail" {} else {
             customSize = recommendSize()
         }
+        partsCountLabel.makeOutLine(strokeWidth: -3.0, oulineColor: .gray, foregroundColor: .lightGray)
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
@@ -132,6 +133,18 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func share(_ sender: Any) {
+        // スクリーンショットを取得
+        let shareImage = selectScreenShot().jpegData(compressionQuality: 0.7)
+        //shareImage.alpha
+        // 共有項目
+        let activityItems: [Any] = [shareImage!, "\(partsCountLabel.text ?? "0")kakera\n#omokake思い出のかけら"]
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+
+        // UIActivityViewControllerを表示
+        self.present(activityVC, animated: true, completion: nil)
+    }
     
 }
 
@@ -162,5 +175,30 @@ extension DrawViewController {
                 return 0.0
        }
         
+    }
+    
+    private func screenShot()-> UIImage {
+        //コンテキスト開始
+        UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, 0.0)
+        //viewを書き出す
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        // imageにコンテキストの内容を書き出す
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let result = image.imageWithAlpha(alpha: 1.0)
+        //コンテキストを閉じる
+        UIGraphicsEndImageContext()
+        return result
+    }
+    
+    private func selectScreenShot()-> UIImage {
+        //コンテキスト開始
+        UIGraphicsBeginImageContextWithOptions(self.drawView.bounds.size, false, 0.0)
+        //viewを書き出す
+        self.drawView.drawHierarchy(in: self.drawView.bounds, afterScreenUpdates: true)
+        // imageにコンテキストの内容を書き出す
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        //コンテキストを閉じる
+        UIGraphicsEndImageContext()
+        return image
     }
 }
