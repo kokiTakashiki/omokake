@@ -177,19 +177,6 @@ extension DrawViewController {
         
     }
     
-    private func screenShot()-> UIImage {
-        //コンテキスト開始
-        UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, 0.0)
-        //viewを書き出す
-        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
-        // imageにコンテキストの内容を書き出す
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        let result = image.imageWithAlpha(alpha: 1.0)
-        //コンテキストを閉じる
-        UIGraphicsEndImageContext()
-        return result
-    }
-    
     private func selectScreenShot()-> UIImage {
         //コンテキスト開始
         UIGraphicsBeginImageContextWithOptions(self.drawView.bounds.size, false, 0.0)
@@ -199,6 +186,6 @@ extension DrawViewController {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         //コンテキストを閉じる
         UIGraphicsEndImageContext()
-        return image
+        return image.resizeImage(maxSize: 4194304) ?? UIImage.emptyImage(color: .black, frame: CGRect.zero)
     }
 }
