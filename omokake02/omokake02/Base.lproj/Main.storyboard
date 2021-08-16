@@ -262,7 +262,7 @@ iPhoneとiCloud内の写真に アクセスして
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhH-Rd-3RL">
-                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <rect key="frame" x="147" y="438" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XhH-Rd-3RL" secondAttribute="height" multiplier="1:1" id="p1y-Gp-rZ4"/>
                                     <constraint firstAttribute="height" constant="120" id="tHE-rv-jpR"/>
@@ -282,7 +282,7 @@ iPhoneとiCloud内の写真に アクセスして
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd9-Hg-HxF">
-                                <rect key="frame" x="20" y="196" width="374" height="177"/>
+                                <rect key="frame" x="20" y="246" width="374" height="177"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="177" id="qkR-Wy-Wd2"/>
@@ -308,7 +308,7 @@ iPhoneとiCloud内の写真に
                             <constraint firstItem="O6K-SX-vZo" firstAttribute="centerX" secondItem="kLi-u2-2ZK" secondAttribute="centerX" id="QSq-L8-crO"/>
                             <constraint firstItem="OZb-xx-TOH" firstAttribute="bottom" secondItem="aGo-iy-pBb" secondAttribute="bottom" constant="32" id="Uhq-mY-WHv"/>
                             <constraint firstItem="OZb-xx-TOH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iFh-9u-Yus" secondAttribute="trailing" symbolic="YES" id="akx-m6-VJg"/>
-                            <constraint firstItem="XhH-Rd-3RL" firstAttribute="centerY" secondItem="kLi-u2-2ZK" secondAttribute="centerY" id="e0d-q7-59I"/>
+                            <constraint firstItem="XhH-Rd-3RL" firstAttribute="centerY" secondItem="kLi-u2-2ZK" secondAttribute="centerY" constant="50" id="e0d-q7-59I"/>
                             <constraint firstItem="aGo-iy-pBb" firstAttribute="leading" secondItem="O6K-SX-vZo" secondAttribute="trailing" constant="60" id="rgd-Yx-6p0"/>
                             <constraint firstItem="iFh-9u-Yus" firstAttribute="leading" secondItem="OZb-xx-TOH" secondAttribute="leading" constant="20" id="y9l-Y5-Tne"/>
                             <constraint firstItem="OZb-xx-TOH" firstAttribute="bottom" secondItem="O6K-SX-vZo" secondAttribute="bottom" constant="35" id="yff-w4-8lG"/>
@@ -343,8 +343,11 @@ iPhoneとiCloud内の写真に
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-4M-LMf">
-                                <rect key="frame" x="20" y="151" width="374" height="222"/>
+                                <rect key="frame" x="20" y="200" width="374" height="223"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="PXa-yf-Snd"/>
+                                </constraints>
                                 <string key="text">取得できませんでした。
 
 iPhoneの設定画面から
@@ -379,7 +382,7 @@ iPhoneの設定画面から
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-S9-TJM">
-                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <rect key="frame" x="147" y="438" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="DJO-ZB-WAQ"/>
                                     <constraint firstAttribute="width" secondItem="cJf-S9-TJM" secondAttribute="height" multiplier="1:1" id="ZIs-bl-8Cu"/>
@@ -395,13 +398,12 @@ iPhoneの設定画面から
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="714-mN-ntI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aD9-8r-xdS" secondAttribute="trailing" symbolic="YES" id="1yq-q2-FEY"/>
-                            <constraint firstItem="DqE-4M-LMf" firstAttribute="top" secondItem="aD9-8r-xdS" secondAttribute="bottom" constant="44" id="CFf-Qo-187"/>
                             <constraint firstItem="aD9-8r-xdS" firstAttribute="top" secondItem="714-mN-ntI" secondAttribute="top" constant="25" id="FaR-6H-Wkn"/>
                             <constraint firstItem="714-mN-ntI" firstAttribute="bottom" secondItem="eo9-4B-aqd" secondAttribute="bottom" constant="32" id="WyR-p6-2dT"/>
                             <constraint firstItem="7DD-av-cfI" firstAttribute="leading" secondItem="eo9-4B-aqd" secondAttribute="trailing" constant="60" id="Y5L-0r-ioc"/>
                             <constraint firstItem="DqE-4M-LMf" firstAttribute="centerX" secondItem="ckZ-hc-5gv" secondAttribute="centerX" id="Yoh-bz-ukW"/>
                             <constraint firstItem="DqE-4M-LMf" firstAttribute="leading" secondItem="714-mN-ntI" secondAttribute="leading" constant="20" id="Z4i-H9-OqK"/>
-                            <constraint firstItem="cJf-S9-TJM" firstAttribute="centerY" secondItem="ckZ-hc-5gv" secondAttribute="centerY" id="eC4-o1-2ki"/>
+                            <constraint firstItem="cJf-S9-TJM" firstAttribute="centerY" secondItem="ckZ-hc-5gv" secondAttribute="centerY" constant="50" id="eC4-o1-2ki"/>
                             <constraint firstItem="7DD-av-cfI" firstAttribute="centerX" secondItem="ckZ-hc-5gv" secondAttribute="centerX" id="eQr-sO-YrS"/>
                             <constraint firstItem="aD9-8r-xdS" firstAttribute="leading" secondItem="714-mN-ntI" secondAttribute="leading" constant="20" id="jqK-hf-DIk"/>
                             <constraint firstItem="cJf-S9-TJM" firstAttribute="centerX" secondItem="ckZ-hc-5gv" secondAttribute="centerX" id="nel-9H-Nss"/>

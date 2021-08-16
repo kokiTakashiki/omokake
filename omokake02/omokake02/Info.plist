@@ -27,7 +27,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>写真を取得します。写真への影響はありません。</string>
+	<string>写真を作品に反映させるためには&quot;すべての写真へのアクセス&quot;が必要です。写真への影響はありません。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
