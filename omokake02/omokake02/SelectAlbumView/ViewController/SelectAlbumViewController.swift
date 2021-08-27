@@ -51,42 +51,12 @@ extension SelectAlbumViewController {
         let device = Device.current
         print("[MenuViewController] device \(device)")
         switch device {
-        case .iPhone6s:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhone6sPlus:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhoneSE:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhone7:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhone8:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhone7Plus:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhoneX:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhone8Plus:
-            partsAlertAndPresent(note, maxParts: 200)
-        case .iPhoneXR:
+        case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
             partsAlertAndPresent(note, maxParts: 300)
-        case .iPhoneXSMax:
-            partsAlertAndPresent(note, maxParts: 300)
-        case .iPhoneXS:
-            partsAlertAndPresent(note, maxParts: 300)
-        case .iPhoneSE2:
-            partsAlertAndPresent(note, maxParts: 300)
-        case .iPhone11:
+
+        case .iPhone11, .iPhone11ProMax, .iPhone11Pro, .iPhone12Pro, .iPhone12, .iPhone12ProMax:
             partsAlertAndPresent(note, maxParts: 400)
-        case .iPhone11ProMax:
-            partsAlertAndPresent(note, maxParts: 400)
-        case .iPhone11Pro:
-            partsAlertAndPresent(note, maxParts: 400)
-        case .iPhone12Pro:
-            partsAlertAndPresent(note, maxParts: 400)
-        case .iPhone12:
-            partsAlertAndPresent(note, maxParts: 400)
-        case .iPhone12ProMax:
-            partsAlertAndPresent(note, maxParts: 400)
+
         default:
             partsAlertAndPresent(note, maxParts: 200)
         }
