@@ -10,6 +10,12 @@ import UIKit
 import DeviceKit
 
 final class SelectAlbumViewController: UIViewController {
+    struct ViewModel {
+        var partsCoint: Int
+        let selectKakera: String //:Array<String> = ["kakera","kakera2"]
+        let isBlendingEnabled: Bool
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -19,10 +25,7 @@ final class SelectAlbumViewController: UIViewController {
         }
     }
     
-    var partsCount:Int = 1
-    var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
-    var isBlendingEnabled:Bool = false
-    
+    var viewModel: ViewModel?
     var albumData = [AlbumInfo]()
     
     override func viewDidLoad() {
@@ -100,7 +103,7 @@ extension SelectAlbumViewController {
 
         } else if note.photosCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
-            partsCount = maxParts
+            viewModel?.partsCoint = maxParts
             let alert: UIAlertController = UIAlertController(title: "\(maxParts)枚に制限します。",
                                                              message: "サムネイル表示では\(maxParts)枚の\n表示が上限となっています。",
                                                              preferredStyle:  UIAlertController.Style.alert)
@@ -119,9 +122,9 @@ extension SelectAlbumViewController {
     private func present(_ note: AlbumInfo) {
         let partSizeChangeStoryboard = UIStoryboard(name: "PartSizeChangeView", bundle: nil)
         let partSizeChangeViewController = partSizeChangeStoryboard.instantiateViewController(withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
-        partSizeChangeViewController.partsCount = partsCount
-        partSizeChangeViewController.selectKakera = selectKakera
-        partSizeChangeViewController.isBlendingEnabled = isBlendingEnabled
+        partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1
+        partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? ""
+        partSizeChangeViewController.isBlendingEnabled = viewModel?.isBlendingEnabled ?? false
         partSizeChangeViewController.albumInfo = note
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
         self.present(partSizeChangeViewController, animated: true, completion: nil)
