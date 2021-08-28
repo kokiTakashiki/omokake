@@ -27,7 +27,6 @@
 		9AD9FB78269EF0C600518925 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9AD9FB77269EF0C600518925 /* DeviceKit */; };
 		9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB7A269F306100518925 /* SelectAlbumViewController.swift */; };
 		9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9FB7C269F308800518925 /* SelectAlbumViewController.storyboard */; };
-		9AD9FB81269F315400518925 /* AlbumTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB80269F315400518925 /* AlbumTableView.swift */; };
 		9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */; };
 		9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */; };
 		9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB88269F352B00518925 /* AlbumInfo.swift */; };
@@ -74,7 +73,6 @@
 		9AD9FB74269C977B00518925 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		9AD9FB7A269F306100518925 /* SelectAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAlbumViewController.swift; sourceTree = "<group>"; };
 		9AD9FB7C269F308800518925 /* SelectAlbumViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAlbumViewController.storyboard; sourceTree = "<group>"; };
-		9AD9FB80269F315400518925 /* AlbumTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableView.swift; sourceTree = "<group>"; };
 		9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		9AD9FB88269F352B00518925 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
@@ -194,29 +192,20 @@
 		9AD9FB79269F302000518925 /* SelectAlbumView */ = {
 			isa = PBXGroup;
 			children = (
+				9AD9FB7A269F306100518925 /* SelectAlbumViewController.swift */,
 				9AD9FB7C269F308800518925 /* SelectAlbumViewController.storyboard */,
-				9AD9FB7E269F30BB00518925 /* ViewController */,
-				9AD9FB7F269F30D200518925 /* View */,
+				9AD9FB7F269F30D200518925 /* cell */,
 			);
 			path = SelectAlbumView;
 			sourceTree = "<group>";
 		};
-		9AD9FB7E269F30BB00518925 /* ViewController */ = {
+		9AD9FB7F269F30D200518925 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				9AD9FB7A269F306100518925 /* SelectAlbumViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		9AD9FB7F269F30D200518925 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9AD9FB80269F315400518925 /* AlbumTableView.swift */,
 				9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */,
 				9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */,
 			);
-			path = View;
+			path = cell;
 			sourceTree = "<group>";
 		};
 		9AD9FB86269F347B00518925 /* Common */ = {
@@ -395,7 +384,6 @@
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
-				9AD9FB81269F315400518925 /* AlbumTableView.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
 				9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */,
