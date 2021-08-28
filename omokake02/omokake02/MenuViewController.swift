@@ -51,9 +51,9 @@ extension MenuViewController {
         //deviceMaxParts()
         let selectAlbumStoryboard = UIStoryboard(name: "SelectAlbumViewController", bundle: nil)
         let selectAlbumViewController = selectAlbumStoryboard.instantiateViewController(withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
-        selectAlbumViewController.partsCount = partsCount
-        selectAlbumViewController.selectKakera = selectKakera
-        selectAlbumViewController.isBlendingEnabled = isBlendingEnabled
+        selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
+                                                                                  selectKakera: selectKakera,
+                                                                                  isBlendingEnabled: isBlendingEnabled)
         selectAlbumViewController.modalPresentationStyle = .fullScreen
         self.present(selectAlbumViewController, animated: true, completion: nil)
     }
@@ -67,42 +67,12 @@ extension MenuViewController {
         let device = Device.current
         print("[MenuViewController] device \(device)")
         switch device {
-        case .iPhone6s:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhone6sPlus:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhoneSE:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhone7:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhone8:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhone7Plus:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhoneX:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhone8Plus:
-            partsAlertAndPresent(maxParts: 100000)
-        case .iPhoneXR:
+        case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
             partsAlertAndPresent(maxParts: 200000)
-        case .iPhoneXSMax:
-            partsAlertAndPresent(maxParts: 200000)
-        case .iPhoneXS:
-            partsAlertAndPresent(maxParts: 200000)
-        case .iPhoneSE2:
-            partsAlertAndPresent(maxParts: 200000)
-        case .iPhone11:
+
+        case .iPhone11, .iPhone11ProMax, .iPhone11Pro, .iPhone12Pro, .iPhone12, .iPhone12ProMax:
             partsAlertAndPresent(maxParts: 300000)
-        case .iPhone11ProMax:
-            partsAlertAndPresent(maxParts: 300000)
-        case .iPhone11Pro:
-            partsAlertAndPresent(maxParts: 300000)
-        case .iPhone12Pro:
-            partsAlertAndPresent(maxParts: 300000)
-        case .iPhone12:
-            partsAlertAndPresent(maxParts: 300000)
-        case .iPhone12ProMax:
-            partsAlertAndPresent(maxParts: 300000)
+
         default:
             partsAlertAndPresent(maxParts: 100000)
         }
