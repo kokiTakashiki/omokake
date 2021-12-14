@@ -21,6 +21,7 @@
 		9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */; };
 		9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */; };
 		9AC3915226AECDF000CA7D19 /* HelpContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3915126AECDF000CA7D19 /* HelpContainerViewController.swift */; };
+		9ACD9F4E276901D600487980 /* DrawViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ACD9F4D276901D600487980 /* DrawViewController.storyboard */; };
 		9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD47C362699E644003B8094 /* DeniedViewController.swift */; };
 		9AD9FB73269C8E5B00518925 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB72269C8E5B00518925 /* Array+Ex.swift */; };
 		9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB74269C977B00518925 /* UIImage+Ex.swift */; };
@@ -68,6 +69,7 @@
 		9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
 		9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		9AC3915126AECDF000CA7D19 /* HelpContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpContainerViewController.swift; sourceTree = "<group>"; };
+		9ACD9F4D276901D600487980 /* DrawViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrawViewController.storyboard; sourceTree = "<group>"; };
 		9AD47C362699E644003B8094 /* DeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeniedViewController.swift; sourceTree = "<group>"; };
 		9AD9FB72269C8E5B00518925 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		9AD9FB74269C977B00518925 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,16 @@
 				9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		9ACD9F4C2769015E00487980 /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				9ACD9F4D276901D600487980 /* DrawViewController.storyboard */,
+				9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */,
+				9AEDD94E235441580004A0C2 /* RenderParticle */,
+			);
+			path = DrawView;
 			sourceTree = "<group>";
 		};
 		9AD47C352699E54E003B8094 /* TutorialView */ = {
@@ -255,8 +267,7 @@
 				9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
 				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
-				9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */,
-				9AEDD94E235441580004A0C2 /* RenderParticle */,
+				9ACD9F4C2769015E00487980 /* DrawView */,
 				9AEDD9402352C9A10004A0C2 /* texture */,
 				9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */,
 				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
@@ -356,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACD9F4E276901D600487980 /* DrawViewController.storyboard in Resources */,
 				9AEDD9422352C9B30004A0C2 /* kakera.png in Resources */,
 				9AEDD931234A0A1F0004A0C2 /* LaunchScreen.storyboard in Resources */,
 				9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */,

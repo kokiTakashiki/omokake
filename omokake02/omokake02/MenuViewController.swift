@@ -105,7 +105,7 @@ extension MenuViewController {
     }
     
     private func present() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard = UIStoryboard(name: "DrawViewController", bundle: nil)
         let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
