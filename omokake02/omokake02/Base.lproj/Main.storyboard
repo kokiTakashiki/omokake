@@ -508,46 +508,6 @@ kakera Setting画面
             </objects>
             <point key="canvasLocation" x="-2326.0869565217395" y="714.50892857142856"/>
         </scene>
-        <!--Flow Select View Controller-->
-        <scene sceneID="V8D-ih-Gdc">
-            <objects>
-                <viewController storyboardIdentifier="FlowSelectViewController" id="laj-ZJ-ETm" customClass="FlowSelectViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nzj-XF-X4B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-Hg-heu">
-                                <rect key="frame" x="114.5" y="355.5" width="185" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BfB-Hg-heu" secondAttribute="height" multiplier="1:1" id="odg-FI-jWa"/>
-                                    <constraint firstAttribute="height" constant="185" id="y8n-Xf-DOl"/>
-                                </constraints>
-                                <state key="normal" image="BlowUp"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thV-UG-BBu">
-                                <rect key="frame" x="164.5" y="69" width="85" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="bt8-ME-wvN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="h6i-NK-bLe"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="thV-UG-BBu" firstAttribute="centerX" secondItem="Nzj-XF-X4B" secondAttribute="centerX" id="3sZ-6M-5eg"/>
-                            <constraint firstItem="thV-UG-BBu" firstAttribute="top" secondItem="h6i-NK-bLe" secondAttribute="top" constant="25" id="DOA-rq-I5Z"/>
-                            <constraint firstItem="BfB-Hg-heu" firstAttribute="centerX" secondItem="Nzj-XF-X4B" secondAttribute="centerX" id="OHZ-UB-Wxq"/>
-                            <constraint firstItem="BfB-Hg-heu" firstAttribute="centerY" secondItem="Nzj-XF-X4B" secondAttribute="centerY" id="fae-zv-8BV"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PWa-6W-xWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1441" y="-17"/>
-        </scene>
         <!--Help Select View Controller-->
         <scene sceneID="STf-Ft-PJA">
             <objects>
@@ -921,7 +881,6 @@ Special Thanks</string>
         </scene>
     </scenes>
     <resources>
-        <image name="BlowUp" width="536" height="536"/>
         <image name="kakusan" width="600" height="600"/>
         <image name="settingButton" width="536" height="532"/>
         <image name="shusoku" width="400" height="597"/>
