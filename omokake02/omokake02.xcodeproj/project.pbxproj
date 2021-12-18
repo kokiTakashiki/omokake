@@ -33,9 +33,10 @@
 		9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB88269F352B00518925 /* AlbumInfo.swift */; };
 		9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */; };
 		9ADF72C2276E1DE6008608E5 /* HelpSelectView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */; };
+		9ADF72C4276E1EFC008608E5 /* TutorialView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF72C3276E1EFC008608E5 /* TutorialView.storyboard */; };
 		9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */; };
 		9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */; };
-		9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */; };
+		9AEDD92C234A0A1D0004A0C2 /* TitleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92A234A0A1D0004A0C2 /* TitleViewController.storyboard */; };
 		9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */; };
 		9AEDD931234A0A1F0004A0C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92F234A0A1F0004A0C2 /* LaunchScreen.storyboard */; };
 		9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD938234A0EEC0004A0C2 /* Renderer.swift */; };
@@ -82,10 +83,11 @@
 		9AD9FB88269F352B00518925 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 		9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpSelectView.storyboard; sourceTree = "<group>"; };
+		9ADF72C3276E1EFC008608E5 /* TutorialView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialView.storyboard; sourceTree = "<group>"; };
 		9AEDD923234A0A1D0004A0C2 /* omokake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omokake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
-		9AEDD92B234A0A1D0004A0C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AEDD92B234A0A1D0004A0C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TitleViewController.storyboard; sourceTree = "<group>"; };
 		9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AEDD930234A0A1F0004A0C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AEDD932234A0A1F0004A0C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,15 +182,16 @@
 			path = DrawView;
 			sourceTree = "<group>";
 		};
-		9AD47C352699E54E003B8094 /* TutorialView */ = {
+		9AD47C352699E54E003B8094 /* TutorialViews */ = {
 			isa = PBXGroup;
 			children = (
+				9ADF72C3276E1EFC008608E5 /* TutorialView.storyboard */,
 				9AEDD95F2354AA420004A0C2 /* TutorialViewController.swift */,
 				9AEDD9612354D1650004A0C2 /* ShowApprovalViewController.swift */,
 				9AEDD9632354E1E50004A0C2 /* EndTutorialViewController.swift */,
 				9AD47C362699E644003B8094 /* DeniedViewController.swift */,
 			);
-			path = TutorialView;
+			path = TutorialViews;
 			sourceTree = "<group>";
 		};
 		9AD9FB71269C8E3700518925 /* extension */ = {
@@ -248,6 +251,7 @@
 		9ADF72C0276E1C1E008608E5 /* TitleView */ = {
 			isa = PBXGroup;
 			children = (
+				9AEDD92A234A0A1D0004A0C2 /* TitleViewController.storyboard */,
 				9AEDD94923543B260004A0C2 /* TitleViewController.swift */,
 			);
 			path = TitleView;
@@ -277,13 +281,12 @@
 				9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */,
 				9ADF72C0276E1C1E008608E5 /* TitleView */,
 				9AA7F90C235ECF93004B03B4 /* HelpPageView */,
-				9AD47C352699E54E003B8094 /* TutorialView */,
+				9AD47C352699E54E003B8094 /* TutorialViews */,
 				9A99CD09276DDD5F00AA560A /* MenuView */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
 				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
 				9ACD9F4C2769015E00487980 /* DrawView */,
 				9AEDD9402352C9A10004A0C2 /* texture */,
-				9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */,
 				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
 				9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */,
 				9AEDD92F234A0A1F0004A0C2 /* LaunchScreen.storyboard */,
@@ -390,11 +393,12 @@
 				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
 				9ADF72C2276E1DE6008608E5 /* HelpSelectView.storyboard in Resources */,
 				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
+				9ADF72C4276E1EFC008608E5 /* TutorialView.storyboard in Resources */,
 				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
-				9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */,
+				9AEDD92C234A0A1D0004A0C2 /* TitleViewController.storyboard in Resources */,
 				9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */,
 				9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */,
 				9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */,
@@ -443,12 +447,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */ = {
+		9AEDD92A234A0A1D0004A0C2 /* TitleViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9AEDD92B234A0A1D0004A0C2 /* Base */,
 			);
-			name = Main.storyboard;
+			name = TitleViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		9AEDD92F234A0A1F0004A0C2 /* LaunchScreen.storyboard */ = {

@@ -38,21 +38,19 @@ class TitleViewController: UIViewController {
         }
         
     }
+}
+
+// MARK: IBAction
+extension TitleViewController {
+    @IBAction func tutorialButtonAction(_ sender: Any) {
+        let tutorialViewController = instantiateStoryBoardToViewController(storyBoardName: "TutorialView", withIdentifier: "TutorialViewController") as! TutorialViewController
+        tutorialViewController.modalPresentationStyle = .fullScreen
+        self.present(tutorialViewController, animated: true, completion: nil)
+    }
     
     @IBAction func menuButtonAction(_ sender: Any) {
         let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         menuViewController.modalPresentationStyle = .fullScreen
         self.present(menuViewController, animated: true, completion: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "tutorial1thView" {
-            //let tutorialVC:TutorialViewController = segue.destination as! TutorialViewController
-            //drawViewController.modalTransitionStyle = .crossDissolve
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-    }
-    
 }
