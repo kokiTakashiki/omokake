@@ -75,7 +75,7 @@ extension SelectAlbumViewController {
     // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
     private func deviceMaxParts(_ note: AlbumInfo) {
         let device = Device.current
-        print("[MenuViewController] device \(device)")
+        print("[SelectAlbumViewController] deviceMaxParts \(device)")
         switch device {
         case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
             partsAlertAndPresent(note, maxParts: 300)
@@ -120,8 +120,8 @@ extension SelectAlbumViewController {
     }
     
     private func present(_ note: AlbumInfo) {
-        let partSizeChangeStoryboard = UIStoryboard(name: "PartSizeChangeView", bundle: nil)
-        let partSizeChangeViewController = partSizeChangeStoryboard.instantiateViewController(withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
+        let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
+                                                                             withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
         partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1
         partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? ""
         partSizeChangeViewController.isBlendingEnabled = viewModel?.isBlendingEnabled ?? false

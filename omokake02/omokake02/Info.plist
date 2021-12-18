@@ -27,11 +27,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>写真を作品に反映させるためには"すべての写真へのアクセス"が必要です。写真への影響はありません。</string>
+	<string>写真を作品に反映させるためには&quot;すべての写真へのアクセス&quot;が必要です。写真への影響はありません。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>TitleViewController</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -16,4 +16,11 @@ class DeniedViewController: UIViewController {
            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    @IBAction func backButtonAction(_ sender: Any) {
+        let titleViewController = instantiateStoryBoardToViewController(storyBoardName: "TitleViewController",
+                                                                       withIdentifier: "TitleViewController") as! TitleViewController
+        titleViewController.modalPresentationStyle = .fullScreen
+        titleViewController.modalTransitionStyle = .crossDissolve
+        self.present(titleViewController, animated: true, completion: nil)
+    }
 }
