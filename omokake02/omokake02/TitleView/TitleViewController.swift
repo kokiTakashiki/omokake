@@ -40,8 +40,7 @@ class TitleViewController: UIViewController {
     }
     
     @IBAction func menuButtonAction(_ sender: Any) {
-        let menuViewStoryboard = UIStoryboard(name: "MenuViewController", bundle: nil)
-        let menuViewController = menuViewStoryboard.instantiateViewController(withIdentifier: "MenuView") as! MenuViewController
+        let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         menuViewController.modalPresentationStyle = .fullScreen
         self.present(menuViewController, animated: true, completion: nil)
     }

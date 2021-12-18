@@ -34,8 +34,8 @@ class MenuViewController: UIViewController {
 // MARK: IBAction
 extension MenuViewController {
     @IBAction func helpButtonAction(_ sender: Any) {
-        let helpSelectViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let helpSelectViewController = helpSelectViewStoryboard.instantiateViewController(withIdentifier: "HelpSelectView") as! HelpSelectViewController
+        let helpSelectViewController = instantiateStoryBoardToViewController(storyBoardName: "Main",
+                                                                             withIdentifier: "HelpSelectView") as! HelpSelectViewController
         helpSelectViewController.modalPresentationStyle = .fullScreen
         self.present(helpSelectViewController, animated: true, completion: nil)
     }
@@ -55,9 +55,7 @@ extension MenuViewController {
     @IBAction func thumbnailAction(_ sender: Any) {
         selectKakera = "thumbnail"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = false
-        //deviceMaxParts()
-        let selectAlbumStoryboard = UIStoryboard(name: "SelectAlbumViewController", bundle: nil)
-        let selectAlbumViewController = selectAlbumStoryboard.instantiateViewController(withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
+        let selectAlbumViewController = instantiateStoryBoardToViewController(storyBoardName: "SelectAlbumViewController", withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
         selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
                                                                                   selectKakera: selectKakera,
                                                                                   isBlendingEnabled: isBlendingEnabled)
@@ -112,8 +110,7 @@ extension MenuViewController {
     }
     
     private func present() {
-        let mainStoryboard = UIStoryboard(name: "DrawViewController", bundle: nil)
-        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
+        let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
         drawViewController.isBlendingEnabled = isBlendingEnabled

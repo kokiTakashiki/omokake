@@ -105,8 +105,7 @@ extension PartSizeChangeViewController {
     }
     
     private func present() {
-        let mainStoryboard = UIStoryboard(name: "DrawViewController", bundle: nil)
-        let drawViewController = mainStoryboard.instantiateViewController(withIdentifier: "DrawViewController") as! DrawViewController
+        let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
         drawViewController.isBlendingEnabled = isBlendingEnabled

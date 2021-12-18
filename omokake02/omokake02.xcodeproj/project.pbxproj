@@ -32,6 +32,7 @@
 		9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */; };
 		9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */; };
 		9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB88269F352B00518925 /* AlbumInfo.swift */; };
+		9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */; };
 		9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */; };
 		9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */; };
 		9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		9AD9FB88269F352B00518925 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
+		9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 		9AEDD923234A0A1D0004A0C2 /* omokake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omokake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */,
 				9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */,
 				9ABA85DC26BFBEBC002EC738 /* Index+Ex.swift */,
+				9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -249,6 +252,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		9ADF72C0276E1C1E008608E5 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				9AEDD94923543B260004A0C2 /* TitleViewController.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		9AEDD91A234A0A1D0004A0C2 = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +282,7 @@
 			children = (
 				9AD9FB86269F347B00518925 /* Common */,
 				9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */,
-				9AEDD94923543B260004A0C2 /* TitleViewController.swift */,
+				9ADF72C0276E1C1E008608E5 /* TitleView */,
 				9AA7F90C235ECF93004B03B4 /* HelpPageView */,
 				9AD47C352699E54E003B8094 /* TutorialView */,
 				9A99CD09276DDD5F00AA560A /* MenuView */,
@@ -405,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
+				9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,

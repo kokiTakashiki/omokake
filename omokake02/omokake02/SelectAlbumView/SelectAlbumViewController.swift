@@ -120,8 +120,8 @@ extension SelectAlbumViewController {
     }
     
     private func present(_ note: AlbumInfo) {
-        let partSizeChangeStoryboard = UIStoryboard(name: "PartSizeChangeView", bundle: nil)
-        let partSizeChangeViewController = partSizeChangeStoryboard.instantiateViewController(withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
+        let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
+                                                                             withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
         partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1
         partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? ""
         partSizeChangeViewController.isBlendingEnabled = viewModel?.isBlendingEnabled ?? false

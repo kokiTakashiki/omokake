@@ -23,8 +23,7 @@ class EndTutorialViewController: UIViewController {
         let menuOn = true
         defaults.set(menuOn, forKey: "menuOn")
         
-        let menuViewStoryboard = UIStoryboard(name: "MenuViewController", bundle: nil)
-        let menuViewController = menuViewStoryboard.instantiateViewController(withIdentifier: "MenuView") as! MenuViewController
+        let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         menuViewController.modalPresentationStyle = .fullScreen
         self.present(menuViewController, animated: true, completion: nil)
     }
