@@ -11,23 +11,21 @@ import UIKit
 
 class EndTutorialViewController: UIViewController {
     
-    //var titleVC:TitleViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TutorialToMenu" {
-            
-            let tutorialOff = true
-            let defaults = UserDefaults.standard
-            defaults.set(tutorialOff, forKey: "tutorialOff")
-
-            let menuOn = true
-            //let defaults2 = UserDefaults.standard
-            defaults.set(menuOn, forKey: "menuOn")
-            
-        }
-    }
     
+    @IBAction func menuButtonAction(_ sender: Any) {
+        let tutorialOff = true
+        let defaults = UserDefaults.standard
+        defaults.set(tutorialOff, forKey: "tutorialOff")
+
+        let menuOn = true
+        defaults.set(menuOn, forKey: "menuOn")
+        
+        let menuViewStoryboard = UIStoryboard(name: "MenuViewController", bundle: nil)
+        let menuViewController = menuViewStoryboard.instantiateViewController(withIdentifier: "MenuView") as! MenuViewController
+        menuViewController.modalPresentationStyle = .fullScreen
+        self.present(menuViewController, animated: true, completion: nil)
+    }
 }

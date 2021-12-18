@@ -75,7 +75,7 @@ extension SelectAlbumViewController {
     // このサイトを参考に分岐　https://volx.jp/iphone-antutu-benchmark
     private func deviceMaxParts(_ note: AlbumInfo) {
         let device = Device.current
-        print("[MenuViewController] device \(device)")
+        print("[SelectAlbumViewController] deviceMaxParts \(device)")
         switch device {
         case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
             partsAlertAndPresent(note, maxParts: 300)

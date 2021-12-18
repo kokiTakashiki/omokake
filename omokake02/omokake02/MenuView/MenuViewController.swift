@@ -33,6 +33,13 @@ class MenuViewController: UIViewController {
 
 // MARK: IBAction
 extension MenuViewController {
+    @IBAction func helpButtonAction(_ sender: Any) {
+        let helpSelectViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let helpSelectViewController = helpSelectViewStoryboard.instantiateViewController(withIdentifier: "HelpSelectView") as! HelpSelectViewController
+        helpSelectViewController.modalPresentationStyle = .fullScreen
+        self.present(helpSelectViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func sankakuAction(_ sender: Any) {
         selectKakera = "sankaku"//["kakera","kakera2"]
         isBlendingEnabled = true

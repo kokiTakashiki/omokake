@@ -48,7 +48,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="H98-mq-xA1" kind="modal" identifier="menuView" modalPresentationStyle="fullScreen" id="Zpa-gN-UjY"/>
+                                    <action selector="menuButtonAction:" destination="bZW-Pr-Eax" eventType="touchUpInside" id="OOm-iY-AnD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -474,7 +474,7 @@ kakera Setting画面
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="H98-mq-xA1" kind="modal" identifier="TutorialToMenu" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9fA-Kc-5Km"/>
+                                    <action selector="menuButtonAction:" destination="7Lv-WV-Cjc" eventType="touchUpInside" id="JeX-Tp-BDO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い方について" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owe-Gw-DqD">
@@ -551,7 +551,7 @@ kakera Setting画面
         <!--Help Select View Controller-->
         <scene sceneID="STf-Ft-PJA">
             <objects>
-                <viewController id="UgK-ev-nRT" customClass="HelpSelectViewController" customModule="omokake" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpSelectView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UgK-ev-nRT" customClass="HelpSelectViewController" customModule="omokake" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6tW-Ia-8qa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,120 +609,6 @@ kakera Setting画面
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n27-sL-BNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1014.4927536231885" y="745.98214285714278"/>
-        </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="cRn-gE-RXo">
-            <objects>
-                <viewController id="H98-mq-xA1" customClass="MenuViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UXA-K5-ZMY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-op-tHX">
-                                <rect key="frame" x="19" y="251" width="185" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1zH-op-tHX" secondAttribute="height" multiplier="1:1" id="W5p-DH-cNl"/>
-                                </constraints>
-                                <state key="normal" image="buttonKakera.png">
-                                    <color key="titleColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <connections>
-                                    <action selector="sankakuAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="Xkl-27-qHu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fu-Of-5f6">
-                                <rect key="frame" x="19" y="637" width="185" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3Fu-Of-5f6" secondAttribute="height" multiplier="1:1" id="NF9-62-Hhh"/>
-                                </constraints>
-                                <state key="normal" image="buttonThumbnail"/>
-                                <connections>
-                                    <action selector="thumbnailAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="iwF-AH-kvk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rW-Jj-a9X">
-                                <rect key="frame" x="354" y="44" width="40" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UgK-ev-nRT" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="eNZ-BB-j2s"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kakera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-qd-XdB">
-                                <rect key="frame" x="137.5" y="69" width="139" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="qoS-4y-vRm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今まで撮った写真の数（かけらの数）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-8x-MI0">
-                                <rect key="frame" x="28" y="136" width="238" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="PKL-bt-oL4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1b-or-W8h">
-                                <rect key="frame" x="28" y="158" width="17" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="tmi-hH-fAK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29T-Ud-FLE">
-                                <rect key="frame" x="209" y="445.5" width="185" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="29T-Ud-FLE" secondAttribute="height" multiplier="1:1" id="1YS-ao-ChG"/>
-                                </constraints>
-                                <state key="normal" image="buttonSKakera.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="sikakuAction:" destination="H98-mq-xA1" eventType="touchUpInside" id="grV-yo-pbs"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xhL-K5-bcB"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="1rW-Jj-a9X" firstAttribute="top" secondItem="xhL-K5-bcB" secondAttribute="top" id="6Oj-MS-R1W"/>
-                            <constraint firstItem="eLa-qd-XdB" firstAttribute="centerX" secondItem="UXA-K5-ZMY" secondAttribute="centerX" id="8YV-T0-Gyx"/>
-                            <constraint firstItem="A1b-or-W8h" firstAttribute="top" secondItem="DXf-8x-MI0" secondAttribute="bottom" constant="8" symbolic="YES" id="96w-uK-f7u"/>
-                            <constraint firstItem="xhL-K5-bcB" firstAttribute="trailing" secondItem="1zH-op-tHX" secondAttribute="trailing" constant="210" id="C6d-xc-cHx"/>
-                            <constraint firstItem="eLa-qd-XdB" firstAttribute="top" secondItem="xhL-K5-bcB" secondAttribute="top" constant="25" id="G5w-Tz-nba"/>
-                            <constraint firstItem="29T-Ud-FLE" firstAttribute="centerY" secondItem="UXA-K5-ZMY" secondAttribute="centerY" constant="90" id="KbX-e5-PmQ"/>
-                            <constraint firstItem="xhL-K5-bcB" firstAttribute="bottom" secondItem="3Fu-Of-5f6" secondAttribute="bottom" constant="40" id="MPQ-e2-oqi"/>
-                            <constraint firstItem="1zH-op-tHX" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="19" id="PLl-NX-TSB"/>
-                            <constraint firstItem="1zH-op-tHX" firstAttribute="trailing" secondItem="3Fu-Of-5f6" secondAttribute="trailing" id="PeF-08-QUT"/>
-                            <constraint firstItem="1zH-op-tHX" firstAttribute="top" secondItem="A1b-or-W8h" secondAttribute="bottom" constant="76" id="Pew-1u-oCN"/>
-                            <constraint firstItem="xhL-K5-bcB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DXf-8x-MI0" secondAttribute="trailing" symbolic="YES" id="QtU-nh-NfR"/>
-                            <constraint firstItem="29T-Ud-FLE" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="209" id="Wuz-66-Qs6"/>
-                            <constraint firstItem="xhL-K5-bcB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A1b-or-W8h" secondAttribute="trailing" symbolic="YES" id="j4L-aM-bJg"/>
-                            <constraint firstItem="A1b-or-W8h" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="28" id="jxT-nB-OKt"/>
-                            <constraint firstItem="1rW-Jj-a9X" firstAttribute="leading" secondItem="eLa-qd-XdB" secondAttribute="trailing" constant="77.5" id="l2R-le-Y8l"/>
-                            <constraint firstItem="29T-Ud-FLE" firstAttribute="trailing" secondItem="1rW-Jj-a9X" secondAttribute="trailing" id="pON-gd-OBE"/>
-                            <constraint firstItem="DXf-8x-MI0" firstAttribute="top" secondItem="eLa-qd-XdB" secondAttribute="bottom" constant="8" symbolic="YES" id="qJc-fi-6oX"/>
-                            <constraint firstItem="29T-Ud-FLE" firstAttribute="trailing" secondItem="UXA-K5-ZMY" secondAttribute="trailingMargin" id="rWW-gb-nrY"/>
-                            <constraint firstItem="1zH-op-tHX" firstAttribute="leading" secondItem="3Fu-Of-5f6" secondAttribute="leading" id="vaN-8B-omO"/>
-                            <constraint firstItem="DXf-8x-MI0" firstAttribute="leading" secondItem="xhL-K5-bcB" secondAttribute="leading" constant="28" id="yCJ-uN-bo2"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="gBH-bc-9jV"/>
-                    <connections>
-                        <outlet property="photosCount" destination="A1b-or-W8h" id="Ocn-Ph-OK2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xY9-w9-V1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2326" y="-17"/>
         </scene>
         <!--Help Container View Controller-->
         <scene sceneID="eCN-Tf-ctB">
@@ -1034,14 +920,8 @@ Special Thanks</string>
             <point key="canvasLocation" x="-259.4202898550725" y="813.61607142857144"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9fA-Kc-5Km"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="BlowUp" width="536" height="536"/>
-        <image name="buttonKakera.png" width="536" height="531"/>
-        <image name="buttonSKakera.png" width="536" height="532"/>
-        <image name="buttonThumbnail" width="1058" height="1070"/>
         <image name="kakusan" width="600" height="600"/>
         <image name="settingButton" width="536" height="532"/>
         <image name="shusoku" width="400" height="597"/>

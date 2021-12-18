@@ -39,16 +39,17 @@ class TitleViewController: UIViewController {
         
     }
     
+    @IBAction func menuButtonAction(_ sender: Any) {
+        let menuViewStoryboard = UIStoryboard(name: "MenuViewController", bundle: nil)
+        let menuViewController = menuViewStoryboard.instantiateViewController(withIdentifier: "MenuView") as! MenuViewController
+        menuViewController.modalPresentationStyle = .fullScreen
+        self.present(menuViewController, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "tutorial1thView" {
             //let tutorialVC:TutorialViewController = segue.destination as! TutorialViewController
-            //drawViewController.modalTransitionStyle = .crossDissolve
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        if segue.identifier == "menuView" {
-            //let menuVC:MenuViewController = segue.destination as! MenuViewController
             //drawViewController.modalTransitionStyle = .crossDissolve
             self.dismiss(animated: true, completion: nil)
         }

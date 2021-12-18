@@ -11,6 +11,7 @@
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
+		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA7F909235CA1AC004B03B4 /* FlowSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */; };
 		9AA7F912235ED28B004B03B4 /* HelpSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */; };
 		9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */; };
@@ -59,6 +60,7 @@
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
+		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowSelectViewController.swift; sourceTree = "<group>"; };
 		9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSelectViewController.swift; sourceTree = "<group>"; };
 		9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9A99CD09276DDD5F00AA560A /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
+				9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */,
+			);
+			path = MenuView;
 			sourceTree = "<group>";
 		};
 		9AA7F90C235ECF93004B03B4 /* HelpPageView */ = {
@@ -263,7 +274,7 @@
 				9AEDD94923543B260004A0C2 /* TitleViewController.swift */,
 				9AA7F90C235ECF93004B03B4 /* HelpPageView */,
 				9AD47C352699E54E003B8094 /* TutorialView */,
-				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
+				9A99CD09276DDD5F00AA560A /* MenuView */,
 				9AA7F908235CA1AC004B03B4 /* FlowSelectViewController.swift */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
 				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
@@ -375,6 +386,7 @@
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
 				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
 				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
+				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
