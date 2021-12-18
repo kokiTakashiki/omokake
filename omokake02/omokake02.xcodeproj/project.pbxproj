@@ -122,7 +122,6 @@
 			children = (
 				9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */,
 				9A5FBA5426B94F0000B09CC8 /* ViewController */,
-				9A5FBA5526B94F0D00B09CC8 /* View */,
 			);
 			path = PartSizeChangeView;
 			sourceTree = "<group>";
@@ -133,13 +132,6 @@
 				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		9A5FBA5526B94F0D00B09CC8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9A99CD09276DDD5F00AA560A /* MenuView */ = {
