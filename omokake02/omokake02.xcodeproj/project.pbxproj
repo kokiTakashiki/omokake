@@ -32,6 +32,7 @@
 		9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */; };
 		9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB88269F352B00518925 /* AlbumInfo.swift */; };
 		9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */; };
+		9ADF72C2276E1DE6008608E5 /* HelpSelectView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */; };
 		9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */; };
 		9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */; };
 		9AEDD92C234A0A1D0004A0C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD92A234A0A1D0004A0C2 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		9AD9FB84269F33CE00518925 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		9AD9FB88269F352B00518925 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpSelectView.storyboard; sourceTree = "<group>"; };
 		9AEDD923234A0A1D0004A0C2 /* omokake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omokake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AEDD928234A0A1D0004A0C2 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		9AA7F90C235ECF93004B03B4 /* HelpPageView */ = {
 			isa = PBXGroup;
 			children = (
+				9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */,
 				9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */,
 				9AC3915126AECDF000CA7D19 /* HelpContainerViewController.swift */,
 			);
@@ -385,6 +388,7 @@
 				9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */,
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
 				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
+				9ADF72C2276E1DE6008608E5 /* HelpSelectView.storyboard in Resources */,
 				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
 				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,

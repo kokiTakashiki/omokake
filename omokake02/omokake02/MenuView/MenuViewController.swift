@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
 // MARK: IBAction
 extension MenuViewController {
     @IBAction func helpButtonAction(_ sender: Any) {
-        let helpSelectViewController = instantiateStoryBoardToViewController(storyBoardName: "Main",
+        let helpSelectViewController = instantiateStoryBoardToViewController(storyBoardName: "HelpSelectView",
                                                                              withIdentifier: "HelpSelectView") as! HelpSelectViewController
         helpSelectViewController.modalPresentationStyle = .fullScreen
         self.present(helpSelectViewController, animated: true, completion: nil)
