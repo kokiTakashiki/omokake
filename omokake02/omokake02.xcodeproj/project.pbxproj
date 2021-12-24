@@ -121,6 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A27D894277229AB000720A7 /* SelectGoogleDriveImagesView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SelectGoogleDriveImagesView;
+			sourceTree = "<group>";
+		};
 		9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +291,7 @@
 				9AD47C352699E54E003B8094 /* TutorialViews */,
 				9A99CD09276DDD5F00AA560A /* MenuView */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
+				9A27D894277229AB000720A7 /* SelectGoogleDriveImagesView */,
 				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
 				9ACD9F4C2769015E00487980 /* DrawView */,
 				9AEDD9402352C9A10004A0C2 /* texture */,
