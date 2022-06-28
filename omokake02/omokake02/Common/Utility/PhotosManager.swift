@@ -32,11 +32,11 @@ struct PhotosManager {
             
             // アルバムタイトル
             //print(assetCollection.localizedTitle ?? "")
-            print("[PhotosManager]",assetCollection.localizedTitle!, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
+            print("[PhotosManager]",assetCollection.localizedTitle ?? "nil", PHAsset.fetchAssets(in: assetCollection, options: nil).count)
             
             // アセットをフェッチ
             assets = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
-            sendCount = assets!.count
+            sendCount = assets?.count ?? 0
             
             //print("asset count",self.assets.count)
         }
@@ -48,12 +48,12 @@ struct PhotosManager {
             
             // アルバムタイトル
             //print(assetCollection.localizedTitle ?? "")
-            //print(assetCollection.localizedTitle!, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
+            //print(assetCollection.localizedTitle, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
             
             if assetCollection.localizedTitle == "Videos" {
                 // アセットをフェッチ
                 assetsVideo = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
-                sendVideoCount = assetsVideo!.count
+                sendVideoCount = assetsVideo?.count ?? 0
             }
             //print("asset count",self.assets.count)
         }
@@ -175,13 +175,13 @@ struct PhotosManager {
                 for i in 0..<partsCount{
                     let asset = requestFetchResult.object(at: i)
                     
-                    imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
-                        if image == nil {
+                    imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { imageRow, _ in
+                        guard let image = imageRow else {
                             print("[PhotosManager] managerError")
                             originalArray.append(UIImage.emptyImage(color: .clear, frame: CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: thumbnailSize)))
-                        } else {
-                            originalArray.append(image! as UIImage)
+                            return
                         }
+                        originalArray.append(image as UIImage)
                     })
                 }
             }
