@@ -10,7 +10,8 @@ import UIKit
 
 class HelpContainerViewController: UIViewController {
     @IBAction func twitterButtonAction(_ sender: Any) {
-        if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
+        guard let url = URL(string: "twitter://") else { return }
+        if UIApplication.shared.canOpenURL(url) {
             guard let twitterUrl = URL(string: "twitter://user?screen_name=bluewhitered123") else { return }
             UIApplication.shared.open(twitterUrl, options: [:], completionHandler: { result in
                 print(result) // → true

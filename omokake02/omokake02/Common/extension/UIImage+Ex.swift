@@ -18,12 +18,12 @@ extension UIImage {
         // グラフィックスコンテキスト用の位置情報
         let rect = frame
         // グラフィックスコンテキストを取得
-        let context = UIGraphicsGetCurrentContext()
+        guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
         // グラフィックスコンテキストの設定
-        context!.setFillColor(color.cgColor)
-        context!.fill(rect)
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
         // グラフィックスコンテキストの画像を取得
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
 
         // グラフィックスコンテキストの編集を終了
         UIGraphicsEndImageContext()

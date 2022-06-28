@@ -49,7 +49,8 @@ class ParticleSetup {
     var particleCount: Int = 0 {
         didSet {
             let bufferSize = MemoryLayout<Particle>.stride * particleCount
-            particleBuffer = Renderer.device.makeBuffer(length: bufferSize)!
+            guard let buffer = Renderer.device.makeBuffer(length: bufferSize) else { return }
+            particleBuffer = buffer
         }
     }
     

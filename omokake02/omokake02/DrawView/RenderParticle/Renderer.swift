@@ -54,13 +54,15 @@ class Renderer: NSObject {
 extension Renderer {
     private func createOmokake(mtlView: MTKView, startPosition: simd_float2, imageName: String, imageName2: String, colorCount: Int) {
         if partsCount <= 1 {
-            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName)!, colorCount: colorCount)
+            guard let texture = ParticleSetup.loadTexture(imageName: imageName) else { return }
+            let omokak = omokake(size: mtlView.drawableSize, texture: texture, colorCount: colorCount)
             //生成地点
             omokak.position = startPosition
             omokak.particleCount = partsCount
             setParticles.append(omokak)
         } else {
-            let omokak = omokake(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName)!, colorCount: colorCount)
+            guard let texture = ParticleSetup.loadTexture(imageName: imageName) else { return }
+            let omokak = omokake(size: mtlView.drawableSize, texture: texture, colorCount: colorCount)
             //生成地点
             var randpartsCount = partsCount / Int.random(in: 3...10)
             if randpartsCount == 0 { randpartsCount = 1 }
@@ -69,7 +71,8 @@ extension Renderer {
             omokak.particleCount = partsCount - randpartsCount
             setParticles.append(omokak)
             
-            let omokak2 = omokake2(size: mtlView.drawableSize, texture: ParticleSetup.loadTexture(imageName: imageName2)!, colorCount: colorCount)
+            guard let texture2 = ParticleSetup.loadTexture(imageName: imageName2) else { return }
+            let omokak2 = omokake2(size: mtlView.drawableSize, texture: texture2, colorCount: colorCount)
             //生成地点
             omokak2.position = startPosition
             omokak2.particleCount = randpartsCount
@@ -280,8 +283,7 @@ extension Renderer {
         }
         computeEncoder.endEncoding()
         
-        
-        let renderEncoder = commandBuf.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
+        guard let renderEncoder = commandBuf.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return 0 }
         renderEncoder.setRenderPipelineState(renderPipelineState)
         var size = simd_float2(Float(drawableSize.width),Float(drawableSize.height))
         renderEncoder.setVertexBytes(&size,

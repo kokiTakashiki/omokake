@@ -98,7 +98,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         super.touchesBegan(touches, with: event)
         
         let touch = touches.first
-        let touchLocation = (touch?.location(in: drawView))!
+        guard let touchLocation = (touch?.location(in: drawView)) else { return }
         let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressurePointInit = touchInit
@@ -110,7 +110,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
         super.touchesMoved(touches, with: event)
         
         let touch = touches.first
-        let touchLocation = (touch?.location(in: drawView))!
+        guard let touchLocation = (touch?.location(in: drawView)) else { return }
         let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressurePointInit = touchInit
@@ -120,7 +120,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         let touch = touches.first
-        let touchLocation = (touch?.location(in: drawView))!
+        guard let touchLocation = (touch?.location(in: drawView)) else { return }
         let touchInit = simd_float2(x: Float((touchLocation.x - drawView.bounds.width/2) / drawView.bounds.width ),
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressureEndPInit = touchInit
@@ -135,10 +135,10 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     
     @IBAction func share(_ sender: Any) {
         // スクリーンショットを取得
-        let shareImage = selectScreenShot().jpegData(compressionQuality: 0.7)
+        guard let shareImage = selectScreenShot().jpegData(compressionQuality: 0.7) else { return }
         //shareImage.alpha
         // 共有項目
-        let activityItems: [Any] = [shareImage!, "\(partsCountLabel.text ?? "0")kakera\n#omokake思い出のかけら"]
+        let activityItems: [Any] = [shareImage, "\(partsCountLabel.text ?? "0")kakera\n#omokake思い出のかけら"]
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
 
