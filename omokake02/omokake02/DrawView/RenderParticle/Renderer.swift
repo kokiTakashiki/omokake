@@ -53,6 +53,7 @@ class Renderer: NSObject {
 // MARK: Create
 extension Renderer {
     private func createOmokake(mtlView: MTKView, startPosition: simd_float2, imageName: String, imageName2: String, colorCount: Int) {
+        if partsCount == 0 { return } // ならセットアップはしない。
         if partsCount <= 1 {
             guard let texture = ParticleSetup.loadTexture(imageName: imageName) else { return }
             let omokak = omokake(size: mtlView.drawableSize, texture: texture, colorCount: colorCount)

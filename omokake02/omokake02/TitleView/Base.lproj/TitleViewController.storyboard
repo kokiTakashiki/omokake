@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bZW-Pr-Eax">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bZW-Pr-Eax">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,10 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgv-fg-ElO">
-                                <rect key="frame" x="110" y="416" width="194" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="BeL-UI-AMK"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Tap to Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,10 +36,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-0U-gms">
-                                <rect key="frame" x="110" y="416" width="194" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="KyA-Lf-rQD"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Tap to Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,11 +50,17 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jgv-fg-ElO" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="4pJ-dK-uND"/>
+                            <constraint firstItem="TIF-w7-Syp" firstAttribute="bottom" secondItem="DkD-0U-gms" secondAttribute="bottom" id="Drw-pZ-ben"/>
+                            <constraint firstItem="DkD-0U-gms" firstAttribute="leading" secondItem="TIF-w7-Syp" secondAttribute="leading" id="Hd4-Rf-FxC"/>
                             <constraint firstItem="VW1-DD-Cg5" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="P5P-Mf-d1f"/>
+                            <constraint firstItem="TIF-w7-Syp" firstAttribute="trailing" secondItem="DkD-0U-gms" secondAttribute="trailing" id="PMb-tz-RI6"/>
+                            <constraint firstItem="TIF-w7-Syp" firstAttribute="bottom" secondItem="Jgv-fg-ElO" secondAttribute="bottom" id="W81-kK-u7H"/>
                             <constraint firstItem="DkD-0U-gms" firstAttribute="centerY" secondItem="68t-dn-AUv" secondAttribute="centerY" id="Wz5-SN-8e5"/>
+                            <constraint firstItem="TIF-w7-Syp" firstAttribute="trailing" secondItem="Jgv-fg-ElO" secondAttribute="trailing" id="d2x-AP-CW1"/>
                             <constraint firstItem="DkD-0U-gms" firstAttribute="centerX" secondItem="68t-dn-AUv" secondAttribute="centerX" id="gEK-ee-D17"/>
                             <constraint firstItem="Jgv-fg-ElO" firstAttribute="centerY" secondItem="68t-dn-AUv" secondAttribute="centerY" id="i8m-E0-8lw"/>
                             <constraint firstItem="VW1-DD-Cg5" firstAttribute="top" secondItem="TIF-w7-Syp" secondAttribute="top" constant="86" id="m4b-pn-krU"/>
+                            <constraint firstItem="Jgv-fg-ElO" firstAttribute="leading" secondItem="TIF-w7-Syp" secondAttribute="leading" id="zhD-85-4ue"/>
                         </constraints>
                     </view>
                     <connections>
