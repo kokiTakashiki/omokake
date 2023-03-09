@@ -156,14 +156,14 @@
 			path = MenuView;
 			sourceTree = "<group>";
 		};
-		9AA7F90C235ECF93004B03B4 /* HelpPageView */ = {
+		9AA7F90C235ECF93004B03B4 /* HelpView */ = {
 			isa = PBXGroup;
 			children = (
 				9ADF72C1276E1DE6008608E5 /* HelpSelectView.storyboard */,
 				9AA7F911235ED28B004B03B4 /* HelpSelectViewController.swift */,
 				9AC3915126AECDF000CA7D19 /* HelpContainerViewController.swift */,
 			);
-			path = HelpPageView;
+			path = HelpView;
 			sourceTree = "<group>";
 		};
 		9AA7F9152361DA38004B03B4 /* Frameworks */ = {
@@ -289,16 +289,15 @@
 				9AD9FB86269F347B00518925 /* Common */,
 				9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */,
 				9ADF72C0276E1C1E008608E5 /* TitleView */,
-				9AA7F90C235ECF93004B03B4 /* HelpPageView */,
 				9AD47C352699E54E003B8094 /* TutorialViews */,
 				9A99CD09276DDD5F00AA560A /* MenuView */,
+				9AA7F90C235ECF93004B03B4 /* HelpView */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
 				9A27D894277229AB000720A7 /* SelectGoogleDriveImagesView */,
 				9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */,
 				9ACD9F4C2769015E00487980 /* DrawView */,
 				9AEDD9402352C9A10004A0C2 /* texture */,
-				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
-				9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */,
+				9AFAD69429BA3B750060153C /* Resource */,
 				9AEDD92F234A0A1F0004A0C2 /* LaunchScreen.storyboard */,
 				9AEDD932234A0A1F0004A0C2 /* Info.plist */,
 			);
@@ -328,6 +327,15 @@
 				9AEDD93A234A0F190004A0C2 /* shader.metal */,
 			);
 			path = RenderParticle;
+			sourceTree = "<group>";
+		};
+		9AFAD69429BA3B750060153C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
+				9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
