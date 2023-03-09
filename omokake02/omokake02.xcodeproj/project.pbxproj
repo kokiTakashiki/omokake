@@ -55,6 +55,7 @@
 		9AEDD9602354AA420004A0C2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD95F2354AA420004A0C2 /* TutorialViewController.swift */; };
 		9AEDD9622354D1650004A0C2 /* ShowApprovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD9612354D1650004A0C2 /* ShowApprovalViewController.swift */; };
 		9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD9632354E1E50004A0C2 /* EndTutorialViewController.swift */; };
+		9AFAD69729BA3BB30060153C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAD69929BA3BB30060153C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		9AEDD9632354E1E50004A0C2 /* EndTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTutorialViewController.swift; sourceTree = "<group>"; };
 		9AFAD69129BA3AAB0060153C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/TitleViewController.strings; sourceTree = "<group>"; };
 		9AFAD69229BA3AAB0060153C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9AFAD69829BA3BB30060153C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AFAD69A29BA3BB80060153C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +337,7 @@
 			children = (
 				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
 				9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */,
+				9AFAD69929BA3BB30060153C /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -419,6 +423,7 @@
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
 				9AEDD92C234A0A1D0004A0C2 /* TitleViewController.storyboard in Resources */,
 				9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */,
+				9AFAD69729BA3BB30060153C /* Localizable.strings in Resources */,
 				9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */,
 				9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */,
 			);
@@ -482,6 +487,15 @@
 				9AFAD69229BA3AAB0060153C /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9AFAD69929BA3BB30060153C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AFAD69829BA3BB30060153C /* en */,
+				9AFAD69A29BA3BB80060153C /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
