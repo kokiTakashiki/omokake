@@ -6,7 +6,6 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
-//import Foundation
 import MetalKit
 
 struct Particle {
