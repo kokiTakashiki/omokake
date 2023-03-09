@@ -598,6 +598,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,6 +620,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = GY636G2259;
 				INFOPLIST_FILE = omokake02/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
