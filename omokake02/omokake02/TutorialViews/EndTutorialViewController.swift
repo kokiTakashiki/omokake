@@ -24,8 +24,9 @@ class EndTutorialViewController: UIViewController {
         defaults.set(menuOn, forKey: "menuOn")
         
         let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
-        menuViewController.modalPresentationStyle = .fullScreen
-        menuViewController.modalTransitionStyle = .crossDissolve
-        self.present(menuViewController, animated: true, completion: nil)
+        let navi = UINavigationController(rootViewController: menuViewController)
+        navi.modalPresentationStyle = .fullScreen
+        navi.modalTransitionStyle = .crossDissolve
+        self.present(navi, animated: true, completion: nil)
     }
 }

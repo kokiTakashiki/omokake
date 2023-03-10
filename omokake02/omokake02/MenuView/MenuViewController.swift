@@ -23,7 +23,16 @@ class MenuViewController: UIViewController {
         partsCount = PhotosManager.allPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,10 +43,8 @@ class MenuViewController: UIViewController {
 // MARK: IBAction
 extension MenuViewController {
     @IBAction func helpButtonAction(_ sender: Any) {
-        let helpSelectViewController = instantiateStoryBoardToViewController(storyBoardName: "HelpSelectView",
-                                                                             withIdentifier: "HelpSelectView") as! HelpSelectViewController
-        helpSelectViewController.modalPresentationStyle = .fullScreen
-        self.present(helpSelectViewController, animated: true, completion: nil)
+        let helpViewController = HelpViewController()
+        self.navigationController?.pushViewController(helpViewController, animated: true)
     }
     
     @IBAction func sankakuAction(_ sender: Any) {
