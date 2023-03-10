@@ -5,3 +5,26 @@
   Created by 武田孝騎 on 2023/03/10.
   Copyright © 2023 takasiki. All rights reserved.
 */
+
+"ScreenExplanation" = "画面説明";
+"ScreenDescription" = "iPhoneとiCloud内に保存された写真の数だけ「かけら」を生成します。";
+
+"KakeraScreenDescription" = "kakera画面\n「かけら」の形を選択します。\n※色はランダムです。";
+
+"omokakeScreenDescription" = "omokake画面\n「かけら」がゆらゆらと流れます。";
+"ShareButton" = "共有ボタンです。";
+"ShareButtonDescription" = "スクリーンショットを各種アプリから共有できます。";
+
+"SelectAlbumScreenDescription" = "Select Album画面\nアルバムを選択してその写真のサムネイルを「かけら」として流します。\n※写真への影響はありません。";
+
+"KakeraSettingScreenDescription" = "kakera Setting画面\nサムネイルの大きさと背景色を変更できます。";
+
+"TouchInteraction" = "タッチインタラクション";
+"TouchInteractionDescription1" = "長押しでかけらが\n集まります。";
+"TouchInteractionDescription2" = "離すとかけらが\n散らばります。";
+
+"DevelopingByName" = "武田 孝騎";
+"IconDesignName" = "武田 綾奈";
+"SpecialThanksName" = "佐川 晴海";
+
+"ContactUs" = "お問い合わせ";
