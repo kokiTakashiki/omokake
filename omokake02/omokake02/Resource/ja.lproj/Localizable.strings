@@ -6,6 +6,7 @@
   Copyright © 2023 takasiki. All rights reserved.
 */
 
+// HelpView
 "ScreenExplanation" = "画面説明";
 "ScreenDescription" = "iPhoneとiCloud内に保存された写真の数だけ「かけら」を生成します。";
 

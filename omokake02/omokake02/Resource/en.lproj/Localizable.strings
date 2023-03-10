@@ -6,6 +6,7 @@
   Copyright © 2023 takasiki. All rights reserved.
 */
 
+// HelpView
 "ScreenExplanation" = "Screen Explanation";
 "ScreenDescription" = "Generate as many \"kakera\" as the number of photos stored in iPhone and iCloud.";
 
