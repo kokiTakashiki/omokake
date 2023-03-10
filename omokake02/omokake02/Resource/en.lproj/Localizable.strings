@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  omokake02
+
+  Created by 武田孝騎 on 2023/03/10.
+  Copyright © 2023 takasiki. All rights reserved.
+*/
+
+// HelpView
+"ScreenExplanation" = "Screen Explanation";
+"ScreenDescription" = "Generate as many \"kakera\" as the number of photos stored in iPhone and iCloud.";
+
+"KakeraScreenDescription" = "kakera screen\nSelect the shape of the kakera.\nThe color is random.";
+
+"omokakeScreenDescription" = "omokake screen\nA \"kakera\" will be floating in the air.";
+"ShareButton" = "Share button.";
+"ShareButtonDescription" = "You can share screenshots from various applications.";
+
+"SelectAlbumScreenDescription" = "Select Album screen\nSelect an album, and thumbnails of the selected photos will be played as \"pieces\".\nThere is no effect on the photo.";
+
+"KakeraSettingScreenDescription" = "kakera Setting screen\nYou can change the thumbnail size and background color.";
+
+"TouchInteraction" = "Touch Interaction";
+"TouchInteractionDescription1" = "With a long press pieces pieces are collected.";
+"TouchInteractionDescription2" = "When released pieces will scatter. pieces will be scattered.";
+
+"DevelopingByName" = "Koki Takeda";
+"IconDesignName" = "Ayane Takeda";
+"SpecialThanksName" = "Harumi Sagawa";
+
+"ContactUs" = "Contact Us";
