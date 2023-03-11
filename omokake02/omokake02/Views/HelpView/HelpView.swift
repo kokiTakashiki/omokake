@@ -43,6 +43,14 @@ extension HelpView {
             })
         }
     }
+
+    @MainActor
+    private func openURLAction(_ urlString: String) async {
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: { result in
+            print(result) // → true
+        })
+    }
 }
 
 // MARK: Parts Groups
@@ -129,6 +137,40 @@ private extension HelpView {
                     Spacer()
                     description("SpecialThanksName", edge: .trailing)
                 }
+                HStack(spacing: 0) {
+                    Text("SND02 \"piano\"")
+                        .fixedSize(horizontal: true, vertical: false)
+                        .font(.custom("Futura Medium", size: 18))
+                    Spacer()
+                    Button(action: {
+                        Task {
+                            await openURLAction("https://snd.dev/")
+                        }
+                    }, label: {
+                        Text("https://snd.dev/")
+                            .fixedSize(horizontal: true, vertical: false)
+                            .font(.custom("Futura Medium", size: 18))
+                    })
+                }
+                .padding(.leading, 28)
+                .padding(.trailing, 26)
+                HStack(spacing: 0) {
+                    Text("DeviceKit")
+                        .fixedSize(horizontal: true, vertical: false)
+                        .font(.custom("Futura Medium", size: 18))
+                    Spacer()
+                    Button(action: {
+                        Task {
+                            await openURLAction("https://github.com/devicekit/DeviceKit")
+                        }
+                    }, label: {
+                        Text("https://github.com/devicekit/DeviceKit")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .font(.custom("Futura Medium", size: 18))
+                    })
+                }
+                .padding(.leading, 28)
+                .padding(.trailing, 26)
                 Spacer()
                 Rectangle()
                     .frame(height: 20)
