@@ -160,8 +160,8 @@ private extension HelpView {
                             .font(.custom("Futura Medium", size: 18))
                     })
                 }
-                .padding(.leading, 20)
-                .padding(.trailing, 20)
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
                 Rectangle()
                     .frame(height: 20)
                     .foregroundColor(.clear)
