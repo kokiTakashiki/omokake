@@ -17,7 +17,7 @@ struct HelpView: View {
                 credit()
                 contactUs(action: {
                     Task {
-                        twitterButtonAction()
+                        await twitterButtonAction()
                     }
                 })
             }
@@ -29,7 +29,7 @@ struct HelpView: View {
 
 extension HelpView {
     @MainActor
-    private func twitterButtonAction() {
+    private func twitterButtonAction() async {
         guard let url = URL(string: "twitter://") else { return }
         if UIApplication.shared.canOpenURL(url) {
             guard let twitterUrl = URL(string: "twitter://user?screen_name=bluewhitered123") else { return }
