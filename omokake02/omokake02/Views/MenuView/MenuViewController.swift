@@ -103,22 +103,28 @@ extension MenuViewController {
     // 11Pro 300000
     private func partsAlertAndPresent(maxParts: Int) {
         if partsCount < 200 {
-            let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。", preferredStyle:  UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-                (action: UIAlertAction!) -> Void in
-                self.present()
-            })
+            let alert = UIAlertController(
+                title: "写真をもっと\n撮ってみませんか？",
+                message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。",
+                preferredStyle: .alert
+            )
+            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                self?.present()
+            }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)
         } else if partsCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             partsCount = maxParts
-            let alert: UIAlertController = UIAlertController(title: "あなたは最高の写真家です。", message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。", preferredStyle:  UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-                (action: UIAlertAction!) -> Void in
-                self.present()
-            })
+            let alert = UIAlertController(
+                title: "あなたは最高の写真家です。",
+                message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。",
+                preferredStyle: .alert
+            )
+            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                self?.present()
+            }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)

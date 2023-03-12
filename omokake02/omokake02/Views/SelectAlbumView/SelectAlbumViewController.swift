@@ -99,12 +99,14 @@ extension SelectAlbumViewController {
     // 11Pro 400
     private func partsAlertAndPresent(_ note: AlbumInfo, maxParts: Int) {
         if note.photosCount < 10 {
-            let alert: UIAlertController = UIAlertController(title: "写真をもっと\n撮ってみませんか？", message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。", preferredStyle:  UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK",
-                                                             style: UIAlertAction.Style.default,
-                                                             handler:{ (action: UIAlertAction!) -> Void in
-                self.present(note)
-            })
+            let alert = UIAlertController(
+                title: "写真をもっと\n撮ってみませんか？",
+                message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。",
+                preferredStyle:  .alert
+            )
+            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                self?.present(note)
+            }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)
@@ -112,14 +114,14 @@ extension SelectAlbumViewController {
         } else if note.photosCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             viewModel?.partsCoint = maxParts
-            let alert: UIAlertController = UIAlertController(title: "\(maxParts)枚に制限します。",
-                                                             message: "サムネイル表示では\(maxParts)枚の\n表示が上限となっています。",
-                                                             preferredStyle:  UIAlertController.Style.alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK",
-                                                             style: UIAlertAction.Style.default,
-                                                             handler:{ (action: UIAlertAction!) -> Void in
-                self.present(note)
-            })
+            let alert = UIAlertController(
+                title: "\(maxParts)枚に制限します。",
+                message: "サムネイル表示では\(maxParts)枚の\n表示が上限となっています。",
+                preferredStyle:  .alert
+            )
+            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                self?.present(note)
+            }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)
