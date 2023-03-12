@@ -185,14 +185,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9AC3914C26A58F1600CA7D19 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		9ACD9F4C2769015E00487980 /* DrawView */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +246,6 @@
 		9AD9FB86269F347B00518925 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9AC3914C26A58F1600CA7D19 /* Utility */,
 				9AD9FB71269C8E3700518925 /* extension */,
 				9AD9FB87269F348600518925 /* Entity */,
 			);
@@ -363,6 +354,7 @@
 		9AFAD6A029BC8E060060153C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9AC3914D26A5906D00CA7D19 /* PhotosManager.swift */,
 				9AFAD6A129BC8E140060153C /* Audio */,
 			);
 			path = Model;
