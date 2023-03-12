@@ -190,13 +190,13 @@ struct PhotosManager {
         return originalArray
     }
     
-    static func Authorization() -> String {
+    static func Authorization() -> PhotoAccessState {
         
         let semaphore = DispatchSemaphore(value: 0)
-        var status = "norn"
+        var status: PhotoAccessState = .none
         
-        PHPhotoLibrary.Authorization(userCompletionHandler: { str in
-            status = str
+        PHPhotoLibrary.Authorization(userCompletionHandler: { state in
+            status = state
             semaphore.signal()
         })
         semaphore.wait()
