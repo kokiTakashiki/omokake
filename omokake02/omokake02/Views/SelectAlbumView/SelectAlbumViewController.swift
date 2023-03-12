@@ -10,6 +10,8 @@ import UIKit
 import DeviceKit
 
 final class SelectAlbumViewController: UIViewController {
+    private let audio = PlayerController.shared
+
     struct ViewModel {
         var partsCoint: Int
         let selectKakera: String //:Array<String> = ["kakera","kakera2"]
@@ -64,6 +66,7 @@ extension SelectAlbumViewController: UITableViewDataSource, UITableViewDelegate 
 // MARK: - Extension SelectAlbumViewController
 extension SelectAlbumViewController {
     @IBAction func backSelectKakeraAction(_ sender: Any) {
+        audio.play(effect: Audio.EffectFiles.transitionDown)
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -99,6 +102,7 @@ extension SelectAlbumViewController {
                 self.present(note)
             })
             alert.addAction(defaultAction)
+            audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)
 
         } else if note.photosCount > maxParts {
@@ -113,6 +117,7 @@ extension SelectAlbumViewController {
                 self.present(note)
             })
             alert.addAction(defaultAction)
+            audio.play(effect: Audio.EffectFiles.caution)
             present(alert, animated: true, completion: nil)
         } else {
             self.present(note)
@@ -120,6 +125,7 @@ extension SelectAlbumViewController {
     }
     
     private func present(_ note: AlbumInfo) {
+        audio.playRandom(effects: Audio.EffectFiles.taps)
         let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
                                                                              withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
         partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1

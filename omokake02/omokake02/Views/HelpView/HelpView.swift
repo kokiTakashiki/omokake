@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HelpView: View {
+    private let audio = PlayerController.shared
+
     var body: some View {
         ScrollView {
             VStack {
@@ -17,6 +19,7 @@ struct HelpView: View {
                 credit()
                 contactUs(action: {
                     Task {
+                        audio.playRandom(effects: Audio.EffectFiles.taps)
                         await twitterButtonAction()
                     }
                 })
@@ -144,6 +147,7 @@ private extension HelpView {
                     Spacer()
                     Button(action: {
                         Task {
+                            audio.playRandom(effects: Audio.EffectFiles.taps)
                             await openURLAction("https://snd.dev/")
                         }
                     }, label: {
@@ -161,6 +165,7 @@ private extension HelpView {
                     Spacer()
                     Button(action: {
                         Task {
+                            audio.playRandom(effects: Audio.EffectFiles.taps)
                             await openURLAction("https://github.com/devicekit/DeviceKit")
                         }
                     }, label: {

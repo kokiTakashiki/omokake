@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class TitleViewController: UIViewController {
+    private let audio = PlayerController.shared
+
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
@@ -43,12 +45,16 @@ class TitleViewController: UIViewController {
 // MARK: IBAction
 extension TitleViewController {
     @IBAction func tutorialButtonAction(_ sender: Any) {
+        audio.playRandom(effects: Audio.EffectFiles.taps)
+
         let tutorialViewController = instantiateStoryBoardToViewController(storyBoardName: "TutorialView", withIdentifier: "TutorialViewController") as! TutorialViewController
         tutorialViewController.modalPresentationStyle = .fullScreen
         self.present(tutorialViewController, animated: true, completion: nil)
     }
     
     @IBAction func menuButtonAction(_ sender: Any) {
+        audio.playRandom(effects: Audio.EffectFiles.taps)
+
         let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
