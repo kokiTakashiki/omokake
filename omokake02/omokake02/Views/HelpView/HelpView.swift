@@ -138,7 +138,7 @@ private extension HelpView {
                     description("SpecialThanksName", edge: .trailing)
                 }
                 HStack(spacing: 0) {
-                    Text("SND02 \"piano\"")
+                    Text("SND")
                         .fixedSize(horizontal: true, vertical: false)
                         .font(.custom("Futura Medium", size: 18))
                     Spacer()
