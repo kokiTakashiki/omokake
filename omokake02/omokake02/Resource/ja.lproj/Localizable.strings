@@ -6,6 +6,22 @@
   Copyright © 2023 takasiki. All rights reserved.
 */
 
+// IntroSteps
+"AboutOmokake" = "おもかけについて";
+"AboutOmokakeDescription" = "おもかけは、\nたくさんの思い出に触れること\nをコンセプトにしたアプリです。\n\niPhoneとiCloud内の写真に\nアクセスし\n写真の数だけ\n「かけら」を生成します。\n\nそのため撮った写真が少ないと満足のいく作品にならない可能性があります。\n\n写真への影響はありません。";
+
+"AccessData" = "データの取得";
+"AccessDataDescription" = "iPhoneとiCloud内の写真に\nアクセスします。\n許可をしていただくことにより\n作品に反映できます。";
+
+"DataAcquisitionComplete" = "データの取得完了";
+"DataAcquisitionCompleteDescription" = "取得できました。\n\n最後に使い方の説明です。";
+
+"HowToUse" = "使い方について";
+"HowToUseDescription" = "タッチインタラクションに関してなど\nより詳細な説明は「？」ボタンで いつでもみることができます。";
+
+"FailedToAcquireData" = "データの取得失敗";
+"FailedToAcquireDataDescription" = "取得できませんでした。\n\niPhoneの設定画面から\nすべての写真を選択してください。\n\nなお取得のみで書き込みは行いません。";
+
 // HelpView
 "ScreenExplanation" = "画面説明";
 "ScreenDescription" = "iPhoneとiCloud内に保存された写真の数だけ「かけら」を生成します。";

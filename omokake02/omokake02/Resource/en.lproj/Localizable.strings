@@ -6,6 +6,22 @@
   Copyright © 2023 takasiki. All rights reserved.
 */
 
+// IntroSteps
+"AboutOmokake" = "About Omokake";
+"AboutOmokakeDescription" = "Omokake is an application based on the concept of touching many memories.\n\nIt accesses photos in iPhone and iCloud and generates \"pieces\" as many as the number of photos.\n\nTherefore, if the number of photos taken is small, there is a possibility that the work will not be satisfactory.\n\nThere is no effect on the photos.";
+
+"AccessData" = "Access your data";
+"AccessDataDescription" = "Access your iPhone and iCloud photos.\nAllowing access will be reflected in your work.";
+
+"DataAcquisitionComplete" = "Data acquisition complete";
+"DataAcquisitionCompleteDescription" = "Data acquisition is complete.\n\nFinally, here is an explanation of how to use the system.";
+
+"HowToUse" = "How to use";
+"HowToUseDescription" = "A more detailed explanation of touch interactions, for example, can be found at any time using the \"?\" button for a more detailed explanation of touch interaction.";
+
+"FailedToAcquireData" = "Failed to acquire data.";
+"FailedToAcquireDataDescription" = "Could not retrieve.\n\nPlease select all photos from the iPhone settings screen.\n\nOnly acquisition and not writing is performed.";
+
 // HelpView
 "ScreenExplanation" = "Screen Explanation";
 "ScreenDescription" = "Generate as many \"kakera\" as the number of photos stored in iPhone and iCloud.";
