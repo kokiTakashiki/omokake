@@ -16,6 +16,8 @@ class HelpViewController: UIViewController {
     case popGesture
     }
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
+
     private let backTypeSubject = PassthroughSubject<BackType, Never>()
     private var cancels = Set<AnyCancellable>()
 
@@ -45,6 +47,7 @@ class HelpViewController: UIViewController {
             .sink { [weak self] previous, current in
                 if previous == current {
                     self?.audio.play(effect: Audio.EffectFiles.transitionDown)
+                    self?.haptic.play(.impact(.soft))
                 }
         }
         .store(in: &cancels)
@@ -54,6 +57,7 @@ class HelpViewController: UIViewController {
     func onTapBackButton(_ sender: UIBarButtonItem) {
         backTypeSubject.send(.button)
         audio.play(effect: Audio.EffectFiles.transitionDown)
+        haptic.play(.impact(.soft))
         navigationController?.popViewController(animated: true)
     }
 

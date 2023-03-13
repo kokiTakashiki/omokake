@@ -11,6 +11,7 @@ import MetalKit
 
 class PartSizeChangeViewController: UIViewController {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
 
     @IBOutlet weak var drawView: MTKView!
     @IBOutlet weak var partSizeSlider: UISlider!
@@ -68,11 +69,13 @@ class PartSizeChangeViewController: UIViewController {
 
     @IBAction func dismissButton(_ sender: UIButton) {
         audio.play(effect: Audio.EffectFiles.transitionDown)
+        haptic.play(.impact(.soft))
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func selectColorAction(_ sender: UIButton) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.light))
         shareBackgroundColor = selectBackGroundColor(sender.tag)
     }
 }
@@ -113,6 +116,7 @@ extension PartSizeChangeViewController {
     
     private func present() {
         audio.play(effect: Audio.EffectFiles.transitionUp)
+        haptic.play(.impact(.medium))
         let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera

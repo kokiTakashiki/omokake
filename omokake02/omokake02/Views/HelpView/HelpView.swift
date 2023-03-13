@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HelpView: View {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
 
     var body: some View {
         ScrollView {
@@ -20,6 +21,7 @@ struct HelpView: View {
                 contactUs(action: {
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
+                        haptic.play(.impact(.soft))
                         await twitterButtonAction()
                     }
                 })
@@ -148,6 +150,7 @@ private extension HelpView {
                     Button(action: {
                         Task {
                             audio.playRandom(effects: Audio.EffectFiles.taps)
+                            haptic.play(.impact(.soft))
                             await openURLAction("https://snd.dev/")
                         }
                     }, label: {
@@ -166,6 +169,7 @@ private extension HelpView {
                     Button(action: {
                         Task {
                             audio.playRandom(effects: Audio.EffectFiles.taps)
+                            haptic.play(.impact(.soft))
                             await openURLAction("https://github.com/devicekit/DeviceKit")
                         }
                     }, label: {
