@@ -15,6 +15,7 @@ struct Audio {
 
     struct EffectFiles {
         static let caution = Effect(fileName: "caution", type: "wav")
+        static let celebration = Effect(fileName: "celebration", type: "wav")
         static let taps = [
             Effect(fileName: "tap_01", type: "wav"),
             Effect(fileName: "tap_02", type: "wav"),
