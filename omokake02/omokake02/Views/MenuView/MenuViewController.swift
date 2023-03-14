@@ -25,6 +25,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         partsCount = PhotosManager.allPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
+        photosCountHelpLabel.text = NSLocalizedString("kakeraNumberHelpText", comment: "")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -107,8 +108,8 @@ extension MenuViewController {
     private func partsAlertAndPresent(maxParts: Int) {
         if partsCount < 200 {
             let alert = UIAlertController(
-                title: "写真をもっと\n撮ってみませんか？",
-                message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。",
+                title: NSLocalizedString("TakeMorePhotos", comment: ""),
+                message: NSLocalizedString("200orMore", comment: ""),
                 preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
@@ -121,9 +122,11 @@ extension MenuViewController {
         } else if partsCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             partsCount = maxParts
+            let localizedString = NSLocalizedString("LimitedGeneratingKakera", comment: "")
+            let messageString = String(format: localizedString, "\(maxParts)","\(maxParts)")
             let alert = UIAlertController(
-                title: "あなたは最高の写真家です。",
-                message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。",
+                title: NSLocalizedString("BestPhotographer", comment: ""),
+                message: messageString,
                 preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
