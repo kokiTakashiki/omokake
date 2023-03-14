@@ -19,6 +19,7 @@ class MenuViewController: UIViewController {
     var partsCount = 0
     var selectKakera:String = ""
     var isBlendingEnabled:Bool = false
+    @IBOutlet private weak var photosCountHelpLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
