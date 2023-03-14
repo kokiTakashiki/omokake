@@ -63,7 +63,6 @@ class PartSizeChangeViewController: UIViewController {
     }
     
     @IBAction func startButtonAction(_ sender: UIButton) {
-        audio.play(effect: Audio.EffectFiles.transitionUp)
         self.present()
     }
 
