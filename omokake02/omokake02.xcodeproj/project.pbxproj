@@ -12,6 +12,7 @@
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
 		9A78B9A529BE306A00DD70DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9A729BE306A00DD70DD /* InfoPlist.strings */; };
 		9A78B9AA29BF755300DD70DD /* HapticFeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */; };
+		9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
 		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */; };
@@ -76,6 +77,7 @@
 		9A78B9A629BE306A00DD70DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A829BE306F00DD70DD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackController.swift; sourceTree = "<group>"; };
+		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Ex.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA4A16529BDCA2900D03310 /* MultiStepsView */,
+				9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */,
 			);
 			path = UIParts;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 		9AD9FB86269F347B00518925 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9A78B9A029BE2A2700DD70DD /* UIParts */,
 				9AD9FB71269C8E3700518925 /* extension */,
 				9AD9FB87269F348600518925 /* Entity */,
 			);
@@ -536,6 +540,7 @@
 				9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9AFAD6A829BC91530060153C /* Music.swift in Sources */,
+				9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */,
 				9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
 				9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */,
