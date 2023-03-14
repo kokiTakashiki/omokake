@@ -10,16 +10,25 @@
 		9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */; };
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
+		9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */; };
 		9A78B9A529BE306A00DD70DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9A729BE306A00DD70DD /* InfoPlist.strings */; };
 		9A78B9AA29BF755300DD70DD /* HapticFeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */; };
 		9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
 		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
+		9AA4A15229BD77EE00D03310 /* IntroStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */; };
 		9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */; };
 		9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15729BD913900D03310 /* ExtraStepContent.swift */; };
 		9AA4A15A29BD927400D03310 /* MultiStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15929BD927400D03310 /* MultiStepsView.swift */; };
 		9AA4A16029BD932A00D03310 /* ExtraContentPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15F29BD932A00D03310 /* ExtraContentPosition.swift */; };
+		9AA4A16229BD9B0600D03310 /* IntroStepsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16129BD9B0600D03310 /* IntroStepsState.swift */; };
+		9AA4A16429BDC08D00D03310 /* IntroSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16329BDC08D00D03310 /* IntroSteps.swift */; };
 		9AA4A16829BDCF2A00D03310 /* View+UIParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */; };
+		9AA4A16B29BDD35D00D03310 /* DeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16A29BDD35D00D03310 /* DeniedView.swift */; };
+		9AA4A16D29BDD3B000D03310 /* InfoOmokakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16C29BDD3B000D03310 /* InfoOmokakeView.swift */; };
+		9AA4A16F29BDF97E00D03310 /* ApprovalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16E29BDF97E00D03310 /* ApprovalView.swift */; };
+		9AA4A17129BE1B5400D03310 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A17029BE1B5400D03310 /* CompleteView.swift */; };
+		9AA4A17329BE1E7200D03310 /* HowToUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A17229BE1E7200D03310 /* HowToUseView.swift */; };
 		9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */; };
 		9ABA85D726BD3CE2002EC738 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */; };
 		9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */; };
@@ -74,17 +83,26 @@
 		9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartSizeChangeView.storyboard; sourceTree = "<group>"; };
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
+		9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsEnvironmentObject.swift; sourceTree = "<group>"; };
 		9A78B9A629BE306A00DD70DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A829BE306F00DD70DD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackController.swift; sourceTree = "<group>"; };
 		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsViewController.swift; sourceTree = "<group>"; };
 		9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Ex.swift"; sourceTree = "<group>"; };
 		9AA4A15729BD913900D03310 /* ExtraStepContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraStepContent.swift; sourceTree = "<group>"; };
 		9AA4A15929BD927400D03310 /* MultiStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStepsView.swift; sourceTree = "<group>"; };
 		9AA4A15F29BD932A00D03310 /* ExtraContentPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraContentPosition.swift; sourceTree = "<group>"; };
+		9AA4A16129BD9B0600D03310 /* IntroStepsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsState.swift; sourceTree = "<group>"; };
+		9AA4A16329BDC08D00D03310 /* IntroSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroSteps.swift; sourceTree = "<group>"; };
 		9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UIParts.swift"; sourceTree = "<group>"; };
+		9AA4A16A29BDD35D00D03310 /* DeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeniedView.swift; sourceTree = "<group>"; };
+		9AA4A16C29BDD3B000D03310 /* InfoOmokakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOmokakeView.swift; sourceTree = "<group>"; };
+		9AA4A16E29BDF97E00D03310 /* ApprovalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalView.swift; sourceTree = "<group>"; };
+		9AA4A17029BE1B5400D03310 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
+		9AA4A17229BE1E7200D03310 /* HowToUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseView.swift; sourceTree = "<group>"; };
 		9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		9ABA85D826BD4723002EC738 /* MTLClearColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLClearColor+Ex.swift"; sourceTree = "<group>"; };
@@ -194,6 +212,18 @@
 			path = MenuView;
 			sourceTree = "<group>";
 		};
+		9AA4A15029BD774300D03310 /* IntroStepsView */ = {
+			isa = PBXGroup;
+			children = (
+				9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */,
+				9AA4A16129BD9B0600D03310 /* IntroStepsState.swift */,
+				9AA4A16329BDC08D00D03310 /* IntroSteps.swift */,
+				9AA4A16929BDD34700D03310 /* content */,
+				9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */,
+			);
+			path = IntroStepsView;
+			sourceTree = "<group>";
+		};
 		9AA4A15329BD79F900D03310 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +253,18 @@
 				9AA4A15929BD927400D03310 /* MultiStepsView.swift */,
 			);
 			path = MultiStepsView;
+			sourceTree = "<group>";
+		};
+		9AA4A16929BDD34700D03310 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				9AA4A16C29BDD3B000D03310 /* InfoOmokakeView.swift */,
+				9AA4A16E29BDF97E00D03310 /* ApprovalView.swift */,
+				9AA4A16A29BDD35D00D03310 /* DeniedView.swift */,
+				9AA4A17029BE1B5400D03310 /* CompleteView.swift */,
+				9AA4A17229BE1E7200D03310 /* HowToUseView.swift */,
+			);
+			path = content;
 			sourceTree = "<group>";
 		};
 		9AA7F90C235ECF93004B03B4 /* HelpView */ = {
@@ -395,6 +437,7 @@
 			children = (
 				9ADF72C0276E1C1E008608E5 /* TitleView */,
 				9AD47C352699E54E003B8094 /* TutorialViews */,
+				9AA4A15029BD774300D03310 /* IntroStepsView */,
 				9A99CD09276DDD5F00AA560A /* MenuView */,
 				9AA7F90C235ECF93004B03B4 /* HelpView */,
 				9AD9FB79269F302000518925 /* SelectAlbumView */,
@@ -530,14 +573,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA4A16F29BDF97E00D03310 /* ApprovalView.swift in Sources */,
 				9AA4A15A29BD927400D03310 /* MultiStepsView.swift in Sources */,
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
 				9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
+				9AA4A16429BDC08D00D03310 /* IntroSteps.swift in Sources */,
 				9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */,
 				9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */,
+				9AA4A16229BD9B0600D03310 /* IntroStepsState.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9AFAD6A829BC91530060153C /* Music.swift in Sources */,
 				9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */,
@@ -548,13 +594,18 @@
 				9AEDD93B234A0F190004A0C2 /* shader.metal in Sources */,
 				9AD47C372699E644003B8094 /* DeniedViewController.swift in Sources */,
 				9AEDD9602354AA420004A0C2 /* TutorialViewController.swift in Sources */,
+				9AA4A16D29BDD3B000D03310 /* InfoOmokakeView.swift in Sources */,
+				9AA4A16B29BDD35D00D03310 /* DeniedView.swift in Sources */,
 				9AFAD6A329BC8E8B0060153C /* FileSoundProtocol.swift in Sources */,
 				9AC3914E26A5906D00CA7D19 /* PhotosManager.swift in Sources */,
 				9AA4A16829BDCF2A00D03310 /* View+UIParts.swift in Sources */,
+				9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */,
 				9AEDD944235370C40004A0C2 /* MenuViewController.swift in Sources */,
 				9AEDD929234A0A1D0004A0C2 /* DrawViewController.swift in Sources */,
 				9A78B9AA29BF755300DD70DD /* HapticFeedbackController.swift in Sources */,
 				9AFAD6AF29BCA30D0060153C /* PlayerController.swift in Sources */,
+				9AA4A15229BD77EE00D03310 /* IntroStepsViewController.swift in Sources */,
+				9AA4A17129BE1B5400D03310 /* CompleteView.swift in Sources */,
 				9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */,
 				9AEDD9622354D1650004A0C2 /* ShowApprovalViewController.swift in Sources */,
 				9AFAD6A529BC91320060153C /* Audio.swift in Sources */,
@@ -563,6 +614,7 @@
 				9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */,
 				9AEDD93D2352BC3D0004A0C2 /* ParticleSetup.swift in Sources */,
 				9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */,
+				9AA4A17329BE1E7200D03310 /* HowToUseView.swift in Sources */,
 				9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */,
 				9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */,
 				9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */,
