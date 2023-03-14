@@ -69,12 +69,11 @@ extension MenuViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
 
-        selectKakera = "thumbnail"//["kakeraS1","kakeraS2"]
-        isBlendingEnabled = false
+        selectKakera = "thumbnail"
         let selectAlbumViewController = instantiateStoryBoardToViewController(storyBoardName: "SelectAlbumViewController", withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
         selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
                                                                                   selectKakera: selectKakera,
-                                                                                  isBlendingEnabled: isBlendingEnabled)
+                                                                                  isBlendingEnabled: false)
         selectAlbumViewController.modalPresentationStyle = .fullScreen
         self.present(selectAlbumViewController, animated: true, completion: nil)
     }
