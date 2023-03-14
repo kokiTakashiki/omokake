@@ -11,6 +11,7 @@ import DeviceKit
 
 final class SelectAlbumViewController: UIViewController {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
 
     struct ViewModel {
         var partsCoint: Int
@@ -67,6 +68,7 @@ extension SelectAlbumViewController: UITableViewDataSource, UITableViewDelegate 
 extension SelectAlbumViewController {
     @IBAction func backSelectKakeraAction(_ sender: Any) {
         audio.play(effect: Audio.EffectFiles.transitionDown)
+        haptic.play(.impact(.soft))
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -109,6 +111,7 @@ extension SelectAlbumViewController {
             }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
+            haptic.play(.notification(.failure))
             present(alert, animated: true, completion: nil)
 
         } else if note.photosCount > maxParts {
@@ -124,6 +127,7 @@ extension SelectAlbumViewController {
             }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
+            haptic.play(.notification(.failure))
             present(alert, animated: true, completion: nil)
         } else {
             self.present(note)
@@ -132,6 +136,7 @@ extension SelectAlbumViewController {
     
     private func present(_ note: AlbumInfo) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.medium))
         let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
                                                                              withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
         partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1

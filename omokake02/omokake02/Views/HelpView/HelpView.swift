@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HelpView: View {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
 
     var body: some View {
         ScrollView {
@@ -20,6 +21,7 @@ struct HelpView: View {
                 contactUs(action: {
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
+                        haptic.play(.impact(.soft))
                         await twitterButtonAction()
                     }
                 })
@@ -148,6 +150,7 @@ private extension HelpView {
                     Button(action: {
                         Task {
                             audio.playRandom(effects: Audio.EffectFiles.taps)
+                            haptic.play(.impact(.soft))
                             await openURLAction("https://snd.dev/")
                         }
                     }, label: {
@@ -166,6 +169,7 @@ private extension HelpView {
                     Button(action: {
                         Task {
                             audio.playRandom(effects: Audio.EffectFiles.taps)
+                            haptic.play(.impact(.soft))
                             await openURLAction("https://github.com/devicekit/DeviceKit")
                         }
                     }, label: {
@@ -216,101 +220,6 @@ private extension HelpView {
         }
         .padding(.leading, 20)
         .padding(.trailing, 20)
-    }
-}
-
-// MARK: UIPart
-private extension HelpView {
-    @ViewBuilder
-    func description(_ content: LocalizedStringKey, edge: Edge = .leading) -> some View {
-        HStack {
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-            switch edge {
-            case .leading:
-                Text(content)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.custom("Futura Medium", size: 18))
-                Spacer()
-            case .trailing:
-                Spacer()
-                Text(content)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.custom("Futura Medium", size: 18))
-            case .top:
-                EmptyView()
-            case .bottom:
-                EmptyView()
-            }
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-        }
-    }
-
-    func iconSideDescription(systemName: String, _ content: LocalizedStringKey) -> some View {
-        HStack {
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-            Image(systemName: systemName)
-            Text(content)
-                .font(.custom("Futura Medium", size: 18))
-            Spacer()
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-        }
-    }
-
-    func imageSideDescription(name: String, _ content: LocalizedStringKey) -> some View {
-        HStack {
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-            Image(name)
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width / 3)
-            Rectangle()
-                .frame(width: 10, height: 20)
-                .foregroundColor(.clear)
-            Text(content)
-                .fixedSize(horizontal: false, vertical: true)
-                .font(.custom("Futura Medium", size: 18))
-            Spacer()
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-        }
-    }
-
-    func title(_ content: LocalizedStringKey) -> some View {
-        HStack {
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
-            Text(content)
-                .fixedSize(horizontal: false, vertical: true)
-                .font(.custom("Futura Medium", size: 30))
-            Spacer()
-        }
-    }
-
-    var waku: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .foregroundColor(.white)
-            RoundedRectangle(cornerRadius: 30)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .foregroundColor(.black)
-                .padding(.top, 3)
-                .padding(.leading, 3)
-                .padding(.trailing, 3)
-                .padding(.bottom, 3)
-        }
     }
 }
 

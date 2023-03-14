@@ -11,6 +11,7 @@ import UIKit
 
 class TitleViewController: UIViewController {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
 
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
@@ -46,14 +47,16 @@ class TitleViewController: UIViewController {
 extension TitleViewController {
     @IBAction func tutorialButtonAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.soft))
 
-        let tutorialViewController = instantiateStoryBoardToViewController(storyBoardName: "TutorialView", withIdentifier: "TutorialViewController") as! TutorialViewController
+        let tutorialViewController = IntroStepsViewController()
         tutorialViewController.modalPresentationStyle = .fullScreen
         self.present(tutorialViewController, animated: true, completion: nil)
     }
     
     @IBAction func menuButtonAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.soft))
 
         let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         let navi = UINavigationController(rootViewController: menuViewController)

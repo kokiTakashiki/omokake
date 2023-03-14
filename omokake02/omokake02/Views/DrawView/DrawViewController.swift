@@ -11,6 +11,7 @@ import MetalKit
 
 class DrawViewController: UIViewController, MTKViewDelegate {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
     
     @IBOutlet weak var drawView: MTKView!
     @IBOutlet weak var partsCountLabel: UILabel!
@@ -132,6 +133,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
 
     @IBAction func backMenuAction(_ sender: UIButton) {
         audio.play(effect: Audio.EffectFiles.transitionDown)
+        haptic.play(.impact(.soft))
         self.dismiss(animated: true, completion: nil)
     }
     

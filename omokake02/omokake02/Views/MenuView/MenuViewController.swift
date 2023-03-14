@@ -12,6 +12,7 @@ import DeviceKit
 
 class MenuViewController: UIViewController {
     private let audio = PlayerController.shared
+    private let haptic = HapticFeedbackController.shared
     
     //var partsCount:Int = 0
     @IBOutlet weak var photosCount: UILabel!
@@ -45,6 +46,7 @@ class MenuViewController: UIViewController {
 extension MenuViewController {
     @IBAction func helpButtonAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.medium))
 
         let helpViewController = HelpViewController()
         self.navigationController?.pushViewController(helpViewController, animated: true)
@@ -64,6 +66,7 @@ extension MenuViewController {
     
     @IBAction func thumbnailAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
+        haptic.play(.impact(.medium))
 
         selectKakera = "thumbnail"//["kakeraS1","kakeraS2"]
         isBlendingEnabled = false
@@ -113,6 +116,7 @@ extension MenuViewController {
             }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
+            haptic.play(.notification(.failure))
             present(alert, animated: true, completion: nil)
         } else if partsCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
@@ -127,6 +131,7 @@ extension MenuViewController {
             }
             alert.addAction(defaultAction)
             audio.play(effect: Audio.EffectFiles.caution)
+            haptic.play(.notification(.failure))
             present(alert, animated: true, completion: nil)
         } else {
             self.present()
@@ -135,6 +140,8 @@ extension MenuViewController {
     
     private func present() {
         audio.play(effect: Audio.EffectFiles.transitionUp)
+        haptic.play(.impact(.soft))
+
         let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
