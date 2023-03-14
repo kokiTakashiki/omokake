@@ -15,6 +15,9 @@
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
 		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */; };
+		9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15729BD913900D03310 /* ExtraStepContent.swift */; };
+		9AA4A15A29BD927400D03310 /* MultiStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15929BD927400D03310 /* MultiStepsView.swift */; };
+		9AA4A16029BD932A00D03310 /* ExtraContentPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15F29BD932A00D03310 /* ExtraContentPosition.swift */; };
 		9AA4A16829BDCF2A00D03310 /* View+UIParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */; };
 		9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */; };
 		9ABA85D726BD3CE2002EC738 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */; };
@@ -76,6 +79,9 @@
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Ex.swift"; sourceTree = "<group>"; };
+		9AA4A15729BD913900D03310 /* ExtraStepContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraStepContent.swift; sourceTree = "<group>"; };
+		9AA4A15929BD927400D03310 /* MultiStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStepsView.swift; sourceTree = "<group>"; };
+		9AA4A15F29BD932A00D03310 /* ExtraContentPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraContentPosition.swift; sourceTree = "<group>"; };
 		9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UIParts.swift"; sourceTree = "<group>"; };
 		9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
@@ -168,6 +174,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		9A78B9A029BE2A2700DD70DD /* UIParts */ = {
+			isa = PBXGroup;
+			children = (
+				9AA4A16529BDCA2900D03310 /* MultiStepsView */,
+			);
+			path = UIParts;
+			sourceTree = "<group>";
+		};
 		9A99CD09276DDD5F00AA560A /* MenuView */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +210,16 @@
 				9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		9AA4A16529BDCA2900D03310 /* MultiStepsView */ = {
+			isa = PBXGroup;
+			children = (
+				9AA4A15729BD913900D03310 /* ExtraStepContent.swift */,
+				9AA4A15F29BD932A00D03310 /* ExtraContentPosition.swift */,
+				9AA4A15929BD927400D03310 /* MultiStepsView.swift */,
+			);
+			path = MultiStepsView;
 			sourceTree = "<group>";
 		};
 		9AA7F90C235ECF93004B03B4 /* HelpView */ = {
@@ -502,12 +526,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA4A15A29BD927400D03310 /* MultiStepsView.swift in Sources */,
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
 				9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9AEDD9642354E1E50004A0C2 /* EndTutorialViewController.swift in Sources */,
 				9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */,
+				9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9AFAD6A829BC91530060153C /* Music.swift in Sources */,
 				9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */,
@@ -536,6 +562,7 @@
 				9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */,
 				9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */,
 				9ABA85D726BD3CE2002EC738 /* UIColor+Ex.swift in Sources */,
+				9AA4A16029BD932A00D03310 /* ExtraContentPosition.swift in Sources */,
 				9AEDD93F2352C7250004A0C2 /* CreateParts.swift in Sources */,
 				9AFAD6AC29BC91760060153C /* Player.swift in Sources */,
 				9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */,
