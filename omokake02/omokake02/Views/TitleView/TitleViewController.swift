@@ -49,7 +49,7 @@ extension TitleViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
-        let tutorialViewController = instantiateStoryBoardToViewController(storyBoardName: "TutorialView", withIdentifier: "TutorialViewController") as! TutorialViewController
+        let tutorialViewController = IntroStepsViewController()
         tutorialViewController.modalPresentationStyle = .fullScreen
         self.present(tutorialViewController, animated: true, completion: nil)
     }
