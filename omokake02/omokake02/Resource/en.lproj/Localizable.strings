@@ -45,3 +45,12 @@
 "SpecialThanksName" = "Harumi Sagawa";
 
 "ContactUs" = "Contact";
+
+// MenuView
+"kakeraNumberHelpText" = "Number of photos taken so far (kakera)";
+
+"TakeMorePhotos" = "Would you like to take more photos?";
+"200orMore" = "The number of photos is small. The work may be unsatisfactory. The recommended number of photos is 200 or more.";
+
+"BestPhotographer" = "You are the best photographer.";
+"LimitedGeneratingKakera" = "Your iPhone is limited to generating %@ kakera. %@ kakera is generated.";

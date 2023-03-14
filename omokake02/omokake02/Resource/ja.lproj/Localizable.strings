@@ -45,3 +45,12 @@
 "SpecialThanksName" = "佐川 晴海";
 
 "ContactUs" = "お問い合わせ";
+
+// MenuView
+"kakeraNumberHelpText" = "今まで撮った写真の数（かけらの数）";
+
+"TakeMorePhotos" = "写真をもっと\n撮ってみませんか？";
+"200orMore" = "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。";
+
+"BestPhotographer" = "あなたは最高の写真家です。";
+"LimitedGeneratingKakera" = "あなたのiPhoneでは%@かけらの\n生成が限界となっています。\n%@かけらを生成します。";

@@ -15,15 +15,17 @@ class MenuViewController: UIViewController {
     private let haptic = HapticFeedbackController.shared
     
     //var partsCount:Int = 0
-    @IBOutlet weak var photosCount: UILabel!
-    var partsCount = 0
-    var selectKakera:String = ""
-    var isBlendingEnabled:Bool = false
+    @IBOutlet private weak var photosCount: UILabel!
+    @IBOutlet private weak var photosCountHelpLabel: UILabel!
+    private var partsCount = 0
+    private var selectKakera: String = ""
+    private var isBlendingEnabled: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         partsCount = PhotosManager.allPhotoCount()
         photosCount.text = String(partsCount) + " kakera"
+        photosCountHelpLabel.text = NSLocalizedString("kakeraNumberHelpText", comment: "")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,12 +70,11 @@ extension MenuViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
 
-        selectKakera = "thumbnail"//["kakeraS1","kakeraS2"]
-        isBlendingEnabled = false
+        selectKakera = "thumbnail"
         let selectAlbumViewController = instantiateStoryBoardToViewController(storyBoardName: "SelectAlbumViewController", withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
         selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
                                                                                   selectKakera: selectKakera,
-                                                                                  isBlendingEnabled: isBlendingEnabled)
+                                                                                  isBlendingEnabled: false)
         selectAlbumViewController.modalPresentationStyle = .fullScreen
         self.present(selectAlbumViewController, animated: true, completion: nil)
     }
@@ -107,8 +108,8 @@ extension MenuViewController {
     private func partsAlertAndPresent(maxParts: Int) {
         if partsCount < 200 {
             let alert = UIAlertController(
-                title: "写真をもっと\n撮ってみませんか？",
-                message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。",
+                title: NSLocalizedString("TakeMorePhotos", comment: ""),
+                message: NSLocalizedString("200orMore", comment: ""),
                 preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
@@ -121,9 +122,11 @@ extension MenuViewController {
         } else if partsCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             partsCount = maxParts
+            let localizedString = NSLocalizedString("LimitedGeneratingKakera", comment: "")
+            let messageString = String(format: localizedString, "\(maxParts)","\(maxParts)")
             let alert = UIAlertController(
-                title: "あなたは最高の写真家です。",
-                message: "あなたのiPhoneでは\(maxParts)かけらの\n生成が限界となっています。\n\(maxParts)かけらを生成します。",
+                title: NSLocalizedString("BestPhotographer", comment: ""),
+                message: messageString,
                 preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
