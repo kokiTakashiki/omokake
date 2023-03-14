@@ -15,11 +15,11 @@ class MenuViewController: UIViewController {
     private let haptic = HapticFeedbackController.shared
     
     //var partsCount:Int = 0
-    @IBOutlet weak var photosCount: UILabel!
-    var partsCount = 0
-    var selectKakera:String = ""
-    var isBlendingEnabled:Bool = false
+    @IBOutlet private weak var photosCount: UILabel!
     @IBOutlet private weak var photosCountHelpLabel: UILabel!
+    private var partsCount = 0
+    private var selectKakera: String = ""
+    private var isBlendingEnabled: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
