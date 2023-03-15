@@ -15,7 +15,7 @@ final class SelectAlbumViewController: UIViewController {
 
     struct ViewModel {
         var partsCoint: Int
-        let selectKakera: String //:Array<String> = ["kakera","kakera2"]
+        let selectKakera: Renderer.KakeraType //:Array<String> = ["kakera","kakera2"]
         let isBlendingEnabled: Bool
     }
     
@@ -140,7 +140,7 @@ extension SelectAlbumViewController {
         let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
                                                                              withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
         partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1
-        partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? ""
+        partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? .sankaku
         partSizeChangeViewController.isBlendingEnabled = viewModel?.isBlendingEnabled ?? false
         partSizeChangeViewController.albumInfo = note
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
