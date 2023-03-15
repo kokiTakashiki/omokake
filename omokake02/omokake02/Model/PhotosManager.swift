@@ -42,19 +42,17 @@ struct PhotosManager {
         }
         
         // Videosをフェッチ
-        let assetVideoCollections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
+        let assetVideoCollections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumVideos, options: nil)
         
         assetVideoCollections.enumerateObjects { assetCollection, index, _ in
             
             // アルバムタイトル
             //print(assetCollection.localizedTitle ?? "")
-            //print(assetCollection.localizedTitle, PHAsset.fetchAssets(in: assetCollection, options: nil).count)
+            //print("[PhotosManager] video ",assetCollection.localizedTitle ?? "nil", PHAsset.fetchAssets(in: assetCollection, options: nil).count)
             
-            if assetCollection.localizedTitle == "Videos" {
-                // アセットをフェッチ
-                assetsVideo = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
-                sendVideoCount = assetsVideo?.count ?? 0
-            }
+            // アセットをフェッチ
+            assetsVideo = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
+            sendVideoCount = assetsVideo?.count ?? 0
             //print("asset count",self.assets.count)
         }
         
