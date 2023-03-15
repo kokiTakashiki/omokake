@@ -23,7 +23,7 @@ class PartSizeChangeViewController: UIViewController {
     
     // next View
     var partsCount:Int = 1
-    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
     
     //dammy
     var pressurePointInit:simd_float2 = simd_float2(x: -10000.0, y: -10000.0)

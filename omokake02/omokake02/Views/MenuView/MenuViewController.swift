@@ -149,7 +149,7 @@ extension MenuViewController {
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
         drawViewController.isBlendingEnabled = isBlendingEnabled
-        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
         drawViewController.modalPresentationStyle = .fullScreen
         drawViewController.modalTransitionStyle = .crossDissolve
         self.present(drawViewController, animated: true, completion: nil)

@@ -124,15 +124,15 @@ extension Renderer {
         case .thumbnail: // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
-            switch albumInfo.title {
-            case "お気に入り":
+            switch albumInfo.type {
+            case .favorites:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
                 originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
-            default:
+            case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
@@ -172,15 +172,15 @@ extension Renderer {
         case .thumbnail:
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
-            switch albumInfo.title {
-            case "お気に入り":
+            switch albumInfo.type {
+            case .favorites:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
                 originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
-            default:
+            case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
@@ -198,8 +198,6 @@ extension Renderer {
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
-        default:
-            print("[Renderer] select is falier")
         }
     }
 }

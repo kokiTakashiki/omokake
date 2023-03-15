@@ -27,7 +27,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     var customSize:Float = 1.0
     
     // thumbnail用
-    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
     
     var shareBackgroundColor:MTLClearColor = .black
     
