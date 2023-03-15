@@ -16,6 +16,14 @@ protocol RenderDestinationProvider {
     //var sampleCount: Int { get set }
 }
 
+extension Renderer {
+    enum KakeraType {
+        case sankaku
+        case sikaku
+        case thumbnail
+    }
+}
+
 class Renderer: NSObject {
     static var device: MTLDevice!
     let drawableSize: CGSize!
