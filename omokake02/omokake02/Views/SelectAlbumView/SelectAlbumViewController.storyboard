@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Album View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SelectAlbumView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SelectAlbumViewController" customModule="omokake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5HK-xt-Cud">
+                                <rect key="frame" x="20" y="90.5" width="280" height="477.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7w-gV-DS3">
+                                <rect key="frame" x="56.5" y="20" width="207.5" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3f5-Zg-Uqf">
+                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="75W-ZQ-Abp"/>
+                                    <constraint firstAttribute="width" constant="40" id="f4E-Sd-YrI"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backSelectKakeraAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XJV-1X-bbU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g7w-gV-DS3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="55h-Hz-EIr"/>
+                            <constraint firstItem="3f5-Zg-Uqf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="5d1-P6-BzI"/>
+                            <constraint firstItem="5HK-xt-Cud" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="7pp-HK-tix"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5HK-xt-Cud" secondAttribute="trailing" constant="20" id="91e-ta-54w"/>
+                            <constraint firstItem="g7w-gV-DS3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="GBP-Bp-pft"/>
+                            <constraint firstItem="5HK-xt-Cud" firstAttribute="top" secondItem="g7w-gV-DS3" secondAttribute="bottom" constant="25" id="R4L-Cv-s52"/>
+                            <constraint firstItem="3f5-Zg-Uqf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="cuD-KK-LFP"/>
+                            <constraint firstItem="5HK-xt-Cud" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wiL-SC-ITB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5HK-xt-Cud" id="2dv-tR-Ihd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="108.80281690140845"/>
+        </scene>
+    </scenes>
+</document>

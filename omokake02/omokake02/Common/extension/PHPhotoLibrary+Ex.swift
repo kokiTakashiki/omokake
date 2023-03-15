@@ -8,31 +8,41 @@
 
 import Photos
 
+enum PhotoAccessState {
+    case none
+    case Authorized
+    case Denied
+    case NotDetermined
+    case Restricted
+    case limited
+    case Default
+}
+
 extension PHPhotoLibrary {
     //ユーザーに許可を促す.
-    class func Authorization( userCompletionHandler: @escaping (String) -> Void){
+    class func Authorization( userCompletionHandler: @escaping (PhotoAccessState) -> Void){
         
         if #available(iOS 14.0, *) {
             PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
                 
                 switch status {
                 case .authorized:
-                    userCompletionHandler("Authorized")
+                    userCompletionHandler(.Authorized)
                     print("[PHPhotoLibrary] Authorized")
                 case .denied:
-                    userCompletionHandler("Denied")
+                    userCompletionHandler(.Denied)
                     print("[PHPhotoLibrary] Denied")
                 case .notDetermined:
-                    userCompletionHandler("NotDetermined")
+                    userCompletionHandler(.NotDetermined)
                     print("[PHPhotoLibrary] NotDetermined")
                 case .restricted:
-                    userCompletionHandler("Restricted")
+                    userCompletionHandler(.Restricted)
                     print("[PHPhotoLibrary] Restricted")
                 case .limited:
-                    userCompletionHandler("limited")
+                    userCompletionHandler(.limited)
                     print("[PHPhotoLibrary] limited")
                 @unknown default:
-                    userCompletionHandler("default")
+                    userCompletionHandler(.Default)
                     print("[PHPhotoLibrary] default")
                 }
                 
@@ -42,22 +52,22 @@ extension PHPhotoLibrary {
                 
                 switch status {
                 case .authorized:
-                    userCompletionHandler("Authorized")
+                    userCompletionHandler(.Authorized)
                     print("[PHPhotoLibrary] Authorized")
                 case .denied:
-                    userCompletionHandler("Denied")
+                    userCompletionHandler(.Denied)
                     print("[PHPhotoLibrary] Denied")
                 case .notDetermined:
-                    userCompletionHandler("NotDetermined")
+                    userCompletionHandler(.NotDetermined)
                     print("[PHPhotoLibrary] NotDetermined")
                 case .restricted:
-                    userCompletionHandler("Restricted")
+                    userCompletionHandler(.Restricted)
                     print("[PHPhotoLibrary] Restricted")
                 case .limited:
-                    userCompletionHandler("limited")
+                    userCompletionHandler(.limited)
                     print("[PHPhotoLibrary] limited")
                 @unknown default:
-                    userCompletionHandler("default")
+                    userCompletionHandler(.Default)
                     print("[PHPhotoLibrary] default")
                 }
                 
