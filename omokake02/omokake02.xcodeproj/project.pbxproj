@@ -169,18 +169,10 @@
 		9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */ = {
 			isa = PBXGroup;
 			children = (
+				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
 				9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */,
-				9A5FBA5426B94F0000B09CC8 /* ViewController */,
 			);
 			path = PartSizeChangeView;
-			sourceTree = "<group>";
-		};
-		9A5FBA5426B94F0000B09CC8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9A78B9A029BE2A2700DD70DD /* UIParts */ = {
