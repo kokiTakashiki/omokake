@@ -143,12 +143,13 @@ extension SelectAlbumViewController {
     private func present(_ note: AlbumInfo) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
-        let partSizeChangeViewController = instantiateStoryBoardToViewController(storyBoardName: "PartSizeChangeView",
-                                                                             withIdentifier: "PartSizeChangeView") as! PartSizeChangeViewController
-        partSizeChangeViewController.partsCount = viewModel?.partsCoint ?? 1
-        partSizeChangeViewController.selectKakera = viewModel?.selectKakera ?? .sankaku
-        partSizeChangeViewController.isBlendingEnabled = viewModel?.isBlendingEnabled ?? false
-        partSizeChangeViewController.albumInfo = note
+
+        let partSizeChangeViewController = PartSizeChangeViewController(
+            selectKakera: viewModel?.selectKakera ?? .sankaku,
+            isBlendingEnabled: viewModel?.isBlendingEnabled ?? false,
+            partsCount: viewModel?.partsCoint ?? 1,
+            albumInfo: note
+        )
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
         self.present(partSizeChangeViewController, animated: true, completion: nil)
     }

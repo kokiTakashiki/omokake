@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */; };
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
 		9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */; };
 		9A78B9A529BE306A00DD70DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9A729BE306A00DD70DD /* InfoPlist.strings */; };
 		9A78B9AA29BF755300DD70DD /* HapticFeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */; };
 		9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */; };
+		9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
 		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA4A15229BD77EE00D03310 /* IntroStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */; };
@@ -75,7 +75,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartSizeChangeView.storyboard; sourceTree = "<group>"; };
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
 		9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsEnvironmentObject.swift; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		9A78B9A829BE306F00DD70DD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackController.swift; sourceTree = "<group>"; };
 		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartSizeChangeViewController.xib; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
 		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsViewController.swift; sourceTree = "<group>"; };
@@ -169,18 +169,10 @@
 		9A5FBA5126B9490A00B09CC8 /* PartSizeChangeView */ = {
 			isa = PBXGroup;
 			children = (
-				9A5FBA5226B94EF200B09CC8 /* PartSizeChangeView.storyboard */,
-				9A5FBA5426B94F0000B09CC8 /* ViewController */,
+				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
+				9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */,
 			);
 			path = PartSizeChangeView;
-			sourceTree = "<group>";
-		};
-		9A5FBA5426B94F0000B09CC8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9A78B9A029BE2A2700DD70DD /* UIParts */ = {
@@ -485,7 +477,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = takasiki;
 				TargetAttributes = {
 					9AEDD922234A0A1D0004A0C2 = {
@@ -528,13 +520,13 @@
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
 				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
 				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
+				9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */,
 				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9A78B9A529BE306A00DD70DD /* InfoPlist.strings in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
 				9AEDD92C234A0A1D0004A0C2 /* TitleViewController.storyboard in Resources */,
-				9A5FBA5326B94EF200B09CC8 /* PartSizeChangeView.storyboard in Resources */,
 				9AFAD69729BA3BB30060153C /* Localizable.strings in Resources */,
 				9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */,
 				9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */,
@@ -666,6 +658,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -728,6 +721,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -751,7 +745,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
