@@ -8,14 +8,21 @@
 
 import Foundation
 
+enum AlbumType {
+    case favorites
+    case regular
+}
+
 class AlbumInfo {
     var index: Int
     var title: String
+    var type: AlbumType
     var photosCount: Int
     
-    init(index: Int, title: String, photosCount: Int) {
+    init(index: Int, title: String, type: AlbumType, photosCount: Int) {
         self.index = index
         self.title = title
+        self.type = type
         self.photosCount = photosCount
     }
 }
