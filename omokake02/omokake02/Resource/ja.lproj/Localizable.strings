@@ -54,3 +54,10 @@
 
 "BestPhotographer" = "あなたは最高の写真家です。";
 "LimitedGeneratingKakera" = "あなたのiPhoneでは%@かけらの\n生成が限界となっています。\n%@かけらを生成します。";
+
+// SelectAlbumView
+"Favorites" = "お気に入り";
+"10orMore" = "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。";
+"LimitPhotos" = "%@枚に制限します。";
+"CappedPhotos" = "サムネイル表示では%@枚の\n表示が上限となっています。";
+"Photos" = "写真数：%@";
