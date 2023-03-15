@@ -54,3 +54,10 @@
 
 "BestPhotographer" = "You are the best photographer.";
 "LimitedGeneratingKakera" = "Your iPhone is limited to generating %@ kakera. %@ kakera is generated.";
+
+// SelectAlbumView
+"Favorites" = "Favorites";
+"10orMore" = "The number of photos is small. The work may be unsatisfactory. The recommended number of photos is 10 or more.";
+"LimitPhotos" = "Limit to %@ photos.";
+"CappedPhotos" = "The thumbnail display is capped at %@ photos.";
+"Photos" = "Photos：%@";

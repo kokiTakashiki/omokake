@@ -102,8 +102,8 @@ extension SelectAlbumViewController {
     private func partsAlertAndPresent(_ note: AlbumInfo, maxParts: Int) {
         if note.photosCount < 10 {
             let alert = UIAlertController(
-                title: "写真をもっと\n撮ってみませんか？",
-                message: "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。",
+                title: NSLocalizedString("TakeMorePhotos", comment: ""),
+                message: NSLocalizedString("10orMore", comment: ""),
                 preferredStyle:  .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
@@ -117,9 +117,15 @@ extension SelectAlbumViewController {
         } else if note.photosCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
             viewModel?.partsCoint = maxParts
+
+            let titleLocalizedString = NSLocalizedString("LimitPhotos", comment: "")
+            let titleString = String(format: titleLocalizedString, "\(maxParts)")
+            let localizedString = NSLocalizedString("CappedPhotos", comment: "")
+            let messageString = String(format: localizedString, "\(maxParts)")
+
             let alert = UIAlertController(
-                title: "\(maxParts)枚に制限します。",
-                message: "サムネイル表示では\(maxParts)枚の\n表示が上限となっています。",
+                title: titleString,
+                message: messageString,
                 preferredStyle:  .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in

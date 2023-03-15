@@ -14,6 +14,8 @@ class AlbumTableViewCell: UITableViewCell {
     
     func setData(title: String, photosCount: Int) {
         self.titleLabel.text = title
-        self.photosCount.text = "写真数：\(photosCount)"
+        let localizedString = NSLocalizedString("Photos", comment: "")
+        let messageString = String(format: localizedString, "\(photosCount)")
+        self.photosCount.text = messageString
     }
 }
