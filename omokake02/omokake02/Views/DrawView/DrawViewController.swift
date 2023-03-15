@@ -22,12 +22,12 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     var touchEndFloat:Float = 0.0
     
     var partsCount:Int = 0
-    var selectKakera:String = ""//:Array<String> = ["kakera","kakera2"]
+    var selectKakera: Renderer.KakeraType = .sankaku//:Array<String> = ["kakera","kakera2"]
     var isBlendingEnabled:Bool = false
     var customSize:Float = 1.0
     
     // thumbnail用
-    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
     
     var shareBackgroundColor:MTLClearColor = .black
     
@@ -56,7 +56,7 @@ class DrawViewController: UIViewController, MTKViewDelegate {
                             albumInfo: albumInfo)
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
         
-        if selectKakera == "thumbnail" {} else {
+        if selectKakera != .thumbnail {
             customSize = recommendSize()
         }
         partsCountLabel.makeOutLine(strokeWidth: -3.0, oulineColor: .gray, foregroundColor: .lightGray)

@@ -18,7 +18,7 @@ class MenuViewController: UIViewController {
     @IBOutlet private weak var photosCount: UILabel!
     @IBOutlet private weak var photosCountHelpLabel: UILabel!
     private var partsCount = 0
-    private var selectKakera: String = ""
+    private var selectKakera: Renderer.KakeraType = .sankaku
     private var isBlendingEnabled: Bool = false
     
     override func viewDidLoad() {
@@ -55,13 +55,13 @@ extension MenuViewController {
     }
     
     @IBAction func sankakuAction(_ sender: Any) {
-        selectKakera = "sankaku"//["kakera","kakera2"]
+        selectKakera = .sankaku//["kakera","kakera2"]
         isBlendingEnabled = true
         deviceMaxParts()
     }
     
     @IBAction func sikakuAction(_ sender: Any) {
-        selectKakera = "sikaku"//["kakeraS1","kakeraS2"]
+        selectKakera = .sikaku//["kakeraS1","kakeraS2"]
         isBlendingEnabled = true
         deviceMaxParts()
     }
@@ -70,7 +70,7 @@ extension MenuViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
 
-        selectKakera = "thumbnail"
+        selectKakera = .thumbnail
         let selectAlbumViewController = instantiateStoryBoardToViewController(storyBoardName: "SelectAlbumViewController", withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
         selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
                                                                                   selectKakera: selectKakera,
@@ -149,7 +149,7 @@ extension MenuViewController {
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
         drawViewController.isBlendingEnabled = isBlendingEnabled
-        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
         drawViewController.modalPresentationStyle = .fullScreen
         drawViewController.modalTransitionStyle = .crossDissolve
         self.present(drawViewController, animated: true, completion: nil)

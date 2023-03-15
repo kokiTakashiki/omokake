@@ -16,6 +16,14 @@ protocol RenderDestinationProvider {
     //var sampleCount: Int { get set }
 }
 
+extension Renderer {
+    enum KakeraType {
+        case sankaku
+        case sikaku
+        case thumbnail
+    }
+}
+
 class Renderer: NSObject {
     static var device: MTLDevice!
     let drawableSize: CGSize!
@@ -31,7 +39,7 @@ class Renderer: NSObject {
     var partsCount: Int = 0
 
     
-    init?(mtlView: MTKView, partsCount: Int, selectKakera: String, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
+    init?(mtlView: MTKView, partsCount: Int, selectKakera: KakeraType, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
         guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
             return nil
         }
@@ -46,6 +54,23 @@ class Renderer: NSObject {
         
         loadMetal(isBlendingEnabled: isBlendingEnabled)
         partsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
+    }
+    
+    init?(mtlView: MTKView, selectKakera: KakeraType, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
+        guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
+            return nil
+        }
+        
+        Renderer.self.device = mtlView.device
+        self.drawableSize = mtlView.drawableSize
+        self.commandQ = commandQ
+        self.partsCount = 1
+        self.renderDestination = renderDestination
+        super.init()
+        mtlView.framebufferOnly = false
+        
+        loadMetal(isBlendingEnabled: isBlendingEnabled)
+        onePartsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
     }
 }
 
@@ -80,34 +105,34 @@ extension Renderer {
         }
     }
     
-    private func partsSetUp(_ mtlView: MTKView, selectKakera: String, albumInfo: AlbumInfo) {
+    private func partsSetUp(_ mtlView: MTKView, selectKakera: KakeraType, albumInfo: AlbumInfo) {
         let colorCount = Int.random(in: 1...4)
         
         switch selectKakera {
-        case "sankaku":
+        case .sankaku:
             createOmokake(mtlView: mtlView,
                           startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
                           imageName: "kakera",
                           imageName2: "kakera2",
                           colorCount: colorCount)
-        case "sikaku":
+        case .sikaku:
             createOmokake(mtlView: mtlView,
                           startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
                           imageName: "kakeraS1",
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
-        case "thumbnail": // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
+        case .thumbnail: // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
-            switch albumInfo.title {
-            case "お気に入り":
+            switch albumInfo.type {
+            case .favorites:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
                 originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
-            default:
+            case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
@@ -125,30 +150,37 @@ extension Renderer {
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
-        case "sankakuSize":
+        }
+    }
+    
+    private func onePartsSetUp(_ mtlView: MTKView, selectKakera: KakeraType, albumInfo: AlbumInfo) {
+        let colorCount = Int.random(in: 1...4)
+        
+        switch selectKakera {
+        case .sankaku:
             createOmokake(mtlView: mtlView,
                           startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
                           imageName: "kakera",
                           imageName2: "kakera2",
                           colorCount: colorCount)
-        case "sikakuSize":
+        case .sikaku:
             createOmokake(mtlView: mtlView,
                           startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
                           imageName: "kakeraS1",
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
-        case "thumbnailSize":
+        case .thumbnail:
             let thumbnailSize = CGSize(width: 20, height: 20)
             var originalArray:[UIImage] = []
-            switch albumInfo.title {
-            case "お気に入り":
+            switch albumInfo.type {
+            case .favorites:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
                 originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
-            default:
+            case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
@@ -166,8 +198,6 @@ extension Renderer {
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
-        default:
-            print("[Renderer] select is falier")
         }
     }
 }

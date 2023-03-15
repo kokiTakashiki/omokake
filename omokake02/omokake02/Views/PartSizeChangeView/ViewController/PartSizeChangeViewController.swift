@@ -18,12 +18,12 @@ class PartSizeChangeViewController: UIViewController {
     
     var renderer: Renderer? = nil
     
-    var selectKakera:String = ""
+    var selectKakera: Renderer.KakeraType = .sankaku
     var isBlendingEnabled:Bool = false
     
     // next View
     var partsCount:Int = 1
-    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", photosCount: 0)
+    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
     
     //dammy
     var pressurePointInit:simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
@@ -47,7 +47,7 @@ class PartSizeChangeViewController: UIViewController {
             print("[PartSizeChangeViewController] Metal is not supported on this device")
             return
         }
-        if selectKakera == "thumbnail" {
+        if selectKakera == .thumbnail {
             partSizeSlider.maximumValue = 400
             partSizeSlider.minimumValue = 50
         }
@@ -55,8 +55,7 @@ class PartSizeChangeViewController: UIViewController {
         partSizeSlider.value = recommendSize(selectKakera: selectKakera)
         
         renderer = Renderer(mtlView: drawView,
-                            partsCount: 1,
-                            selectKakera: selectKakera + "Size",
+                            selectKakera: selectKakera,
                             isBlendingEnabled: isBlendingEnabled,
                             renderDestination: drawView,
                             albumInfo: albumInfo)
@@ -128,8 +127,8 @@ extension PartSizeChangeViewController {
         self.present(drawViewController, animated: true, completion: nil)
     }
     
-    private func recommendSize(selectKakera: String) -> Float {
-        if selectKakera == "thumbnail" {
+    private func recommendSize(selectKakera: Renderer.KakeraType) -> Float {
+        if selectKakera == .thumbnail {
             return 225
         } else {
             switch partsCount {
