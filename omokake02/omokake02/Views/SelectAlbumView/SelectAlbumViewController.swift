@@ -27,9 +27,17 @@ final class SelectAlbumViewController: UIViewController {
                                forCellReuseIdentifier: "AlbumTableViewCell")
         }
     }
+    private var albumData = [AlbumInfo]()
+    private var viewModel: ViewModel
     
-    var viewModel: ViewModel?
-    var albumData = [AlbumInfo]()
+    init?(coder: NSCoder, viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +124,7 @@ extension SelectAlbumViewController {
 
         } else if note.photosCount > maxParts {
             // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
-            viewModel?.partsCoint = maxParts
+            viewModel.partsCoint = maxParts
 
             let titleLocalizedString = NSLocalizedString("LimitPhotos", comment: "")
             let titleString = String(format: titleLocalizedString, "\(maxParts)")
@@ -145,9 +153,9 @@ extension SelectAlbumViewController {
         haptic.play(.impact(.medium))
 
         let partSizeChangeViewController = PartSizeChangeViewController(
-            selectKakera: viewModel?.selectKakera ?? .sankaku,
-            isBlendingEnabled: viewModel?.isBlendingEnabled ?? false,
-            partsCount: viewModel?.partsCoint ?? 1,
+            selectKakera: viewModel.selectKakera,
+            isBlendingEnabled: viewModel.isBlendingEnabled,
+            partsCount: viewModel.partsCoint,
             albumInfo: note
         )
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
