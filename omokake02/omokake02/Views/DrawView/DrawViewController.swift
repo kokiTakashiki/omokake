@@ -9,51 +9,75 @@
 import UIKit
 import MetalKit
 
-class DrawViewController: UIViewController, MTKViewDelegate {
+final class DrawViewController: UIViewController, MTKViewDelegate {
     private let audio = PlayerController.shared
     private let haptic = HapticFeedbackController.shared
     
-    @IBOutlet weak var drawView: MTKView!
-    @IBOutlet weak var partsCountLabel: UILabel!
+    @IBOutlet private weak var drawView: MTKView!
+    @IBOutlet private weak var partsCountLabel: UILabel!
     
-    var renderer: Renderer!
-    var pressurePointInit:simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
-    var pressureEndPInit:simd_float2 = simd_float2(x: -1.0, y: -1.0)
-    var touchEndFloat:Float = 0.0
+    private var renderer: Renderer?
+    private var pressurePointInit: simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
+    private var pressureEndPInit: simd_float2 = simd_float2(x: -1.0, y: -1.0)
+    private var touchEndFloat: Float = 0.0
     
-    var partsCount:Int = 0
-    var selectKakera: Renderer.KakeraType = .sankaku//:Array<String> = ["kakera","kakera2"]
-    var isBlendingEnabled:Bool = false
-    var customSize:Float = 1.0
+    private var partsCount: Int
+    private var selectKakera: Renderer.KakeraType
+    private var isBlendingEnabled: Bool
+    private var customSize: Float
     
     // thumbnail用
-    var albumInfo:AlbumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
+    private var albumInfo: AlbumInfo
     
-    var shareBackgroundColor:MTLClearColor = .black
-    
+    private var shareBackgroundColor: MTLClearColor
+
+    init?(
+        coder: NSCoder,
+        partsCount: Int,
+        selectKakera: Renderer.KakeraType,
+        isBlendingEnabled: Bool,
+        customSize: Float,
+        albumInfo: AlbumInfo,
+        shareBackgroundColor: MTLClearColor
+    ) {
+        self.partsCount = partsCount
+        self.selectKakera = selectKakera
+        self.isBlendingEnabled = isBlendingEnabled
+        self.customSize = customSize
+        
+        self.albumInfo = albumInfo
+        self.shareBackgroundColor = shareBackgroundColor
+        
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("Metal is not supported")
         }
-        self.view.backgroundColor = .convertMTLClearColor(shareBackgroundColor)
+
         drawView.device = defaultDevice
-        drawView.clearColor = shareBackgroundColor
-        drawView.delegate = self
-        
         guard drawView.device != nil else {
             print("[DrawViewController] Metal is not supported on this device")
             return
         }
+        drawView.clearColor = shareBackgroundColor
         
-        renderer = Renderer(mtlView: drawView,
-                            partsCount: partsCount,
-                            selectKakera: selectKakera,
-                            isBlendingEnabled: isBlendingEnabled,
-                            renderDestination: drawView,
-                            albumInfo: albumInfo)
+        self.renderer = Renderer(mtlView: drawView,
+                                 partsCount: partsCount,
+                                 selectKakera: selectKakera,
+                                 isBlendingEnabled: isBlendingEnabled,
+                                 renderDestination: drawView,
+                                 albumInfo: albumInfo)
+        
+        self.view.backgroundColor = .convertMTLClearColor(shareBackgroundColor)
+        drawView.delegate = self
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
         
         if selectKakera != .thumbnail {
@@ -66,7 +90,12 @@ class DrawViewController: UIViewController, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        let result = renderer.update(pressurePointInit: pressurePointInit, touchEndFloat: touchEndFloat, pressureEndPointInit: pressureEndPInit, customSize: customSize)
+        guard let result = renderer?.update(
+            pressurePointInit: pressurePointInit,
+            touchEndFloat: touchEndFloat,
+            pressureEndPointInit: pressureEndPInit,
+            customSize: customSize
+        ) else { return }
         //フェードオン！
         if fadeOn {
             fadeOut()
