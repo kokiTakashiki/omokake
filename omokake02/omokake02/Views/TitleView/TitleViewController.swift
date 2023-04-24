@@ -6,10 +6,9 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class TitleViewController: UIViewController {
+final class TitleViewController: UIViewController {
     private let audio = PlayerController.shared
     private let haptic = HapticFeedbackController.shared
 

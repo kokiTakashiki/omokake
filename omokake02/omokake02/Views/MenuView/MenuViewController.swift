@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import DeviceKit
 
-class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController {
     private let audio = PlayerController.shared
     private let haptic = HapticFeedbackController.shared
     

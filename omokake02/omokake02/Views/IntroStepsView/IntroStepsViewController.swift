@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-class IntroStepsViewController: UIViewController {
+final class IntroStepsViewController: UIViewController {
     private let introStepsEnvironmentObject = IntroStepsEnvironmentObject()
     private var cancels = Set<AnyCancellable>()
     

@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-class HelpViewController: UIViewController {
+final class HelpViewController: UIViewController {
     enum BackType {
     case button
     case popGesture
