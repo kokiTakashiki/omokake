@@ -71,11 +71,18 @@ extension MenuViewController {
         haptic.play(.impact(.medium))
 
         selectKakera = .thumbnail
-        let selectAlbumViewController = instantiateStoryBoardToViewController(storyBoardName: "SelectAlbumViewController", withIdentifier: "SelectAlbumView") as! SelectAlbumViewController
-        selectAlbumViewController.viewModel = SelectAlbumViewController.ViewModel(partsCoint: partsCount,
-                                                                                  selectKakera: selectKakera,
-                                                                                  isBlendingEnabled: false)
-        selectAlbumViewController.modalPresentationStyle = .fullScreen
+        let selectAlbumViewController = SelectAlbumViewController.makeStoryBoardToViewController() {
+            let viewController = SelectAlbumViewController(
+                coder: $0,
+                viewModel: SelectAlbumViewController.ViewModel(
+                    partsCoint: self.partsCount,
+                    selectKakera: self.selectKakera,
+                    isBlendingEnabled: false
+                )
+            )
+            viewController?.modalPresentationStyle = .fullScreen
+            return viewController
+        }
         self.present(selectAlbumViewController, animated: true, completion: nil)
     }
 }
@@ -145,13 +152,20 @@ extension MenuViewController {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.soft))
 
-        let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
-        drawViewController.partsCount = partsCount
-        drawViewController.selectKakera = selectKakera
-        drawViewController.isBlendingEnabled = isBlendingEnabled
-        drawViewController.albumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
-        drawViewController.modalPresentationStyle = .fullScreen
-        drawViewController.modalTransitionStyle = .crossDissolve
+        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
+            let viewController = DrawViewController(
+                coder: $0,
+                partsCount: self.partsCount,
+                selectKakera: self.selectKakera,
+                isBlendingEnabled: self.isBlendingEnabled,
+                customSize: 1.0,
+                albumInfo: AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0),
+                shareBackgroundColor: .black
+            )
+            viewController?.modalPresentationStyle = .fullScreen
+            viewController?.modalTransitionStyle = .crossDissolve
+            return viewController
+        }
         self.present(drawViewController, animated: true, completion: nil)
     }
 }
