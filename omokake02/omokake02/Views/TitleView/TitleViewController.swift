@@ -15,8 +15,8 @@ final class TitleViewController: UIViewController {
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
-    var tutorialOff:Bool = false
-    var menuOn:Bool = false
+    private var tutorialOff: Bool = false
+    private var menuOn: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
