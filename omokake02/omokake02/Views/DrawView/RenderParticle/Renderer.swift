@@ -48,7 +48,7 @@ class Renderer {
     ) {
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
-        self.commandQ = Renderer.self.device.makeCommandQueue()
+        self.commandQueue = Renderer.self.device.makeCommandQueue()
         self.partsCount = partsCount
         self.renderDestination = renderDestination
         mtlView.framebufferOnly = false
@@ -66,7 +66,7 @@ class Renderer {
     ) {
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
-        self.commandQ = Renderer.self.device.makeCommandQueue()
+        self.commandQueue = Renderer.self.device.makeCommandQueue()
         self.partsCount = 1
         self.renderDestination = renderDestination
         mtlView.framebufferOnly = false
@@ -254,56 +254,73 @@ extension Renderer {
 // MARK: Update
 extension Renderer {
     //public func draw(in view: MTKView) {
-    func update(pressurePointInit: simd_float2, touchEndFloat: Float, pressureEndPointInit: simd_float2, customSize: Float) -> Int{
+    func update(
+        pressurePointInit: simd_float2,
+        isTouchEnd: Bool,
+        pressureEndPointInit: simd_float2,
+        customSize: Float
+    ) -> Int {
         
         for setParticle in setParticles {
             setParticle.generate()
         }
         
-        guard let commandBuf = commandQ?.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
+        guard let commandBuffer = commandQueue?.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
             let currentDrawable = renderDestination.currentDrawable else {
             return 0
         }
-        guard let computeEncoder = commandBuf.makeComputeCommandEncoder() else {
+        guard let computeEncoder = commandBuffer.makeComputeCommandEncoder() else {
             return 0
         }
         computeEncoder.setComputePipelineState(computePipelineState)
-        let threadsPerGroup = MTLSizeMake(computePipelineState.threadExecutionWidth, 1, 1)
-        func dispatchThreads(particleCount: Int) {
-            let threadsPerGrid = MTLSizeMake(particleCount, 1, 1)
-            computeEncoder.dispatchThreads(threadsPerGrid,threadsPerThreadgroup: threadsPerGroup)
-        }
         
         for setParticle in setParticles {
-            var timeBuffer: MTLBuffer! = nil
-            timeBuffer = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: [])
+            guard
+                let timeBuffer = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: []),
+                let pressureBuffer = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: []),
+                let pressureEndBuffer = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: []),
+                let touchEndBool = Renderer.device.makeBuffer(length: MemoryLayout<uint>.size, options: [])
+            else { return 0 }
+
             timeBuffer.label = "time"
-            let vTimeData = timeBuffer.contents().bindMemory(to: Float.self, capacity: 1 / MemoryLayout<Float>.stride)
-            vTimeData[0] = Float(Date().timeIntervalSince(startDate))
+            let timeBufferPointer = timeBuffer.contents().bindMemory(
+                to: Float.self,
+                capacity: 1 / MemoryLayout<Float>.stride
+            )
+            timeBufferPointer[0] = Float(Date().timeIntervalSince(startDate))
             
             // pressurePoint
-            var pressureBuffer1: MTLBuffer! = nil
-            pressureBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: [])
-            pressureBuffer1.label = "pressureZone1"
-            let vPressureBuffer1Data = pressureBuffer1.contents().bindMemory(to: simd_float2.self, capacity: 1 / MemoryLayout<simd_float2>.stride)
-            vPressureBuffer1Data[0] = simd_float2(pressurePointInit.x * Float(drawableSize.width),pressurePointInit.y * Float(drawableSize.height))
+            pressureBuffer.label = "pressureZone1"
+            let pressureBufferPointer = pressureBuffer.contents().bindMemory(
+                to: simd_float2.self,
+                capacity: 1 / MemoryLayout<simd_float2>.stride
+            )
+            pressureBufferPointer[0] = simd_float2(
+                pressurePointInit.x * Float(drawableSize.width),
+                pressurePointInit.y * Float(drawableSize.height)
+            )
             
             // pressureEndPoint
-            var pressureEndBuffer1: MTLBuffer! = nil
-            pressureEndBuffer1 = Renderer.device.makeBuffer(length: MemoryLayout<simd_float2>.size, options: [])
-            pressureEndBuffer1.label = "pressureEndPoint"
-            let pressureEndBuffer1Data = pressureEndBuffer1.contents().bindMemory(to: simd_float2.self, capacity: 1 / MemoryLayout<simd_float2>.stride)
-            pressureEndBuffer1Data[0] = simd_float2(pressureEndPointInit.x * Float(drawableSize.width),pressureEndPointInit.y * Float(drawableSize.height))
+            pressureEndBuffer.label = "pressureEndPoint"
+            let pressureEndBufferPointer = pressureEndBuffer.contents().bindMemory(
+                to: simd_float2.self,
+                capacity: 1 / MemoryLayout<simd_float2>.stride
+            )
+            pressureEndBufferPointer[0] = simd_float2(
+                pressureEndPointInit.x * Float(drawableSize.width),
+                pressureEndPointInit.y * Float(drawableSize.height)
+            )
             
-            var touchEndBool: MTLBuffer! = nil
-            touchEndBool = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: [])
             touchEndBool.label = "touchEndBool"
-            let touchEndBoolData = touchEndBool.contents().bindMemory(to: Float.self, capacity: 1 / MemoryLayout<Float>.stride)
-            touchEndBoolData[0] = touchEndFloat
+            let touchEndBoolPointer = touchEndBool.contents().bindMemory(
+                to: Int.self,
+                capacity: 1 / MemoryLayout<Int>.stride
+            )
+            touchEndBoolPointer[0] = isTouchEnd ? 1 : 0
             
             computeEncoder.setBuffer(timeBuffer, offset: 0, index: 2)
-            computeEncoder.setBuffer(pressureBuffer1, offset: 0, index: 3)
-            computeEncoder.setBuffer(pressureEndBuffer1, offset: 0, index: 4)
+            computeEncoder.setBuffer(pressureBuffer, offset: 0, index: 3)
+            computeEncoder.setBuffer(pressureEndBuffer, offset: 0, index: 4)
             computeEncoder.setBuffer(touchEndBool, offset: 0, index: 5)
             computeEncoder.setBuffer(setParticle.particleBuffer, offset: 0, index: 0)
             computeEncoder.setBytes(&setParticle.particleCount,length: MemoryLayout<uint>.stride, index: 1)
@@ -312,12 +329,16 @@ extension Renderer {
         }
         computeEncoder.endEncoding()
         
-        guard let renderEncoder = commandBuf.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return 0 }
+        guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(
+            descriptor: renderPassDescriptor
+        ) else { return 0 }
         renderEncoder.setRenderPipelineState(renderPipelineState)
-        var size = simd_float2(Float(drawableSize.width),Float(drawableSize.height))
-        renderEncoder.setVertexBytes(&size,
-                                     length: MemoryLayout<simd_float2>.stride,
-                                     index: 0)
+        var size = simd_float2(Float(drawableSize.width), Float(drawableSize.height))
+        renderEncoder.setVertexBytes(
+            &size,
+            length: MemoryLayout<simd_float2>.stride,
+            index: 0
+        )
         
         // label用
         var allCurrentParticles = 0
@@ -328,23 +349,40 @@ extension Renderer {
                                          length: MemoryLayout<simd_float2>.stride,
                                          index: 2)
             
-            var customSizeBuffer: MTLBuffer! = nil
-            customSizeBuffer = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: [])
+            guard let customSizeBuffer = Renderer.device.makeBuffer(
+                length: MemoryLayout<Float>.size,
+                options: []
+            ) else { return 0 }
             customSizeBuffer.label = "customSizeBuffer"
-            let customSizeBufferData = customSizeBuffer.contents().bindMemory(to: Float.self, capacity: 1 / MemoryLayout<Float>.stride)
-            customSizeBufferData[0] = customSize
+            let customSizeBufferPointer = customSizeBuffer.contents().bindMemory(
+                to: Float.self,
+                capacity: 1 / MemoryLayout<Float>.stride
+            )
+            customSizeBufferPointer[0] = customSize
             
             renderEncoder.setVertexBuffer(customSizeBuffer,offset: 0, index: 3)
             renderEncoder.setFragmentTexture(setParticle.particleTexture, index: 0)
-            renderEncoder.drawPrimitives(type: .point, vertexStart: 0,
-                                         vertexCount: 1,
-                                         instanceCount: setParticle.currentParticles)
+            renderEncoder.drawPrimitives(
+                type: .point,
+                vertexStart: 0,
+                vertexCount: 1,
+                instanceCount: setParticle.currentParticles
+            )
             allCurrentParticles += setParticle.currentParticles
         }
         renderEncoder.endEncoding()
-        commandBuf.present(currentDrawable)
-        commandBuf.commit()
+        commandBuffer.present(currentDrawable)
+        commandBuffer.commit()
         
         return allCurrentParticles
+    }
+    
+    private func dispatchThreads(computeEncoder: MTLComputeCommandEncoder, particleCount: Int) {
+        let threadsPerGrid = MTLSizeMake(particleCount, 1, 1)
+        let threadsPerGroup = MTLSizeMake(computePipelineState.threadExecutionWidth, 1, 1)
+        computeEncoder.dispatchThreads(
+            threadsPerGrid,
+            threadsPerThreadgroup: threadsPerGroup
+        )
     }
 }

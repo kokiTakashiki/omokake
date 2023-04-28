@@ -19,7 +19,7 @@ final class DrawViewController: UIViewController, MTKViewDelegate {
     private var renderer: Renderer?
     private var pressurePointInit: simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
     private var pressureEndPInit: simd_float2 = simd_float2(x: -1.0, y: -1.0)
-    private var touchEndFloat: Float = 0.0
+    private var isTouchEnd: Bool = false
     
     private var partsCount: Int
     private var selectKakera: Renderer.KakeraType
@@ -92,7 +92,7 @@ final class DrawViewController: UIViewController, MTKViewDelegate {
     func draw(in view: MTKView) {
         guard let result = renderer?.update(
             pressurePointInit: pressurePointInit,
-            touchEndFloat: touchEndFloat,
+            isTouchEnd: isTouchEnd,
             pressureEndPointInit: pressureEndPInit,
             customSize: customSize
         ) else { return }
@@ -120,7 +120,7 @@ final class DrawViewController: UIViewController, MTKViewDelegate {
         }else if fadeOutCount < 0{
             //reset
             fadeOutCount = 0.25
-            touchEndFloat = 0.0
+            isTouchEnd = false
             fadeOn = false
         }
     }
@@ -156,7 +156,7 @@ final class DrawViewController: UIViewController, MTKViewDelegate {
         y: Float( (drawView.bounds.height - touchLocation.y) / drawView.bounds.height ) )
         pressureEndPInit = touchInit
         pressurePointInit = simd_float2(x: -10000.0, y: -10000.0)
-        touchEndFloat = 1.0
+        isTouchEnd = true
         fadeOn = true
     }
 

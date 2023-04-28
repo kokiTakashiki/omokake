@@ -28,7 +28,7 @@ kernel void perticleCompute(device Particle *particles [[buffer(0)]],
                     const device float& timer [[ buffer(2) ]],
                     const device float2& pressureP [[ buffer(3) ]],
                     const device float2& pressureEndP [[ buffer(4) ]],
-                    const device float& touchEndBool [[ buffer(5) ]],
+                    const device uint& touchEndBool [[ buffer(5) ]],
                     uint id [[thread_position_in_grid]]) {
     if (id >= particlesCount) {
         return;
@@ -75,7 +75,7 @@ kernel void perticleCompute(device Particle *particles [[buffer(0)]],
     // 純粋な長さを求める
     float Endlen = sqrt(EndlengthSquared);
     
-    if(touchEndBool == 1.0){
+    if(touchEndBool == 1){
         if(Endlen < 160.0){
             // 正規化(ベクトルの長さを 1 にする)
             evx /= Endlen;
