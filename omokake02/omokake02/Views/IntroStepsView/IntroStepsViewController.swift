@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-final class IntroStepsViewController: UIViewController {
+class IntroStepsViewController: UIViewController {
     private let introStepsEnvironmentObject = IntroStepsEnvironmentObject()
     private var cancels = Set<AnyCancellable>()
     
@@ -49,7 +49,7 @@ extension IntroStepsViewController {
         defaults.set(true, forKey: "tutorialOff")
         defaults.set(true, forKey: "menuOn")
         
-        let menuViewController = MenuViewController.instantiateStoryBoardToUIViewController()
+        let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
         navi.modalTransitionStyle = .crossDissolve

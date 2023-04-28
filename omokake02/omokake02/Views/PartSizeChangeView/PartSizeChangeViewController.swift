@@ -150,20 +150,15 @@ extension PartSizeChangeViewController {
     private func present() {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.medium))
-        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
-            let viewController = DrawViewController(
-                coder: $0,
-                partsCount: self.partsCount,
-                selectKakera: self.selectKakera,
-                isBlendingEnabled: self.isBlendingEnabled,
-                customSize: self.partSizeSlider.value,
-                albumInfo: self.albumInfo,
-                shareBackgroundColor: self.shareBackgroundColor
-            )
-            viewController?.modalPresentationStyle = .fullScreen
-            viewController?.modalTransitionStyle = .crossDissolve
-            return viewController
-        }
+        let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
+        drawViewController.partsCount = partsCount
+        drawViewController.selectKakera = selectKakera
+        drawViewController.isBlendingEnabled = isBlendingEnabled
+        drawViewController.albumInfo = albumInfo
+        drawViewController.customSize = partSizeSlider.value
+        drawViewController.shareBackgroundColor = shareBackgroundColor
+        drawViewController.modalPresentationStyle = .fullScreen
+        drawViewController.modalTransitionStyle = .crossDissolve
         self.present(drawViewController, animated: true, completion: nil)
     }
     

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */; };
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
 		9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */; };
@@ -76,7 +75,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
 		9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsEnvironmentObject.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */,
 				9ABA85D626BD3CE2002EC738 /* UIColor+Ex.swift */,
 				9ADF72BE276E17F6008608E5 /* UIViewController+Ex.swift */,
-				9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -588,7 +585,6 @@
 				9AA4A16029BD932A00D03310 /* ExtraContentPosition.swift in Sources */,
 				9AEDD93F2352C7250004A0C2 /* CreateParts.swift in Sources */,
 				9AFAD6AC29BC91760060153C /* Player.swift in Sources */,
-				9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */,
 				9AEDD927234A0A1D0004A0C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

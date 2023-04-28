@@ -6,17 +6,18 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-final class TitleViewController: UIViewController {
+class TitleViewController: UIViewController {
     private let audio = PlayerController.shared
     private let haptic = HapticFeedbackController.shared
 
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
-    private var tutorialOff: Bool = false
-    private var menuOn: Bool = false
+    var tutorialOff:Bool = false
+    var menuOn:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ extension TitleViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
-        let menuViewController = MenuViewController.instantiateStoryBoardToUIViewController()
+        let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
         self.present(navi, animated: true, completion: nil)

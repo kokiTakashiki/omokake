@@ -24,12 +24,12 @@ extension Renderer {
     }
 }
 
-class Renderer {
+class Renderer: NSObject {
     static var device: MTLDevice!
     let drawableSize: CGSize!
     var renderDestination: RenderDestinationProvider
     
-    let commandQ: MTLCommandQueue?
+    let commandQ: MTLCommandQueue
     var computePipelineState: MTLComputePipelineState!
     var renderPipelineState: MTLRenderPipelineState!
     let startDate = Date()
@@ -38,37 +38,35 @@ class Renderer {
     
     var partsCount: Int = 0
 
-    init(
-        mtlView: MTKView,
-        partsCount: Int,
-        selectKakera: KakeraType,
-        isBlendingEnabled: Bool,
-        renderDestination: RenderDestinationProvider,
-        albumInfo: AlbumInfo)
-    {
+    
+    init?(mtlView: MTKView, partsCount: Int, selectKakera: KakeraType, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
+        guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
+            return nil
+        }
+        
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
-        self.commandQ = Renderer.self.device.makeCommandQueue()
+        self.commandQ = commandQ
         self.partsCount = partsCount
         self.renderDestination = renderDestination
+        super.init()
         mtlView.framebufferOnly = false
         
         loadMetal(isBlendingEnabled: isBlendingEnabled)
         partsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
     }
     
-    init(
-        mtlView: MTKView,
-        selectKakera: KakeraType,
-        isBlendingEnabled: Bool,
-        renderDestination: RenderDestinationProvider,
-        albumInfo: AlbumInfo)
-    {
+    init?(mtlView: MTKView, selectKakera: KakeraType, isBlendingEnabled: Bool, renderDestination: RenderDestinationProvider, albumInfo: AlbumInfo) {
+        guard let device = MTLCreateSystemDefaultDevice(), let commandQ = device.makeCommandQueue() else {
+            return nil
+        }
+        
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
-        self.commandQ = Renderer.self.device.makeCommandQueue()
+        self.commandQ = commandQ
         self.partsCount = 1
         self.renderDestination = renderDestination
+        super.init()
         mtlView.framebufferOnly = false
         
         loadMetal(isBlendingEnabled: isBlendingEnabled)
@@ -208,10 +206,7 @@ extension Renderer {
 extension Renderer {
     private func loadMetal(isBlendingEnabled: Bool) {
         // Load all the shader files with a metal file extension in the project
-        guard
-            let defaultLibrary = Renderer.device.makeDefaultLibrary(),
-            let computeFunc = defaultLibrary.makeFunction(name: "perticleCompute")
-        else {
+        guard let defaultLibrary = Renderer.device.makeDefaultLibrary(), let computeFunc = defaultLibrary.makeFunction(name: "perticleCompute") else {
             return
         }
         
@@ -260,7 +255,7 @@ extension Renderer {
             setParticle.generate()
         }
         
-        guard let commandBuf = commandQ?.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
+        guard let commandBuf = commandQ.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
             let currentDrawable = renderDestination.currentDrawable else {
             return 0
         }
