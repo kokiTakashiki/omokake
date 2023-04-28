@@ -25,18 +25,18 @@ extension Renderer {
 }
 
 class Renderer {
-    static var device: MTLDevice!
-    let drawableSize: CGSize!
-    var renderDestination: RenderDestinationProvider
+    static private(set) var device: MTLDevice!
+    private(set) var partsCount: Int = 0
+
+    private let drawableSize: CGSize!
+    private var renderDestination: RenderDestinationProvider
     
-    let commandQ: MTLCommandQueue?
-    var computePipelineState: MTLComputePipelineState!
-    var renderPipelineState: MTLRenderPipelineState!
-    let startDate = Date()
-    
-    var setParticles: [ParticleSetup] = []
-    
-    var partsCount: Int = 0
+    private let commandQueue: MTLCommandQueue?
+    private var computePipelineState: MTLComputePipelineState!
+    private var renderPipelineState: MTLRenderPipelineState!
+
+    private let startDate = Date()
+    private var setParticles: [ParticleSetup] = []
 
     init(
         mtlView: MTKView,
