@@ -1,0 +1,19 @@
+{
+    "variables": {
+        "SDK_VERSION": "16.2"
+    },
+    "sdk": "iphonesimulator${SDK_VERSION}",
+    "workspace": "${workspaceRoot}/omokake02/omokake02.xcworkspace",
+    "scheme": "vscodeBuild",
+    "debugConfigurations": [
+        {
+            "name": "Simulator",
+            "cwd": "${buildPath}",
+            "program": "ios-sim",
+            "args": [
+                "launch", "omokake.app/",
+                "--devicetypeid",  "com.apple.CoreSimulator.SimDeviceType.iPhone-14, ${SDK_VERSION}"
+            ]
+        }        
+    ]
+}
