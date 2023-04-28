@@ -32,7 +32,7 @@ class PartSizeChangeViewController: UIViewController {
     //dammy
     private var pressurePointInit: simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
     private var pressureEndPInit: simd_float2 = simd_float2(x: -1.0, y: -1.0)
-    private var touchEndFloat: Float = 0.0
+    private var isTouchEnd: Bool = false
     
     private var shareBackgroundColor: MTLClearColor = .black
     
@@ -117,7 +117,7 @@ extension PartSizeChangeViewController: MTKViewDelegate {
         guard (
             renderer?.update(
                 pressurePointInit: pressurePointInit,
-                touchEndFloat: touchEndFloat,
+                isTouchEnd: isTouchEnd,
                 pressureEndPointInit: pressureEndPInit,
                 customSize: partSizeSlider.value
             )
