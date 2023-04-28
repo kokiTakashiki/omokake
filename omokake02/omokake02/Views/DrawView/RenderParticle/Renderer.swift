@@ -44,8 +44,8 @@ class Renderer {
         selectKakera: KakeraType,
         isBlendingEnabled: Bool,
         renderDestination: RenderDestinationProvider,
-        albumInfo: AlbumInfo)
-    {
+        albumInfo: AlbumInfo
+    ) {
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
         self.commandQ = Renderer.self.device.makeCommandQueue()
@@ -62,8 +62,8 @@ class Renderer {
         selectKakera: KakeraType,
         isBlendingEnabled: Bool,
         renderDestination: RenderDestinationProvider,
-        albumInfo: AlbumInfo)
-    {
+        albumInfo: AlbumInfo
+    ) {
         Renderer.self.device = mtlView.device
         self.drawableSize = mtlView.drawableSize
         self.commandQ = Renderer.self.device.makeCommandQueue()
