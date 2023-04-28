@@ -308,13 +308,7 @@ extension Renderer {
             computeEncoder.setBuffer(setParticle.particleBuffer, offset: 0, index: 0)
             computeEncoder.setBytes(&setParticle.particleCount,length: MemoryLayout<uint>.stride, index: 1)
             
-            if Renderer.device.supportsFeatureSet(.iOS_GPUFamily4_v1) {
-                dispatchThreads(particleCount: setParticle.particleCount)
-            } else {
-                let threadsPerThreadgroup = MTLSize(width: min(computePipelineState.threadExecutionWidth,setParticle.currentParticles), height: 1, depth: 1)
-                let groupsPerGrid = MTLSize(width: setParticle.currentParticles / min(computePipelineState.threadExecutionWidth,setParticle.currentParticles) + 1, height: 1, depth: 1)
-                computeEncoder.dispatchThreadgroups(groupsPerGrid,threadsPerThreadgroup: threadsPerThreadgroup)
-            }
+            dispatchThreads(computeEncoder: computeEncoder, particleCount: setParticle.particleCount)
         }
         computeEncoder.endEncoding()
         
