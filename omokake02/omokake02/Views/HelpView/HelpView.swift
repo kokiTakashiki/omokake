@@ -15,10 +15,10 @@ struct HelpView: View {
     var body: some View {
         ScrollView {
             VStack {
-                screenExplanation()
                 touchInteraction()
                 credit()
                 contactUs(action: {
+                ScreenExplanationView()
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
@@ -60,45 +60,6 @@ extension HelpView {
 
 // MARK: Parts Groups
 private extension HelpView {
-    func screenExplanation() -> some View {
-        ZStack {
-            waku
-            VStack {
-                Group {
-                    Rectangle()
-                        .frame(height: 20)
-                        .foregroundColor(.clear)
-                    title("ScreenExplanation")
-                    description("ScreenDescription")
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.clear)
-                    description("KakeraScreenDescription")
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.clear)
-                    description("omokakeScreenDescription")
-                    iconSideDescription(systemName: "square.and.arrow.up", "ShareButton")
-                    description("ShareButtonDescription")
-                }
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.clear)
-                description("SelectAlbumScreenDescription")
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.clear)
-                description("KakeraSettingScreenDescription")
-                Spacer()
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-            }
-        }
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
-    }
-
     func touchInteraction() -> some View {
         ZStack {
             waku
