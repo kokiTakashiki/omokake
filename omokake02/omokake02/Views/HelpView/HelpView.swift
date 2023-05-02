@@ -15,10 +15,22 @@ struct HelpView: View {
     var body: some View {
         ScrollView {
             VStack {
-                credit()
                 contactUs(action: {
                 ScreenExplanationView()
                 TouchInteractionExplanationView()
+                CreditView(actionSNDLink: {
+                    Task {
+                        audio.playRandom(effects: Audio.EffectFiles.taps)
+                        haptic.play(.impact(.soft))
+                        await openURLAction("https://snd.dev/")
+                    }
+                }, actionDeviceKitLink: {
+                    Task {
+                        audio.playRandom(effects: Audio.EffectFiles.taps)
+                        haptic.play(.impact(.soft))
+                        await openURLAction("https://github.com/devicekit/DeviceKit")
+                    }
+                })
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
@@ -60,77 +72,6 @@ extension HelpView {
 
 // MARK: Parts Groups
 private extension HelpView {
-    func credit() -> some View {
-        ZStack {
-            waku
-            VStack {
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-                title("Credit")
-                HStack {
-                    description("Developing by")
-                    Spacer()
-                    description("DevelopingByName", edge: .trailing)
-                }
-                HStack {
-                    description("Icon Design")
-                    Spacer()
-                    description("IconDesignName", edge: .trailing)
-                }
-                HStack {
-                    description("Special Thanks")
-                    Spacer()
-                    description("SpecialThanksName", edge: .trailing)
-                }
-                HStack(spacing: 0) {
-                    Text("SND")
-                        .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
-                    Spacer()
-                    Button(action: {
-                        Task {
-                            audio.playRandom(effects: Audio.EffectFiles.taps)
-                            haptic.play(.impact(.soft))
-                            await openURLAction("https://snd.dev/")
-                        }
-                    }, label: {
-                        Text("https://snd.dev/")
-                            .fixedSize(horizontal: true, vertical: false)
-                            .font(.custom("Futura Medium", size: 18))
-                    })
-                }
-                .padding(.leading, 28)
-                .padding(.trailing, 26)
-                HStack(spacing: 0) {
-                    Text("DeviceKit")
-                        .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
-                    Spacer()
-                    Button(action: {
-                        Task {
-                            audio.playRandom(effects: Audio.EffectFiles.taps)
-                            haptic.play(.impact(.soft))
-                            await openURLAction("https://github.com/devicekit/DeviceKit")
-                        }
-                    }, label: {
-                        Text("https://github.com/devicekit/DeviceKit")
-                            .fixedSize(horizontal: false, vertical: true)
-                            .font(.custom("Futura Medium", size: 18))
-                    })
-                }
-                .padding(.leading, 28)
-                .padding(.trailing, 26)
-                Spacer()
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-            }
-        }
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
-    }
-
     func contactUs(action: @escaping () -> Void) -> some View {
         ZStack {
             waku
