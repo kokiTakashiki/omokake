@@ -15,7 +15,6 @@ struct HelpView: View {
     var body: some View {
         ScrollView {
             VStack {
-                contactUs(action: {
                 ScreenExplanationView()
                 TouchInteractionExplanationView()
                 CreditView(actionSNDLink: {
@@ -31,6 +30,7 @@ struct HelpView: View {
                         await openURLAction("https://github.com/devicekit/DeviceKit")
                     }
                 })
+                ContactUsView(action: {
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
@@ -67,41 +67,6 @@ extension HelpView {
         UIApplication.shared.open(url, options: [:], completionHandler: { result in
             print(result) // → true
         })
-    }
-}
-
-// MARK: Parts Groups
-private extension HelpView {
-    func contactUs(action: @escaping () -> Void) -> some View {
-        ZStack {
-            waku
-            VStack {
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-                title("ContactUs")
-                HStack(spacing: 0) {
-                    Text("Twitter")
-                        .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
-                    Spacer()
-                    Button(action: {
-                        action()
-                    }, label: {
-                        Text("@bluewhitered123")
-                            .fixedSize(horizontal: true, vertical: false)
-                            .font(.custom("Futura Medium", size: 18))
-                    })
-                }
-                .padding(.leading, 30)
-                .padding(.trailing, 30)
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-            }
-        }
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
     }
 }
 
