@@ -15,10 +15,10 @@ struct HelpView: View {
     var body: some View {
         ScrollView {
             VStack {
-                touchInteraction()
                 credit()
                 contactUs(action: {
                 ScreenExplanationView()
+                TouchInteractionExplanationView()
                     Task {
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
@@ -60,26 +60,6 @@ extension HelpView {
 
 // MARK: Parts Groups
 private extension HelpView {
-    func touchInteraction() -> some View {
-        ZStack {
-            waku
-            VStack {
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-                title("TouchInteraction")
-                imageSideDescription(name: "shusoku", "TouchInteractionDescription1")
-                imageSideDescription(name: "kakusan", "TouchInteractionDescription2")
-                Spacer()
-                Rectangle()
-                    .frame(height: 20)
-                    .foregroundColor(.clear)
-            }
-        }
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
-    }
-
     func credit() -> some View {
         ZStack {
             waku
