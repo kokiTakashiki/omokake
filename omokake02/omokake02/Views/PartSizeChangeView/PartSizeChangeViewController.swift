@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if os(xrOS)
+final class PartSizeChangeViewController: UIViewController {}
+#elseif os(iOS)
 import MetalKit
 
 class PartSizeChangeViewController: UIViewController {
@@ -131,15 +134,15 @@ extension PartSizeChangeViewController {
     private func selectBackGroundColor(_ selectButtonTag: Int) -> MTLClearColor {
         switch selectButtonTag {
         case 1:
-            return .convertUIColor(.backgroundMagenta)
+            return .convertUIColor(.myBackgroundMagenta)
         case 2:
-            return .convertUIColor(.backgroundCyaan)
+            return .convertUIColor(.myBackgroundCyaan)
         case 3:
-            return .convertUIColor(.backgroundGreen)
+            return .convertUIColor(.myBackgroundGreen)
         case 4:
-            return .convertUIColor(.backgroundYellow)
+            return .convertUIColor(.myBackgroundYellow)
         case 5:
-            return .convertUIColor(.backgroundOrange)
+            return .convertUIColor(.myBackgroundOrange)
         case 6:
             return .black
         default:
@@ -195,3 +198,4 @@ extension PartSizeChangeViewController {
         
     }
 }
+#endif

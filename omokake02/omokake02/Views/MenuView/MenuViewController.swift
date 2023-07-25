@@ -6,9 +6,12 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
-import Foundation
 import UIKit
+#if os(xrOS)
+
+#elseif os(iOS)
 import DeviceKit
+#endif
 
 class MenuViewController: UIViewController {
     private let audio = PlayerController.shared
@@ -85,6 +88,9 @@ extension MenuViewController {
     // TODO: チップの性能ごとに自動判定したい。
     // このサイトを参考に分岐　https://www.antutu.com/en/ranking/ios1.htm
     private func deviceMaxParts() {
+#if os(xrOS)
+        partsAlertAndPresent(maxParts: 300000)
+#elseif os(iOS)
         let device = Device.current
         print("[MenuViewController] device \(device)")
         switch device {
@@ -101,6 +107,7 @@ extension MenuViewController {
         default:
             partsAlertAndPresent(maxParts: 100000)
         }
+#endif
     }
     
     // 6s 100000
@@ -145,6 +152,9 @@ extension MenuViewController {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.soft))
 
+#if os(xrOS)
+        let drawViewController = DrawViewController()
+#elseif os(iOS)
         let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
         drawViewController.partsCount = partsCount
         drawViewController.selectKakera = selectKakera
@@ -152,6 +162,7 @@ extension MenuViewController {
         drawViewController.albumInfo = AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0)
         drawViewController.modalPresentationStyle = .fullScreen
         drawViewController.modalTransitionStyle = .crossDissolve
+#endif
         self.present(drawViewController, animated: true, completion: nil)
     }
 }

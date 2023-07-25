@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if os(xrOS)
+final class DrawViewController: UIViewController {}
+#elseif os(iOS)
 import MetalKit
 
 class DrawViewController: UIViewController, MTKViewDelegate {
@@ -193,3 +196,4 @@ extension DrawViewController {
         return image.resizeImage(maxSize: 4194304) ?? UIImage.emptyImage(color: .black, frame: CGRect.zero)
     }
 }
+#endif

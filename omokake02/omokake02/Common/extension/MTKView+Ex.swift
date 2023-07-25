@@ -6,6 +6,10 @@
 //  Copyright © 2021 takasiki. All rights reserved.
 //
 
+#if os(xrOS)
+
+#elseif os(iOS)
 import MetalKit
 
 extension MTKView : RenderDestinationProvider {}
+#endif

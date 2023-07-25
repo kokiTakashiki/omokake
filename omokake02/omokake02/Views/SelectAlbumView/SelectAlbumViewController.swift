@@ -7,7 +7,11 @@
 //
 
 import UIKit
+#if os(xrOS)
+
+#elseif os(iOS)
 import DeviceKit
+#endif
 
 final class SelectAlbumViewController: UIViewController {
     private let audio = PlayerController.shared
@@ -79,6 +83,9 @@ extension SelectAlbumViewController {
     // TODO: チップの性能ごとに自動判定したい。
     // このサイトを参考に分岐　https://www.antutu.com/en/ranking/ios1.htm
     private func deviceMaxParts(_ note: AlbumInfo) {
+#if os(xrOS)
+        partsAlertAndPresent(note, maxParts: 400)
+#elseif os(iOS)
         let device = Device.current
         print("[SelectAlbumViewController] deviceMaxParts \(device)")
         switch device {
@@ -95,6 +102,7 @@ extension SelectAlbumViewController {
         default:
             partsAlertAndPresent(note, maxParts: 200)
         }
+#endif
     }
     
     // 6s 200
@@ -143,13 +151,16 @@ extension SelectAlbumViewController {
     private func present(_ note: AlbumInfo) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
-
+#if os(xrOS)
+        let partSizeChangeViewController = PartSizeChangeViewController()
+#elseif os(iOS)
         let partSizeChangeViewController = PartSizeChangeViewController(
             selectKakera: viewModel?.selectKakera ?? .sankaku,
             isBlendingEnabled: viewModel?.isBlendingEnabled ?? false,
             partsCount: viewModel?.partsCoint ?? 1,
             albumInfo: note
         )
+#endif
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
         self.present(partSizeChangeViewController, animated: true, completion: nil)
     }

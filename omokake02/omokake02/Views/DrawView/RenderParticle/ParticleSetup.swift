@@ -6,6 +6,9 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
+#if os(xrOS)
+class ParticleSetup {}
+#elseif os(iOS)
 import MetalKit
 
 struct Particle {
@@ -137,3 +140,4 @@ class ParticleSetup {
         }
     }
 }
+#endif

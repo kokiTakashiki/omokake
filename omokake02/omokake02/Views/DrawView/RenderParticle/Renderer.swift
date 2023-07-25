@@ -6,6 +6,17 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
+#if os(xrOS)
+import Foundation
+class Renderer: NSObject {}
+extension Renderer {
+    enum KakeraType {
+        case sankaku
+        case sikaku
+        case thumbnail
+    }
+}
+#elseif os(iOS)
 import MetalKit
 
 protocol RenderDestinationProvider {
@@ -349,3 +360,4 @@ extension Renderer {
         return allCurrentParticles
     }
 }
+#endif

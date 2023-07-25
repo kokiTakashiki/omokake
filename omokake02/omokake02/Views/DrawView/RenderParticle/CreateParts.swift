@@ -6,6 +6,9 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
+#if os(xrOS)
+
+#elseif os(iOS)
 import CoreGraphics
 import Metal
 import simd
@@ -212,3 +215,4 @@ extension Renderer {
         return particleSetup
     }
 }
+#endif
