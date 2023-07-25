@@ -60,7 +60,11 @@ extension View {
             Image(name)
                 .resizable()
                 .scaledToFit()
+#if os(xrOS)
+                .frame(width: 100)
+#elseif os(iOS)
                 .frame(width: UIScreen.main.bounds.width / 3)
+#endif
             Rectangle()
                 .frame(width: 10, height: 20)
                 .foregroundColor(.clear)
