@@ -15,7 +15,7 @@ struct ExtraStepContent: View {
     let extraContentSize : CGSize?
     var body: some View {
         ZStack {
-            if let extra = extraContent[index] {
+            if case let extra: String = extraContent[index] {
                 if UIImage(systemName: extra) != nil {
                     Image(systemName: extra)
                 } else {
