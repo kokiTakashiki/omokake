@@ -15,10 +15,13 @@ enum ImpactFeedbackStyle: Int {
     case soft
     case rigid
 
+#if os(xrOS)
+
+#elseif os(iOS)
     var value: UIImpactFeedbackGenerator.FeedbackStyle {
         return .init(rawValue: rawValue)!
     }
-
+#endif
 }
 
 enum NotificationFeedbackType: Int {
@@ -26,10 +29,13 @@ enum NotificationFeedbackType: Int {
     case failure
     case error
 
+#if os(xrOS)
+
+#elseif os(iOS)
     var value: UINotificationFeedbackGenerator.FeedbackType {
         return .init(rawValue: rawValue)!
     }
-
+#endif
 }
 
 enum Haptic {
@@ -42,13 +48,21 @@ final class HapticFeedbackController {
 
     static let shared = HapticFeedbackController()
     private init() {}
+
+#if os(xrOS)
+
+#elseif os(iOS)
     private var impactFeedbackGenerator: UIImpactFeedbackGenerator?
     private var notificationFeedbackGenerator: UINotificationFeedbackGenerator?
     private var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
+#endif
 
     func play(_ haptic: Haptic) {
         switch haptic {
         case .impact(let style, let intensity):
+#if os(xrOS)
+
+#elseif os(iOS)
             impactFeedbackGenerator = UIImpactFeedbackGenerator(style: style.value)
             impactFeedbackGenerator?.prepare()
             
@@ -58,17 +72,24 @@ final class HapticFeedbackController {
                 impactFeedbackGenerator?.impactOccurred()
             }
             impactFeedbackGenerator = nil
-
+#endif
         case .notification(let type):
+#if os(xrOS)
+
+#elseif os(iOS)
             notificationFeedbackGenerator = UINotificationFeedbackGenerator()
             notificationFeedbackGenerator?.prepare()
             notificationFeedbackGenerator?.notificationOccurred(type.value)
             notificationFeedbackGenerator = nil
-
+#endif
         case .selection:
+#if os(xrOS)
+
+#elseif os(iOS)
             selectionFeedbackGenerator = UISelectionFeedbackGenerator()
             selectionFeedbackGenerator?.prepare()
             selectionFeedbackGenerator = nil
+#endif
         }
     }
 
