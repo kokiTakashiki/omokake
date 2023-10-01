@@ -10,30 +10,40 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func description(_ content: LocalizedStringKey, edge: Edge = .leading) -> some View {
+    func description(
+        _ content: LocalizedStringKey,
+        edge: Edge = .leading,
+        isFixedSizeHorizontal: Bool = false,
+        isLeadingSpace: Bool = true,
+        isTrailingSpace: Bool = true
+    ) -> some View {
         HStack {
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
+            if isLeadingSpace {
+                Rectangle()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.clear)
+            }
             switch edge {
             case .leading:
                 Text(content)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
                     .font(.custom("Futura Medium", size: 18))
                 Spacer()
             case .trailing:
                 Spacer()
                 Text(content)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
                     .font(.custom("Futura Medium", size: 18))
             case .top:
                 EmptyView()
             case .bottom:
                 EmptyView()
             }
-            Rectangle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.clear)
+            if isTrailingSpace {
+                Rectangle()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.clear)
+            }
         }
     }
 

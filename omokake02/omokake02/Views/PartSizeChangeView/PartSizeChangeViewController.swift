@@ -9,7 +9,7 @@
 import UIKit
 import MetalKit
 
-class PartSizeChangeViewController: UIViewController {
+final class PartSizeChangeViewController: UIViewController {
 
     // MARK: IBOutlet
 

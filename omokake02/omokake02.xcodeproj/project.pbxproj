@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */; };
+		9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */; };
+		9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */; };
+		9A2790E729FC1EA2008E4F32 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E629FC1EA2008E4F32 /* CreditView.swift */; };
+		9A2790E929FD0DEE008E4F32 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E829FD0DEE008E4F32 /* ContactUsView.swift */; };
 		9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */; };
 		9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */; };
 		9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */; };
@@ -77,6 +81,10 @@
 
 /* Begin PBXFileReference section */
 		9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExplanationView.swift; sourceTree = "<group>"; };
+		9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchInteractionExplanationView.swift; sourceTree = "<group>"; };
+		9A2790E629FC1EA2008E4F32 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		9A2790E829FD0DEE008E4F32 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
 		9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsEnvironmentObject.swift; sourceTree = "<group>"; };
@@ -161,6 +169,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A2790E129FBCB63008E4F32 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */,
+				9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */,
+				9A2790E629FC1EA2008E4F32 /* CreditView.swift */,
+				9A2790E829FD0DEE008E4F32 /* ContactUsView.swift */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
 		9A27D894277229AB000720A7 /* SelectGoogleDriveImagesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +275,7 @@
 			children = (
 				9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */,
 				9AFAD69D29BA409E0060153C /* HelpView.swift */,
+				9A2790E129FBCB63008E4F32 /* content */,
 			);
 			path = HelpView;
 			sourceTree = "<group>";
@@ -549,6 +569,7 @@
 				9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */,
 				9AC3914B26A57D2900CA7D19 /* PHPhotoLibrary+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
+				9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */,
 				9AA4A16429BDC08D00D03310 /* IntroSteps.swift in Sources */,
 				9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */,
 				9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */,
@@ -561,6 +582,7 @@
 				9AD9FB89269F352B00518925 /* AlbumInfo.swift in Sources */,
 				9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */,
 				9AEDD93B234A0F190004A0C2 /* shader.metal in Sources */,
+				9A2790E729FC1EA2008E4F32 /* CreditView.swift in Sources */,
 				9AA4A16D29BDD3B000D03310 /* InfoOmokakeView.swift in Sources */,
 				9AA4A16B29BDD35D00D03310 /* DeniedView.swift in Sources */,
 				9AFAD6A329BC8E8B0060153C /* FileSoundProtocol.swift in Sources */,
@@ -579,6 +601,8 @@
 				9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */,
 				9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */,
 				9AEDD93D2352BC3D0004A0C2 /* ParticleSetup.swift in Sources */,
+				9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */,
+				9A2790E929FD0DEE008E4F32 /* ContactUsView.swift in Sources */,
 				9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */,
 				9AA4A17329BE1E7200D03310 /* HowToUseView.swift in Sources */,
 				9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */,
