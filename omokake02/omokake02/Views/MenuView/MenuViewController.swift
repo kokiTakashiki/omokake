@@ -102,7 +102,8 @@ extension MenuViewController {
                 .iPhone12Pro, .iPhone12, .iPhone12ProMax, .iPhone12Mini,
                 .iPhoneSE3, .iPhone13Mini, .iPhone13,
                 .iPhone14, .iPhone14Plus, .iPhone13Pro,
-                .iPhone13ProMax, .iPhone14ProMax, .iPhone14Pro:
+                .iPhone13ProMax, .iPhone14ProMax, .iPhone14Pro,
+                .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax:
             partsAlertAndPresent(maxParts: 300000)
 
         default:
