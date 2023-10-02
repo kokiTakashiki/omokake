@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A12BB542ACB09E700FA21D4 /* DeviceKit */; };
 		9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */; };
 		9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */; };
 		9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */; };
@@ -43,7 +44,6 @@
 		9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3914F26ADABDB00CA7D19 /* UIView+Ex.swift */; };
 		9ACD9F4E276901D600487980 /* DrawViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ACD9F4D276901D600487980 /* DrawViewController.storyboard */; };
 		9AD9FB75269C977B00518925 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB74269C977B00518925 /* UIImage+Ex.swift */; };
-		9AD9FB78269EF0C600518925 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9AD9FB77269EF0C600518925 /* DeviceKit */; };
 		9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB7A269F306100518925 /* SelectAlbumViewController.swift */; };
 		9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9FB7C269F308800518925 /* SelectAlbumViewController.storyboard */; };
 		9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9FB82269F316A00518925 /* AlbumTableViewCell.swift */; };
@@ -162,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD9FB78269EF0C600518925 /* DeviceKit in Frameworks */,
+				9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +487,7 @@
 			);
 			name = omokake02;
 			packageProductDependencies = (
-				9AD9FB77269EF0C600518925 /* DeviceKit */,
+				9A12BB542ACB09E700FA21D4 /* DeviceKit */,
 			);
 			productName = omokake02;
 			productReference = 9AEDD923234A0A1D0004A0C2 /* omokake.app */;
@@ -519,7 +519,7 @@
 			);
 			mainGroup = 9AEDD91A234A0A1D0004A0C2;
 			packageReferences = (
-				9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+				9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = 9AEDD924234A0A1D0004A0C2 /* Products */;
 			projectDirPath = "";
@@ -846,20 +846,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+		9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.0;
+				minimumVersion = 5.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9AD9FB77269EF0C600518925 /* DeviceKit */ = {
+		9A12BB542ACB09E700FA21D4 /* DeviceKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9AD9FB76269EF0C600518925 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			package = 9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */;
 			productName = DeviceKit;
 		};
 /* End XCSwiftPackageProductDependency section */
