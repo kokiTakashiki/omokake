@@ -8,6 +8,7 @@
 
 import UIKit
 import DeviceKit
+import OmokakeModel
 
 final class SelectAlbumViewController: UIViewController {
     private let audio = PlayerController.shared

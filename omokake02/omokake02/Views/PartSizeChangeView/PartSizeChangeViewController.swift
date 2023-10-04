@@ -8,6 +8,7 @@
 
 import UIKit
 import MetalKit
+import OmokakeModel
 
 final class PartSizeChangeViewController: UIViewController {
 

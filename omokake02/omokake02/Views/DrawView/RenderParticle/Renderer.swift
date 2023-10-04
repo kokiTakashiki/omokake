@@ -7,6 +7,7 @@
 //
 
 import MetalKit
+import OmokakeModel
 
 protocol RenderDestinationProvider {
     var currentRenderPassDescriptor: MTLRenderPassDescriptor? { get }

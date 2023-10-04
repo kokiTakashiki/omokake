@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import Combine
+import OmokakeModel
 
 final class HelpViewController: UIViewController {
     enum BackType {

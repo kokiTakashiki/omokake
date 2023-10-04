@@ -8,6 +8,7 @@
 
 import UIKit
 import MetalKit
+import OmokakeModel
 
 final class DrawViewController: UIViewController, MTKViewDelegate {
     private let audio = PlayerController.shared
@@ -210,6 +211,7 @@ extension DrawViewController {
         
     }
     
+    // TODO: Modelに移す。
     private func selectScreenShot()-> UIImage {
         //コンテキスト開始
         UIGraphicsBeginImageContextWithOptions(self.drawView.bounds.size, false, 0.0)

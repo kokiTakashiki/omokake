@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OmokakeModel
 
 final class TitleViewController: UIViewController {
     private let audio = PlayerController.shared

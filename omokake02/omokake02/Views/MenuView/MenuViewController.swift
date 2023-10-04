@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import DeviceKit
+import OmokakeModel
 
 final class MenuViewController: UIViewController {
     private let audio = PlayerController.shared

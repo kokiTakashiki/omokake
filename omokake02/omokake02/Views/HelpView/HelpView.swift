@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import OmokakeModel
 
 struct HelpView: View {
     private let audio = PlayerController.shared
