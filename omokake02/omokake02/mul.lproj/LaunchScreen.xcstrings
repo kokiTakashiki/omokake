@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ID4-kZ-Zm7.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Copyright  ©︎ 2021 KokiTakeda. All rights reserved.\"; ObjectID = \"ID4-kZ-Zm7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Copyright  ©︎ 2021 KokiTakeda. All rights reserved."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright  ©︎ 2021 KokiTakeda. All rights reserved."
+          }
+        }
+      }
+    },
+    "sLZ-bi-CpA.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"omokake\"; ObjectID = \"sLZ-bi-CpA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "omokake"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "omokake"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

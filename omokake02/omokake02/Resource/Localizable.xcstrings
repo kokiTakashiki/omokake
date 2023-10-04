@@ -1,0 +1,685 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "@bluewhitered123" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "@bluewhitered123"
+          }
+        }
+      }
+    },
+    "10orMore" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The number of photos is small. The work may be unsatisfactory. The recommended number of photos is 10 or more."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は10枚以上です。"
+          }
+        }
+      }
+    },
+    "200orMore" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The number of photos is small. The work may be unsatisfactory. The recommended number of photos is 200 or more."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真の枚数が少ないです。\n満足のいかない作品になる可能性が\nあります。\n推奨は200枚以上です。"
+          }
+        }
+      }
+    },
+    "AboutOmokake" : {
+      "comment" : "IntroSteps",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Omokake"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "おもかけについて"
+          }
+        }
+      }
+    },
+    "AboutOmokakeDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omokake is an application based on the concept of touching many memories.\n\nIt accesses photos in iPhone and iCloud and generates \"pieces\" as many as the number of photos.\n\nTherefore, if the number of photos taken is small, there is a possibility that the work will not be satisfactory.\n\nThere is no effect on the photos."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "おもかけは、\nたくさんの思い出に触れること\nをコンセプトにしたアプリです。\n\niPhoneとiCloud内の写真に\nアクセスし\n写真の数だけ\n「かけら」を生成します。\n\nそのため撮った写真が少ないと満足のいく作品にならない可能性があります。\n\n写真への影響はありません。"
+          }
+        }
+      }
+    },
+    "AccessData" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access your data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データの取得"
+          }
+        }
+      }
+    },
+    "AccessDataDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access your iPhone and iCloud photos.\nAllowing access will be reflected in your work."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhoneとiCloud内の写真に\nアクセスします。\n許可をしていただくことにより\n作品に反映できます。"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
+    "BestPhotographer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are the best photographer."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "あなたは最高の写真家です。"
+          }
+        }
+      }
+    },
+    "CappedPhotos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The thumbnail display is capped at %@ photos."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サムネイル表示では%@枚の\n表示が上限となっています。"
+          }
+        }
+      }
+    },
+    "ContactUs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お問い合わせ"
+          }
+        }
+      }
+    },
+    "Credit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credit"
+          }
+        }
+      }
+    },
+    "DataAcquisitionComplete" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data acquisition complete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データの取得完了"
+          }
+        }
+      }
+    },
+    "DataAcquisitionCompleteDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data acquisition is complete.\n\nFinally, here is an explanation of how to use the system."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取得できました。\n\n最後に使い方の説明です。"
+          }
+        }
+      }
+    },
+    "Developing by" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developing by"
+          }
+        }
+      }
+    },
+    "DevelopingByName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koki Takeda"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "武田 孝騎"
+          }
+        }
+      }
+    },
+    "DeviceKit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DeviceKit"
+          }
+        }
+      }
+    },
+    "FailedToAcquireData" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to acquire data."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データの取得失敗"
+          }
+        }
+      }
+    },
+    "FailedToAcquireDataDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not retrieve.\n\nPlease select all photos from the iPhone settings screen.\n\nOnly acquisition and not writing is performed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取得できませんでした。\n\niPhoneの設定画面から\nすべての写真を選択してください。\n\nなお取得のみで書き込みは行いません。"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "comment" : "SelectAlbumView",
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "HowToUse" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to use"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使い方について"
+          }
+        }
+      }
+    },
+    "HowToUseDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A more detailed explanation of touch interactions, for example, can be found at any time using the \"?\" button for a more detailed explanation of touch interaction."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タッチインタラクションに関してなど\nより詳細な説明は「？」ボタンで いつでもみることができます。"
+          }
+        }
+      }
+    },
+    "https://github.com/devicekit/DeviceKit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://github.com/devicekit/DeviceKit"
+          }
+        }
+      }
+    },
+    "https://snd.dev/" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://snd.dev/"
+          }
+        }
+      }
+    },
+    "Icon Design" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon Design"
+          }
+        }
+      }
+    },
+    "IconDesignName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayana Takeda"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "武田 綾奈"
+          }
+        }
+      }
+    },
+    "kakeraNumberHelpText" : {
+      "comment" : "MenuView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number of photos taken so far (kakera)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今まで撮った写真の数（かけらの数）"
+          }
+        }
+      }
+    },
+    "KakeraScreenDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kakera screen\nSelect the shape of the kakera.\nThe color is random."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kakera画面\n「かけら」の形を選択します。\n※色はランダムです。"
+          }
+        }
+      }
+    },
+    "KakeraSettingScreenDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kakera Setting screen\nYou can change the thumbnail size and background color."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kakera Setting画面\nサムネイルの大きさと背景色を変更できます。"
+          }
+        }
+      }
+    },
+    "LimitedGeneratingKakera" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your iPhone is limited to generating %@ kakera. %@ kakera is generated."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "あなたのiPhoneでは%@かけらの\n生成が限界となっています。\n%@かけらを生成します。"
+          }
+        }
+      }
+    },
+    "LimitPhotos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limit to %@ photos."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@枚に制限します。"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        }
+      }
+    },
+    "omokakeScreenDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "omokake screen\nA \"kakera\" will be floating in the air."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "omokake画面\n「かけら」がゆらゆらと流れます。"
+          }
+        }
+      }
+    },
+    "Photos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photos：%@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真数：%@"
+          }
+        }
+      }
+    },
+    "ScreenDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate as many \"kakera\" as the number of photos stored in iPhone and iCloud."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iPhoneとiCloud内に保存された写真の数だけ「かけら」を生成します。"
+          }
+        }
+      }
+    },
+    "ScreenExplanation" : {
+      "comment" : "HelpView",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screen Explanation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面説明"
+          }
+        }
+      }
+    },
+    "SelectAlbumScreenDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Album screen\nSelect an album, and thumbnails of the selected photos will be played as \"pieces\".\nThere is no effect on the photo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Album画面\nアルバムを選択してその写真のサムネイルを「かけら」として流します。\n※写真への影響はありません。"
+          }
+        }
+      }
+    },
+    "ShareButton" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share button."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有ボタンです。"
+          }
+        }
+      }
+    },
+    "ShareButtonDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can share screenshots from various applications."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スクリーンショットを各種アプリから共有できます。"
+          }
+        }
+      }
+    },
+    "SND" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SND"
+          }
+        }
+      }
+    },
+    "Special Thanks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Special Thanks"
+          }
+        }
+      }
+    },
+    "SpecialThanksName" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harumi Sagawa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "佐川 晴海"
+          }
+        }
+      }
+    },
+    "TakeMorePhotos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like to take more photos?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真をもっと\n撮ってみませんか？"
+          }
+        }
+      }
+    },
+    "TouchInteraction" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch Interaction"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タッチインタラクション"
+          }
+        }
+      }
+    },
+    "TouchInteractionDescription1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With a long press pieces pieces are collected."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長押しでかけらが\n集まります。"
+          }
+        }
+      }
+    },
+    "TouchInteractionDescription2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When released pieces will scatter. pieces will be scattered."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "離すとかけらが\n散らばります。"
+          }
+        }
+      }
+    },
+    "Twitter" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twitter"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
