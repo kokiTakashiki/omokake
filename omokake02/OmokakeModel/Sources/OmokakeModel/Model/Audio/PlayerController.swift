@@ -36,7 +36,7 @@ public class PlayerController {
 
 extension PlayerController: Player {
     
-    func play(music: Music) {
+    public func play(music: Music) {
         guard let newMusic = try? AVAudioPlayer(soundFile: music) else { return }
         newMusic.volume = musicVolume
         newMusic.play()
@@ -44,18 +44,18 @@ extension PlayerController: Player {
         currentMusic = newMusic
     }
 
-    func pause(music: Music) {
+    public func pause(music: Music) {
         currentMusic?.pause()
     }
 
-    func play(effect: Effect) {
+    public func play(effect: Effect) {
         guard let newEffect = try? AVAudioPlayer(soundFile: effect) else { return }
         newEffect.volume = effectVolume
         newEffect.play()
         currentEffect = newEffect
     }
 
-    func playRandom(effects: [Effect]) {
+    public func playRandom(effects: [Effect]) {
         guard
             let effect = effects.randomElement(),
             let newEffect = try? AVAudioPlayer(soundFile: effect)

@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import Photos
 
-struct PhotosManager {
-    static func allPhotoCount() -> Int {
+public struct PhotosManager {
+    public static func allPhotoCount() -> Int {
         
         var assets:PHFetchResult<PHAsset>!
         var sendCount:Int = 0
@@ -59,7 +59,7 @@ struct PhotosManager {
         return sendCount - sendVideoCount
     }
     
-    static func albumTitleNames() -> [AlbumInfo] {
+    public static func albumTitleNames() -> [AlbumInfo] {
         var result:[AlbumInfo] = []
         // アルバムをフェッチ
         let assetCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
@@ -81,7 +81,7 @@ struct PhotosManager {
     }
     
     // get the assets in a collection
-    static func assets(fromCollection collection: PHAssetCollection) -> PHFetchResult<PHAsset> {
+    public static func assets(fromCollection collection: PHAssetCollection) -> PHFetchResult<PHAsset> {
         let photosOptions = PHFetchOptions()
         photosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         photosOptions.predicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
@@ -89,7 +89,7 @@ struct PhotosManager {
         return PHAsset.fetchAssets(in: collection, options: photosOptions)
     }
     
-    static func favoriteAlbumInfo() -> AlbumInfo {
+    public static func favoriteAlbumInfo() -> AlbumInfo {
         var result:[AlbumInfo] = []
         let assetCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
         assetCollection.enumerateObjects { assetCollection, index, _ in
@@ -106,7 +106,7 @@ struct PhotosManager {
         return result[0]
     }
     
-    static func favoriteThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+    public static func favoriteThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var originalArray = [UIImage]()
         let imageManager = PHCachingImageManager()
         
@@ -133,7 +133,7 @@ struct PhotosManager {
         return originalArray
     }
     
-    static func selectThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+    public static func selectThumbnail(albumInfo: AlbumInfo, partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var originalArray = [UIImage]()
         let imageManager = PHCachingImageManager()
         
@@ -160,7 +160,7 @@ struct PhotosManager {
         return originalArray
     }
     
-    static func allThumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
+    public static func allThumbnail(partsCount: Int, thumbnailSize: CGSize) -> [UIImage] {
         var requestFetchResult: PHFetchResult<PHAsset>!
         
         var originalArray = [UIImage]()
@@ -202,7 +202,7 @@ struct PhotosManager {
         return originalArray
     }
     
-    static func Authorization() -> PhotoAccessState {
+    public static func authorization() -> PhotoAccessState {
         
         let semaphore = DispatchSemaphore(value: 0)
         var status: PhotoAccessState = .none

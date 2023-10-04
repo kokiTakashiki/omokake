@@ -2,13 +2,15 @@
 //  UIImage+Ex.swift
 //  omokake02
 //
-//  Created by takedatakashiki on 2023/10/04.
-//  Copyright © 2023 takasiki. All rights reserved.
+//  Created by 武田孝騎 on 2021/07/13.
+//  Copyright © 2021 takasiki. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 extension UIImage {
+
     static func emptyImage(color: UIColor, frame: CGRect) -> UIImage {
         // グラフィックスコンテキストを作成
         UIGraphicsBeginImageContext(frame.size)
@@ -27,6 +29,28 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return image
+    }
+    
+    func imageWithAlpha(alpha: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: alpha)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage ?? UIImage.emptyImage(color: .black, frame: CGRect.zero)
+    }
+    
+    /// 上下逆になった画像を反転する
+    func fixedOrientation() -> UIImage? {
+        if self.imageOrientation == UIImage.Orientation.up {
+            return self
+        }
+        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        UIGraphicsEndImageContext()
+        return newImage
     }
 
     /// イメージ縮小
@@ -51,7 +75,7 @@ extension UIImage {
     }
 
     /// 最大容量チェック
-    private func isLessThanMaxByte(data: NSData?, maxDataByte: Int) -> Bool {
+    func isLessThanMaxByte(data: NSData?, maxDataByte: Int) -> Bool {
 
         if maxDataByte <= 0 {
             // 最大容量の指定が無い場合はOK扱い
