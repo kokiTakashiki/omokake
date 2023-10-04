@@ -10,6 +10,7 @@
 		9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A12BB542ACB09E700FA21D4 /* DeviceKit */; };
 		9A12BB572ACB0BAB00FA21D4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A12BB562ACB0BAB00FA21D4 /* Localizable.xcstrings */; };
 		9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A12BB5A2ACB0BBE00FA21D4 /* InfoPlist.xcstrings */; };
+		9A12BB5E2ACCDF0400FA21D4 /* OmokakeModel in Frameworks */ = {isa = PBXBuildFile; productRef = 9A12BB5D2ACCDF0400FA21D4 /* OmokakeModel */; };
 		9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */; };
 		9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */; };
 		9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */; };
@@ -165,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A12BB5E2ACCDF0400FA21D4 /* OmokakeModel in Frameworks */,
 				9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +493,7 @@
 			name = omokake02;
 			packageProductDependencies = (
 				9A12BB542ACB09E700FA21D4 /* DeviceKit */,
+				9A12BB5D2ACCDF0400FA21D4 /* OmokakeModel */,
 			);
 			productName = omokake02;
 			productReference = 9AEDD923234A0A1D0004A0C2 /* omokake.app */;
@@ -524,6 +527,7 @@
 			mainGroup = 9AEDD91A234A0A1D0004A0C2;
 			packageReferences = (
 				9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+				9A12BB5C2ACCDF0400FA21D4 /* XCLocalSwiftPackageReference "OmokakeModel" */,
 			);
 			productRefGroup = 9AEDD924234A0A1D0004A0C2 /* Products */;
 			projectDirPath = "";
@@ -838,6 +842,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		9A12BB5C2ACCDF0400FA21D4 /* XCLocalSwiftPackageReference "OmokakeModel" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = OmokakeModel;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -854,6 +865,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */;
 			productName = DeviceKit;
+		};
+		9A12BB5D2ACCDF0400FA21D4 /* OmokakeModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OmokakeModel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
