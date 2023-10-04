@@ -1,9 +1,0 @@
-/* 
-  InfoPlist.strings
-  omokake02
-
-  Created by 武田孝騎 on 2023/03/13.
-  Copyright © 2023 takasiki. All rights reserved.
-*/
-
-NSPhotoLibraryUsageDescription = "\"Access to all photos\" is required in order for the photos to be reflected in the work. There is no effect on the photos.";

@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A12BB542ACB09E700FA21D4 /* DeviceKit */; };
+		9A12BB572ACB0BAB00FA21D4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A12BB562ACB0BAB00FA21D4 /* Localizable.xcstrings */; };
+		9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A12BB5A2ACB0BBE00FA21D4 /* InfoPlist.xcstrings */; };
 		9A2790E029F6E28A008E4F32 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */; };
 		9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */; };
 		9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */; };
@@ -68,7 +70,6 @@
 		9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD957235481A80004A0C2 /* buttonSKakera.png */; };
 		9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD958235481A80004A0C2 /* buttonKakera.png */; };
 		9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD959235481A90004A0C2 /* comingSoon1.png */; };
-		9AFAD69729BA3BB30060153C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AFAD69929BA3BB30060153C /* Localizable.strings */; };
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFAD6A329BC8E8B0060153C /* FileSoundProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD6A229BC8E8B0060153C /* FileSoundProtocol.swift */; };
@@ -80,6 +81,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A12BB562ACB0BAB00FA21D4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9A12BB582ACB0BAB00FA21D4 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/TitleViewController.xcstrings; sourceTree = "<group>"; };
+		9A12BB592ACB0BAB00FA21D4 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
+		9A12BB5A2ACB0BBE00FA21D4 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		9A2790DF29F6E28A008E4F32 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		9A2790E229FBCB7B008E4F32 /* ScreenExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExplanationView.swift; sourceTree = "<group>"; };
 		9A2790E429FC1DC5008E4F32 /* TouchInteractionExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchInteractionExplanationView.swift; sourceTree = "<group>"; };
@@ -88,8 +93,6 @@
 		9A5FBA5626BA244600B09CC8 /* PartSizeChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSizeChangeViewController.swift; sourceTree = "<group>"; };
 		9A5FBA5D26BBAFBE00B09CC8 /* MTKView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+Ex.swift"; sourceTree = "<group>"; };
 		9A78B99E29BE245100DD70DD /* IntroStepsEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsEnvironmentObject.swift; sourceTree = "<group>"; };
-		9A78B9A629BE306A00DD70DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9A78B9A829BE306F00DD70DD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A78B9A929BF755300DD70DD /* HapticFeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackController.swift; sourceTree = "<group>"; };
 		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartSizeChangeViewController.xib; sourceTree = "<group>"; };
@@ -383,7 +386,7 @@
 				9AFAD69429BA3B750060153C /* Resource */,
 				9AEDD92F234A0A1F0004A0C2 /* LaunchScreen.storyboard */,
 				9AEDD932234A0A1F0004A0C2 /* Info.plist */,
-				9A78B9A729BE306A00DD70DD /* InfoPlist.strings */,
+				9A12BB5A2ACB0BBE00FA21D4 /* InfoPlist.xcstrings */,
 			);
 			path = omokake02;
 			sourceTree = "<group>";
@@ -419,7 +422,7 @@
 				9AEDD9402352C9A10004A0C2 /* texture */,
 				9AEDD92D234A0A1F0004A0C2 /* Assets.xcassets */,
 				9ABA85D426BCC09A002EC738 /* ColorAssets.xcassets */,
-				9AFAD69929BA3BB30060153C /* Localizable.strings */,
+				9A12BB562ACB0BAB00FA21D4 /* Localizable.xcstrings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -499,8 +502,9 @@
 		9AEDD91B234A0A1D0004A0C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = takasiki;
 				TargetAttributes = {
 					9AEDD922234A0A1D0004A0C2 = {
@@ -542,15 +546,15 @@
 				9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */,
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
 				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
+				9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */,
 				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
 				9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */,
 				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
-				9A78B9A529BE306A00DD70DD /* InfoPlist.strings in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
 				9AEDD92C234A0A1D0004A0C2 /* TitleViewController.storyboard in Resources */,
-				9AFAD69729BA3BB30060153C /* Localizable.strings in Resources */,
+				9A12BB572ACB0BAB00FA21D4 /* Localizable.xcstrings in Resources */,
 				9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */,
 				9AD9FB85269F33CE00518925 /* AlbumTableViewCell.xib in Resources */,
 			);
@@ -620,20 +624,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9A78B9A729BE306A00DD70DD /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A78B9A629BE306A00DD70DD /* en */,
-				9A78B9A829BE306F00DD70DD /* ja */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		9AEDD92A234A0A1D0004A0C2 /* TitleViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9AEDD92B234A0A1D0004A0C2 /* Base */,
-				9AFAD69129BA3AAB0060153C /* ja */,
+				9A12BB582ACB0BAB00FA21D4 /* mul */,
 			);
 			name = TitleViewController.storyboard;
 			sourceTree = "<group>";
@@ -642,18 +637,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				9AEDD930234A0A1F0004A0C2 /* Base */,
-				9AFAD69229BA3AAB0060153C /* ja */,
+				9A12BB592ACB0BAB00FA21D4 /* mul */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		9AFAD69929BA3BB30060153C /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9AFAD69829BA3BB30060153C /* en */,
-				9AFAD69A29BA3BB80060153C /* ja */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -698,6 +684,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -713,6 +700,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -761,6 +749,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -770,9 +759,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -795,6 +786,7 @@
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = takashiki.omokake;
 				PRODUCT_NAME = omokake;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -817,6 +809,7 @@
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = takashiki.omokake;
 				PRODUCT_NAME = omokake;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
