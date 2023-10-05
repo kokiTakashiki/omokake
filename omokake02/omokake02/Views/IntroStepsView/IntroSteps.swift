@@ -13,41 +13,39 @@ struct IntroSteps: View {
     @EnvironmentObject var environmentObject: IntroStepsEnvironmentObject
     
     var body: some View {
-        ZStack {
-            VStack {
-                // MULTI-STEPS View
-                MultiStepsView(
-                    steps: $environmentObject.status,
-                    extraContent: IntroStepsState.allValues,
-                    extraContentPosition: .above,
-                    extraContentSize: CGSize(width: 30, height: 30),
-                    action: {_ in }
-                ) {
-                    RoundedRectangle(cornerRadius: 5).frame(height: 10)
-                }
-                .padding()
-                .font(.title)
-                
+        VStack {
+            // MULTI-STEPS View
+            MultiStepsView(
+                steps: $environmentObject.status,
+                extraContent: IntroStepsState.allValues,
+                extraContentPosition: .above,
+                extraContentSize: CGSize(width: 30, height: 30),
+                action: {_ in }
+            ) {
+                RoundedRectangle(cornerRadius: 5).frame(height: 10)
+            }
+            .padding()
+            .font(.title)
+            
+            Spacer()
+
+            if environmentObject.photoAccessState == .none ||
+                environmentObject.photoAccessState == .Authorized
+            {
+                content()
                 Spacer()
-
-                if environmentObject.photoAccessState == .none ||
-                    environmentObject.photoAccessState == .Authorized
-                {
-                    content()
-                    Spacer()
-                    bottomButton
-                } else {
-                    DeniedView() {
-                        Task {
-                            await environmentObject.deniedViewAction()
-                        }
+                bottomButton
+            } else {
+                DeniedView() {
+                    Task {
+                        await environmentObject.deniedViewAction()
                     }
-                    Spacer()
-                    bottomBackButton
                 }
-
+                Spacer()
+                bottomBackButton
             }
         }
+        .padding(.bottom, 10.0)
     }
 }
 
