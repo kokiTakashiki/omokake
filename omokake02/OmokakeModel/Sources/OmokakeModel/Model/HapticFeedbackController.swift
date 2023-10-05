@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum ImpactFeedbackStyle: Int {
+@available(iOS 13, *)
+public enum ImpactFeedbackStyle: Int {
     case light
     case medium
     case heavy
@@ -21,7 +22,8 @@ enum ImpactFeedbackStyle: Int {
 
 }
 
-enum NotificationFeedbackType: Int {
+@available(iOS 13, *)
+public enum NotificationFeedbackType: Int {
     case success
     case failure
     case error
@@ -32,21 +34,23 @@ enum NotificationFeedbackType: Int {
 
 }
 
-enum Haptic {
+@available(iOS 13, *)
+public enum Haptic {
     case impact(_ style: ImpactFeedbackStyle, intensity: CGFloat? = nil)
     case notification(_ type: NotificationFeedbackType)
     case selection
 }
 
-final class HapticFeedbackController {
+@available(iOS 13, *)
+public final class HapticFeedbackController {
 
-    static let shared = HapticFeedbackController()
+    public static let shared = HapticFeedbackController()
     private init() {}
     private var impactFeedbackGenerator: UIImpactFeedbackGenerator?
     private var notificationFeedbackGenerator: UINotificationFeedbackGenerator?
     private var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
 
-    func play(_ haptic: Haptic) {
+    public func play(_ haptic: Haptic) {
         switch haptic {
         case .impact(let style, let intensity):
             impactFeedbackGenerator = UIImpactFeedbackGenerator(style: style.value)

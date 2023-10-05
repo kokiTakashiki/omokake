@@ -8,22 +8,22 @@
 
 import Foundation
 
-struct Audio {
-    struct MusicFiles {
+public struct Audio {
+    public enum MusicFiles {
         //static let yourMusic = Music(fileName: "MusicName", type: "mp3")
     }
 
-    struct EffectFiles {
-        static let caution = Effect(fileName: "caution", type: "wav")
-        static let celebration = Effect(fileName: "celebration", type: "wav")
-        static let taps = [
+    public enum EffectFiles {
+        public static let caution = Effect(fileName: "caution", type: "wav")
+        public static let celebration = Effect(fileName: "celebration", type: "wav")
+        public static let taps = [
             Effect(fileName: "tap_01", type: "wav"),
             Effect(fileName: "tap_02", type: "wav"),
             Effect(fileName: "tap_03", type: "wav"),
             Effect(fileName: "tap_04", type: "wav"),
             Effect(fileName: "tap_05", type: "wav"),
         ]
-        static let transitionDown = Effect(fileName: "transition_down", type: "wav")
-        static let transitionUp = Effect(fileName: "transition_up", type: "wav")
+        public static let transitionDown = Effect(fileName: "transition_down", type: "wav")
+        public static let transitionUp = Effect(fileName: "transition_up", type: "wav")
     }
 }

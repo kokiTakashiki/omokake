@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import OmokakeModel
 
 @MainActor
 final class IntroStepsEnvironmentObject: ObservableObject {
@@ -87,7 +88,7 @@ final class IntroStepsEnvironmentObject: ObservableObject {
     }
     
     private func authorization() async -> PhotoAccessState {
-        let state: PhotoAccessState = PhotosManager.Authorization()
+        let state: PhotoAccessState = PhotosManager.authorization()
         sleep(2)
         showingIndicator = false
         if state == .Authorized {

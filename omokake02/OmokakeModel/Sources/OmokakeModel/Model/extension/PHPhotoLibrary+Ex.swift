@@ -8,7 +8,7 @@
 
 import Photos
 
-enum PhotoAccessState {
+public enum PhotoAccessState {
     case none
     case Authorized
     case Denied
@@ -20,7 +20,7 @@ enum PhotoAccessState {
 
 extension PHPhotoLibrary {
     //ユーザーに許可を促す.
-    class func Authorization( userCompletionHandler: @escaping (PhotoAccessState) -> Void){
+    static func Authorization( userCompletionHandler: @escaping (PhotoAccessState) -> Void){
         
         if #available(iOS 14.0, *) {
             PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
