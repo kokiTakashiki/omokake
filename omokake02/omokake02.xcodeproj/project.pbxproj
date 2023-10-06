@@ -68,6 +68,7 @@
 		9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD959235481A90004A0C2 /* comingSoon1.png */; };
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
+		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		9AEDD959235481A90004A0C2 /* comingSoon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comingSoon1.png; sourceTree = "<group>"; };
 		9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			children = (
 				9AD9FB86269F347B00518925 /* Common */,
 				9AEDD926234A0A1D0004A0C2 /* AppDelegate.swift */,
+				9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */,
 				9AFAD69F29BC8DB90060153C /* Views */,
 				9A6FCF5F2ACCE4860020C361 /* UseCase */,
 				9AFAD69429BA3B750060153C /* Resource */,
@@ -541,6 +544,7 @@
 				9A5FBA5E26BBAFBE00B09CC8 /* MTKView+Ex.swift in Sources */,
 				9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */,
 				9AEDD939234A0EEC0004A0C2 /* Renderer.swift in Sources */,
+				9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */,
 				9AEDD93D2352BC3D0004A0C2 /* ParticleSetup.swift in Sources */,
 				9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */,
 				9A2790E929FD0DEE008E4F32 /* ContactUsView.swift in Sources */,
