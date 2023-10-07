@@ -380,10 +380,24 @@ extension Renderer {
     
     private func dispatchThreads(computeEncoder: MTLComputeCommandEncoder, particleCount: Int) {
         let threadsPerGrid = MTLSizeMake(particleCount, 1, 1)
-        let threadsPerGroup = MTLSizeMake(computePipelineState.threadExecutionWidth, 1, 1)
-        computeEncoder.dispatchThreads(
-            threadsPerGrid,
-            threadsPerThreadgroup: threadsPerGroup
-        )
+
+        let maxTotalThreadsPerThreadgroup = computePipelineState.maxTotalThreadsPerThreadgroup
+        let threadExecutionWidth          = computePipelineState.threadExecutionWidth
+        let width  = maxTotalThreadsPerThreadgroup / threadExecutionWidth * threadExecutionWidth
+        let height = 1
+        let depth  = 1
+        let threadsPerGroup = MTLSize(width: width, height: height, depth: depth)
+
+        if Self.device.supportsFamily(.apple4) {
+            computeEncoder.dispatchThreads(
+                threadsPerGrid,
+                threadsPerThreadgroup: threadsPerGroup
+            )
+        } else {
+            computeEncoder.dispatchThreadgroups(
+                threadsPerGrid,
+                threadsPerThreadgroup: threadsPerGroup
+            )
+        }
     }
 }
