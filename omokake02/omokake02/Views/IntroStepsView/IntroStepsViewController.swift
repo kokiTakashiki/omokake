@@ -33,7 +33,7 @@ final class IntroStepsViewController: UIViewController {
         introStepsEnvironmentObject.tapHowToUseNextButtonSubject
             .sink { [weak self] value in
                 if value == true {
-                    Task {
+                    Task { @MainActor in
                         await self?.showMenu()
                     }
                 }
