@@ -37,7 +37,7 @@ struct IntroSteps: View {
                 bottomButton
             } else {
                 DeniedView() {
-                    Task {
+                    Task { @MainActor in
                         await environmentObject.deniedViewAction()
                     }
                 }
@@ -60,7 +60,7 @@ extension IntroSteps {
             InfoOmokakeView()
         case .approval:
             ApprovalView() {
-                Task {
+                Task { @MainActor in
                     await environmentObject.approvalViewAction()
                 }
             }
@@ -76,7 +76,7 @@ extension IntroSteps {
         // BOTTOM BUTTONS
         HStack {
             Button(action: {
-                Task {
+                Task { @MainActor in
                     await environmentObject.bottomButtonAction()
                 }
             }, label: {
@@ -102,7 +102,7 @@ extension IntroSteps {
     private var bottomBackButton: some View {
         HStack {
             Button(action: {
-                Task {
+                Task { @MainActor in
                     await environmentObject.bottomBackButtonAction()
                 }
             }, label: {

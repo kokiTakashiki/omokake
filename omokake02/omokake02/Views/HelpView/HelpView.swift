@@ -19,20 +19,20 @@ struct HelpView: View {
                 ScreenExplanationView()
                 TouchInteractionExplanationView()
                 CreditView(actionSNDLink: {
-                    Task {
+                    Task { @MainActor in
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
                         await openURLAction("https://snd.dev/")
                     }
                 }, actionDeviceKitLink: {
-                    Task {
+                    Task { @MainActor in
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
                         await openURLAction("https://github.com/devicekit/DeviceKit")
                     }
                 })
                 ContactUsView(action: {
-                    Task {
+                    Task { @MainActor in
                         audio.playRandom(effects: Audio.EffectFiles.taps)
                         haptic.play(.impact(.soft))
                         await twitterButtonAction()
