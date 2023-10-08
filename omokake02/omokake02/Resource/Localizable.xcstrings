@@ -11,6 +11,9 @@
         }
       }
     },
+    "%lld kakera" : {
+
+    },
     "10orMore" : {
       "localizations" : {
         "en" : {
@@ -372,6 +375,9 @@
         }
       }
     },
+    "kakera" : {
+
+    },
     "kakeraNumberHelpText" : {
       "comment" : "MenuView",
       "localizations" : {
@@ -422,6 +428,7 @@
       }
     },
     "LimitedGeneratingKakera" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -462,6 +469,9 @@
           }
         }
       }
+    },
+    "OK" : {
+
     },
     "omokakeScreenDescription" : {
       "localizations" : {
