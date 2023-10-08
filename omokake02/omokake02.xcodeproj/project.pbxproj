@@ -66,6 +66,7 @@
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
+		9AFFDFF02AD15FDD00941E30 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */; };
 		9AFFDFF62AD1AE0800941E30 /* AnimationSequence in Frameworks */ = {isa = PBXBuildFile; productRef = 9AFFDFF52AD1AE0800941E30 /* AnimationSequence */; };
 		9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */; };
 		9AFFDFFA2AD2416800941E30 /* MenuViewEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */; };
@@ -134,6 +135,7 @@
 		9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
 		9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewEnvironmentObject.swift; sourceTree = "<group>"; };
 		9AFFDFFB2AD2489D00941E30 /* View+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+alert.swift"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
 				9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */,
+				9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */,
 				9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */,
 			);
 			path = MenuView;
@@ -529,6 +532,7 @@
 				9AA4A16229BD9B0600D03310 /* IntroStepsState.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */,
+				9AFFDFF02AD15FDD00941E30 /* MenuView.swift in Sources */,
 				9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
 				9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */,
