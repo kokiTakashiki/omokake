@@ -81,7 +81,7 @@ struct CreditView: View {
                     }, label: {
                         Text("https://snd.dev/")
                             .fixedSize(horizontal: true, vertical: false)
-                            .font(.futuraMedium(size: 18))
+                            .font(.futuraMedium(size: 14))
                     })
                 }
                 .padding(.leading, 28)
@@ -96,7 +96,22 @@ struct CreditView: View {
                     }, label: {
                         Text("https://github.com/devicekit/DeviceKit")
                             .fixedSize(horizontal: false, vertical: true)
-                            .font(.futuraMedium(size: 18))
+                            .font(.futuraMedium(size: 14))
+                    })
+                }
+                .padding(.leading, 28)
+                .padding(.trailing, 26)
+                HStack(spacing: 0) {
+                    Text("AnimationSequence")
+                        .fixedSize(horizontal: true, vertical: false)
+                        .font(.futuraMedium(size: 18))
+                    Spacer()
+                    Button(action: {
+                        actionDeviceKitLink()
+                    }, label: {
+                        Text("https://github.com/cristhianleonli/AnimationSequence")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .font(.futuraMedium(size: 14))
                     })
                 }
                 .padding(.leading, 28)

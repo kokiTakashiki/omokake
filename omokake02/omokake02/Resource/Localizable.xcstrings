@@ -108,6 +108,9 @@
         }
       }
     },
+    "AnimationSequence" : {
+
+    },
     "Back" : {
       "localizations" : {
         "ja" : {
@@ -319,6 +322,9 @@
           }
         }
       }
+    },
+    "https://github.com/cristhianleonli/AnimationSequence" : {
+
     },
     "https://github.com/devicekit/DeviceKit" : {
       "localizations" : {

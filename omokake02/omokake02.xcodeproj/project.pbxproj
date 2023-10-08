@@ -69,6 +69,7 @@
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
+		9AFFDFF62AD1AE0800941E30 /* AnimationSequence in Frameworks */ = {isa = PBXBuildFile; productRef = 9AFFDFF52AD1AE0800941E30 /* AnimationSequence */; };
 		9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFFDFF62AD1AE0800941E30 /* AnimationSequence in Frameworks */,
 				9A12BB5E2ACCDF0400FA21D4 /* OmokakeModel in Frameworks */,
 				9A12BB552ACB09E700FA21D4 /* DeviceKit in Frameworks */,
 			);
@@ -441,6 +443,7 @@
 			packageProductDependencies = (
 				9A12BB542ACB09E700FA21D4 /* DeviceKit */,
 				9A12BB5D2ACCDF0400FA21D4 /* OmokakeModel */,
+				9AFFDFF52AD1AE0800941E30 /* AnimationSequence */,
 			);
 			productName = omokake02;
 			productReference = 9AEDD923234A0A1D0004A0C2 /* omokake.app */;
@@ -475,6 +478,7 @@
 			packageReferences = (
 				9A12BB532ACB09E700FA21D4 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 				9A12BB5C2ACCDF0400FA21D4 /* XCLocalSwiftPackageReference "OmokakeModel" */,
+				9AFFDFF42AD1AE0700941E30 /* XCRemoteSwiftPackageReference "AnimationSequence" */,
 			);
 			productRefGroup = 9AEDD924234A0A1D0004A0C2 /* Products */;
 			projectDirPath = "";
@@ -797,6 +801,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		9AFFDFF42AD1AE0700941E30 /* XCRemoteSwiftPackageReference "AnimationSequence" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cristhianleonli/AnimationSequence.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -808,6 +820,11 @@
 		9A12BB5D2ACCDF0400FA21D4 /* OmokakeModel */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OmokakeModel;
+		};
+		9AFFDFF52AD1AE0800941E30 /* AnimationSequence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AFFDFF42AD1AE0700941E30 /* XCRemoteSwiftPackageReference "AnimationSequence" */;
+			productName = AnimationSequence;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
