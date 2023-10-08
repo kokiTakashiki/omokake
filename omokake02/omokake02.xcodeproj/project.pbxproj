@@ -63,9 +63,6 @@
 		9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD94923543B260004A0C2 /* TitleViewController.swift */; };
 		9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */; };
 		9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD95023547C3A0004A0C2 /* kakeraS1.png */; };
-		9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD957235481A80004A0C2 /* buttonSKakera.png */; };
-		9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD958235481A80004A0C2 /* buttonKakera.png */; };
-		9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD959235481A90004A0C2 /* comingSoon1.png */; };
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
@@ -132,9 +129,6 @@
 		9AEDD94923543B260004A0C2 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS2.png; sourceTree = "<group>"; };
 		9AEDD95023547C3A0004A0C2 /* kakeraS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS1.png; sourceTree = "<group>"; };
-		9AEDD957235481A80004A0C2 /* buttonSKakera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonSKakera.png; sourceTree = "<group>"; };
-		9AEDD958235481A80004A0C2 /* buttonKakera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonKakera.png; sourceTree = "<group>"; };
-		9AEDD959235481A90004A0C2 /* comingSoon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comingSoon1.png; sourceTree = "<group>"; };
 		9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -380,9 +374,6 @@
 				9AEDD947235390320004A0C2 /* kakera2.png */,
 				9AEDD95023547C3A0004A0C2 /* kakeraS1.png */,
 				9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */,
-				9AEDD958235481A80004A0C2 /* buttonKakera.png */,
-				9AEDD957235481A80004A0C2 /* buttonSKakera.png */,
-				9AEDD959235481A90004A0C2 /* comingSoon1.png */,
 			);
 			path = texture;
 			sourceTree = "<group>";
@@ -497,12 +488,9 @@
 				9ACD9F4E276901D600487980 /* DrawViewController.storyboard in Resources */,
 				9AEDD9422352C9B30004A0C2 /* kakera.png in Resources */,
 				9AEDD931234A0A1F0004A0C2 /* LaunchScreen.storyboard in Resources */,
-				9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */,
 				9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */,
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
-				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
 				9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */,
-				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
 				9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */,
 				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
