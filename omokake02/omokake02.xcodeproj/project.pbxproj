@@ -23,7 +23,6 @@
 		9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */; };
 		9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
-		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA4A15229BD77EE00D03310 /* IntroStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */; };
 		9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */; };
 		9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15729BD913900D03310 /* ExtraStepContent.swift */; };
@@ -90,7 +89,6 @@
 		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartSizeChangeViewController.xib; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
-		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsViewController.swift; sourceTree = "<group>"; };
 		9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Ex.swift"; sourceTree = "<group>"; };
 		9AA4A15729BD913900D03310 /* ExtraStepContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraStepContent.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
-				9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */,
 				9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */,
 				9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */,
 			);
@@ -501,7 +498,6 @@
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
 				9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */,
 				9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */,
-				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
