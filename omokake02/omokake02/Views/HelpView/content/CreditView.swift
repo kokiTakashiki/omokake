@@ -74,14 +74,14 @@ struct CreditView: View {
                 HStack(spacing: 0) {
                     Text("SND")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
+                        .font(.futuraMedium(size: 18))
                     Spacer()
                     Button(action: {
                         actionSNDLink()
                     }, label: {
                         Text("https://snd.dev/")
                             .fixedSize(horizontal: true, vertical: false)
-                            .font(.custom("Futura Medium", size: 18))
+                            .font(.futuraMedium(size: 18))
                     })
                 }
                 .padding(.leading, 28)
@@ -89,14 +89,14 @@ struct CreditView: View {
                 HStack(spacing: 0) {
                     Text("DeviceKit")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
+                        .font(.futuraMedium(size: 18))
                     Spacer()
                     Button(action: {
                         actionDeviceKitLink()
                     }, label: {
                         Text("https://github.com/devicekit/DeviceKit")
                             .fixedSize(horizontal: false, vertical: true)
-                            .font(.custom("Futura Medium", size: 18))
+                            .font(.futuraMedium(size: 18))
                     })
                 }
                 .padding(.leading, 28)

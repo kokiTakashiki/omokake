@@ -26,14 +26,14 @@ struct ContactUsView: View {
                 HStack(spacing: 0) {
                     Text("Twitter")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.custom("Futura Medium", size: 18))
+                        .font(.futuraMedium(size: 18))
                     Spacer()
                     Button(action: {
                         action()
                     }, label: {
                         Text("@bluewhitered123")
                             .fixedSize(horizontal: true, vertical: false)
-                            .font(.custom("Futura Medium", size: 18))
+                            .font(.futuraMedium(size: 18))
                     })
                 }
                 .padding(.leading, 30)
