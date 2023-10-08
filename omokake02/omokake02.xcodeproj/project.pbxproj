@@ -68,6 +68,7 @@
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
 		9AFFDFF62AD1AE0800941E30 /* AnimationSequence in Frameworks */ = {isa = PBXBuildFile; productRef = 9AFFDFF52AD1AE0800941E30 /* AnimationSequence */; };
 		9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */; };
+		9AFFDFFC2AD2489D00941E30 /* View+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFFB2AD2489D00941E30 /* View+alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
+		9AFFDFFB2AD2489D00941E30 /* View+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */,
 				9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */,
 				9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */,
+				9AFFDFFB2AD2489D00941E30 /* View+alert.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				9A2790E729FC1EA2008E4F32 /* CreditView.swift in Sources */,
 				9AA4A16D29BDD3B000D03310 /* InfoOmokakeView.swift in Sources */,
 				9AA4A16B29BDD35D00D03310 /* DeniedView.swift in Sources */,
+				9AFFDFFC2AD2489D00941E30 /* View+alert.swift in Sources */,
 				9AA4A16829BDCF2A00D03310 /* View+UIParts.swift in Sources */,
 				9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */,
 				9AEDD944235370C40004A0C2 /* MenuViewController.swift in Sources */,
