@@ -6,168 +6,64 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import DeviceKit
-import OmokakeModel
+import SwiftUI
+import Combine
+
+extension MenuViewController {
+    enum TransitionCase {
+        case modalPresentation
+        case pushViewController
+    }
+}
 
 final class MenuViewController: UIViewController {
-    private let audio = PlayerController.shared
-    private let haptic = HapticFeedbackController.shared
-    
-    //var partsCount:Int = 0
-    @IBOutlet private weak var photosCount: UILabel!
-    @IBOutlet private weak var photosCountHelpLabel: UILabel!
-    private var partsCount = 0
-    private var selectKakera: Renderer.KakeraType = .sankaku
-    private var isBlendingEnabled: Bool = false
+    private let menuViewEnvironmentObject = MenuViewEnvironmentObject()
+    private var cancels = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        partsCount = PhotosManager.allPhotoCount()
-        photosCount.text = String(partsCount) + " kakera"
-        photosCountHelpLabel.text = NSLocalizedString("kakeraNumberHelpText", comment: "")
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
+        let hostingController: UIHostingController = UIHostingController(
+            rootView: MenuView().environmentObject(menuViewEnvironmentObject)
+        )
+        self.addChild(hostingController)
+        self.view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        hostingController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        hostingController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        hostingController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        hostingController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        hostingController.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
         self.navigationController?.navigationBar.isHidden = true
+        
+        // MARK: Bind
+        menuViewEnvironmentObject.presentSubject
+            .sink { [weak self] (viewController, transitionCase) in
+                self?.present(viewController, transitionCase: transitionCase)
+            }
+            .store(in: &cancels)
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-}
-
-// MARK: IBAction
-extension MenuViewController {
-    @IBAction func helpButtonAction(_ sender: Any) {
-        audio.playRandom(effects: Audio.EffectFiles.taps)
-        haptic.play(.impact(.medium))
-
-        let helpViewController = HelpViewController()
-        self.navigationController?.pushViewController(helpViewController, animated: true)
-    }
-    
-    @IBAction func sankakuAction(_ sender: Any) {
-        selectKakera = .sankaku//["kakera","kakera2"]
-        isBlendingEnabled = true
-        deviceMaxParts()
-    }
-    
-    @IBAction func sikakuAction(_ sender: Any) {
-        selectKakera = .sikaku//["kakeraS1","kakeraS2"]
-        isBlendingEnabled = true
-        deviceMaxParts()
-    }
-    
-    @IBAction func thumbnailAction(_ sender: Any) {
-        audio.playRandom(effects: Audio.EffectFiles.taps)
-        haptic.play(.impact(.medium))
-
-        selectKakera = .thumbnail
-        let selectAlbumViewController = SelectAlbumViewController.makeStoryBoardToViewController() {
-            let viewController = SelectAlbumViewController(
-                coder: $0,
-                viewModel: SelectAlbumViewController.ViewModel(
-                    partsCoint: self.partsCount,
-                    selectKakera: self.selectKakera,
-                    isBlendingEnabled: false
-                )
-            )
-            viewController?.modalPresentationStyle = .fullScreen
-            return viewController
-        }
-        self.present(selectAlbumViewController, animated: true, completion: nil)
     }
 }
 
 // MARK: praivate
 extension MenuViewController {
-    // TODO: チップの性能ごとに自動判定したい。
-    // このサイトを参考に分岐　https://www.antutu.com/en/ranking/ios1.htm
-    private func deviceMaxParts() {
-        let device = Device.current
-        print("[MenuViewController] device \(device)")
-        switch device {
-        case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
-            partsAlertAndPresent(maxParts: 200000)
-
-        case .iPhone11, .iPhone11ProMax, .iPhone11Pro,
-                .iPhone12Pro, .iPhone12, .iPhone12ProMax, .iPhone12Mini,
-                .iPhoneSE3, .iPhone13Mini, .iPhone13,
-                .iPhone14, .iPhone14Plus, .iPhone13Pro,
-                .iPhone13ProMax, .iPhone14ProMax, .iPhone14Pro,
-                .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax:
-            partsAlertAndPresent(maxParts: 300000)
-
-        default:
-            partsAlertAndPresent(maxParts: 100000)
+    private func present(
+        _ viewController: UIViewController,
+        transitionCase: TransitionCase
+    ) {
+        switch transitionCase {
+        case .modalPresentation:
+            present(viewController, animated: true, completion: nil)
+        case .pushViewController:
+            navigationController?.pushViewController(viewController, animated: true)
         }
-    }
-    
-    // 6s 100000
-    // 11Pro 300000
-    private func partsAlertAndPresent(maxParts: Int) {
-        if partsCount < 200 {
-            let alert = UIAlertController(
-                title: NSLocalizedString("TakeMorePhotos", comment: ""),
-                message: NSLocalizedString("200orMore", comment: ""),
-                preferredStyle: .alert
-            )
-            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-                self?.present()
-            }
-            alert.addAction(defaultAction)
-            audio.play(effect: Audio.EffectFiles.caution)
-            haptic.play(.notification(.failure))
-            present(alert, animated: true, completion: nil)
-        } else if partsCount > maxParts {
-            // TODO: 現状maxpartで制限かける。次期アップデートでかけら量を自由に変更できる画面を用意する予定。\nその限界を超えたあなたに特別な機能を\n用意しました。
-            partsCount = maxParts
-            let localizedString = NSLocalizedString("LimitedGeneratingKakera", comment: "")
-            let messageString = String(format: localizedString, "\(maxParts)","\(maxParts)")
-            let alert = UIAlertController(
-                title: NSLocalizedString("BestPhotographer", comment: ""),
-                message: messageString,
-                preferredStyle: .alert
-            )
-            let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-                self?.present()
-            }
-            alert.addAction(defaultAction)
-            audio.play(effect: Audio.EffectFiles.caution)
-            haptic.play(.notification(.failure))
-            present(alert, animated: true, completion: nil)
-        } else {
-            self.present()
-        }
-    }
-    
-    private func present() {
-        audio.play(effect: Audio.EffectFiles.transitionUp)
-        haptic.play(.impact(.soft))
-
-        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
-            let viewController = DrawViewController(
-                coder: $0,
-                partsCount: self.partsCount,
-                selectKakera: self.selectKakera,
-                isBlendingEnabled: self.isBlendingEnabled,
-                customSize: 1.0,
-                albumInfo: AlbumInfo(index: 0, title: "", type: .regular, photosCount: 0),
-                shareBackgroundColor: .black
-            )
-            viewController?.modalPresentationStyle = .fullScreen
-            viewController?.modalTransitionStyle = .crossDissolve
-            return viewController
-        }
-        self.present(drawViewController, animated: true, completion: nil)
     }
 }

@@ -58,7 +58,7 @@ extension TitleViewController {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
-        let menuViewController = MenuViewController.instantiateStoryBoardToUIViewController()
+        let menuViewController = MenuViewController()
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
         self.present(navi, animated: true, completion: nil)

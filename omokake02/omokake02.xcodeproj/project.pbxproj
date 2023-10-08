@@ -23,7 +23,6 @@
 		9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */; };
 		9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */; };
 		9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */; };
-		9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */; };
 		9AA4A15229BD77EE00D03310 /* IntroStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */; };
 		9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */; };
 		9AA4A15829BD913900D03310 /* ExtraStepContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4A15729BD913900D03310 /* ExtraStepContent.swift */; };
@@ -63,14 +62,14 @@
 		9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDD94923543B260004A0C2 /* TitleViewController.swift */; };
 		9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */; };
 		9AEDD95223547C3A0004A0C2 /* kakeraS1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD95023547C3A0004A0C2 /* kakeraS1.png */; };
-		9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD957235481A80004A0C2 /* buttonSKakera.png */; };
-		9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD958235481A80004A0C2 /* buttonKakera.png */; };
-		9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEDD959235481A90004A0C2 /* comingSoon1.png */; };
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
+		9AFFDFF02AD15FDD00941E30 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */; };
 		9AFFDFF62AD1AE0800941E30 /* AnimationSequence in Frameworks */ = {isa = PBXBuildFile; productRef = 9AFFDFF52AD1AE0800941E30 /* AnimationSequence */; };
 		9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */; };
+		9AFFDFFA2AD2416800941E30 /* MenuViewEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */; };
+		9AFFDFFC2AD2489D00941E30 /* View+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFFB2AD2489D00941E30 /* View+alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +89,6 @@
 		9A78B9AB29BF7EAF00DD70DD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A78B9AD29C20DC400DD70DD /* PartSizeChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartSizeChangeViewController.xib; sourceTree = "<group>"; };
 		9A994F7626CA4D5A008ABBCD /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
-		9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		9AA4A15129BD77EE00D03310 /* IntroStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroStepsViewController.swift; sourceTree = "<group>"; };
 		9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Ex.swift"; sourceTree = "<group>"; };
 		9AA4A15729BD913900D03310 /* ExtraStepContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraStepContent.swift; sourceTree = "<group>"; };
@@ -132,13 +130,13 @@
 		9AEDD94923543B260004A0C2 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS2.png; sourceTree = "<group>"; };
 		9AEDD95023547C3A0004A0C2 /* kakeraS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakeraS1.png; sourceTree = "<group>"; };
-		9AEDD957235481A80004A0C2 /* buttonSKakera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonSKakera.png; sourceTree = "<group>"; };
-		9AEDD958235481A80004A0C2 /* buttonKakera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonKakera.png; sourceTree = "<group>"; };
-		9AEDD959235481A90004A0C2 /* comingSoon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comingSoon1.png; sourceTree = "<group>"; };
 		9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
+		9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewEnvironmentObject.swift; sourceTree = "<group>"; };
+		9AFFDFFB2AD2489D00941E30 /* View+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				9AEDD943235370C40004A0C2 /* MenuViewController.swift */,
-				9A99CD0A276DDE3100AA560A /* MenuViewController.storyboard */,
+				9AFFDFEF2AD15FDD00941E30 /* MenuView.swift */,
+				9AFFDFF92AD2416800941E30 /* MenuViewEnvironmentObject.swift */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -238,6 +237,7 @@
 				9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */,
 				9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */,
 				9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */,
+				9AFFDFFB2AD2489D00941E30 /* View+alert.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -380,9 +380,6 @@
 				9AEDD947235390320004A0C2 /* kakera2.png */,
 				9AEDD95023547C3A0004A0C2 /* kakeraS1.png */,
 				9AEDD94F23547C3A0004A0C2 /* kakeraS2.png */,
-				9AEDD958235481A80004A0C2 /* buttonKakera.png */,
-				9AEDD957235481A80004A0C2 /* buttonSKakera.png */,
-				9AEDD959235481A90004A0C2 /* comingSoon1.png */,
 			);
 			path = texture;
 			sourceTree = "<group>";
@@ -497,14 +494,10 @@
 				9ACD9F4E276901D600487980 /* DrawViewController.storyboard in Resources */,
 				9AEDD9422352C9B30004A0C2 /* kakera.png in Resources */,
 				9AEDD931234A0A1F0004A0C2 /* LaunchScreen.storyboard in Resources */,
-				9AEDD95B235481A90004A0C2 /* buttonKakera.png in Resources */,
 				9AD9FB7D269F308800518925 /* SelectAlbumViewController.storyboard in Resources */,
 				9ABA85D526BCC09A002EC738 /* ColorAssets.xcassets in Resources */,
-				9AEDD95C235481A90004A0C2 /* comingSoon1.png in Resources */,
 				9A12BB5B2ACB0BBE00FA21D4 /* InfoPlist.xcstrings in Resources */,
-				9AEDD95A235481A90004A0C2 /* buttonSKakera.png in Resources */,
 				9A78B9AE29C20DC400DD70DD /* PartSizeChangeViewController.xib in Resources */,
-				9A99CD0B276DDE3100AA560A /* MenuViewController.storyboard in Resources */,
 				9AEDD92E234A0A1F0004A0C2 /* Assets.xcassets in Resources */,
 				9AEDD95123547C3A0004A0C2 /* kakeraS2.png in Resources */,
 				9AEDD948235390320004A0C2 /* kakera2.png in Resources */,
@@ -535,6 +528,7 @@
 				9AA4A16229BD9B0600D03310 /* IntroStepsState.swift in Sources */,
 				9A994F7726CA4D5A008ABBCD /* UILabel+Ex.swift in Sources */,
 				9A78B9AC29BF7EAF00DD70DD /* ActivityIndicator.swift in Sources */,
+				9AFFDFF02AD15FDD00941E30 /* MenuView.swift in Sources */,
 				9AA4A15629BD90EF00D03310 /* CaseIterable+Ex.swift in Sources */,
 				9ABA85D926BD4723002EC738 /* MTLClearColor+Ex.swift in Sources */,
 				9AD9FB7B269F306100518925 /* SelectAlbumViewController.swift in Sources */,
@@ -542,6 +536,7 @@
 				9A2790E729FC1EA2008E4F32 /* CreditView.swift in Sources */,
 				9AA4A16D29BDD3B000D03310 /* InfoOmokakeView.swift in Sources */,
 				9AA4A16B29BDD35D00D03310 /* DeniedView.swift in Sources */,
+				9AFFDFFC2AD2489D00941E30 /* View+alert.swift in Sources */,
 				9AA4A16829BDCF2A00D03310 /* View+UIParts.swift in Sources */,
 				9A78B99F29BE245100DD70DD /* IntroStepsEnvironmentObject.swift in Sources */,
 				9AEDD944235370C40004A0C2 /* MenuViewController.swift in Sources */,
@@ -557,6 +552,7 @@
 				9A2790E329FBCB7B008E4F32 /* ScreenExplanationView.swift in Sources */,
 				9A2790E929FD0DEE008E4F32 /* ContactUsView.swift in Sources */,
 				9A5FBA5726BA244600B09CC8 /* PartSizeChangeViewController.swift in Sources */,
+				9AFFDFFA2AD2416800941E30 /* MenuViewEnvironmentObject.swift in Sources */,
 				9AA4A17329BE1E7200D03310 /* HowToUseView.swift in Sources */,
 				9AC3915026ADABDB00CA7D19 /* UIView+Ex.swift in Sources */,
 				9AEDD94A23543B260004A0C2 /* TitleViewController.swift in Sources */,
