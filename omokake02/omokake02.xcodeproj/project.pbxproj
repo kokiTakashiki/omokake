@@ -69,6 +69,7 @@
 		9AFAD69C29BA3F4B0060153C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */; };
 		9AFAD69E29BA409E0060153C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFAD69D29BA409E0060153C /* HelpView.swift */; };
 		9AFFDFEE2ACFD0DB00941E30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */; };
+		9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		9AFAD69B29BA3F4B0060153C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9AFAD69D29BA409E0060153C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		9AFFDFED2ACFD0DB00941E30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			children = (
 				9AA4A15529BD90EF00D03310 /* CaseIterable+Ex.swift */,
 				9AA4A16729BDCF2A00D03310 /* View+UIParts.swift */,
+				9AFFDFF72AD1BAF700941E30 /* Font+Ex.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				9AA4A16F29BDF97E00D03310 /* ApprovalView.swift in Sources */,
 				9AA4A15A29BD927400D03310 /* MultiStepsView.swift in Sources */,
 				9AD9FB83269F316A00518925 /* AlbumTableViewCell.swift in Sources */,
+				9AFFDFF82AD1BAF700941E30 /* Font+Ex.swift in Sources */,
 				9ADF72BF276E17F6008608E5 /* UIViewController+Ex.swift in Sources */,
 				9ABA85DD26BFBEBC002EC738 /* Index+Ex.swift in Sources */,
 				9A2790E529FC1DC5008E4F32 /* TouchInteractionExplanationView.swift in Sources */,

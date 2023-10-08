@@ -27,13 +27,13 @@ extension View {
             case .leading:
                 Text(content)
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
-                    .font(.custom("Futura Medium", size: 18))
+                    .font(.futuraMedium(size: 18))
                 Spacer()
             case .trailing:
                 Spacer()
                 Text(content)
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
-                    .font(.custom("Futura Medium", size: 18))
+                    .font(.futuraMedium(size: 18))
             case .top:
                 EmptyView()
             case .bottom:
@@ -54,7 +54,7 @@ extension View {
                 .foregroundColor(.clear)
             Image(systemName: systemName)
             Text(content)
-                .font(.custom("Futura Medium", size: 18))
+                .font(.futuraMedium(size: 18))
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
@@ -76,7 +76,7 @@ extension View {
                 .foregroundColor(.clear)
             Text(content)
                 .fixedSize(horizontal: false, vertical: true)
-                .font(.custom("Futura Medium", size: 18))
+                .font(.futuraMedium(size: 18))
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
@@ -91,7 +91,7 @@ extension View {
                 .foregroundColor(.clear)
             Text(content)
                 .fixedSize(horizontal: false, vertical: true)
-                .font(.custom("Futura Medium", size: 30))
+                .font(.futuraMedium(size: 30))
             Spacer()
         }
     }
