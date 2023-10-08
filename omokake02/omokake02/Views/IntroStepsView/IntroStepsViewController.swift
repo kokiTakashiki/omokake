@@ -49,7 +49,7 @@ extension IntroStepsViewController {
         defaults.set(true, forKey: "tutorialOff")
         defaults.set(true, forKey: "menuOn")
         
-        let menuViewController = MenuViewController.instantiateStoryBoardToUIViewController()
+        let menuViewController = MenuViewController()
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
         navi.modalTransitionStyle = .crossDissolve
