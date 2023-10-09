@@ -125,7 +125,7 @@ extension Renderer {
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
         case .thumbnail: // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
-            let thumbnailSize = CGSize(width: 20, height: 20)
+            let thumbnailSize = CGSize(width: 250, height: 250)
             var originalArray:[UIImage] = []
             switch albumInfo.type {
             case .favorites:
@@ -173,7 +173,7 @@ extension Renderer {
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
         case .thumbnail:
-            let thumbnailSize = CGSize(width: 20, height: 20)
+            let thumbnailSize = CGSize(width: 250, height: 250)
             var originalArray:[UIImage] = []
             switch albumInfo.type {
             case .favorites:
