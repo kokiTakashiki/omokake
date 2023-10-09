@@ -30,6 +30,7 @@ struct MenuView: View {
             main
             questionmarkButton
         }
+        .padding(.top, 28)
         .okAlert(
             "TakeMorePhotos",
             messageKey: "200orMore",
