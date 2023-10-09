@@ -7,6 +7,7 @@
 //
 
 import MetalKit
+import simd
 
 struct Particle {
     var startPosition: simd_float2
