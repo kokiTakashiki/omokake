@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import OmokakeModel
 
 @MainActor
 final class IntroStepsEnvironmentObject: ObservableObject {
@@ -26,19 +27,19 @@ final class IntroStepsEnvironmentObject: ObservableObject {
 
         switch currentStatus {
         case .infoOmokake:
-            Task {
+            Task { @MainActor in
                 await updateStatus()
             }
         case .approval:
             showingIndicator = true
-            Task {
+            Task { @MainActor in
                 self.photoAccessState = await self.authorization()
-                Task {
+                Task { @MainActor in
                     await updateStatus()
                 }
             }
         case .complete:
-            Task {
+            Task { @MainActor in
                 await updateStatus()
             }
         case .howToUse:
@@ -51,9 +52,9 @@ final class IntroStepsEnvironmentObject: ObservableObject {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
-        Task {
+        Task { @MainActor in
             self.photoAccessState = await self.authorization()
-            Task {
+            Task { @MainActor in
                 await self.updateStatus()
             }
         }
@@ -87,7 +88,7 @@ final class IntroStepsEnvironmentObject: ObservableObject {
     }
     
     private func authorization() async -> PhotoAccessState {
-        let state: PhotoAccessState = PhotosManager.Authorization()
+        let state: PhotoAccessState = PhotosManager.authorization()
         sleep(2)
         showingIndicator = false
         if state == .Authorized {

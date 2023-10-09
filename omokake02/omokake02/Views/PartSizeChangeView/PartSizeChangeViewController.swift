@@ -8,8 +8,9 @@
 
 import UIKit
 import MetalKit
+import OmokakeModel
 
-class PartSizeChangeViewController: UIViewController {
+final class PartSizeChangeViewController: UIViewController {
 
     // MARK: IBOutlet
 
@@ -32,7 +33,7 @@ class PartSizeChangeViewController: UIViewController {
     //dammy
     private var pressurePointInit: simd_float2 = simd_float2(x: -10000.0, y: -10000.0)
     private var pressureEndPInit: simd_float2 = simd_float2(x: -1.0, y: -1.0)
-    private var touchEndFloat: Float = 0.0
+    private var isTouchEnd: Bool = false
     
     private var shareBackgroundColor: MTLClearColor = .black
     
@@ -117,7 +118,7 @@ extension PartSizeChangeViewController: MTKViewDelegate {
         guard (
             renderer?.update(
                 pressurePointInit: pressurePointInit,
-                touchEndFloat: touchEndFloat,
+                isTouchEnd: isTouchEnd,
                 pressureEndPointInit: pressureEndPInit,
                 customSize: partSizeSlider.value
             )
@@ -150,15 +151,20 @@ extension PartSizeChangeViewController {
     private func present() {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.medium))
-        let drawViewController = instantiateStoryBoardToViewController(storyBoardName: "DrawViewController", withIdentifier: "DrawViewController") as! DrawViewController
-        drawViewController.partsCount = partsCount
-        drawViewController.selectKakera = selectKakera
-        drawViewController.isBlendingEnabled = isBlendingEnabled
-        drawViewController.albumInfo = albumInfo
-        drawViewController.customSize = partSizeSlider.value
-        drawViewController.shareBackgroundColor = shareBackgroundColor
-        drawViewController.modalPresentationStyle = .fullScreen
-        drawViewController.modalTransitionStyle = .crossDissolve
+        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
+            let viewController = DrawViewController(
+                coder: $0,
+                partsCount: self.partsCount,
+                selectKakera: self.selectKakera,
+                isBlendingEnabled: self.isBlendingEnabled,
+                customSize: self.partSizeSlider.value,
+                albumInfo: self.albumInfo,
+                shareBackgroundColor: self.shareBackgroundColor
+            )
+            viewController?.modalPresentationStyle = .fullScreen
+            viewController?.modalTransitionStyle = .crossDissolve
+            return viewController
+        }
         self.present(drawViewController, animated: true, completion: nil)
     }
     

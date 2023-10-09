@@ -13,41 +13,39 @@ struct IntroSteps: View {
     @EnvironmentObject var environmentObject: IntroStepsEnvironmentObject
     
     var body: some View {
-        ZStack {
-            VStack {
-                // MULTI-STEPS View
-                MultiStepsView(
-                    steps: $environmentObject.status,
-                    extraContent: IntroStepsState.allValues,
-                    extraContentPosition: .above,
-                    extraContentSize: CGSize(width: 30, height: 30),
-                    action: {_ in }
-                ) {
-                    RoundedRectangle(cornerRadius: 5).frame(height: 10)
-                }
-                .padding()
-                .font(.title)
-                
+        VStack {
+            // MULTI-STEPS View
+            MultiStepsView(
+                steps: $environmentObject.status,
+                extraContent: IntroStepsState.allValues,
+                extraContentPosition: .above,
+                extraContentSize: CGSize(width: 30, height: 30),
+                action: {_ in }
+            ) {
+                RoundedRectangle(cornerRadius: 5).frame(height: 10)
+            }
+            .padding()
+            .font(.title)
+            
+            Spacer()
+
+            if environmentObject.photoAccessState == .none ||
+                environmentObject.photoAccessState == .Authorized
+            {
+                content()
                 Spacer()
-
-                if environmentObject.photoAccessState == .none ||
-                    environmentObject.photoAccessState == .Authorized
-                {
-                    content()
-                    Spacer()
-                    bottomButton
-                } else {
-                    DeniedView() {
-                        Task {
-                            await environmentObject.deniedViewAction()
-                        }
+                bottomButton
+            } else {
+                DeniedView() {
+                    Task { @MainActor in
+                        await environmentObject.deniedViewAction()
                     }
-                    Spacer()
-                    bottomBackButton
                 }
-
+                Spacer()
+                bottomBackButton
             }
         }
+        .padding(.bottom, 10.0)
     }
 }
 
@@ -62,7 +60,7 @@ extension IntroSteps {
             InfoOmokakeView()
         case .approval:
             ApprovalView() {
-                Task {
+                Task { @MainActor in
                     await environmentObject.approvalViewAction()
                 }
             }
@@ -78,14 +76,14 @@ extension IntroSteps {
         // BOTTOM BUTTONS
         HStack {
             Button(action: {
-                Task {
+                Task { @MainActor in
                     await environmentObject.bottomButtonAction()
                 }
             }, label: {
                 HStack {
                     Image(systemName: "arrow.right.circle")
                     Text("Next")
-                        .font(.custom("Futura Medium", size: 20))
+                        .font(.futuraMedium(size: 20))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
@@ -104,14 +102,14 @@ extension IntroSteps {
     private var bottomBackButton: some View {
         HStack {
             Button(action: {
-                Task {
+                Task { @MainActor in
                     await environmentObject.bottomBackButtonAction()
                 }
             }, label: {
                 HStack {
                     Image(systemName: "arrow.left.circle")
                     Text("Back")
-                        .font(.custom("Futura Medium", size: 20))
+                        .font(.futuraMedium(size: 20))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(

@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-class IntroStepsViewController: UIViewController {
+final class IntroStepsViewController: UIViewController {
     private let introStepsEnvironmentObject = IntroStepsEnvironmentObject()
     private var cancels = Set<AnyCancellable>()
     
@@ -33,7 +33,7 @@ class IntroStepsViewController: UIViewController {
         introStepsEnvironmentObject.tapHowToUseNextButtonSubject
             .sink { [weak self] value in
                 if value == true {
-                    Task {
+                    Task { @MainActor in
                         await self?.showMenu()
                     }
                 }
@@ -49,7 +49,7 @@ extension IntroStepsViewController {
         defaults.set(true, forKey: "tutorialOff")
         defaults.set(true, forKey: "menuOn")
         
-        let menuViewController = instantiateStoryBoardToViewController(storyBoardName: "MenuViewController", withIdentifier: "MenuView") as! MenuViewController
+        let menuViewController = MenuViewController()
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
         navi.modalTransitionStyle = .crossDissolve

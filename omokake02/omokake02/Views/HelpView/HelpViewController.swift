@@ -9,8 +9,9 @@
 import UIKit
 import SwiftUI
 import Combine
+import OmokakeModel
 
-class HelpViewController: UIViewController {
+final class HelpViewController: UIViewController {
     enum BackType {
     case button
     case popGesture
@@ -29,6 +30,7 @@ class HelpViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
         self.navigationController?.navigationBar.tintColor = .lightGray
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.navigationBar.isHidden = false
 
         let hostingController: UIHostingController = UIHostingController(rootView: HelpView())
         self.addChild(hostingController)
@@ -60,10 +62,16 @@ class HelpViewController: UIViewController {
         haptic.play(.impact(.soft))
         navigationController?.popViewController(animated: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func viewDidDisappear(_ animated: Bool) {
