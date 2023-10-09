@@ -102,6 +102,7 @@ struct MenuView: View {
                 } label: {
                     Image("buttonKakera")
                         .resizable()
+                        .renderingMode(.original)
                         .frame(width: Self.buttonWidth, height: Self.buttonWidth)
                         .opacity(animationState.kakeraOpacity)
                 }
@@ -113,6 +114,7 @@ struct MenuView: View {
                 } label: {
                     Image("buttonThumbnail")
                         .resizable()
+                        .renderingMode(.original)
                         .frame(width: Self.buttonWidth, height: Self.buttonWidth)
                         .opacity(animationState.thumbnailOpacity)
                 }
@@ -125,6 +127,7 @@ struct MenuView: View {
                 } label: {
                     Image("buttonSKakera")
                         .resizable()
+                        .renderingMode(.original)
                         .frame(width: Self.buttonWidth, height: Self.buttonWidth)
                         .opacity(animationState.sKakeraOpacity)
                 }
