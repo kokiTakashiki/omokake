@@ -29,7 +29,7 @@ final class MenuViewEnvironmentObject: ObservableObject {
 
     init() {
         partsCount = PhotosManager.allPhotoCount()
-        maxParts = Self.deviceMaxParts()
+        maxParts = Device.kakeraMaxParts(.kakera)
     }
 }
 
@@ -127,27 +127,5 @@ extension MenuViewEnvironmentObject {
             return viewController
         }
         presentSubject.send((drawViewController, .modalPresentation))
-    }
-    
-    // TODO: チップの性能ごとに自動判定したい。
-    // このサイトを参考に分岐　https://www.antutu.com/en/ranking/ios1.htm
-    private static func deviceMaxParts() -> Int {
-        let device = Device.current
-        print("[MenuViewController] device \(device)")
-        switch device {
-        case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
-            return 200000
-
-        case .iPhone11, .iPhone11ProMax, .iPhone11Pro,
-                .iPhone12Pro, .iPhone12, .iPhone12ProMax, .iPhone12Mini,
-                .iPhoneSE3, .iPhone13Mini, .iPhone13,
-                .iPhone14, .iPhone14Plus, .iPhone13Pro,
-                .iPhone13ProMax, .iPhone14ProMax, .iPhone14Pro,
-                .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax:
-            return 300000
-
-        default:
-            return 100000
-        }
     }
 }

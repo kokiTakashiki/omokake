@@ -9,7 +9,8 @@
 import Foundation
 
 extension CaseIterable where Self: Equatable & RawRepresentable {
-    var allCases: AllCases { Self.allCases }
+    private var allCases: AllCases { Self.allCases }
+    
     func next() -> Self {
         let index = allCases.firstIndex(of: self)!
         let next = allCases.index(after: index)

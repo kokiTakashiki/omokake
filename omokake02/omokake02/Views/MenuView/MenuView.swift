@@ -56,13 +56,13 @@ struct MenuView: View {
 
     private func animateViews() {
         AnimationSequence(duration: 0.6, delay: 0, easing: .default)
-            .append {
+            .add {
                 animationState.kakeraOpacity = 1.0
             }
-            .append {
+            .add {
                 animationState.sKakeraOpacity = 1.0
             }
-            .append {
+            .add {
                 animationState.thumbnailOpacity = 1.0
             }
             .start()

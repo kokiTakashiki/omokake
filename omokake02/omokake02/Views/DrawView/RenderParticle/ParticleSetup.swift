@@ -37,6 +37,7 @@ struct ParticleDescriptor {
     var speedY: Float = 1
 }
 
+@MainActor
 class ParticleSetup {
     
     var particleTexture: MTLTexture!

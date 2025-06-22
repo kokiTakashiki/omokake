@@ -68,7 +68,7 @@ extension SelectAlbumViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = albumData[indexPath.row]
-        deviceMaxParts(album)
+        partsAlertAndPresent(album, maxParts: Device.kakeraMaxParts(.thumbnail))
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -85,28 +85,6 @@ extension SelectAlbumViewController {
 
 // MARK: - Extension Private Method
 extension SelectAlbumViewController {
-    // TODO: チップの性能ごとに自動判定したい。
-    // このサイトを参考に分岐　https://www.antutu.com/en/ranking/ios1.htm
-    private func deviceMaxParts(_ note: AlbumInfo) {
-        let device = Device.current
-        print("[SelectAlbumViewController] deviceMaxParts \(device)")
-        switch device {
-        case .iPhoneXR, .iPhoneXSMax, .iPhoneXS, .iPhoneSE2:
-            partsAlertAndPresent(note, maxParts: 300)
-
-        case .iPhone11, .iPhone11ProMax, .iPhone11Pro,
-                .iPhone12Pro, .iPhone12, .iPhone12ProMax, .iPhone12Mini,
-                .iPhoneSE3, .iPhone13Mini, .iPhone13,
-                .iPhone14, .iPhone14Plus, .iPhone13Pro,
-                .iPhone13ProMax, .iPhone14ProMax, .iPhone14Pro,
-                .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax:
-            partsAlertAndPresent(note, maxParts: 400)
-
-        default:
-            partsAlertAndPresent(note, maxParts: 200)
-        }
-    }
-    
     // 6s 200
     // 11Pro 400
     private func partsAlertAndPresent(_ note: AlbumInfo, maxParts: Int) {

@@ -9,7 +9,7 @@
 import UIKit
 import AVKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

@@ -9,6 +9,7 @@
 import MetalKit
 import OmokakeModel
 
+@MainActor
 protocol RenderDestinationProvider {
     var currentRenderPassDescriptor: MTLRenderPassDescriptor? { get }
     var currentDrawable: CAMetalDrawable? { get }
@@ -25,6 +26,7 @@ extension Renderer {
     }
 }
 
+@MainActor
 class Renderer {
     static private(set) var device: MTLDevice!
     private(set) var partsCount: Int = 0

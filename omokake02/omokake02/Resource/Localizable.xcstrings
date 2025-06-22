@@ -286,6 +286,12 @@
       "comment" : "SelectAlbumView",
       "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +299,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "HowToUse" : {
       "localizations" : {

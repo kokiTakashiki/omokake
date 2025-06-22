@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 public protocol StoryboardLoadable {
     
     static var identifier: String { get }
