@@ -67,3 +67,5 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 omokake02/.DS_Store
+.DS_Store
+omokake02/buildServer.json
