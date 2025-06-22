@@ -1,5 +1,15 @@
 {
+  "originHash" : "c7095882e507f72c91df5695d0a304f8740ec38e089a765c89a7795860956738",
   "pins" : [
+    {
+      "identity" : "animationsequence",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cristhianleonli/AnimationSequence.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2dca92bf33e138118a87c9ab2de952f7cbb3cfe4"
+      }
+    },
     {
       "identity" : "devicekit",
       "kind" : "remoteSourceControl",
@@ -10,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
