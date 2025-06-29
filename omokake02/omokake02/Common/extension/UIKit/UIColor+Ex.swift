@@ -9,8 +9,20 @@
 import UIKit
 import MetalKit
 
-extension UIColor {    
-    static func convertMTLClearColor(_ color:MTLClearColor) -> UIColor {
-        return UIColor(red: CGFloat(color.red), green: CGFloat(color.green), blue: CGFloat(color.blue), alpha: CGFloat(color.alpha))
+extension UIColor {
+    /// **Creates** a UIColor from an MTLClearColor.
+    ///
+    /// This performs a value-preserving type conversion from Metal's clear color
+    /// representation to UIKit's color representation.
+    ///
+    /// - Parameter clearColor: The MTLClearColor to convert.
+    /// - Returns: A UIColor with equivalent color values.
+    static func makeColor(from clearColor: MTLClearColor) -> UIColor {
+        return UIColor(
+            red: CGFloat(clearColor.red), 
+            green: CGFloat(clearColor.green), 
+            blue: CGFloat(clearColor.blue), 
+            alpha: CGFloat(clearColor.alpha)
+        )
     }
 }

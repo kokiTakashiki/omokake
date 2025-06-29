@@ -9,10 +9,18 @@
 import SwiftUI
 
 extension View {
+    /// **Displays** an OK alert with the specified title and message.
+    ///
+    /// - Parameters:
+    ///   - titleKey: The localized string key for the alert title.
+    ///   - messageKey: The localized string key for the alert message.
+    ///   - isPresented: A binding to determine whether the alert is presented.
+    ///   - action: The action to perform when OK is tapped.
+    /// - Returns: A view that presents an alert when the binding is true.
     @ViewBuilder
-    func okAlert(
+    func alertWithOKButton(
         _ titleKey: LocalizedStringKey,
-        messageKey: LocalizedStringKey,
+        message messageKey: LocalizedStringKey,
         isPresented: Binding<Bool>,
         action: @escaping () -> Void
     ) -> some View {
@@ -37,10 +45,18 @@ extension View {
         }
     }
 
+    /// **Displays** an OK alert with the specified title and message text.
+    ///
+    /// - Parameters:
+    ///   - titleKey: The localized string key for the alert title.
+    ///   - messageText: The plain text for the alert message.
+    ///   - isPresented: A binding to determine whether the alert is presented.
+    ///   - action: The action to perform when OK is tapped.
+    /// - Returns: A view that presents an alert when the binding is true.
     @ViewBuilder
-    func okAlert(
+    func alertWithOKButton(
         _ titleKey: LocalizedStringKey,
-        messageText: String,
+        message messageText: String,
         isPresented: Binding<Bool>,
         action: @escaping () -> Void
     ) -> some View {

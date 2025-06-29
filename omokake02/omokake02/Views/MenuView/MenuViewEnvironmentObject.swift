@@ -61,7 +61,7 @@ extension MenuViewEnvironmentObject {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
 
-        let selectAlbumViewController = SelectAlbumViewController.makeStoryBoardToViewController() {
+        let selectAlbumViewController = SelectAlbumViewController.makeViewController() {
             let viewController = SelectAlbumViewController(
                 coder: $0,
                 viewModel: SelectAlbumViewController.ViewModel(
@@ -112,7 +112,7 @@ extension MenuViewEnvironmentObject {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.soft))
 
-        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
+        let drawViewController = DrawViewController.makeViewController() {
             let viewController = DrawViewController(
                 coder: $0,
                 partsCount: drawPartsCount,

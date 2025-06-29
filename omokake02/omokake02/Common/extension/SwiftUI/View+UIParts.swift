@@ -9,16 +9,25 @@
 import SwiftUI
 
 extension View {
+    /// **Displays** a description text with customizable alignment and spacing.
+    ///
+    /// - Parameters:
+    ///   - content: The localized string key for the description text.
+    ///   - edge: The edge alignment for the text (default: .leading).
+    ///   - isFixedSizeHorizontal: Whether to fix the horizontal size (default: false).
+    ///   - isLeadingSpace: Whether to include leading space (default: true).
+    ///   - isTrailingSpace: Whether to include trailing space (default: true).
+    /// - Returns: A view with the description text and specified layout.
     @ViewBuilder
-    func description(
+    func describedText(
         _ content: LocalizedStringKey,
-        edge: Edge = .leading,
+        alignedTo edge: Edge = .leading,
         isFixedSizeHorizontal: Bool = false,
-        isLeadingSpace: Bool = true,
-        isTrailingSpace: Bool = true
+        hasLeadingSpace: Bool = true,
+        hasTrailingSpace: Bool = true
     ) -> some View {
         HStack {
-            if isLeadingSpace {
+            if hasLeadingSpace {
                 Rectangle()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.clear)
@@ -27,19 +36,19 @@ extension View {
             case .leading:
                 Text(content)
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
-                    .font(.futuraMedium(size: 18))
+                    .font(.makeFuturaMedium(size: 18))
                 Spacer()
             case .trailing:
                 Spacer()
                 Text(content)
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
-                    .font(.futuraMedium(size: 18))
+                    .font(.makeFuturaMedium(size: 18))
             case .top:
                 EmptyView()
             case .bottom:
                 EmptyView()
             }
-            if isTrailingSpace {
+            if hasTrailingSpace {
                 Rectangle()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.clear)
@@ -47,14 +56,23 @@ extension View {
         }
     }
 
-    func iconSideDescription(systemName: String, _ content: LocalizedStringKey) -> some View {
+    /// **Displays** a description with a system icon on the side.
+    ///
+    /// - Parameters:
+    ///   - systemName: The name of the system icon.
+    ///   - content: The localized string key for the description text.
+    /// - Returns: A view with an icon and description text.
+    func describedTextWithIcon(
+        systemName: String,
+        _ content: LocalizedStringKey
+    ) -> some View {
         HStack {
             Rectangle()
                 .frame(width: 20, height: 20)
                 .foregroundColor(.clear)
             Image(systemName: systemName)
             Text(content)
-                .font(.futuraMedium(size: 18))
+                .font(.makeFuturaMedium(size: 18))
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
@@ -62,12 +80,21 @@ extension View {
         }
     }
 
-    func imageSideDescription(name: String, _ content: LocalizedStringKey) -> some View {
+    /// **Displays** a description with an image on the side.
+    ///
+    /// - Parameters:
+    ///   - imageName: The name of the image.
+    ///   - content: The localized string key for the description text.
+    /// - Returns: A view with an image and description text.
+    func describedTextWithImage(
+        imageName: String,
+        _ content: LocalizedStringKey
+    ) -> some View {
         HStack {
             Rectangle()
                 .frame(width: 20, height: 20)
                 .foregroundColor(.clear)
-            Image(name)
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width / 3)
@@ -76,7 +103,7 @@ extension View {
                 .foregroundColor(.clear)
             Text(content)
                 .fixedSize(horizontal: false, vertical: true)
-                .font(.futuraMedium(size: 18))
+                .font(.makeFuturaMedium(size: 18))
             Spacer()
             Rectangle()
                 .frame(width: 20, height: 20)
@@ -84,19 +111,24 @@ extension View {
         }
     }
 
-    func title(_ content: LocalizedStringKey) -> some View {
+    /// **Displays** a title text.
+    ///
+    /// - Parameter content: The localized string key for the title.
+    /// - Returns: A view with styled title text.
+    func titleText(_ content: LocalizedStringKey) -> some View {
         HStack {
             Rectangle()
                 .frame(width: 20, height: 20)
                 .foregroundColor(.clear)
             Text(content)
                 .fixedSize(horizontal: false, vertical: true)
-                .font(.futuraMedium(size: 30))
+                .font(.makeFuturaMedium(size: 30))
             Spacer()
         }
     }
 
-    var waku: some View {
+    /// **A decorative frame** with rounded rectangle border styling.
+    var decorativeFrame: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

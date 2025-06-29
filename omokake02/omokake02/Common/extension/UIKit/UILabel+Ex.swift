@@ -10,15 +10,19 @@ import UIKit
 
 extension UILabel{
 
-    /// makeOutLine
+    /// **Applies** an outline effect to the label text.
     ///
     /// - Parameters:
-    ///   - strokeWidth: 線の太さ。負数
-    ///   - oulineColor: 線の色
-    ///   - foregroundColor: 縁取りの中の色
-    func makeOutLine(strokeWidth: CGFloat, oulineColor: UIColor, foregroundColor: UIColor) {
+    ///   - strokeWidth: The width of the stroke (should be negative for outline effect).
+    ///   - outlineColor: The color of the outline.
+    ///   - foregroundColor: The color of the text inside the outline.
+    func applyOutline(
+        strokeWidth: CGFloat,
+        outlineColor: UIColor,
+        foregroundColor: UIColor
+    ) {
         let strokeTextAttributes = [
-            .strokeColor : oulineColor,
+            .strokeColor : outlineColor,
             .foregroundColor : foregroundColor,
             .strokeWidth : strokeWidth,
             .font : self.font as Any

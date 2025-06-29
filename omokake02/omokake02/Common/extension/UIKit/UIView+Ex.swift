@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIView {
+    /// **The corner radius** of the view's layer.
+    ///
+    /// Setting this property automatically enables `masksToBounds` when the value is greater than 0.
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -19,6 +22,7 @@ extension UIView {
         }
     }
     
+    /// **The width of the view's border**.
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -29,6 +33,7 @@ extension UIView {
         }
     }
     
+    /// **The color of the view's border**.
     @IBInspectable
     var borderColor: UIColor? {
         get {

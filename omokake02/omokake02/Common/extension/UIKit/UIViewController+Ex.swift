@@ -9,14 +9,23 @@
 import UIKit
 
 extension UIViewController {
-    static func instantiateStoryBoardToUIViewController() -> UIViewController {
+    /// **Creates** a view controller instance from a storyboard with the same name as the class.
+    ///
+    /// - Returns: A UIViewController instance loaded from the storyboard.
+    static func makeViewController() -> UIViewController {
         let storyBoardName = String(describing: self.classForCoder())
         let storyboard = UIStoryboard(name: storyBoardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: storyBoardName)
         return viewController
     }
 
-    static func makeStoryBoardToViewController<ViewController>(creator: @escaping (NSCoder) -> ViewController?) -> ViewController where ViewController : UIViewController {
+    /// **Creates** a view controller instance from a storyboard using a custom creator.
+    ///
+    /// - Parameter creator: A closure that creates the view controller from an NSCoder.
+    /// - Returns: A view controller instance of the specified type.
+    static func makeViewController<ViewController>(
+        using creator: @escaping (NSCoder) -> ViewController?
+    ) -> ViewController where ViewController : UIViewController {
         let storyBoardName = String(describing: self.classForCoder())
         let storyBoard = UIStoryboard(name: storyBoardName, bundle: nil)
         let viewController = storyBoard.instantiateViewController(identifier: storyBoardName, creator: creator)

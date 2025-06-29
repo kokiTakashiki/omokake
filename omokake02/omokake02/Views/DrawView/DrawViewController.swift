@@ -77,14 +77,14 @@ final class DrawViewController: UIViewController, MTKViewDelegate {
                                  renderDestination: drawView,
                                  albumInfo: albumInfo)
         
-        self.view.backgroundColor = .convertMTLClearColor(shareBackgroundColor)
+        self.view.backgroundColor = .makeColor(from: shareBackgroundColor)
         drawView.delegate = self
         //print("width",drawView.bounds.width,"height",drawView.bounds.height)
         
         if selectKakera != .thumbnail {
             customSize = recommendSize()
         }
-        partsCountLabel.makeOutLine(strokeWidth: -3.0, oulineColor: .gray, foregroundColor: .lightGray)
+        partsCountLabel.applyOutline(strokeWidth: -3.0, outlineColor: .gray, foregroundColor: .lightGray)
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {

@@ -9,7 +9,11 @@
 import SwiftUI
 
 extension Font {
-    static func futuraMedium(size: CGFloat) -> Font? {
+    /// **Creates** a Futura Medium font with the specified size.
+    ///
+    /// - Parameter size: The size of the font.
+    /// - Returns: A custom Font instance, or nil if the font cannot be loaded.
+    static func makeFuturaMedium(size: CGFloat) -> Font? {
         .custom("Futura Medium", size: size)
     }
 }

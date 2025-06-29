@@ -83,7 +83,7 @@ extension IntroSteps {
                 HStack {
                     Image(systemName: "arrow.right.circle")
                     Text("Next")
-                        .font(.futuraMedium(size: 20))
+                        .font(.makeFuturaMedium(size: 20))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
@@ -109,7 +109,7 @@ extension IntroSteps {
                 HStack {
                     Image(systemName: "arrow.left.circle")
                     Text("Back")
-                        .font(.futuraMedium(size: 20))
+                        .font(.makeFuturaMedium(size: 20))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(

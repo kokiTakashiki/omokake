@@ -151,7 +151,7 @@ extension PartSizeChangeViewController {
     private func present() {
         audio.play(effect: Audio.EffectFiles.transitionUp)
         haptic.play(.impact(.medium))
-        let drawViewController = DrawViewController.makeStoryBoardToViewController() {
+        let drawViewController = DrawViewController.makeViewController() {
             let viewController = DrawViewController(
                 coder: $0,
                 partsCount: self.partsCount,
