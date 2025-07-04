@@ -17,23 +17,23 @@ struct ContactUsView: View {
 
     var body: some View {
         ZStack {
-            waku
+            decorativeFrame
             VStack {
                 Rectangle()
                     .frame(height: 20)
                     .foregroundColor(.clear)
-                title("ContactUs")
+                titleText("ContactUs")
                 HStack(spacing: 0) {
                     Text("Twitter")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.futuraMedium(size: 18))
+                        .font(.makeFuturaMedium(size: 18))
                     Spacer()
                     Button(action: {
                         action()
                     }, label: {
                         Text("@bluewhitered123")
                             .fixedSize(horizontal: true, vertical: false)
-                            .font(.futuraMedium(size: 18))
+                            .font(.makeFuturaMedium(size: 18))
                     })
                 }
                 .padding(.leading, 30)

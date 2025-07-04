@@ -21,8 +21,8 @@ struct ApprovalView: View {
             if environment.showingIndicator {
                 ActivityIndicator()
             }
-            title("AccessData")
-            description("AccessDataDescription")
+            titleText("AccessData")
+            describedText("AccessDataDescription")
             Button(action: {
                 action()
             }, label: {

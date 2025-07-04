@@ -23,65 +23,65 @@ struct CreditView: View {
 
     var body: some View {
         ZStack {
-            waku
+            decorativeFrame
             VStack {
                 Rectangle()
                     .frame(height: 20)
                     .foregroundColor(.clear)
-                title("Credit")
+                titleText("Credit")
                 HStack {
-                    description(
+                    describedText(
                         "Developing by",
                         isFixedSizeHorizontal: true,
-                        isTrailingSpace: false
+                        hasTrailingSpace: false
                     )
-                    description(
+                    describedText(
                         "DevelopingByName",
-                        edge: .trailing,
+                        alignedTo: .trailing,
                         isFixedSizeHorizontal: true,
-                        isLeadingSpace: false
+                        hasLeadingSpace: false
                     )
                 }
 
                 HStack {
-                    description(
+                    describedText(
                         "Icon Design",
                         isFixedSizeHorizontal: true,
-                        isTrailingSpace: false
+                        hasTrailingSpace: false
                     )
-                    description(
+                    describedText(
                         "IconDesignName",
-                        edge: .trailing,
+                        alignedTo: .trailing,
                         isFixedSizeHorizontal: true,
-                        isLeadingSpace: false
+                        hasLeadingSpace: false
                     )
                 }
                 
                 HStack {
-                    description(
+                    describedText(
                         "Special Thanks",
                         isFixedSizeHorizontal: true,
-                        isTrailingSpace: false
+                        hasTrailingSpace: false
                     )
-                    description(
+                    describedText(
                         "SpecialThanksName",
-                        edge: .trailing,
+                        alignedTo: .trailing,
                         isFixedSizeHorizontal: true,
-                        isLeadingSpace: false
+                        hasLeadingSpace: false
                     )
                 }
 
                 HStack(spacing: 0) {
                     Text("SND")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.futuraMedium(size: 18))
+                        .font(.makeFuturaMedium(size: 18))
                     Spacer()
                     Button(action: {
                         actionSNDLink()
                     }, label: {
                         Text("https://snd.dev/")
                             .fixedSize(horizontal: true, vertical: false)
-                            .font(.futuraMedium(size: 14))
+                            .font(.makeFuturaMedium(size: 14))
                     })
                 }
                 .padding(.leading, 28)
@@ -89,14 +89,14 @@ struct CreditView: View {
                 HStack(spacing: 0) {
                     Text("DeviceKit")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.futuraMedium(size: 18))
+                        .font(.makeFuturaMedium(size: 18))
                     Spacer()
                     Button(action: {
                         actionDeviceKitLink()
                     }, label: {
                         Text("https://github.com/devicekit/DeviceKit")
                             .fixedSize(horizontal: false, vertical: true)
-                            .font(.futuraMedium(size: 14))
+                            .font(.makeFuturaMedium(size: 14))
                     })
                 }
                 .padding(.leading, 28)
@@ -104,14 +104,14 @@ struct CreditView: View {
                 HStack(spacing: 0) {
                     Text("AnimationSequence")
                         .fixedSize(horizontal: true, vertical: false)
-                        .font(.futuraMedium(size: 18))
+                        .font(.makeFuturaMedium(size: 18))
                     Spacer()
                     Button(action: {
                         actionDeviceKitLink()
                     }, label: {
                         Text("https://github.com/cristhianleonli/AnimationSequence")
                             .fixedSize(horizontal: false, vertical: true)
-                            .font(.futuraMedium(size: 14))
+                            .font(.makeFuturaMedium(size: 14))
                     })
                 }
                 .padding(.leading, 28)

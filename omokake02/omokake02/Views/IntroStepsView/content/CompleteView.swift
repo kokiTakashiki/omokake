@@ -11,8 +11,8 @@ import SwiftUI
 struct CompleteView: View {
     var body: some View {
         VStack {
-            title("DataAcquisitionComplete")
-            description("DataAcquisitionCompleteDescription")
+            titleText("DataAcquisitionComplete")
+            describedText("DataAcquisitionCompleteDescription")
         }
         .padding(.leading, 5.0)
         .padding(.trailing, 5.0)

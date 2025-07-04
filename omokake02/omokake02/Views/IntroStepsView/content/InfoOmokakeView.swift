@@ -14,8 +14,8 @@ struct InfoOmokakeView: View {
             Rectangle()
                 .frame(height: 20)
                 .foregroundColor(.clear)
-            title("AboutOmokake")
-            description("AboutOmokakeDescription")
+            titleText("AboutOmokake")
+            describedText("AboutOmokakeDescription")
         }
         .padding(.leading, 5.0)
         .padding(.trailing, 5.0)

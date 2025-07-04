@@ -21,8 +21,8 @@ struct DeniedView: View {
                 .resizable()
                 .foregroundColor(.red)
                 .frame(width: 40.0, height: 40.0)
-            title("FailedToAcquireData")
-            description("FailedToAcquireDataDescription")
+            titleText("FailedToAcquireData")
+            describedText("FailedToAcquireDataDescription")
             Button(action: {
                 action()
             }, label: {

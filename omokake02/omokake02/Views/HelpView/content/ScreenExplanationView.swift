@@ -11,33 +11,33 @@ import SwiftUI
 struct ScreenExplanationView: View {
     var body: some View {
         ZStack {
-            waku
+            decorativeFrame
             VStack {
                 Group {
                     Rectangle()
                         .frame(height: 20)
                         .foregroundColor(.clear)
-                    title("ScreenExplanation")
-                    description("ScreenDescription")
+                    titleText("ScreenExplanation")
+                    describedText("ScreenDescription")
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.clear)
-                    description("KakeraScreenDescription")
+                    describedText("KakeraScreenDescription")
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.clear)
-                    description("omokakeScreenDescription")
-                    iconSideDescription(systemName: "square.and.arrow.up", "ShareButton")
-                    description("ShareButtonDescription")
+                    describedText("omokakeScreenDescription")
+                    describedTextWithIcon(systemName: "square.and.arrow.up", "ShareButton")
+                    describedText("ShareButtonDescription")
                 }
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.clear)
-                description("SelectAlbumScreenDescription")
+                describedText("SelectAlbumScreenDescription")
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.clear)
-                description("KakeraSettingScreenDescription")
+                describedText("KakeraSettingScreenDescription")
                 Spacer()
                 Rectangle()
                     .frame(height: 20)

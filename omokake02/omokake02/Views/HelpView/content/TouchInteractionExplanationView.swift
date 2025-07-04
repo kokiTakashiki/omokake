@@ -11,14 +11,14 @@ import SwiftUI
 struct TouchInteractionExplanationView: View {
     var body: some View {
         ZStack {
-            waku
+            decorativeFrame
             VStack {
                 Rectangle()
                     .frame(height: 20)
                     .foregroundColor(.clear)
-                title("TouchInteraction")
-                imageSideDescription(name: "shusoku", "TouchInteractionDescription1")
-                imageSideDescription(name: "kakusan", "TouchInteractionDescription2")
+                titleText("TouchInteraction")
+                describedTextWithImage(imageName: "shusoku", "TouchInteractionDescription1")
+                describedTextWithImage(imageName: "kakusan", "TouchInteractionDescription2")
                 Spacer()
                 Rectangle()
                     .frame(height: 20)

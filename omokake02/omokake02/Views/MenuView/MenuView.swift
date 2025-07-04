@@ -31,18 +31,18 @@ struct MenuView: View {
             questionmarkButton
         }
         .padding(.top, 28)
-        .okAlert(
+        .alertWithOKButton(
             "TakeMorePhotos",
-            messageKey: "200orMore",
+            message: "200orMore",
             isPresented: $environmentObject.takeMorePhotosShowingAlert
         ) {
             Task { @MainActor in
                 environmentObject.takeMorePhotosAlertOKAction()
             }
         }
-        .okAlert(
+        .alertWithOKButton(
             "BestPhotographer",
-            messageText: messageString,
+            message: messageString,
             isPresented: $environmentObject.limitedGeneratingKakeraShowingAlert
         ) {
             Task { @MainActor in
@@ -71,16 +71,16 @@ struct MenuView: View {
     private var main: some View {
         VStack {
             Text("kakera")
-                .font(.futuraMedium(size: 45))
+                .font(.makeFuturaMedium(size: 45))
             HStack {
                 Text("kakeraNumberHelpText")
-                    .font(.futuraMedium(size: 17))
+                    .font(.makeFuturaMedium(size: 17))
                 Spacer()
             }
             
             HStack {
                 Text("\(environmentObject.partsCount) kakera")
-                    .font(.futuraMedium(size: 17))
+                    .font(.makeFuturaMedium(size: 17))
                 Spacer()
             }
 
