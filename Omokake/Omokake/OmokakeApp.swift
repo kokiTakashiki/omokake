@@ -8,13 +8,18 @@
 import SwiftUI
 import OmokakeWindowApp
 import OmokakeSpaceApp
+import OmokakeOldApp
 
 @main
 struct OmokakeApp: App {
     #if os(iOS) || os(macOS)
     var body: some Scene {
         WindowGroup {
-            OmokakeWindowApp.main
+            if #available(iOS 26.0, macOS 26.0, *) {
+                OmokakeWindowApp.main
+            } else {
+                OmokakeOldApp.main
+            }
         }
     }
     #endif

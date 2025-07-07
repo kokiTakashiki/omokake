@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "DkD-0U-gms.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Tap to Start\"; ObjectID = \"DkD-0U-gms\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to Start"
+          }
+        }
+      }
+    },
+    "Jgv-fg-ElO.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Tap to Start\"; ObjectID = \"Jgv-fg-ElO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to Start"
+          }
+        }
+      }
+    },
+    "VW1-DD-Cg5.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"omokake\"; ObjectID = \"VW1-DD-Cg5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "omokake"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "omokake"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
