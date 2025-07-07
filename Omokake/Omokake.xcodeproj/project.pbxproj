@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9ADD3E962E182D450094667F /* OmokakeWindowApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADD3E952E182D450094667F /* OmokakeWindowApp */; };
+		9ADD3EB62E1B87310094667F /* OmokakeSpaceApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADD3EB52E1B87310094667F /* OmokakeSpaceApp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ADD3E962E182D450094667F /* OmokakeWindowApp in Frameworks */,
+				9ADD3EB62E1B87310094667F /* OmokakeSpaceApp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +135,7 @@
 			name = Omokake;
 			packageProductDependencies = (
 				9ADD3E952E182D450094667F /* OmokakeWindowApp */,
+				9ADD3EB52E1B87310094667F /* OmokakeSpaceApp */,
 			);
 			productName = Omokake;
 			productReference = 9ADD3E552E181FF80094667F /* Omokake.app */;
@@ -637,6 +640,10 @@
 		9ADD3E952E182D450094667F /* OmokakeWindowApp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OmokakeWindowApp;
+		};
+		9ADD3EB52E1B87310094667F /* OmokakeSpaceApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OmokakeSpaceApp;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

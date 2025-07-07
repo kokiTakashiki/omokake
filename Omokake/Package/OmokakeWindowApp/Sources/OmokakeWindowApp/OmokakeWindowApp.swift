@@ -3,6 +3,7 @@
 
 import SwiftUI
 
+/// iOS, iPadOS, macOS向けのOmokake
 public enum OmokakeWindowApp {
     public static var main: some View {
         if #available(iOS 26.0, *) {
