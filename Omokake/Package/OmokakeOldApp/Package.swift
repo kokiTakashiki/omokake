@@ -7,8 +7,7 @@ let package = Package(
     name: "OmokakeOldApp",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v14),
-        .macOS(.v14)
+        .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.

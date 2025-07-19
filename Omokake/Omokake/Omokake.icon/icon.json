@@ -11,7 +11,7 @@
         {
           "blend-mode" : "normal",
           "fill" : "none",
-          "glass" : true,
+          "glass" : false,
           "hidden" : false,
           "image-name" : "icon1024x1024.png",
           "name" : "icon1024x1024"

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9A2BC1112E1B8F9D003151B8 /* OmokakeOldApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9A2BC1102E1B8F9D003151B8 /* OmokakeOldApp */; };
-		9A84A2412E1B93AD004FCA13 /* OmokakeModel in Frameworks */ = {isa = PBXBuildFile; productRef = 9A84A2402E1B93AD004FCA13 /* OmokakeModel */; };
 		9ADD3E962E182D450094667F /* OmokakeWindowApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADD3E952E182D450094667F /* OmokakeWindowApp */; };
 		9ADD3EB62E1B87310094667F /* OmokakeSpaceApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADD3EB52E1B87310094667F /* OmokakeSpaceApp */; };
 /* End PBXBuildFile section */
@@ -86,7 +85,6 @@
 		9ADD3E522E181FF80094667F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				9A84A2412E1B93AD004FCA13 /* OmokakeModel in Frameworks */,
 				9ADD3E962E182D450094667F /* OmokakeWindowApp in Frameworks */,
 				9A2BC1112E1B8F9D003151B8 /* OmokakeOldApp in Frameworks */,
 				9ADD3EB62E1B87310094667F /* OmokakeSpaceApp in Frameworks */,
@@ -156,7 +154,6 @@
 				9ADD3E952E182D450094667F /* OmokakeWindowApp */,
 				9ADD3EB52E1B87310094667F /* OmokakeSpaceApp */,
 				9A2BC1102E1B8F9D003151B8 /* OmokakeOldApp */,
-				9A84A2402E1B93AD004FCA13 /* OmokakeModel */,
 			);
 			productName = Omokake;
 			productReference = 9ADD3E552E181FF80094667F /* Omokake.app */;
@@ -446,7 +443,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
@@ -496,7 +493,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
@@ -655,10 +652,6 @@
 		9A2BC1102E1B8F9D003151B8 /* OmokakeOldApp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OmokakeOldApp;
-		};
-		9A84A2402E1B93AD004FCA13 /* OmokakeModel */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OmokakeModel;
 		};
 		9ADD3E952E182D450094667F /* OmokakeWindowApp */ = {
 			isa = XCSwiftPackageProductDependency;
