@@ -14,8 +14,8 @@ protocol RenderDestinationProvider {
     var currentRenderPassDescriptor: MTLRenderPassDescriptor? { get }
     var currentDrawable: CAMetalDrawable? { get }
     var colorPixelFormat: MTLPixelFormat { get set }
-    //var depthStencilPixelFormat: MTLPixelFormat { get set }
-    //var sampleCount: Int { get set }
+    // var depthStencilPixelFormat: MTLPixelFormat { get set }
+    // var sampleCount: Int { get set }
 }
 
 extension Renderer {
@@ -28,12 +28,12 @@ extension Renderer {
 
 @MainActor
 class Renderer {
-    static private(set) var device: MTLDevice!
-    private(set) var partsCount: Int = 0
+    private(set) static var device: MTLDevice!
+    private(set) var partsCount = 0
 
     private let drawableSize: CGSize!
     private var renderDestination: RenderDestinationProvider
-    
+
     private let commandQueue: MTLCommandQueue?
     private var computePipelineState: MTLComputePipelineState!
     private var renderPipelineState: MTLRenderPipelineState!
@@ -49,17 +49,17 @@ class Renderer {
         renderDestination: RenderDestinationProvider,
         albumInfo: AlbumInfo
     ) {
-        Renderer.self.device = mtlView.device
-        self.drawableSize = mtlView.drawableSize
-        self.commandQueue = Renderer.self.device.makeCommandQueue()
+        Renderer.device = mtlView.device
+        drawableSize = mtlView.drawableSize
+        commandQueue = Renderer.device.makeCommandQueue()
         self.partsCount = partsCount
         self.renderDestination = renderDestination
         mtlView.framebufferOnly = false
-        
+
         loadMetal(isBlendingEnabled: isBlendingEnabled)
         partsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
     }
-    
+
     init(
         mtlView: MTKView,
         selectKakera: KakeraType,
@@ -67,68 +67,81 @@ class Renderer {
         renderDestination: RenderDestinationProvider,
         albumInfo: AlbumInfo
     ) {
-        Renderer.self.device = mtlView.device
-        self.drawableSize = mtlView.drawableSize
-        self.commandQueue = Renderer.self.device.makeCommandQueue()
-        self.partsCount = 1
+        Renderer.device = mtlView.device
+        drawableSize = mtlView.drawableSize
+        commandQueue = Renderer.device.makeCommandQueue()
+        partsCount = 1
         self.renderDestination = renderDestination
         mtlView.framebufferOnly = false
-        
+
         loadMetal(isBlendingEnabled: isBlendingEnabled)
         onePartsSetUp(mtlView, selectKakera: selectKakera, albumInfo: albumInfo)
     }
 }
 
 // MARK: Create
+
 extension Renderer {
-    private func createOmokake(mtlView: MTKView, startPosition: simd_float2, imageName: String, imageName2: String, colorCount: Int) {
+    private func createOmokake(
+        mtlView: MTKView,
+        startPosition: simd_float2,
+        imageName: String,
+        imageName2: String,
+        colorCount: Int
+    ) {
         if partsCount == 0 { return } // ならセットアップはしない。
         if partsCount <= 1 {
             guard let texture = ParticleSetup.loadTexture(imageName: imageName) else { return }
             let omokak = omokake(size: mtlView.drawableSize, texture: texture, colorCount: colorCount)
-            //生成地点
+            // 生成地点
             omokak.position = startPosition
             omokak.particleCount = partsCount
             setParticles.append(omokak)
         } else {
             guard let texture = ParticleSetup.loadTexture(imageName: imageName) else { return }
             let omokak = omokake(size: mtlView.drawableSize, texture: texture, colorCount: colorCount)
-            //生成地点
-            var randpartsCount = partsCount / Int.random(in: 3...10)
+            // 生成地点
+            var randpartsCount = partsCount / Int.random(in: 3 ... 10)
             if randpartsCount == 0 { randpartsCount = 1 }
-            print("[Renderer] randpartsCount",randpartsCount)
+            print("[Renderer] randpartsCount", randpartsCount)
             omokak.position = startPosition
             omokak.particleCount = partsCount - randpartsCount
             setParticles.append(omokak)
-            
+
             guard let texture2 = ParticleSetup.loadTexture(imageName: imageName2) else { return }
             let omokak2 = omokake2(size: mtlView.drawableSize, texture: texture2, colorCount: colorCount)
-            //生成地点
+            // 生成地点
             omokak2.position = startPosition
             omokak2.particleCount = randpartsCount
             setParticles.append(omokak2)
         }
     }
-    
+
     private func partsSetUp(_ mtlView: MTKView, selectKakera: KakeraType, albumInfo: AlbumInfo) {
-        let colorCount = Int.random(in: 1...4)
-        
+        let colorCount = Int.random(in: 1 ... 4)
+
         switch selectKakera {
         case .sankaku:
             createOmokake(mtlView: mtlView,
-                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
+                          startPosition: simd_float2(
+                              Float(mtlView.drawableSize.width / 2.0),
+                              Float(mtlView.drawableSize.height * 0.0)
+                          ),
                           imageName: "kakera",
                           imageName2: "kakera2",
                           colorCount: colorCount)
         case .sikaku:
             createOmokake(mtlView: mtlView,
-                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)),
+                          startPosition: simd_float2(
+                              Float(mtlView.drawableSize.width / 2.0),
+                              Float(mtlView.drawableSize.height * 0.0)
+                          ),
                           imageName: "kakeraS1",
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
         case .thumbnail: // 400 以内じゃないとFPSがきつい iPhone11 Pro iPhone6s 250 以内
             let thumbnailSize = CGSize(width: 250, height: 250)
-            var originalArray:[UIImage] = []
+            var originalArray: [UIImage] = []
             switch albumInfo.type {
             case .favorites:
                 var partsMaxCount = albumInfo.photosCount
@@ -136,47 +149,61 @@ extension Renderer {
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
-                originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+                originalArray = PhotosManager.favoriteThumbnail(
+                    albumInfo: albumInfo,
+                    partsCount: partsMaxCount,
+                    thumbnailSize: thumbnailSize
+                )
             case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
-                originalArray = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+                originalArray = PhotosManager.selectThumbnail(
+                    albumInfo: albumInfo,
+                    partsCount: partsMaxCount,
+                    thumbnailSize: thumbnailSize
+                )
             }
-            for cell in 0..<originalArray.count {
+            for cell in 0 ..< originalArray.count {
                 let omokak = omokakeThumbnail(size: mtlView.drawableSize,
                                               texture: ParticleSetup.loadTextureImage(image: originalArray[cell]),
                                               speed: 1,
                                               speedY: 2,
-                                              speedRange: -1.78...0.62)
-                omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height * 0.0)]
+                                              speedRange: -1.78 ... 0.62)
+                omokak.position = [Float(mtlView.drawableSize.width / 2.0), Float(mtlView.drawableSize.height * 0.0)]
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
         }
     }
-    
+
     private func onePartsSetUp(_ mtlView: MTKView, selectKakera: KakeraType, albumInfo: AlbumInfo) {
-        let colorCount = Int.random(in: 1...4)
-        
+        let colorCount = Int.random(in: 1 ... 4)
+
         switch selectKakera {
         case .sankaku:
             createOmokake(mtlView: mtlView,
-                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
+                          startPosition: simd_float2(
+                              Float(mtlView.drawableSize.width / 2.0),
+                              Float(mtlView.drawableSize.height / 2.0)
+                          ),
                           imageName: "kakera",
                           imageName2: "kakera2",
                           colorCount: colorCount)
         case .sikaku:
             createOmokake(mtlView: mtlView,
-                          startPosition: simd_float2(Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)),
+                          startPosition: simd_float2(
+                              Float(mtlView.drawableSize.width / 2.0),
+                              Float(mtlView.drawableSize.height / 2.0)
+                          ),
                           imageName: "kakeraS1",
                           imageName2: "kakeraS2",
                           colorCount: colorCount)
         case .thumbnail:
             let thumbnailSize = CGSize(width: 250, height: 250)
-            var originalArray:[UIImage] = []
+            var originalArray: [UIImage] = []
             switch albumInfo.type {
             case .favorites:
                 var partsMaxCount = albumInfo.photosCount
@@ -184,22 +211,30 @@ extension Renderer {
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
-                originalArray = PhotosManager.favoriteThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+                originalArray = PhotosManager.favoriteThumbnail(
+                    albumInfo: albumInfo,
+                    partsCount: partsMaxCount,
+                    thumbnailSize: thumbnailSize
+                )
             case .regular:
                 var partsMaxCount = albumInfo.photosCount
                 print("[Renderer] partCount", albumInfo.photosCount)
                 if albumInfo.photosCount > partsCount {
                     partsMaxCount = partsCount
                 }
-                originalArray = PhotosManager.selectThumbnail(albumInfo: albumInfo, partsCount: partsMaxCount, thumbnailSize: thumbnailSize)
+                originalArray = PhotosManager.selectThumbnail(
+                    albumInfo: albumInfo,
+                    partsCount: partsMaxCount,
+                    thumbnailSize: thumbnailSize
+                )
             }
-            for cell in 0..<originalArray.count {
+            for cell in 0 ..< originalArray.count {
                 let omokak = omokakeThumbnail(size: mtlView.drawableSize,
                                               texture: ParticleSetup.loadTextureImage(image: originalArray[cell]),
                                               speed: 0,
                                               speedY: 0,
-                                              speedRange: 0...0)
-                omokak.position = [Float(mtlView.drawableSize.width/2.0), Float(mtlView.drawableSize.height/2.0)]
+                                              speedRange: 0 ... 0)
+                omokak.position = [Float(mtlView.drawableSize.width / 2.0), Float(mtlView.drawableSize.height / 2.0)]
                 omokak.particleCount = 1
                 setParticles.append(omokak)
             }
@@ -208,6 +243,7 @@ extension Renderer {
 }
 
 // MARK: loadMetal
+
 extension Renderer {
     private func loadMetal(isBlendingEnabled: Bool) {
         // Load all the shader files with a metal file extension in the project
@@ -217,66 +253,72 @@ extension Renderer {
         else {
             fatalError("[Renderer] Failed to loaded shader function")
         }
-        
+
         do {
             try computePipelineState = Renderer.device.makeComputePipelineState(function: computeFunc)
-        } catch let error {
+        } catch {
             fatalError("[Renderer] Failed to created commpute pipeline state, error \(error)")
         }
-        
+
         // Set the default formats needed to render
-        //renderDestination.depthStencilPixelFormat = .depth32Float_stencil8
+        // renderDestination.depthStencilPixelFormat = .depth32Float_stencil8
         renderDestination.colorPixelFormat = .bgra8Unorm
-        
+
         let vertexFunc = defaultLibrary.makeFunction(name: "vertexTransform")
         let fragmentFunc = defaultLibrary.makeFunction(name: "fragmentShader")
-        
+
         // Create a pipeline state for rendering the captured image
         let renderPipelineStateDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineStateDescriptor.label = "MyRenderPipeline"
         renderPipelineStateDescriptor.vertexFunction = vertexFunc
         renderPipelineStateDescriptor.fragmentFunction = fragmentFunc
-        //ピクセルフォーマット
+        // ピクセルフォーマット
         renderPipelineStateDescriptor.colorAttachments[0].pixelFormat = renderDestination.colorPixelFormat
-        //透明度の許可
-        renderPipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha//renderDestination.colorSourceRGBBlendFactor
-        //アルファブレンドを許可する
-        renderPipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = isBlendingEnabled//renderDestination.colorIsBlendingEnabled
+        // 透明度の許可
+        renderPipelineStateDescriptor.colorAttachments[0]
+            .sourceRGBBlendFactor = .sourceAlpha // renderDestination.colorSourceRGBBlendFactor
+        // アルファブレンドを許可する
+        renderPipelineStateDescriptor.colorAttachments[0]
+            .isBlendingEnabled = isBlendingEnabled // renderDestination.colorIsBlendingEnabled
         //
-        renderPipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .one//renderDestination.colorDestinationRGBBlendFactor
-        //renderPipelineStateDescriptor.stencilAttachmentPixelFormat = renderDestination.depthStencilPixelFormat
-        
+        renderPipelineStateDescriptor.colorAttachments[0]
+            .destinationRGBBlendFactor = .one // renderDestination.colorDestinationRGBBlendFactor
+        // renderPipelineStateDescriptor.stencilAttachmentPixelFormat = renderDestination.depthStencilPixelFormat
+
         do {
             try renderPipelineState = Renderer.device.makeRenderPipelineState(descriptor: renderPipelineStateDescriptor)
-        } catch let error {
+        } catch {
             print("Failed to created render pipeline state, error \(error)")
         }
     }
 }
 
 // MARK: Update
+
 extension Renderer {
-    //public func draw(in view: MTKView) {
+    // public func draw(in view: MTKView) {
     func update(
         pressurePointInit: simd_float2,
         isTouchEnd: Bool,
         pressureEndPointInit: simd_float2,
         customSize: Float
     ) -> Int {
-        
+
         for setParticle in setParticles {
             setParticle.generate()
         }
-        
-        guard let commandBuffer = commandQueue?.makeCommandBuffer(), let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
-            let currentDrawable = renderDestination.currentDrawable else {
+
+        guard let commandBuffer = commandQueue?.makeCommandBuffer(),
+              let renderPassDescriptor = renderDestination.currentRenderPassDescriptor,
+              let currentDrawable = renderDestination.currentDrawable
+        else {
             return 0
         }
         guard let computeEncoder = commandBuffer.makeComputeCommandEncoder() else {
             return 0
         }
         computeEncoder.setComputePipelineState(computePipelineState)
-        
+
         for setParticle in setParticles {
             guard
                 let timeBuffer = Renderer.device.makeBuffer(length: MemoryLayout<Float>.size, options: []),
@@ -291,7 +333,7 @@ extension Renderer {
                 capacity: 1 / MemoryLayout<Float>.stride
             )
             timeBufferPointer[0] = Float(Date().timeIntervalSince(startDate))
-            
+
             // pressurePoint
             pressureBuffer.label = "pressureZone1"
             let pressureBufferPointer = pressureBuffer.contents().bindMemory(
@@ -302,7 +344,7 @@ extension Renderer {
                 pressurePointInit.x * Float(drawableSize.width),
                 pressurePointInit.y * Float(drawableSize.height)
             )
-            
+
             // pressureEndPoint
             pressureEndBuffer.label = "pressureEndPoint"
             let pressureEndBufferPointer = pressureEndBuffer.contents().bindMemory(
@@ -313,25 +355,25 @@ extension Renderer {
                 pressureEndPointInit.x * Float(drawableSize.width),
                 pressureEndPointInit.y * Float(drawableSize.height)
             )
-            
+
             touchEndBool.label = "touchEndBool"
             let touchEndBoolPointer = touchEndBool.contents().bindMemory(
                 to: Int.self,
                 capacity: 1 / MemoryLayout<Int>.stride
             )
             touchEndBoolPointer[0] = isTouchEnd ? 1 : 0
-            
+
             computeEncoder.setBuffer(timeBuffer, offset: 0, index: 2)
             computeEncoder.setBuffer(pressureBuffer, offset: 0, index: 3)
             computeEncoder.setBuffer(pressureEndBuffer, offset: 0, index: 4)
             computeEncoder.setBuffer(touchEndBool, offset: 0, index: 5)
             computeEncoder.setBuffer(setParticle.particleBuffer, offset: 0, index: 0)
-            computeEncoder.setBytes(&setParticle.particleCount,length: MemoryLayout<uint>.stride, index: 1)
-            
+            computeEncoder.setBytes(&setParticle.particleCount, length: MemoryLayout<uint>.stride, index: 1)
+
             dispatchThreads(computeEncoder: computeEncoder, particleCount: setParticle.particleCount)
         }
         computeEncoder.endEncoding()
-        
+
         guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(
             descriptor: renderPassDescriptor
         ) else { return 0 }
@@ -342,16 +384,16 @@ extension Renderer {
             length: MemoryLayout<simd_float2>.stride,
             index: 0
         )
-        
+
         // label用
         var allCurrentParticles = 0
-        
+
         for setParticle in setParticles {
-            renderEncoder.setVertexBuffer(setParticle.particleBuffer,offset: 0, index: 1)
+            renderEncoder.setVertexBuffer(setParticle.particleBuffer, offset: 0, index: 1)
             renderEncoder.setVertexBytes(&setParticle.position,
                                          length: MemoryLayout<simd_float2>.stride,
                                          index: 2)
-            
+
             guard let customSizeBuffer = Renderer.device.makeBuffer(
                 length: MemoryLayout<Float>.size,
                 options: []
@@ -362,8 +404,8 @@ extension Renderer {
                 capacity: 1 / MemoryLayout<Float>.stride
             )
             customSizeBufferPointer[0] = customSize
-            
-            renderEncoder.setVertexBuffer(customSizeBuffer,offset: 0, index: 3)
+
+            renderEncoder.setVertexBuffer(customSizeBuffer, offset: 0, index: 3)
             renderEncoder.setFragmentTexture(setParticle.particleTexture, index: 0)
             renderEncoder.drawPrimitives(
                 type: .point,
@@ -376,18 +418,18 @@ extension Renderer {
         renderEncoder.endEncoding()
         commandBuffer.present(currentDrawable)
         commandBuffer.commit()
-        
+
         return allCurrentParticles
     }
-    
+
     private func dispatchThreads(computeEncoder: MTLComputeCommandEncoder, particleCount: Int) {
         let threadsPerGrid = MTLSizeMake(particleCount, 1, 1)
 
         let maxTotalThreadsPerThreadgroup = computePipelineState.maxTotalThreadsPerThreadgroup
-        let threadExecutionWidth          = computePipelineState.threadExecutionWidth
-        let width  = maxTotalThreadsPerThreadgroup / threadExecutionWidth * threadExecutionWidth
+        let threadExecutionWidth = computePipelineState.threadExecutionWidth
+        let width = maxTotalThreadsPerThreadgroup / threadExecutionWidth * threadExecutionWidth
         let height = 1
-        let depth  = 1
+        let depth = 1
         let threadsPerGroup = MTLSize(width: width, height: height, depth: depth)
 
         if Self.device.supportsFamily(.apple4) {

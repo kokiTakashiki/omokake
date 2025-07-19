@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ContentView.swift
 //  OmokakeWindowApp
 //
 //  Created by takedatakashiki on 2025/07/05.

@@ -19,12 +19,12 @@ public enum PhotoAccessState {
 }
 
 extension PHPhotoLibrary {
-    //ユーザーに許可を促す.
-    static func Authorization( userCompletionHandler: @escaping (PhotoAccessState) -> Void){
-        
+    // ユーザーに許可を促す.
+    static func Authorization(userCompletionHandler: @escaping (PhotoAccessState) -> Void) {
+
         if #available(iOS 14.0, *) {
             PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
-                
+
                 switch status {
                 case .authorized:
                     userCompletionHandler(.Authorized)
@@ -45,11 +45,11 @@ extension PHPhotoLibrary {
                     userCompletionHandler(.Default)
                     print("[PHPhotoLibrary] default")
                 }
-                
+
             }
         } else {
-            PHPhotoLibrary.requestAuthorization { (status) -> Void in
-                
+            PHPhotoLibrary.requestAuthorization { status in
+
                 switch status {
                 case .authorized:
                     userCompletionHandler(.Authorized)
@@ -70,7 +70,7 @@ extension PHPhotoLibrary {
                     userCompletionHandler(.Default)
                     print("[PHPhotoLibrary] default")
                 }
-                
+
             }
         }
     }

@@ -6,8 +6,8 @@
 //  Copyright © 2023 takasiki. All rights reserved.
 //
 
-import SwiftUI
 import OmokakeModel
+import SwiftUI
 
 struct HelpView: View {
     private let audio = PlayerController.shared

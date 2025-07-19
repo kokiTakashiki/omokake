@@ -30,7 +30,7 @@ extension UIImage {
 
         return image
     }
-    
+
     func imageWithAlpha(alpha: CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: CGPoint.zero, blendMode: .normal, alpha: alpha)
@@ -38,14 +38,14 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return newImage ?? UIImage.emptyImage(color: .black, frame: CGRect.zero)
     }
-    
+
     /// 上下逆になった画像を反転する
     func fixedOrientation() -> UIImage? {
-        if self.imageOrientation == UIImage.Orientation.up {
+        if imageOrientation == UIImage.Orientation.up {
             return self
         }
-        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
-        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
             return nil
         }
@@ -56,16 +56,16 @@ extension UIImage {
     /// イメージ縮小
     func resizeImage(maxSize: Int) -> UIImage? {
 
-        guard let jpg = self.jpegData(compressionQuality: 1) as NSData? else {
+        guard let jpg = jpegData(compressionQuality: 1) as NSData? else {
             return nil
         }
         if isLessThanMaxByte(data: jpg, maxDataByte: maxSize) {
             return self
         }
         // 80%に圧縮
-        let _size: CGSize = CGSize(width: (self.size.width * 0.8), height: (self.size.height * 0.8))
+        let _size = CGSize(width: size.width * 0.8, height: size.height * 0.8)
         UIGraphicsBeginImageContext(_size)
-        self.draw(in: CGRect(x: 0, y: 0, width: _size.width, height: _size.height))
+        draw(in: CGRect(x: 0, y: 0, width: _size.width, height: _size.height))
         guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
             return nil
         }
@@ -81,7 +81,7 @@ extension UIImage {
             // 最大容量の指定が無い場合はOK扱い
             return true
         }
-        guard let data = data else {
+        guard let data else {
             fatalError("Data unwrap error")
         }
         if data.length < maxDataByte {

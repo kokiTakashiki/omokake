@@ -10,7 +10,7 @@ import Foundation
 
 extension CaseIterable where Self: Equatable & RawRepresentable {
     private var allCases: AllCases { Self.allCases }
-    
+
     /// **Returns** the next case in the enumeration.
     ///
     /// If the current case is the last one, returns the same case.
@@ -23,7 +23,7 @@ extension CaseIterable where Self: Equatable & RawRepresentable {
         guard next != allCases.endIndex else { return allCases[index] }
         return allCases[next]
     }
-    
+
     /// **Returns** the previous case in the enumeration.
     ///
     /// If the current case is the first one, returns the same case.
@@ -36,11 +36,11 @@ extension CaseIterable where Self: Equatable & RawRepresentable {
         guard previous >= allCases.startIndex else { return allCases[index] }
         return allCases[previous]
     }
-    
+
     /// **All raw values** of the enumeration cases.
     ///
     /// - Complexity: O(n) where n is the number of cases in the enumeration.
     static var allValues: [RawValue] {
-        return allCases.map { $0.rawValue }
+        allCases.map(\.rawValue)
     }
 }

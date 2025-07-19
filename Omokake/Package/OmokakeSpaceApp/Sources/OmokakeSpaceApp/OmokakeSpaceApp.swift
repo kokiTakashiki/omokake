@@ -4,10 +4,10 @@
 import SwiftUI
 
 #if os(visionOS)
-/// visionOS向けのOmokake
-public enum OmokakeSpaceApp {
-    public static var main: some View {
-        ContentView()
+    /// visionOS向けのOmokake
+    public enum OmokakeSpaceApp {
+        public static var main: some View {
+            ContentView()
+        }
     }
-}
 #endif

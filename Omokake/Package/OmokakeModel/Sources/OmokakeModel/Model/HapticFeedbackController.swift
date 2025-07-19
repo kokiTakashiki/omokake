@@ -17,7 +17,7 @@ public enum ImpactFeedbackStyle: Int {
     case rigid
 
     var value: UIImpactFeedbackGenerator.FeedbackStyle {
-        return .init(rawValue: rawValue)!
+        .init(rawValue: rawValue)!
     }
 
 }
@@ -29,7 +29,7 @@ public enum NotificationFeedbackType: Int {
     case error
 
     var value: UINotificationFeedbackGenerator.FeedbackType {
-        return .init(rawValue: rawValue)!
+        .init(rawValue: rawValue)!
     }
 
 }
@@ -53,18 +53,18 @@ public final class HapticFeedbackController {
 
     public func play(_ haptic: Haptic) {
         switch haptic {
-        case .impact(let style, let intensity):
+        case let .impact(style, intensity):
             impactFeedbackGenerator = UIImpactFeedbackGenerator(style: style.value)
             impactFeedbackGenerator?.prepare()
-            
-            if let intensity = intensity {
+
+            if let intensity {
                 impactFeedbackGenerator?.impactOccurred(intensity: intensity)
             } else {
                 impactFeedbackGenerator?.impactOccurred()
             }
             impactFeedbackGenerator = nil
 
-        case .notification(let type):
+        case let .notification(type):
             notificationFeedbackGenerator = UINotificationFeedbackGenerator()
             notificationFeedbackGenerator?.prepare()
             notificationFeedbackGenerator?.notificationOccurred(type.value)

@@ -11,9 +11,9 @@ import UIKit
 class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var photosCount: UILabel!
-    
+
     func setData(title: String, photosCount: Int) {
-        self.titleLabel.text = title
+        titleLabel.text = title
         let localizedString = NSLocalizedString("Photos", comment: "")
         let messageString = String(format: localizedString, "\(photosCount)")
         self.photosCount.text = messageString

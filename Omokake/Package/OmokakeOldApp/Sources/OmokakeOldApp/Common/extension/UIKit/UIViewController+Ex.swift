@@ -13,7 +13,7 @@ extension UIViewController {
     ///
     /// - Returns: A UIViewController instance loaded from the storyboard.
     static func makeViewController() -> UIViewController {
-        let storyBoardName = String(describing: self.classForCoder())
+        let storyBoardName = String(describing: classForCoder())
         let storyboard = UIStoryboard(name: storyBoardName, bundle: Bundle.module)
         let viewController = storyboard.instantiateViewController(withIdentifier: storyBoardName)
         return viewController
@@ -25,8 +25,8 @@ extension UIViewController {
     /// - Returns: A view controller instance of the specified type.
     static func makeViewController<ViewController>(
         using creator: @escaping (NSCoder) -> ViewController?
-    ) -> ViewController where ViewController : UIViewController {
-        let storyBoardName = String(describing: self.classForCoder())
+    ) -> ViewController where ViewController: UIViewController {
+        let storyBoardName = String(describing: classForCoder())
         let storyBoard = UIStoryboard(name: storyBoardName, bundle: Bundle.module)
         let viewController = storyBoard.instantiateViewController(identifier: storyBoardName, creator: creator)
         return viewController

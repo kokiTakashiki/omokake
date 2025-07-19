@@ -56,7 +56,7 @@ struct CreditView: View {
                         hasLeadingSpace: false
                     )
                 }
-                
+
                 HStack {
                     describedText(
                         "Special Thanks",

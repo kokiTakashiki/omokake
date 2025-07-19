@@ -14,13 +14,13 @@ import UIKit
 /// using a standardized naming convention.
 @MainActor
 public protocol StoryboardLoadable {
-    
+
     /// **The identifier** used to instantiate the view controller from the storyboard.
     static var identifier: String { get }
-    
+
     /// **The storyboard** containing this view controller.
     static var storyboard: UIStoryboard { get }
-    
+
     /// **Loads** a view controller from the storyboard using a custom creator.
     ///
     /// - Parameter creator: A closure that creates the view controller from an NSCoder.
@@ -29,18 +29,19 @@ public protocol StoryboardLoadable {
 }
 
 // MARK: Default implementations
+
 public extension StoryboardLoadable {
-    
+
     /// **The default identifier** based on the type name.
     static var identifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
-    
+
     /// **The default storyboard** with the same name as the type.
     static var storyboard: UIStoryboard {
-        return UIStoryboard(name: String(describing: self), bundle: Bundle.module)
+        UIStoryboard(name: String(describing: self), bundle: Bundle.module)
     }
-    
+
     /// **Loads** a view controller from the storyboard using a custom creator.
     ///
     /// - Parameter creator: A closure that creates the view controller from an NSCoder.

@@ -11,7 +11,7 @@ import UIKit
 
 struct IntroSteps: View {
     @EnvironmentObject var environmentObject: IntroStepsEnvironmentObject
-    
+
     var body: some View {
         VStack {
             // MULTI-STEPS View
@@ -20,13 +20,13 @@ struct IntroSteps: View {
                 extraContent: IntroStepsState.allValues,
                 extraContentPosition: .above,
                 extraContentSize: CGSize(width: 30, height: 30),
-                action: {_ in }
+                action: { _ in }
             ) {
                 RoundedRectangle(cornerRadius: 5).frame(height: 10)
             }
             .padding()
             .font(.title)
-            
+
             Spacer()
 
             if environmentObject.photoAccessState == .none ||
@@ -36,7 +36,7 @@ struct IntroSteps: View {
                 Spacer()
                 bottomButton
             } else {
-                DeniedView() {
+                DeniedView {
                     Task { @MainActor in
                         await environmentObject.deniedViewAction()
                     }
@@ -50,6 +50,7 @@ struct IntroSteps: View {
 }
 
 // MARK: UIParts
+
 extension IntroSteps {
 
     @ViewBuilder
@@ -59,7 +60,7 @@ extension IntroSteps {
         case .infoOmokake:
             InfoOmokakeView()
         case .approval:
-            ApprovalView() {
+            ApprovalView {
                 Task { @MainActor in
                     await environmentObject.approvalViewAction()
                 }

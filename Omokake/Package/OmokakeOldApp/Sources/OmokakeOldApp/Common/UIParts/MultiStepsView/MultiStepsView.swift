@@ -8,22 +8,21 @@
 
 import SwiftUI
 
-struct MultiStepsView<T, Content: View> : View where T: Swift.CaseIterable {
+struct MultiStepsView<T, Content: View>: View where T: Swift.CaseIterable {
     @Binding var steps: [T]
-    let extraContent : [String]?
-    let extraContentPosition : ExtraContentPosition?
-    let extraContentSize : CGSize?
-    let action : (Int) -> Void
+    let extraContent: [String]?
+    let extraContentPosition: ExtraContentPosition?
+    let extraContentSize: CGSize?
+    let action: (Int) -> Void
     @ViewBuilder let content: () -> Content
-    
-    @State var numberOfSteps : Int = 0
+
+    @State var numberOfSteps = 0
     @State var widthOfLastItem = 0.0
-    @State var images : [UIImage] = []
-    
+    @State var images: [UIImage] = []
+
     private let accentColor = Color("main", bundle: .module)
-    
-    @ViewBuilder
-    var body: some View {
+
+    @ViewBuilder var body: some View {
         VStack {
             HStack {
                 ForEach(0 ..< numberOfSteps, id: \.self) { index in
@@ -35,8 +34,8 @@ struct MultiStepsView<T, Content: View> : View where T: Swift.CaseIterable {
                     }
                 }
             }
-        }.onAppear() {
-            numberOfSteps = type(of: steps).Element.self.allCases.count
+        }.onAppear {
+            numberOfSteps = type(of: steps).Element.allCases.count
         }
     }
 }
@@ -48,19 +47,34 @@ extension MultiStepsView {
         ZStack {
             HStack(spacing: 0) {
                 VStack {
-                    if let extraContent = extraContent, extraContentPosition == .above {
-                        ExtraStepContent(index: index, color: index < steps.count ? accentColor :.gray, extraContent: extraContent, extraContentSize: extraContentSize)
+                    if let extraContent, extraContentPosition == .above {
+                        ExtraStepContent(
+                            index: index,
+                            color: index < steps.count ? accentColor : .gray,
+                            extraContent: extraContent,
+                            extraContentSize: extraContentSize
+                        )
                     }
-                    content().foregroundColor(index < steps.count ? accentColor :.gray)
+                    content().foregroundColor(index < steps.count ? accentColor : .gray)
                 }
-                if let extraContent = extraContent, extraContentPosition == .inline {
-                    ExtraStepContent(index: index, color: index < steps.count ? accentColor :.gray, extraContent: extraContent, extraContentSize: extraContentSize)
+                if let extraContent, extraContentPosition == .inline {
+                    ExtraStepContent(
+                        index: index,
+                        color: index < steps.count ? accentColor : .gray,
+                        extraContent: extraContent,
+                        extraContentSize: extraContentSize
+                    )
                 }
             }
         }
         .overlay {
-            if let extraContent = extraContent, extraContentPosition == .onTop , index < steps.count {
-                ExtraStepContent(index: index, color: accentColor, extraContent: extraContent, extraContentSize: extraContentSize)
+            if let extraContent, extraContentPosition == .onTop, index < steps.count {
+                ExtraStepContent(
+                    index: index,
+                    color: accentColor,
+                    extraContent: extraContent,
+                    extraContentSize: extraContentSize
+                )
             }
         }
         .onTapGesture {
@@ -73,13 +87,23 @@ extension MultiStepsView {
         ZStack {
             HStack(spacing: 0) {
                 VStack {
-                    if let extraContent = extraContent, extraContentPosition == .above {
-                        ExtraStepContent(index: index, color: index < steps.count ? accentColor :.gray, extraContent: extraContent, extraContentSize: extraContentSize)
+                    if let extraContent, extraContentPosition == .above {
+                        ExtraStepContent(
+                            index: index,
+                            color: index < steps.count ? accentColor : .gray,
+                            extraContent: extraContent,
+                            extraContentSize: extraContentSize
+                        )
                     }
-                    content().foregroundColor(index < steps.count ? accentColor :.gray)
+                    content().foregroundColor(index < steps.count ? accentColor : .gray)
                 }
-                if let extraContent = extraContent, extraContentPosition == .inline {
-                    ExtraStepContent(index: index, color: index < steps.count ? accentColor :.gray, extraContent: extraContent, extraContentSize: extraContentSize)
+                if let extraContent, extraContentPosition == .inline {
+                    ExtraStepContent(
+                        index: index,
+                        color: index < steps.count ? accentColor : .gray,
+                        extraContent: extraContent,
+                        extraContentSize: extraContentSize
+                    )
                 }
             }
         }
@@ -91,8 +115,13 @@ extension MultiStepsView {
 
     @ViewBuilder
     private func itemViewOverlayFor_iOS13later(_ index: Int) -> some View {
-        if let extraContent = extraContent, extraContentPosition == .onTop , index < steps.count {
-            ExtraStepContent(index: index, color: accentColor, extraContent: extraContent, extraContentSize: extraContentSize)
+        if let extraContent, extraContentPosition == .onTop, index < steps.count {
+            ExtraStepContent(
+                index: index,
+                color: accentColor,
+                extraContent: extraContent,
+                extraContentSize: extraContentSize
+            )
         }
     }
 }

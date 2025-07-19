@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UILabel{
+extension UILabel {
 
     /// **Applies** an outline effect to the label text.
     ///
@@ -22,11 +22,11 @@ extension UILabel{
         foregroundColor: UIColor
     ) {
         let strokeTextAttributes = [
-            .strokeColor : outlineColor,
-            .foregroundColor : foregroundColor,
-            .strokeWidth : strokeWidth,
-            .font : self.font as Any
-        ] as [NSAttributedString.Key : Any]
-        self.attributedText = NSMutableAttributedString(string: self.text ?? "", attributes: strokeTextAttributes)
+            .strokeColor: outlineColor,
+            .foregroundColor: foregroundColor,
+            .strokeWidth: strokeWidth,
+            .font: font as Any,
+        ] as [NSAttributedString.Key: Any]
+        attributedText = NSMutableAttributedString(string: text ?? "", attributes: strokeTextAttributes)
     }
 }

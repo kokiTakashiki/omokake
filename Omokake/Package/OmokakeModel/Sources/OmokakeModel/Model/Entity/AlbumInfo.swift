@@ -22,8 +22,8 @@ public struct AlbumInfo {
     }
 }
 
-extension AlbumInfo {
-    public enum AlbumType {
+public extension AlbumInfo {
+    enum AlbumType {
         case favorites
         case regular
     }

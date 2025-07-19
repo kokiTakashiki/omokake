@@ -8,4 +8,4 @@
 
 import MetalKit
 
-extension MTKView : RenderDestinationProvider {}
+extension MTKView: RenderDestinationProvider {}

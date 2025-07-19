@@ -17,31 +17,32 @@ public class PlayerController {
     private init() {}
 
     // MARK: Player
+
     var musicVolume: Float = 1.0 {
-        didSet {currentMusic?.volume = musicVolume}
+        didSet { currentMusic?.volume = musicVolume }
     }
 
     var effectVolume: Float {
-        get{
+        get {
             let value = UserDefaults.standard.object(forKey: "effectVolume")
             if value == nil {
                 return 0.5
             }
             return value as! Float
         }
-        set(value){
-            UserDefaults.standard.set(value, forKey : "effectVolume")
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "effectVolume")
         }
     }
 }
 
 extension PlayerController: Player {
-    
+
     public func play(music: Music) {
         guard let newMusic = try? AVAudioPlayer(soundFile: music) else { return }
         newMusic.volume = musicVolume
         newMusic.play()
-        newMusic.numberOfLoops = -1 //In this way the music will play in loop
+        newMusic.numberOfLoops = -1 // In this way the music will play in loop
         currentMusic = newMusic
     }
 
@@ -67,8 +68,8 @@ extension PlayerController: Player {
     }
 }
 
-extension AVAudioPlayer {
-    public enum PlayerError: Error {
+public extension AVAudioPlayer {
+    enum PlayerError: Error {
         case fileNotFound
     }
 
@@ -78,7 +79,7 @@ extension AVAudioPlayer {
 //        try self.init(contentsOf: url)
 //    }
 
-    public convenience init(soundFile: FileSoundProtocol) throws {
+    convenience init(soundFile: FileSoundProtocol) throws {
         guard let data = NSDataAsset(name: soundFile.fileName, bundle: Bundle.module)?.data else {
             throw PlayerError.fileNotFound
         }

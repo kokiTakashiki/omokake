@@ -34,13 +34,13 @@ extension View {
             }
             switch edge {
             case .leading:
-                    Text(content.localized())
+                Text(content.localized())
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
                     .font(.makeFuturaMedium(size: 18))
                 Spacer()
             case .trailing:
                 Spacer()
-                    Text(content.localized())
+                Text(content.localized())
                     .fixedSize(horizontal: isFixedSizeHorizontal, vertical: !isFixedSizeHorizontal)
                     .font(.makeFuturaMedium(size: 18))
             case .top:

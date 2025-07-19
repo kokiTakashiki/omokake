@@ -14,34 +14,32 @@ extension UIView {
     /// Setting this property automatically enables `masksToBounds` when the value is greater than 0.
     @IBInspectable var cornerRadius: CGFloat {
         get {
-            return layer.cornerRadius
+            layer.cornerRadius
         }
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
         }
     }
-    
+
     /// **The width of the view's border**.
-    @IBInspectable
-    var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
-            return self.layer.borderWidth
+            layer.borderWidth
         }
         set {
-            self.layer.borderWidth = newValue
+            layer.borderWidth = newValue
         }
     }
-    
+
     /// **The color of the view's border**.
-    @IBInspectable
-    var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(cgColor: self.layer.borderColor ?? CGColor(gray: 0.0, alpha: 0.0))
+            UIColor(cgColor: layer.borderColor ?? CGColor(gray: 0.0, alpha: 0.0))
         }
         set {
-            self.layer.borderColor = newValue?.cgColor
+            layer.borderColor = newValue?.cgColor
         }
     }
-    
+
 }

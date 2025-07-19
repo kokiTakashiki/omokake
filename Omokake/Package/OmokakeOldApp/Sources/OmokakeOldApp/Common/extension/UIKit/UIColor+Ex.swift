@@ -6,8 +6,8 @@
 //  Copyright © 2021 takasiki. All rights reserved.
 //
 
-import UIKit
 import MetalKit
+import UIKit
 
 extension UIColor {
     /// **Creates** a UIColor from an MTLClearColor.
@@ -18,10 +18,10 @@ extension UIColor {
     /// - Parameter clearColor: The MTLClearColor to convert.
     /// - Returns: A UIColor with equivalent color values.
     static func makeColor(from clearColor: MTLClearColor) -> UIColor {
-        return UIColor(
-            red: CGFloat(clearColor.red), 
-            green: CGFloat(clearColor.green), 
-            blue: CGFloat(clearColor.blue), 
+        UIColor(
+            red: CGFloat(clearColor.red),
+            green: CGFloat(clearColor.green),
+            blue: CGFloat(clearColor.blue),
             alpha: CGFloat(clearColor.alpha)
         )
     }

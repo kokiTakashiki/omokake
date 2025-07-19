@@ -33,13 +33,13 @@ extension View {
                 Text(messageKey)
             }
         } else {
-            self.alert(isPresented: isPresented) {
+            alert(isPresented: isPresented) {
                 Alert(
                     title: Text(titleKey),
                     message: Text(messageKey),
-                    dismissButton: .default(Text("OK"), action: {
+                    dismissButton: .default(Text("OK")) {
                         action()
-                    })
+                    }
                 )
             }
         }
@@ -69,13 +69,13 @@ extension View {
                 Text(messageText)
             }
         } else {
-            self.alert(isPresented: isPresented) {
+            alert(isPresented: isPresented) {
                 Alert(
                     title: Text(titleKey),
                     message: Text(messageText),
-                    dismissButton: .default(Text("OK"), action: {
+                    dismissButton: .default(Text("OK")) {
                         action()
-                    })
+                    }
                 )
             }
         }

@@ -6,9 +6,9 @@
 //  Copyright © 2021 takasiki. All rights reserved.
 //
 
-import UIKit
 import DeviceKit
 import OmokakeModel
+import UIKit
 
 final class SelectAlbumViewController: UIViewController {
     private let audio = PlayerController.shared
@@ -16,10 +16,10 @@ final class SelectAlbumViewController: UIViewController {
 
     struct ViewModel {
         var partsCoint: Int
-        let selectKakera: Renderer.KakeraType //:Array<String> = ["kakera","kakera2"]
+        let selectKakera: Renderer.KakeraType //: Array<String> = ["kakera","kakera2"]
         let isBlendingEnabled: Bool
     }
-    
+
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -28,25 +28,27 @@ final class SelectAlbumViewController: UIViewController {
                                forCellReuseIdentifier: "AlbumTableViewCell")
         }
     }
+
     private var albumData = [AlbumInfo]()
     private var viewModel: ViewModel
-    
+
     init?(coder: NSCoder, viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // TOOD ViewControllerの責務として描画飲みが好ましいので処理はpresenterなどに移動させた方が設計としては綺麗になる
         albumData.append(PhotosManager.favoriteAlbumInfo())
         albumData = albumData + PhotosManager.albumTitleNames()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
@@ -54,18 +56,22 @@ final class SelectAlbumViewController: UIViewController {
 }
 
 // MARK: - Extension UITableViewDataSource, UITableViewDelegate
+
 extension SelectAlbumViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albumData.count
+        albumData.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let album = albumData[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as! AlbumTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "AlbumTableViewCell",
+            for: indexPath
+        ) as! AlbumTableViewCell
         cell.setData(title: album.title, photosCount: album.photosCount)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = albumData[indexPath.row]
         partsAlertAndPresent(album, maxParts: Device.kakeraMaxParts(.thumbnail))
@@ -74,16 +80,18 @@ extension SelectAlbumViewController: UITableViewDataSource, UITableViewDelegate 
 }
 
 // MARK: - Extension SelectAlbumViewController
+
 extension SelectAlbumViewController {
-    @IBAction func backSelectKakeraAction(_ sender: Any) {
+    @IBAction
+    func backSelectKakeraAction(_ sender: Any) {
         audio.play(effect: Audio.EffectFiles.transitionDown)
         haptic.play(.impact(.soft))
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
-
 // MARK: - Extension Private Method
+
 extension SelectAlbumViewController {
     // 6s 200
     // 11Pro 400
@@ -92,7 +100,7 @@ extension SelectAlbumViewController {
             let alert = UIAlertController(
                 title: NSLocalizedString("TakeMorePhotos", comment: ""),
                 message: NSLocalizedString("10orMore", comment: ""),
-                preferredStyle:  .alert
+                preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
                 self?.present(note)
@@ -114,7 +122,7 @@ extension SelectAlbumViewController {
             let alert = UIAlertController(
                 title: titleString,
                 message: messageString,
-                preferredStyle:  .alert
+                preferredStyle: .alert
             )
             let defaultAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
                 self?.present(note)
@@ -124,10 +132,10 @@ extension SelectAlbumViewController {
             haptic.play(.notification(.failure))
             present(alert, animated: true, completion: nil)
         } else {
-            self.present(note)
+            present(note)
         }
     }
-    
+
     private func present(_ note: AlbumInfo) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.medium))
@@ -139,6 +147,6 @@ extension SelectAlbumViewController {
             albumInfo: note
         )
         partSizeChangeViewController.modalPresentationStyle = .fullScreen
-        self.present(partSizeChangeViewController, animated: true, completion: nil)
+        present(partSizeChangeViewController, animated: true, completion: nil)
     }
 }

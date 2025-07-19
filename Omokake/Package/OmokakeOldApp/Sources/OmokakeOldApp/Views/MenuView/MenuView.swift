@@ -6,8 +6,8 @@
 //  Copyright © 2023 takasiki. All rights reserved.
 //
 
-import SwiftUI
 import AnimationSequence
+import SwiftUI
 
 extension MenuView {
     struct AnimationState {
@@ -25,7 +25,11 @@ struct MenuView: View {
 
     var body: some View {
         let localizedString = NSLocalizedString("LimitedGeneratingKakera", comment: "")
-        let messageString = String(format: localizedString, "\(environmentObject.maxParts)","\(environmentObject.maxParts)")
+        let messageString = String(
+            format: localizedString,
+            "\(environmentObject.maxParts)",
+            "\(environmentObject.maxParts)"
+        )
         ZStack {
             main
             questionmarkButton
@@ -77,7 +81,7 @@ struct MenuView: View {
                     .font(.makeFuturaMedium(size: 17))
                 Spacer()
             }
-            
+
             HStack {
                 Text("\(environmentObject.partsCount) kakera")
                     .font(.makeFuturaMedium(size: 17))
@@ -107,7 +111,7 @@ struct MenuView: View {
                         .frame(width: Self.buttonWidth, height: Self.buttonWidth)
                         .opacity(animationState.kakeraOpacity)
                 }
-                
+
                 Button {
                     Task { @MainActor in
                         environmentObject.thumbnailAction()
@@ -155,7 +159,7 @@ struct MenuView: View {
     }
 }
 
-fileprivate let localizationIds = ["en", "ja"]
+private let localizationIds = ["en", "ja"]
 
 #Preview("Localized - \(localizationIds[0])") {
     MenuView()

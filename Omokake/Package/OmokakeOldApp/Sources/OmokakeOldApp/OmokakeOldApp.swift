@@ -15,6 +15,5 @@ private struct OmokakeOldAppScreen: UIViewControllerRepresentable {
         TitleViewController.makeViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }

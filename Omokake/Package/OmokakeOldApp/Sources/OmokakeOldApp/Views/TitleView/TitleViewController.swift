@@ -6,8 +6,8 @@
 //  Copyright © 1 Reiwa takasiki. All rights reserved.
 //
 
-import UIKit
 import OmokakeModel
+import UIKit
 
 public final class TitleViewController: UIViewController {
     private let audio = OmokakeModel.PlayerController.shared
@@ -15,52 +15,55 @@ public final class TitleViewController: UIViewController {
 
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
-    
-    private var tutorialOff: Bool = false
-    private var menuOn: Bool = false
-    
-    public override func viewDidLoad() {
+
+    private var tutorialOff = false
+    private var menuOn = false
+
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let defaults = UserDefaults.standard
         let loadedTutorialOff = defaults.object(forKey: "tutorialOff")
-        if (loadedTutorialOff as? Bool != nil) {
+        if loadedTutorialOff as? Bool != nil {
             tutorialOff = loadedTutorialOff as! Bool
         }
         let loadedMenuOn = defaults.object(forKey: "menuOn")
-        if (loadedMenuOn as? Bool != nil) {
+        if loadedMenuOn as? Bool != nil {
             menuOn = loadedMenuOn as! Bool
         }
-        
+
         if tutorialOff {
             tutorialButton.isHidden = true
         }
-        
+
         if menuOn {
             menuButton.isHidden = false
         }
-        
+
     }
 }
 
 // MARK: IBAction
+
 extension TitleViewController {
-    @IBAction func tutorialButtonAction(_ sender: Any) {
+    @IBAction
+    func tutorialButtonAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
         let tutorialViewController = IntroStepsViewController()
         tutorialViewController.modalPresentationStyle = .fullScreen
-        self.present(tutorialViewController, animated: true, completion: nil)
+        present(tutorialViewController, animated: true, completion: nil)
     }
-    
-    @IBAction func menuButtonAction(_ sender: Any) {
+
+    @IBAction
+    func menuButtonAction(_ sender: Any) {
         audio.playRandom(effects: Audio.EffectFiles.taps)
         haptic.play(.impact(.soft))
 
         let menuViewController = MenuViewController()
         let navi = UINavigationController(rootViewController: menuViewController)
         navi.modalPresentationStyle = .fullScreen
-        self.present(navi, animated: true, completion: nil)
+        present(navi, animated: true, completion: nil)
     }
 }

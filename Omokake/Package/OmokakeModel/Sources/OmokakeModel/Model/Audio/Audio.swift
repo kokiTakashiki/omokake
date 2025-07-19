@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct Audio {
+public enum Audio {
     public enum MusicFiles {
-        //static let yourMusic = Music(fileName: "MusicName", type: "mp3")
+        // static let yourMusic = Music(fileName: "MusicName", type: "mp3")
     }
 
     @MainActor

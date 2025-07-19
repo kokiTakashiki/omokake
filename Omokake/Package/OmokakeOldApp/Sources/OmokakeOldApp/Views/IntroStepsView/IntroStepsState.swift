@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum IntroStepsState : String, CaseIterable  {
+enum IntroStepsState: String, CaseIterable {
     case infoOmokake
     case approval
     case complete
@@ -17,17 +17,17 @@ enum IntroStepsState : String, CaseIterable  {
     var rawValue: String {
         switch self {
         case .infoOmokake:
-            return "info.circle"
+            "info.circle"
         case .approval:
             if #available(iOS 14, *) {
-                return "photo.on.rectangle.angled"
+                "photo.on.rectangle.angled"
             } else {
-                return "photo.on.rectangle"
+                "photo.on.rectangle"
             }
         case .complete:
-            return "checkmark.circle.fill"
+            "checkmark.circle.fill"
         case .howToUse:
-            return "questionmark.circle"
+            "questionmark.circle"
         }
     }
 }

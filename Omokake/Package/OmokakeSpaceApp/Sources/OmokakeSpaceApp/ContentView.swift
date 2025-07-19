@@ -8,14 +8,14 @@
 import SwiftUI
 
 #if os(visionOS)
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-            .foregroundStyle(.tint)
+    struct ContentView: View {
+        var body: some View {
+            Text("Hello, World!")
+                .foregroundStyle(.tint)
+        }
     }
-}
 
-#Preview {
-    ContentView()
-}
+    #Preview {
+        ContentView()
+    }
 #endif

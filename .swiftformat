@@ -1,0 +1,35 @@
+# SwiftFormat設定ファイル
+
+# 基本的なフォーマット設定
+--indent 4
+--tabwidth 4
+--maxwidth 120
+--linebreaks lf
+
+# インポート文の整理
+--importgrouping testable-top
+
+# 関数とクロージャの設定
+--closingparen balanced
+--funcattributes prev-line
+--typeattributes prev-line
+--storedvarattrs same-line
+--computedvarattrs same-line
+
+# コメントとドキュメント
+--doccomments preserve
+
+# その他の設定
+--stripunusedargs closure-only
+--self remove
+--redundanttype inferred
+--semicolons never
+--trailingclosures default
+--trimwhitespace always
+--yodaswap always
+
+# 無効化するルール
+--disable blankLinesAtEndOfScope,blankLinesAtStartOfScope,unusedArguments,strongOutlets
+
+# 除外するファイルとディレクトリ
+--exclude "**/Generated",**/Pods,**/.build,**/Package.swift 

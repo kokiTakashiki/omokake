@@ -6,9 +6,9 @@
 //  Copyright © 2023 takasiki. All rights reserved.
 //
 
-import SwiftUI
 import Combine
 import OmokakeModel
+import SwiftUI
 
 @MainActor
 final class IntroStepsEnvironmentObject: ObservableObject {
@@ -66,7 +66,7 @@ final class IntroStepsEnvironmentObject: ObservableObject {
 
         // 設定画面に飛ぶしかけ
         if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
-           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 
@@ -86,7 +86,7 @@ final class IntroStepsEnvironmentObject: ObservableObject {
             }
         }
     }
-    
+
     private func authorization() async -> PhotoAccessState {
         let state: PhotoAccessState = PhotosManager.authorization()
         sleep(2)
