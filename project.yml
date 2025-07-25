@@ -18,6 +18,8 @@ packages:
     path: Package/OmokakeModel
   OmokakeOldApp:
     path: Package/OmokakeOldApp
+  OmokakeResources:
+    path: Package/OmokakeResources
   OmokakeSpaceApp:
     path: Package/OmokakeSpaceApp
   OmokakeWindowApp:
@@ -53,6 +55,7 @@ targets:
       - package: OmokakeModel
       - package: OmokakeOldApp
       - package: OmokakeWindowApp
+      - package: OmokakeResources
 
   # macOS App Target
   Omokake_macOS:
@@ -104,6 +107,7 @@ targets:
         INFOPLIST_KEY_UIUserInterfaceStyle: Dark
     dependencies:
       - package: OmokakeSpaceApp
+      - package: OmokakeResources
 
   # iOS Tests
   OmokakeTests_iOS:
