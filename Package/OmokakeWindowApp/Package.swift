@@ -16,11 +16,17 @@ let package = Package(
             targets: ["OmokakeWindowApp"]
         ),
     ],
+    dependencies: [
+        .package(path: "../OmokakeResources")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "OmokakeWindowApp"
+            name: "OmokakeWindowApp",
+            dependencies: [
+                .product(name: "OmokakeResources", package: "OmokakeResources")
+            ]
         ),
         .testTarget(
             name: "OmokakeWindowAppTests",
