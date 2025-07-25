@@ -71,3 +71,9 @@ fastlane/test_output
 guideline
 Omokake/buildServer.json
 buildServer.json
+
+# XcodeGen
+# プロジェクトファイルは自動生成されるためgitで管理しない
+*.xcworkspace
+!*.xcworkspace/contents.xcworkspacedata
+*.xcodeproj

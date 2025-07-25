@@ -5,13 +5,13 @@
 //  Created by takedatakashiki on 2025/07/04.
 //
 
-import OmokakeOldApp
-import OmokakeSpaceApp
 import OmokakeWindowApp
 import SwiftUI
-import UIKit
 
 #if os(iOS)
+    import OmokakeOldApp
+    import UIKit
+
     @available(iOS 14.0, *)
     @main
     struct OmokakeApp: App {
@@ -19,8 +19,11 @@ import UIKit
             WindowGroup {
                 if #available(iOS 26.0, *) {
                     OmokakeWindowApp.main
+                        .preferredColorScheme(.dark)
                 } else {
                     OmokakeOldApp.main
+                        .preferredColorScheme(.dark)
+                        .ignoresSafeArea()
                 }
             }
         }
@@ -42,6 +45,7 @@ import UIKit
                 let window = UIWindow(windowScene: windowScene)
                 window.rootViewController = UIHostingController(rootView: contentView)
                 self.window = window
+                window.overrideUserInterfaceStyle = .dark
                 window.makeKeyAndVisible()
             }
         }
@@ -68,17 +72,21 @@ import UIKit
         var body: some Scene {
             WindowGroup {
                 OmokakeWindowApp.main
+                    .preferredColorScheme(.dark)
             }
         }
     }
 #endif
 
 #if os(visionOS)
+    import OmokakeSpaceApp
+
     @main
     struct OmokakeVisionApp: App {
         var body: some Scene {
             WindowGroup {
                 OmokakeSpaceApp.main
+                    .preferredColorScheme(.dark)
             }
         }
     }

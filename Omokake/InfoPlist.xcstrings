@@ -3,7 +3,7 @@
   "strings" : {
     "CFBundleDisplayName" : {
       "comment" : "Bundle display name",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -26,13 +26,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Omokake"
+            "value" : "Omokake_iOS"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "omokake"
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "comment" : "Privacy - Photo Library Additions Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "作品を写真ライブラリに保存するために使用します。"
           }
         }
       }

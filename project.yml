@@ -1,0 +1,218 @@
+name: Omokake
+options:
+  bundleIdPrefix: com.omokake
+  developmentLanguage: ja
+  createIntermediateGroups: true
+  
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: 1
+    IPHONEOS_DEPLOYMENT_TARGET: "13.0"
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
+    XROS_DEPLOYMENT_TARGET: "26.0"
+    SWIFT_VERSION: "6.0"
+    
+packages:
+  OmokakeModel:
+    path: Package/OmokakeModel
+  OmokakeOldApp:
+    path: Package/OmokakeOldApp
+  OmokakeSpaceApp:
+    path: Package/OmokakeSpaceApp
+  OmokakeWindowApp:
+    path: Package/OmokakeWindowApp
+
+targets:
+  # iOS App Target
+  Omokake_iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: Omokake
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    resources:
+      - path: Omokake/Assets.xcassets
+      - path: Omokake/InfoPlist.xcstrings
+      - path: Omokake/Omokake.icon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.omokake.app.ios
+        INFOPLIST_FILE: Omokake/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        IPHONEOS_DEPLOYMENT_TARGET: "13.0"
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+    dependencies:
+      - package: OmokakeModel
+      - package: OmokakeOldApp
+      - package: OmokakeWindowApp
+
+  # macOS App Target
+  Omokake_macOS:
+    type: application
+    platform: macOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Omokake
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    resources:
+      - path: Omokake/Assets.xcassets
+      - path: Omokake/InfoPlist.xcstrings
+      - path: Omokake/Omokake.icon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.omokake.app.macos
+        INFOPLIST_FILE: Omokake/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        MACOSX_DEPLOYMENT_TARGET: "26.0"
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+    dependencies:
+      - package: OmokakeWindowApp
+
+  # visionOS App Target
+  Omokake_visionOS:
+    type: application
+    platform: visionOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Omokake
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    resources:
+      - path: Omokake/Assets.xcassets
+      - path: Omokake/InfoPlist.xcstrings
+      - path: Omokake/Omokake.icon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.omokake.app.visionos
+        INFOPLIST_FILE: Omokake/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        XROS_DEPLOYMENT_TARGET: "26.0"
+        TARGETED_DEVICE_FAMILY: "7"
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+    dependencies:
+      - package: OmokakeSpaceApp
+
+  # iOS Tests
+  OmokakeTests_iOS:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: OmokakeTests
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    dependencies:
+      - target: Omokake_iOS
+    settings:
+      base:
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Omokake_iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Omokake_iOS
+        IPHONEOS_DEPLOYMENT_TARGET: "13.0"
+
+  # macOS Tests
+  OmokakeTests_macOS:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: OmokakeTests
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    dependencies:
+      - target: Omokake_macOS
+    settings:
+      base:
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Omokake_macOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Omokake_macOS
+        MACOSX_DEPLOYMENT_TARGET: "26.0"
+
+  # visionOS Tests
+  OmokakeTests_visionOS:
+    type: bundle.unit-test
+    platform: visionOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: OmokakeTests
+        excludes:
+          - "*.md"
+          - ".DS_Store"
+    dependencies:
+      - target: Omokake_visionOS
+    settings:
+      base:
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Omokake_visionOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Omokake_visionOS
+        XROS_DEPLOYMENT_TARGET: "26.0"
+
+schemes:
+  Omokake_iOS:
+    build:
+      targets:
+        Omokake_iOS: all
+        OmokakeTests_iOS: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: OmokakeTests_iOS
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
+  Omokake_macOS:
+    build:
+      targets:
+        Omokake_macOS: all
+        OmokakeTests_macOS: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: OmokakeTests_macOS
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
+  Omokake_visionOS:
+    build:
+      targets:
+        Omokake_visionOS: all
+        OmokakeTests_visionOS: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: OmokakeTests_visionOS
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release 
