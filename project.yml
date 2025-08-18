@@ -55,7 +55,6 @@ targets:
       - package: OmokakeModel
       - package: OmokakeOldApp
       - package: OmokakeWindowApp
-      - package: OmokakeResources
 
   # macOS App Target
   Omokake_macOS:
@@ -81,6 +80,7 @@ targets:
         INFOPLIST_KEY_UIUserInterfaceStyle: Dark
     dependencies:
       - package: OmokakeWindowApp
+      - package: OmokakeResources
 
   # visionOS App Target
   Omokake_visionOS:

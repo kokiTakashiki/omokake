@@ -11,20 +11,27 @@ import SwiftUI
 @available(iOS 26.0, macOS 26.0, *)
 struct ContentView: View {
     @State private var selectedSegment = 0
-    @State private var showingAbout = false
+    @State private var isPresentedAbout = false
+    @State private var isPresentedKakeraSetting = false
 
     var body: some View {
         NavigationView {
-            Rectangle()
-                .fill(.clear)
-                .ignoresSafeArea()
-                .toolbar {
-                    topBarItems()
-                    bottomBarItems()
-                }
+            ZStack {
+//                LinearGradient(gradient: Gradient(colors: [.white, .blue, .black]), startPoint: .top, endPoint: .bottom)
+            }
+            .ignoresSafeArea()
+            .toolbar {
+                topBarItems()
+                bottomBarItems()
+            }
         }
-        .sheet(isPresented: $showingAbout) {
+        .sheet(isPresented: $isPresentedAbout) {
             AboutView()
+                .presentationDetents([.medium])
+        }
+        .sheet(isPresented: $isPresentedKakeraSetting) {
+            KakeraSettingView()
+                .presentationDetents([.medium])
         }
     }
 
@@ -32,7 +39,7 @@ struct ContentView: View {
     private func topBarItems() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
             Button(action: {
-                showingAbout = true
+                isPresentedAbout = true
             }) {
                 Image(systemName: "questionmark")
             }
@@ -51,11 +58,10 @@ struct ContentView: View {
                 Image(systemName: "arrow.up.backward.and.arrow.down.forward")
             }
         }
-        ToolbarSpacer()
         ToolbarItemGroup(placement: .status) {
             Picker("Options", selection: $selectedSegment) {
                 Image(
-                    OmokakeResources.ImageResource.kakeraIcon.rawValue,
+                    OmokakeResources.ImageResource.kakeraIconTemplate.rawValue,
                     bundle: OmokakeResources.bundle
                 )
                 .tag(0)
@@ -64,15 +70,13 @@ struct ContentView: View {
             }
             .frame(width: 150)
             .pickerStyle(.segmented)
-        }
-        ToolbarSpacer()
-        ToolbarItem(placement: .bottomBar) {
             Button(action: {
-                // 編集アクション
+                isPresentedKakeraSetting = true
             }) {
                 Image(systemName: "slider.horizontal.3")
             }
         }
+        ToolbarSpacer()
     }
 }
 

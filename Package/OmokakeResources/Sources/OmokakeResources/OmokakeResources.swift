@@ -45,6 +45,7 @@ public enum OmokakeResources {
     /// 利用可能な画像リソース名の列挙
     public enum ImageResource: String, CaseIterable {
         case appIcon = "app_icon"
+        case kakeraIconTemplate = "kakera_icon_template"
         case kakeraIcon = "kakera_icon"
         case photoFrames = "photo_frames"
 

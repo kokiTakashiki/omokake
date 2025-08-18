@@ -39,13 +39,13 @@ struct AboutView: View {
                 }
 
                 // Creditセクション
-                Section("Credit") {
+                Section("クレジット") {
                     InfoRow(title: "Developing by", value: "Koki Takeda")
                     InfoRow(title: "Icon Design", value: "Ayana Takeda")
                     InfoRow(title: "Special Thanks", value: "Harumi Sagawa")
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Third Party Libraries")
+                        Text("サードパーティライブラリ")
                             .font(.body)
                             .foregroundColor(.primary)
 
@@ -70,7 +70,7 @@ struct AboutView: View {
                 }
 
                 // Contactセクション
-                Section("Contact") {
+                Section("お問い合わせ") {
                     HStack {
                         Text("X")
                             .font(.body)
@@ -84,7 +84,7 @@ struct AboutView: View {
                     }
                 }
             }
-            .navigationTitle("About")
+            .navigationTitle(String(localized: "Omokakeについて", bundle: .module))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -96,6 +96,7 @@ struct AboutView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
     }
 }
 

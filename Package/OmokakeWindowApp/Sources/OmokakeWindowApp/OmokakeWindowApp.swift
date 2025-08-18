@@ -9,7 +9,11 @@ public enum OmokakeWindowApp {
         if #available(iOS 26.0, macOS 26.0, *) {
             ContentView()
         } else {
-            fatalError("サポート対象外です")
+            if #available(iOS 15, *) {
+                fatalError(String(localized: "サポート対象外です"))
+            } else {
+                fatalError(Bundle.module.localizedString(forKey: "サポート対象外です", value: nil, table: nil))
+            }
         }
     }
 }

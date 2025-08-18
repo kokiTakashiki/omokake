@@ -26,6 +26,9 @@ let package = Package(
             name: "OmokakeWindowApp",
             dependencies: [
                 .product(name: "OmokakeResources", package: "OmokakeResources")
+            ],
+            resources: [
+                .process("Resources")
             ]
         ),
         .testTarget(
