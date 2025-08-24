@@ -22,7 +22,7 @@ final class PartSizeChangeViewController: UIViewController {
     private let audio = PlayerController.shared
     private let haptic = HapticFeedbackController.shared
 
-    private var renderer: Renderer? = nil
+    private var renderer: Renderer?
 
     private var selectKakera: Renderer.KakeraType!
     private var isBlendingEnabled: Bool!

@@ -6,6 +6,8 @@ import PackageDescription
 let package = Package(
     name: "OmokakeWindowApp",
     platforms: [
+        // iOS13を指定しているが実際はiOS26以降が対象のライブラリ
+        // OmokakeがiOS13以降をサポートしているのでimportできるようにiOS13を指定している。
         .iOS(.v13),
         .macOS(.v26)
     ],
@@ -17,7 +19,8 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../OmokakeResources")
+        .package(path: "../OmokakeResources"),
+        .package(path: "../OmokakeShaders")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -25,7 +28,8 @@ let package = Package(
         .target(
             name: "OmokakeWindowApp",
             dependencies: [
-                .product(name: "OmokakeResources", package: "OmokakeResources")
+                .product(name: "OmokakeResources", package: "OmokakeResources"),
+                .product(name: "OmokakeShaders", package: "OmokakeShaders")
             ],
             resources: [
                 .process("Resources")

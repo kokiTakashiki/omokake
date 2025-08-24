@@ -1,0 +1,4 @@
+module Shaders {
+    header "ShaderTypes.h"
+    export *
+}

@@ -40,9 +40,9 @@ struct AboutView: View {
 
                 // Creditセクション
                 Section("クレジット") {
-                    InfoRow(title: "Developing by", value: "Koki Takeda")
-                    InfoRow(title: "Icon Design", value: "Ayana Takeda")
-                    InfoRow(title: "Special Thanks", value: "Harumi Sagawa")
+                    creditListRow(title: "Developing by", name: "Koki Takeda")
+                    creditListRow(title: "Icon Design", name: "Ayana Takeda")
+                    creditListRow(title: "Special Thanks", name: "Harumi Sagawa")
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text("サードパーティライブラリ")
@@ -85,27 +85,24 @@ struct AboutView: View {
                 }
             }
             .navigationTitle(String(localized: "Omokakeについて", bundle: .module))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
+            #if os(iOS)
+                .navigationBarTitleDisplayMode(.inline)
+            #elseif os(macOS)
+            #endif
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
                     }
                 }
-            }
         }
         .scrollContentBackground(.hidden)
     }
-}
 
-@available(iOS 26.0, macOS 26.0, *)
-struct InfoRow: View {
-    let title: String
-    let value: String
-
-    var body: some View {
+    func creditListRow(title: String, name: String) -> some View {
         HStack {
             Text(title)
                 .font(.body)
@@ -113,7 +110,7 @@ struct InfoRow: View {
 
             Spacer()
 
-            Text(value)
+            Text(name)
                 .font(.body)
                 .foregroundColor(.secondary)
         }

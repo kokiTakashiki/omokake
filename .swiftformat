@@ -28,6 +28,10 @@
 --trimwhitespace always
 --yodaswap always
 
+# 頭字語と略語の設定
+--enable acronyms
+--acronyms ID,URL,UUID
+
 # 無効化するルール
 --disable blankLinesAtEndOfScope,blankLinesAtStartOfScope,unusedArguments,strongOutlets
 

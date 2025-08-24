@@ -34,6 +34,8 @@ packages:
     path: Package/OmokakeSpaceApp
   OmokakeWindowApp:
     path: Package/OmokakeWindowApp
+  OmokakeShaders:
+    path: Package/OmokakeShaders
 
 targets:
   # iOS App Target
@@ -90,7 +92,6 @@ targets:
         INFOPLIST_KEY_UIUserInterfaceStyle: Dark
     dependencies:
       - package: OmokakeWindowApp
-      - package: OmokakeResources
 
   # visionOS App Target
   Omokake_visionOS:
@@ -117,7 +118,6 @@ targets:
         INFOPLIST_KEY_UIUserInterfaceStyle: Dark
     dependencies:
       - package: OmokakeSpaceApp
-      - package: OmokakeResources
 
   # iOS Tests
   OmokakeTests_iOS:

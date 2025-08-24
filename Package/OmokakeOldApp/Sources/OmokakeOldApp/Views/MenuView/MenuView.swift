@@ -159,16 +159,16 @@ struct MenuView: View {
     }
 }
 
-private let localizationIds = ["en", "ja"]
+private let localizationIDs = ["en", "ja"]
 
-#Preview("Localized - \(localizationIds[0])") {
+#Preview("Localized - \(localizationIDs[0])") {
     MenuView()
         .environmentObject(MenuViewEnvironmentObject())
-        .environment(\.locale, .init(identifier: localizationIds[0]))
+        .environment(\.locale, .init(identifier: localizationIDs[0]))
 }
 
-#Preview("Localized - \(localizationIds[1])") {
+#Preview("Localized - \(localizationIDs[1])") {
     MenuView()
         .environmentObject(MenuViewEnvironmentObject())
-        .environment(\.locale, .init(identifier: localizationIds[1]))
+        .environment(\.locale, .init(identifier: localizationIDs[1]))
 }

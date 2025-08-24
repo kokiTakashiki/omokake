@@ -16,14 +16,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-//                LinearGradient(gradient: Gradient(colors: [.white, .blue, .black]), startPoint: .top, endPoint: .bottom)
-            }
-            .ignoresSafeArea()
-            .toolbar {
-                topBarItems()
-                bottomBarItems()
-            }
+            KakerasViewControllerRepresentable()
+                .ignoresSafeArea()
+                .toolbar {
+                    topBarItems()
+                    bottomBarItems()
+                }
         }
         .sheet(isPresented: $isPresentedAbout) {
             AboutView()
@@ -37,27 +35,40 @@ struct ContentView: View {
 
     @ToolbarContentBuilder
     private func topBarItems() -> some ToolbarContent {
-        ToolbarItem(placement: .topBarLeading) {
-            Button(action: {
-                isPresentedAbout = true
-            }) {
-                Image(systemName: "questionmark")
+        #if os(iOS)
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    isPresentedAbout = true
+                }) {
+                    Image(systemName: "questionmark")
+                }
             }
-        }
-        ToolbarItem(placement: .topBarTrailing) {
-            ShareLink("Share URL", item: URL(string: "https://developer.apple.com/xcode/swiftui/")!)
-        }
+            ToolbarItem(placement: .topBarTrailing) {
+                ShareLink("Share URL", item: URL(string: "https://developer.apple.com/xcode/swiftui/")!)
+            }
+        #elseif os(macOS)
+            ToolbarItem(placement: .navigation) {
+                Button(action: {
+                    isPresentedAbout = true
+                }) {
+                    Image(systemName: "questionmark")
+                }
+            }
+        #endif
     }
 
     @ToolbarContentBuilder
     private func bottomBarItems() -> some ToolbarContent {
-        ToolbarItem(placement: .bottomBar) {
-            Button(action: {
-                // 検索アクション
-            }) {
-                Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+        #if os(iOS)
+            ToolbarItem(placement: .bottomBar) {
+                Button(action: {
+                    // 検索アクション
+                }) {
+                    Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+                }
             }
-        }
+        #elseif os(macOS)
+        #endif
         ToolbarItemGroup(placement: .status) {
             Picker("Options", selection: $selectedSegment) {
                 Image(

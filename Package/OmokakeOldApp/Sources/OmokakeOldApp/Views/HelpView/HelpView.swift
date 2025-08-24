@@ -50,13 +50,13 @@ extension HelpView {
     private func twitterButtonAction() async {
         guard let url = URL(string: "twitter://") else { return }
         if UIApplication.shared.canOpenURL(url) {
-            guard let twitterUrl = URL(string: "twitter://user?screen_name=bluewhitered123") else { return }
-            UIApplication.shared.open(twitterUrl, options: [:], completionHandler: { result in
+            guard let twitterURL = URL(string: "twitter://user?screen_name=bluewhitered123") else { return }
+            UIApplication.shared.open(twitterURL, options: [:], completionHandler: { result in
                 print(result) // → true
             })
         } else {
-            guard let twitterUrl = URL(string: "https://twitter.com/bluewhitered123") else { return }
-            UIApplication.shared.open(twitterUrl, options: [:], completionHandler: { result in
+            guard let twitterURL = URL(string: "https://twitter.com/bluewhitered123") else { return }
+            UIApplication.shared.open(twitterURL, options: [:], completionHandler: { result in
                 print(result) // → true
             })
         }
@@ -74,9 +74,9 @@ extension HelpView {
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
 
-        let localizationIds = ["en", "ja"]
+        let localizationIDs = ["en", "ja"]
 
-        ForEach(localizationIds, id: \.self) { id in
+        ForEach(localizationIDs, id: \.self) { id in
 
             HelpView()
                 .previewDisplayName("Localized - \(id)")

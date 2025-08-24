@@ -51,9 +51,9 @@ struct ContactUsView: View {
 struct ContactUsView_Previews: PreviewProvider {
     static var previews: some View {
 
-        let localizationIds = ["en", "ja"]
+        let localizationIDs = ["en", "ja"]
 
-        ForEach(localizationIds, id: \.self) { id in
+        ForEach(localizationIDs, id: \.self) { id in
 
             ContactUsView(action: {})
                 .previewDisplayName("Localized - \(id)")
